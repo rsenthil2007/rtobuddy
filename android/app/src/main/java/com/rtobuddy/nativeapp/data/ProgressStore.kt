@@ -29,7 +29,7 @@ class ProgressStore(private val context: Context) {
     }
 
     val themeId: Flow<String> = context.progressDataStore.data.map { prefs ->
-        prefs[themeKey] ?: "CLASSIC"
+        prefs[themeKey] ?: "BALANCED"
     }
 
     suspend fun setJurisdiction(code: String) {

@@ -1,8 +1,10 @@
 package com.rtobuddy.nativeapp.ui
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.MenuBook
+import androidx.compose.material.icons.outlined.QueryStats
 import androidx.compose.material.icons.outlined.Quiz
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Icon
@@ -17,19 +19,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.foundation.layout.fillMaxSize
 import com.rtobuddy.nativeapp.data.AssetCatalog
 import com.rtobuddy.nativeapp.data.RtoBuddyRepository
 import com.rtobuddy.nativeapp.ui.exam.ExamScreen
 import com.rtobuddy.nativeapp.ui.home.HomeLaunch
 import com.rtobuddy.nativeapp.ui.home.HomeScreen
 import com.rtobuddy.nativeapp.ui.learn.LearnScreen
+import com.rtobuddy.nativeapp.ui.progress.ProgressScreen
 import com.rtobuddy.nativeapp.ui.tools.ToolsScreen
 
 private enum class RootTab(val label: String) {
     Home("Home"),
-    Learn("Learn"),
-    Exam("Exam"),
+    Library("Library"),
+    Drill("Drill"),
+    Progress("Progress"),
     Tools("Tools"),
 }
 
@@ -39,9 +42,10 @@ fun RtoBuddyAppUi(
     catalog: AssetCatalog,
 ) {
     var tab by remember { mutableStateOf(RootTab.Home) }
-    var learnTab by remember { mutableStateOf<String?>(null) }
+    var libraryTab by remember { mutableStateOf<String?>(null) }
     var pendingExam by remember { mutableStateOf<HomeLaunch?>(null) }
     var homeRefresh by remember { mutableIntStateOf(0) }
+    var progressRefresh by remember { mutableIntStateOf(0) }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -49,21 +53,33 @@ fun RtoBuddyAppUi(
             NavigationBar {
                 NavigationBarItem(
                     selected = tab == RootTab.Home,
-                    onClick = { tab = RootTab.Home; homeRefresh += 1 },
+                    onClick = {
+                        tab = RootTab.Home
+                        homeRefresh += 1
+                    },
                     icon = { Icon(Icons.Outlined.Home, contentDescription = null) },
                     label = { Text(RootTab.Home.label) },
                 )
                 NavigationBarItem(
-                    selected = tab == RootTab.Learn,
-                    onClick = { tab = RootTab.Learn },
+                    selected = tab == RootTab.Library,
+                    onClick = { tab = RootTab.Library },
                     icon = { Icon(Icons.Outlined.MenuBook, contentDescription = null) },
-                    label = { Text(RootTab.Learn.label) },
+                    label = { Text(RootTab.Library.label) },
                 )
                 NavigationBarItem(
-                    selected = tab == RootTab.Exam,
-                    onClick = { tab = RootTab.Exam },
+                    selected = tab == RootTab.Drill,
+                    onClick = { tab = RootTab.Drill },
                     icon = { Icon(Icons.Outlined.Quiz, contentDescription = null) },
-                    label = { Text(RootTab.Exam.label) },
+                    label = { Text(RootTab.Drill.label) },
+                )
+                NavigationBarItem(
+                    selected = tab == RootTab.Progress,
+                    onClick = {
+                        tab = RootTab.Progress
+                        progressRefresh += 1
+                    },
+                    icon = { Icon(Icons.Outlined.QueryStats, contentDescription = null) },
+                    label = { Text(RootTab.Progress.label) },
                 )
                 NavigationBarItem(
                     selected = tab == RootTab.Tools,
@@ -81,30 +97,48 @@ fun RtoBuddyAppUi(
                 refreshToken = homeRefresh,
                 onLaunchExam = { launch ->
                     pendingExam = launch
-                    tab = RootTab.Exam
+                    tab = RootTab.Drill
                 },
-                onOpenLearn = { section ->
-                    learnTab = section
-                    tab = RootTab.Learn
+                onOpenLibrary = { section ->
+                    libraryTab = section
+                    tab = RootTab.Library
+                },
+                onOpenProgress = {
+                    progressRefresh += 1
+                    tab = RootTab.Progress
                 },
                 onOpenState = {
-                    learnTab = "state"
-                    tab = RootTab.Learn
+                    libraryTab = "state"
+                    tab = RootTab.Library
                 },
             )
 
-            RootTab.Learn -> LearnScreen(
+            RootTab.Library -> LearnScreen(
                 repository = repository,
                 padding = padding,
-                initialTab = learnTab,
+                initialTab = libraryTab,
             )
 
-            RootTab.Exam -> ExamScreen(
+            RootTab.Drill -> ExamScreen(
                 repository = repository,
                 catalog = catalog,
                 padding = padding,
                 pendingLaunch = pendingExam,
                 onLaunchConsumed = { pendingExam = null },
+            )
+
+            RootTab.Progress -> ProgressScreen(
+                repository = repository,
+                padding = padding,
+                refreshToken = progressRefresh,
+                onLaunchExam = { launch ->
+                    pendingExam = launch
+                    tab = RootTab.Drill
+                },
+                onOpenState = {
+                    libraryTab = "state"
+                    tab = RootTab.Library
+                },
             )
 
             RootTab.Tools -> ToolsScreen(

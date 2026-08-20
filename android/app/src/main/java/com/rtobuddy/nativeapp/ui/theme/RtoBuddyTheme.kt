@@ -14,7 +14,7 @@ enum class AppThemeId(val label: String) {
 
     companion object {
         fun fromStored(value: String?): AppThemeId =
-            entries.firstOrNull { it.name.equals(value, ignoreCase = true) } ?: CLASSIC
+            entries.firstOrNull { it.name.equals(value, ignoreCase = true) } ?: BALANCED
     }
 }
 

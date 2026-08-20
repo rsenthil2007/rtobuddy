@@ -73,7 +73,8 @@ fun ExamScreen(
     LaunchedEffect(pendingLaunch) {
         val launch = pendingLaunch ?: return@LaunchedEffect
         val all = repository.getQuestions()
-        val ids = if (launch.mode == "replay") repository.getRecentMistakeIds() else null
+        val ids = launch.questionIds
+            ?: if (launch.mode == "replay") repository.getRecentMistakeIds() else null
         val session = ExamEngine.createExam(
             all = all,
             category = launch.category,
@@ -98,7 +99,7 @@ fun ExamScreen(
     ) {
         when (val ui = state) {
             ExamUiState.Setup -> {
-                Text("Exam", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+                Text("Drill", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 Text("$questionCount questions available offline")
                 SectionCard(title = "Category") {
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {

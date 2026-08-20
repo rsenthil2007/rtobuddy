@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val app = application as RtoBuddyApp
         setContent {
-            val themeName by app.container.repository.themeId.collectAsStateWithLifecycle(initialValue = "CLASSIC")
+            val themeName by app.container.repository.themeId.collectAsStateWithLifecycle(initialValue = "BALANCED")
             val themeId = AppThemeId.fromStored(themeName)
             RtoBuddyTheme(themeId = themeId) {
                 Surface(

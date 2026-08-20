@@ -26,6 +26,30 @@ data class ReadinessSnapshot(
     val status: String = "Keep Practising",
 )
 
+data class CatalogStats(
+    val signs: Int = 0,
+    val signals: Int = 0,
+    val markings: Int = 0,
+    val rules: Int = 0,
+    val questions: Int = 0,
+    val jurisdictions: Int = 0,
+)
+
+data class ConfidenceItem(
+    val category: String,
+    val label: String,
+    val attempts: Int,
+    val averagePercent: Int,
+    val level: String,
+)
+
+data class Achievement(
+    val id: String,
+    val title: String,
+    val detail: String,
+    val earned: Boolean,
+)
+
 data class SevenDayStep(
     val day: Int,
     val title: String,
@@ -62,6 +86,7 @@ data class ExamQuestion(
     val sign_id: String? = null,
     val signal_id: String? = null,
     val marking_id: String? = null,
+    val animation: String? = null,
 )
 
 @Serializable

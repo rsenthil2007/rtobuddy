@@ -1,6 +1,9 @@
 package com.rtobuddy.nativeapp.data
 
 import com.rtobuddy.nativeapp.domain.ExamResult
+import com.rtobuddy.nativeapp.domain.model.Achievement
+import com.rtobuddy.nativeapp.domain.model.CatalogStats
+import com.rtobuddy.nativeapp.domain.model.ConfidenceItem
 import com.rtobuddy.nativeapp.domain.model.DailyActivity
 import com.rtobuddy.nativeapp.domain.model.DailyRule
 import com.rtobuddy.nativeapp.domain.model.ExamAttempt
@@ -19,6 +22,7 @@ import com.rtobuddy.nativeapp.domain.model.TrafficSignal
 import com.rtobuddy.nativeapp.domain.model.readinessStatus
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
+import kotlin.math.roundToInt
 
 interface RtoBuddyRepository {
     val jurisdictionCode: Flow<String>
@@ -28,6 +32,10 @@ interface RtoBuddyRepository {
     suspend fun getJurisdictions(): List<JurisdictionInfo>
     suspend fun getReadinessSnapshot(): ReadinessSnapshot
     suspend fun getMissionProgress(): MissionProgress
+    suspend fun getCatalogStats(): CatalogStats
+    suspend fun getConfidenceMap(): List<ConfidenceItem>
+    suspend fun getAchievements(): List<Achievement>
+    suspend fun getRecentScores(): List<Int>
     suspend fun getSevenDayPlan(): List<SevenDayStep>
     suspend fun getDailyRule(): DailyRule
     suspend fun getLocalReminder(): LocalReminder?
@@ -36,6 +44,7 @@ interface RtoBuddyRepository {
     suspend fun getMarkings(): List<RoadMarking>
     suspend fun getRules(): List<RoadRule>
     suspend fun getQuestions(): List<ExamQuestion>
+    suspend fun getSpotItQuestionIds(): List<String>
     suspend fun getServices(): List<OfficialService>
     suspend fun getStateRules(): List<StateUtRule>
     suspend fun trackSignView(signId: String)
@@ -79,6 +88,58 @@ class OfflineFirstRtoBuddyRepository(
         )
     }
 
+    override suspend fun getCatalogStats(): CatalogStats = CatalogStats(
+        signs = catalog.signs.size,
+        signals = catalog.signals.size,
+        markings = catalog.markings.size,
+        rules = catalog.rules.size,
+        questions = catalog.questions.size,
+        jurisdictions = catalog.jurisdictions.size,
+    )
+
+    override suspend fun getConfidenceMap(): List<ConfidenceItem> {
+        val labels = mapOf(
+            "traffic_sign" to "Signs",
+            "traffic_signal" to "Signals",
+            "road_marking" to "Markings",
+            "road_rule" to "Rules",
+        )
+        val attempts = progress.getAttempts()
+        return labels.map { (category, label) ->
+            val list = attempts.filter { it.category == category }
+            val avg = if (list.isEmpty()) 0 else list.map { it.percent }.average().roundToInt()
+            ConfidenceItem(
+                category = category,
+                label = label,
+                attempts = list.size,
+                averagePercent = avg,
+                level = when {
+                    list.isEmpty() -> "Not started"
+                    avg >= 80 -> "Strong"
+                    avg >= 60 -> "Building"
+                    else -> "Needs work"
+                },
+            )
+        }
+    }
+
+    override suspend fun getAchievements(): List<Achievement> {
+        val attempts = progress.getAttempts()
+        val activity = ensureActivityDay()
+        val best = attempts.maxOfOrNull { it.percent } ?: 0
+        return listOf(
+            Achievement("first_drill", "First drill", "Complete any practice run", attempts.isNotEmpty()),
+            Achievement("streak_3", "3-day streak", "Learn across 3 consecutive days", activity.streakDays >= 3),
+            Achievement("signs_5", "Sign scout", "Open 5 signs in a day", activity.signIds.size >= 5),
+            Achievement("exam_ready", "Exam Ready", "Hit 75%+ on any attempt", best >= 75),
+            Achievement("simulator", "Simulator pilot", "Finish an exam simulator", attempts.any { it.mode == "simulator" }),
+            Achievement("state_aware", "State aware", "Review a State/UT rule", activity.stateRuleReviewed),
+        )
+    }
+
+    override suspend fun getRecentScores(): List<Int> =
+        progress.getAttempts().takeLast(8).map { it.percent }
+
     override suspend fun getSevenDayPlan(): List<SevenDayStep> {
         val activity = ensureActivityDay()
         val attempts = progress.getAttempts()
@@ -114,6 +175,17 @@ class OfflineFirstRtoBuddyRepository(
     override suspend fun getMarkings(): List<RoadMarking> = catalog.markings
     override suspend fun getRules(): List<RoadRule> = catalog.rules
     override suspend fun getQuestions(): List<ExamQuestion> = catalog.questions
+
+    override suspend fun getSpotItQuestionIds(): List<String> {
+        val animated = catalog.questions.filter { !it.animation.isNullOrBlank() }.map { it.id }
+        if (animated.isNotEmpty()) return animated.shuffled().take(6)
+        return catalog.questions
+            .filter { !it.sign_id.isNullOrBlank() || !it.signal_id.isNullOrBlank() }
+            .shuffled()
+            .take(6)
+            .map { it.id }
+    }
+
     override suspend fun getServices(): List<OfficialService> = catalog.services
 
     override suspend fun getStateRules(): List<StateUtRule> {
