@@ -10,6 +10,8 @@ on:
 jobs:
   build-debug-apk:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     defaults:
       run:
         working-directory: android
@@ -28,6 +30,15 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.9"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android 35 SDK packages
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Verify Gradle
+        run: gradle --version
 
       - name: Build debug APK
         run: gradle :app:assembleDebug --stacktrace
