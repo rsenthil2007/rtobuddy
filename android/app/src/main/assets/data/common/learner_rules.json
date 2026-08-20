@@ -1,0 +1,112 @@
+{
+  "dataset": {
+    "version": "2026.08.v5",
+    "status": "reviewed",
+    "source_ids": [
+      "SRC-PARIVAHAN-FORM2",
+      "SRC-PARIVAHAN-LL"
+    ]
+  },
+  "rules": [
+    {
+      "id": "LR-001",
+      "title": "Learner conditions come with the licence",
+      "summary": "A learner should follow the conditions printed with the learner licence and all applicable road rules.",
+      "category": "learner_conditions",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LR-002",
+      "title": "Display the required learner marking",
+      "summary": "Follow the applicable requirement for displaying the learner identification marking on the vehicle.",
+      "category": "learner_conditions",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LR-003",
+      "title": "Use the correct vehicle class",
+      "summary": "Practice only in a vehicle appropriate to the vehicle class covered by the learner licence.",
+      "category": "learner_conditions",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LR-004",
+      "title": "Carry the learner licence as required",
+      "summary": "Keep the learner licence/reference available as required by the applicable rules and official process.",
+      "category": "learner_conditions",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LR-005",
+      "title": "Follow the accompanying-driver requirement",
+      "summary": "Where the learner conditions require a duly licensed person to accompany the learner, comply with that requirement.",
+      "category": "learner_conditions",
+      "verification_status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LR-006",
+      "title": "Do not treat practice as a licence to ignore road rules",
+      "summary": "A learner has to obey the same applicable traffic controls and road-safety requirements while practising.",
+      "category": "road_safety",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "LR-007",
+      "title": "Study before the preliminary test",
+      "summary": "The preliminary test checks knowledge areas including traffic signs, signals, accident duties and documents.",
+      "category": "test_preparation",
+      "verification_status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "LR-008",
+      "title": "Use the current official State/UT process",
+      "summary": "Online services and their exact workflow can be adapted by States/UTs, so verify the selected jurisdiction before applying.",
+      "category": "application",
+      "verification_status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LR-009",
+      "title": "Keep application references safe",
+      "summary": "Retain application number and appointment details for later status, printing or service actions when issued.",
+      "category": "application",
+      "verification_status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-PRINTLL"
+      ]
+    },
+    {
+      "id": "LR-010",
+      "title": "Check the learner licence before the driving test",
+      "summary": "Before moving to the competence test, confirm that the learner licence is valid and covers the intended class.",
+      "category": "driving_test",
+      "verification_status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-PERMDL"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "question_types": [
+    "single_choice"
+  ],
+  "categories": [
+    "traffic_sign",
+    "traffic_signal",
+    "road_marking",
+    "road_rule",
+    "learner_and_process"
+  ],
+  "required_fields": [
+    "id",
+    "category",
+    "difficulty",
+    "question",
+    "options",
+    "answer_index",
+    "explanation",
+    "source_ids"
+  ],
+  "reference_rules": {
+    "traffic_sign": "sign_id resolves to traffic_signs.json",
+    "traffic_signal": "signal_id resolves to traffic_signals.json",
+    "road_marking": "marking_id resolves to road_markings.json",
+    "road_rule": "all rule_ids resolve to rules.json"
+  }
+}

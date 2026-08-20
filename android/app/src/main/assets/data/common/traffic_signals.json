@@ -1,0 +1,109 @@
+{
+  "dataset": {
+    "version": "2026.08.v6",
+    "count": 5,
+    "status": "source_mapped"
+  },
+  "signals": [
+    {
+      "id": "SIG-001",
+      "name": "Red",
+      "category": "traffic_signal",
+      "states": [
+        {
+          "state": "red",
+          "meaning": "Stop before the stop line and remain stopped until permitted to proceed."
+        }
+      ],
+      "meaning": "Red signal indicates stop.",
+      "rule_ids": [],
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "SIG-002",
+      "name": "Amber / Yellow",
+      "category": "traffic_signal",
+      "states": [
+        {
+          "state": "amber",
+          "meaning": "Stop if it is safe to do so; proceed only where stopping cannot safely be made."
+        }
+      ],
+      "meaning": "Amber/yellow warns of transition to stop and requires appropriate action.",
+      "rule_ids": [],
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "SIG-003",
+      "name": "Green",
+      "category": "traffic_signal",
+      "states": [
+        {
+          "state": "green",
+          "meaning": "Proceed subject to junction conditions, pedestrians and other applicable rules."
+        }
+      ],
+      "meaning": "Green permits movement subject to other road conditions and controls.",
+      "rule_ids": [],
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "SIG-004",
+      "name": "Flashing Red",
+      "category": "traffic_signal",
+      "states": [
+        {
+          "state": "flashing_red",
+          "meaning": "Treat the signal as a stop control and proceed only when safe and permitted."
+        }
+      ],
+      "meaning": "Flashing red is a stop control requiring careful compliance.",
+      "rule_ids": [],
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "SIG-005",
+      "name": "Flashing Amber / Yellow",
+      "category": "traffic_signal",
+      "states": [
+        {
+          "state": "flashing_amber",
+          "meaning": "Proceed with caution and give appropriate attention to conflicting traffic and pedestrians."
+        }
+      ],
+      "meaning": "Flashing amber indicates caution rather than an unconditional free movement.",
+      "rule_ids": [],
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ]
+}

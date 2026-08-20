@@ -1,0 +1,49 @@
+{
+  "jurisdiction": {
+    "code": "TR",
+    "name": "Tripura",
+    "type": "state"
+  },
+  "dataset_version": "0.4.0",
+  "generated_on": "2026-08-18",
+  "inherits": "../common/national_baseline.json",
+  "rules": {
+    "national_overrides": [],
+    "state_ut_rules": [],
+    "local_rules": []
+  },
+  "dynamic_data": {
+    "penalties": [],
+    "fees": [],
+    "tax": [],
+    "speed_limits": [],
+    "parking_restrictions": [],
+    "permit_details": [],
+    "administrative_procedures": []
+  },
+  "official_sources": [],
+  "verification_queue": [
+    "State/UT Motor Vehicle Rules and amendments",
+    "Current transport department notifications",
+    "Current offence/compounding schedule",
+    "Current licence and registration administrative procedure",
+    "State/UT tax and permit requirements",
+    "State/local speed limits and parking restrictions",
+    "Current official transport portal URLs",
+    "Current HSRP/registration-mark instructions",
+    "Current PUC/enforcement instructions where jurisdiction-specific"
+  ],
+  "data_quality": {
+    "legal_content_verified": false,
+    "penalty_schedule_verified": false,
+    "administrative_procedure_verified": false,
+    "last_verified_on": null,
+    "content_status": "scaffold_unverified"
+  },
+  "notes": [
+    "Verified-data scaffold: no unverified state-specific values are invented.",
+    "Keep common national rules in the national baseline and put only additions/overrides here.",
+    "Penalty values must be versioned because State Governments may prescribe increased fines under section 210A."
+  ],
+  "architecture": "national_baseline_plus_jurisdiction_overlay"
+}

@@ -10,10 +10,11 @@ import com.rtobuddy.nativeapp.ui.RtoBuddyAppUi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val app = application as RtoBuddyApp
         setContent {
             MaterialTheme {
                 Surface(color = MaterialTheme.colorScheme.background) {
-                    RtoBuddyAppUi()
+                    RtoBuddyAppUi(repository = app.container.repository, catalog = app.container.catalog)
                 }
             }
         }

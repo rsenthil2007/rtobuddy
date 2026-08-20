@@ -1,0 +1,145 @@
+{
+  "dataset": {
+    "version": "2026.08.v5",
+    "status": "source_verified",
+    "source_ids": [
+      "SRC-PARIVAHAN-FORM2"
+    ]
+  },
+  "documents": [
+    {
+      "id": "DOC-001",
+      "name": "Proof of address",
+      "type": "identity_address",
+      "required_for": [
+        "learner_licence",
+        "driving_licence"
+      ],
+      "mandatory": "check_state_list",
+      "notes": "Accepted examples are specified in the official application/document list; State Government may specify other documents.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "DOC-002",
+      "name": "Proof of age",
+      "type": "identity_age",
+      "required_for": [
+        "learner_licence",
+        "driving_licence"
+      ],
+      "mandatory": "check_state_list",
+      "notes": "Accepted examples are specified in the official application/document list.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "DOC-003",
+      "name": "Form 1 — physical fitness declaration",
+      "type": "form",
+      "required_for": [
+        "applicable_non_transport_applications"
+      ],
+      "mandatory": "check_applicability",
+      "notes": "Use the current official form and follow the applicability rules.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM1"
+      ]
+    },
+    {
+      "id": "DOC-004",
+      "name": "Form 1A — medical certificate",
+      "type": "medical",
+      "required_for": [
+        "applicable_cases"
+      ],
+      "mandatory": "check_applicability",
+      "notes": "Applicability depends on the case; do not assume every learner needs Form 1A.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM1A",
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "DOC-005",
+      "name": "Parent/guardian declaration",
+      "type": "declaration",
+      "required_for": [
+        "applicable_minor_applications"
+      ],
+      "mandatory": "check_applicability",
+      "notes": "Applicable where the applicant is a minor under the relevant rules.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "DOC-006",
+      "name": "Photograph",
+      "type": "photo",
+      "required_for": [
+        "applicable_applications"
+      ],
+      "mandatory": "check_portal_requirements",
+      "notes": "Follow the current portal/RTO instructions for format and submission.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "DOC-007",
+      "name": "Driving school certificate",
+      "type": "training",
+      "required_for": [
+        "applicable_cases"
+      ],
+      "mandatory": "check_applicability",
+      "notes": "Form 5-related training documentation is listed where applicable.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "DOC-008",
+      "name": "Learner Licence",
+      "type": "licence",
+      "required_for": [
+        "permanent_driving_licence"
+      ],
+      "mandatory": true,
+      "notes": "Keep the valid learner licence for the applicable vehicle class when proceeding to the driving test.",
+      "source_ids": [
+        "SRC-PARIVAHAN-PERMDL"
+      ]
+    },
+    {
+      "id": "DOC-009",
+      "name": "Application number / appointment details",
+      "type": "application_reference",
+      "required_for": [
+        "online_services"
+      ],
+      "mandatory": "when_issued",
+      "notes": "Keep application and appointment references available for status/printing/booking tasks.",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL",
+        "SRC-PARIVAHAN-PRINTLL"
+      ]
+    },
+    {
+      "id": "DOC-010",
+      "name": "Foreign-national legal-presence documentation",
+      "type": "identity_immigration",
+      "required_for": [
+        "applicable_foreigner_cases"
+      ],
+      "mandatory": "check_applicability",
+      "notes": "The official document list calls for legal-presence proof in addition to residence proof where applicable.",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    }
+  ]
+}

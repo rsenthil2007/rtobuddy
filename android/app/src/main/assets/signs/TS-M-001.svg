@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Stop">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<polygon points="120,28 166,47 194,86 194,134 166,173 120,192 74,173 46,134 46,86 74,47" fill="#c62828"/><text x="120" y="132" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#fff">STOP</text>
+</svg>

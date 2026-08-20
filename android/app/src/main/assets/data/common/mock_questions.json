@@ -1,0 +1,2901 @@
+{
+  "version": "2026.08.v6",
+  "dataset": {
+    "count": 106,
+    "status": "reviewed",
+    "source_ids": [
+      "SRC-MVA",
+      "SRC-CMVR",
+      "SRC-IRC67",
+      "SRC-MORTH-SIGNS",
+      "SRC-PARIVAHAN-FORM2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q-S-001",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Stop traffic sign indicate?",
+      "options": [
+        "No Entry",
+        "Filling Station",
+        "No Parking",
+        "Stop"
+      ],
+      "answer_index": 3,
+      "explanation": "Stop before proceeding when this sign controls the approach.",
+      "rule_ids": [],
+      "sign_id": "TS-M-001",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-002",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Give Way traffic sign indicate?",
+      "options": [
+        "Compulsory Ahead",
+        "Left Hand Curve",
+        "Slippery Road",
+        "Give Way"
+      ],
+      "answer_index": 3,
+      "explanation": "Give way to traffic as required at the controlled junction.",
+      "rule_ids": [],
+      "sign_id": "TS-M-002",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "give_way"
+    },
+    {
+      "id": "Q-S-003",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the No Entry traffic sign indicate?",
+      "options": [
+        "No Entry",
+        "School Ahead",
+        "Narrow Bridge Ahead",
+        "No Overtaking"
+      ],
+      "answer_index": 0,
+      "explanation": "Entry is prohibited in the direction controlled by the sign.",
+      "rule_ids": [],
+      "sign_id": "TS-M-003",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-004",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the No Motor Vehicles traffic sign indicate?",
+      "options": [
+        "No Motor Vehicles",
+        "School Ahead",
+        "No Through Road",
+        "No Overtaking"
+      ],
+      "answer_index": 0,
+      "explanation": "Motor vehicles are prohibited beyond the sign where the restriction applies.",
+      "rule_ids": [],
+      "sign_id": "TS-M-004",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-005",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the No Overtaking traffic sign indicate?",
+      "options": [
+        "Parking",
+        "Compulsory Keep Left",
+        "Right Hand Curve",
+        "No Overtaking"
+      ],
+      "answer_index": 3,
+      "explanation": "Overtaking is prohibited where the restriction applies.",
+      "rule_ids": [],
+      "sign_id": "TS-M-005",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "no_overtaking"
+    },
+    {
+      "id": "Q-S-006",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Maximum Speed Limit traffic sign indicate?",
+      "options": [
+        "No Entry",
+        "Stop",
+        "Narrow Road Ahead",
+        "Maximum Speed Limit"
+      ],
+      "answer_index": 3,
+      "explanation": "Do not exceed the speed shown on the sign.",
+      "rule_ids": [],
+      "sign_id": "TS-M-006",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "speed_limit"
+    },
+    {
+      "id": "Q-S-007",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the No Parking traffic sign indicate?",
+      "options": [
+        "Give Way",
+        "Maximum Speed Limit",
+        "No Parking",
+        "Filling Station"
+      ],
+      "answer_index": 2,
+      "explanation": "Parking is prohibited where this restriction applies.",
+      "rule_ids": [],
+      "sign_id": "TS-M-007",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-008",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the No Stopping traffic sign indicate?",
+      "options": [
+        "Narrow Bridge Ahead",
+        "No Stopping",
+        "Narrow Road Ahead",
+        "Police Station"
+      ],
+      "answer_index": 1,
+      "explanation": "Stopping is prohibited where this restriction applies.",
+      "rule_ids": [],
+      "sign_id": "TS-M-008",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-009",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Compulsory Keep Left traffic sign indicate?",
+      "options": [
+        "Compulsory Keep Left",
+        "First Aid Post",
+        "No Motor Vehicles",
+        "No Through Road"
+      ],
+      "answer_index": 0,
+      "explanation": "Pass to the left of the traffic island or obstruction as indicated.",
+      "rule_ids": [],
+      "sign_id": "TS-M-009",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-010",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Compulsory Ahead traffic sign indicate?",
+      "options": [
+        "Give Way",
+        "Filling Station",
+        "Maximum Speed Limit",
+        "Compulsory Ahead"
+      ],
+      "answer_index": 3,
+      "explanation": "Proceed straight ahead in the direction indicated by the sign.",
+      "rule_ids": [],
+      "sign_id": "TS-M-010",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-011",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Left Hand Curve traffic sign indicate?",
+      "options": [
+        "Compulsory Keep Left",
+        "Compulsory Ahead",
+        "Slippery Road",
+        "Left Hand Curve"
+      ],
+      "answer_index": 3,
+      "explanation": "A left-hand curve is ahead.",
+      "rule_ids": [],
+      "sign_id": "TS-W-001",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-012",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Right Hand Curve traffic sign indicate?",
+      "options": [
+        "Right Hand Curve",
+        "School Ahead",
+        "Narrow Bridge Ahead",
+        "No Motor Vehicles"
+      ],
+      "answer_index": 0,
+      "explanation": "A right-hand curve is ahead.",
+      "rule_ids": [],
+      "sign_id": "TS-W-002",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-013",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Hairpin Bend traffic sign indicate?",
+      "options": [
+        "Hairpin Bend",
+        "School Ahead",
+        "No Through Road",
+        "No Motor Vehicles"
+      ],
+      "answer_index": 0,
+      "explanation": "A very sharp bend is ahead; slow down and proceed carefully.",
+      "rule_ids": [],
+      "sign_id": "TS-W-003",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-014",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Narrow Road Ahead traffic sign indicate?",
+      "options": [
+        "Parking",
+        "No Stopping",
+        "Left Hand Curve",
+        "Narrow Road Ahead"
+      ],
+      "answer_index": 3,
+      "explanation": "The road narrows ahead; reduce speed and be prepared for conflicting traffic.",
+      "rule_ids": [],
+      "sign_id": "TS-W-004",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-015",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Narrow Bridge Ahead traffic sign indicate?",
+      "options": [
+        "No Entry",
+        "Stop",
+        "Hairpin Bend",
+        "Narrow Bridge Ahead"
+      ],
+      "answer_index": 3,
+      "explanation": "A narrow bridge is ahead; approach with care.",
+      "rule_ids": [],
+      "sign_id": "TS-W-005",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-016",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Pedestrian Crossing Ahead traffic sign indicate?",
+      "options": [
+        "Give Way",
+        "Maximum Speed Limit",
+        "Pedestrian Crossing Ahead",
+        "Filling Station"
+      ],
+      "answer_index": 2,
+      "explanation": "A pedestrian crossing is ahead; slow down and be prepared to yield as required.",
+      "rule_ids": [],
+      "sign_id": "TS-W-006",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "pedestrian_crossing"
+    },
+    {
+      "id": "Q-S-017",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the School Ahead traffic sign indicate?",
+      "options": [
+        "Narrow Road Ahead",
+        "School Ahead",
+        "Hairpin Bend",
+        "Police Station"
+      ],
+      "answer_index": 1,
+      "explanation": "A school or school-zone activity is ahead; exercise extra caution.",
+      "rule_ids": [],
+      "sign_id": "TS-W-007",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-018",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Men at Work traffic sign indicate?",
+      "options": [
+        "Men at Work",
+        "First Aid Post",
+        "No Motor Vehicles",
+        "No Through Road"
+      ],
+      "answer_index": 0,
+      "explanation": "Road works or workmen may be present ahead; slow down and follow temporary controls.",
+      "rule_ids": [],
+      "sign_id": "TS-W-008",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-019",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Slippery Road traffic sign indicate?",
+      "options": [
+        "Police Station",
+        "Slippery Road",
+        "Narrow Bridge Ahead",
+        "Filling Station"
+      ],
+      "answer_index": 1,
+      "explanation": "The road surface may be slippery; reduce speed and avoid sudden manoeuvres.",
+      "rule_ids": [],
+      "sign_id": "TS-W-009",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-020",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Speed Breaker traffic sign indicate?",
+      "options": [
+        "Compulsory Keep Left",
+        "Compulsory Ahead",
+        "Men at Work",
+        "Speed Breaker"
+      ],
+      "answer_index": 3,
+      "explanation": "A speed breaker/hump is ahead; slow down before crossing it.",
+      "rule_ids": [],
+      "sign_id": "TS-W-010",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-021",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Parking traffic sign indicate?",
+      "options": [
+        "Parking",
+        "Pedestrian Crossing Ahead",
+        "Narrow Road Ahead",
+        "No Motor Vehicles"
+      ],
+      "answer_index": 0,
+      "explanation": "Identifies a parking facility or designated parking location.",
+      "rule_ids": [],
+      "sign_id": "TS-I-001",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-022",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Hospital traffic sign indicate?",
+      "options": [
+        "Hospital",
+        "Pedestrian Crossing Ahead",
+        "No Through Road",
+        "No Motor Vehicles"
+      ],
+      "answer_index": 0,
+      "explanation": "Indicates a hospital or hospital facility.",
+      "rule_ids": [],
+      "sign_id": "TS-I-002",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-023",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the First Aid Post traffic sign indicate?",
+      "options": [
+        "Speed Breaker",
+        "No Stopping",
+        "Left Hand Curve",
+        "First Aid Post"
+      ],
+      "answer_index": 3,
+      "explanation": "Indicates a first-aid facility.",
+      "rule_ids": [],
+      "sign_id": "TS-I-003",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-024",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Filling Station traffic sign indicate?",
+      "options": [
+        "No Entry",
+        "Stop",
+        "Hairpin Bend",
+        "Filling Station"
+      ],
+      "answer_index": 3,
+      "explanation": "Indicates a petrol/fuel filling station.",
+      "rule_ids": [],
+      "sign_id": "TS-I-004",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-025",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Bus Stop traffic sign indicate?",
+      "options": [
+        "Give Way",
+        "Maximum Speed Limit",
+        "Bus Stop",
+        "First Aid Post"
+      ],
+      "answer_index": 2,
+      "explanation": "Identifies a designated bus stop.",
+      "rule_ids": [],
+      "sign_id": "TS-I-005",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-026",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Taxi Stand traffic sign indicate?",
+      "options": [
+        "Narrow Road Ahead",
+        "Taxi Stand",
+        "Hairpin Bend",
+        "Police Station"
+      ],
+      "answer_index": 1,
+      "explanation": "Identifies a location where taxis may wait when not engaged.",
+      "rule_ids": [],
+      "sign_id": "TS-I-006",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-027",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the Police Station traffic sign indicate?",
+      "options": [
+        "Police Station",
+        "Hospital",
+        "No Motor Vehicles",
+        "No Through Road"
+      ],
+      "answer_index": 0,
+      "explanation": "Indicates a nearby police station.",
+      "rule_ids": [],
+      "sign_id": "TS-I-007",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-S-028",
+      "category": "traffic_sign",
+      "difficulty": "easy",
+      "question": "What does the No Through Road traffic sign indicate?",
+      "options": [
+        "Taxi Stand",
+        "No Through Road",
+        "Narrow Bridge Ahead",
+        "First Aid Post"
+      ],
+      "answer_index": 1,
+      "explanation": "Indicates that the road ahead does not provide through passage.",
+      "rule_ids": [],
+      "sign_id": "TS-I-008",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-001",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Separates opposing streams of traffic; follow the applicable road marking and traffic rules.",
+      "options": [
+        "No-Stopping Marking",
+        "Centre Line",
+        "Box Junction",
+        "Stop Line"
+      ],
+      "answer_index": 1,
+      "explanation": "The correct marking is Centre Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-001",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-002",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: A broken centre line generally indicates that crossing may be permitted when safe and otherwise lawful.",
+      "options": [
+        "Broken Lane Line",
+        "Hatched Area",
+        "Broken Centre Line",
+        "Bus Stop Marking"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Broken Centre Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-002",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-003",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: A solid centre line indicates a restriction on crossing that line; follow the applicable marking and road conditions.",
+      "options": [
+        "Parking Bay Marking",
+        "Solid Centre Line",
+        "Straight-or-Right Arrow",
+        "Cycle Lane Marking"
+      ],
+      "answer_index": 1,
+      "explanation": "The correct marking is Solid Centre Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-003",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-004",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Double solid lines indicate a stronger restriction against crossing between opposing traffic streams.",
+      "options": [
+        "Double Solid Centre Line",
+        "Stop Line",
+        "Parking Bay Marking",
+        "Centre Line"
+      ],
+      "answer_index": 0,
+      "explanation": "The correct marking is Double Solid Centre Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-004",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-005",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Separates lanes travelling in the same direction.",
+      "options": [
+        "Double Solid Centre Line",
+        "Directional Arrow — Left",
+        "Box Junction",
+        "Lane Line"
+      ],
+      "answer_index": 3,
+      "explanation": "The correct marking is Lane Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-005",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-006",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Marks lane separation where a lane change may be possible when safe and lawful.",
+      "options": [
+        "Yellow Edge/Restriction Line",
+        "Cycle Lane Marking",
+        "Broken Lane Line",
+        "Centre Line"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Broken Lane Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-006",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-007",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Marks the edge of the carriageway.",
+      "options": [
+        "Edge Line",
+        "Hatched Area",
+        "Give-Way Line",
+        "Box Junction"
+      ],
+      "answer_index": 0,
+      "explanation": "The correct marking is Edge Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-007",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-008",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Indicates where a vehicle should stop at a controlled stop point.",
+      "options": [
+        "Stop Line",
+        "Lane Line",
+        "Cycle Lane Marking",
+        "Solid Centre Line"
+      ],
+      "answer_index": 0,
+      "explanation": "The correct marking is Stop Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-008",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-009",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Indicates where a driver should yield according to the applicable give-way control.",
+      "options": [
+        "Zebra Crossing",
+        "Give-Way Line",
+        "Stop Line",
+        "Straight-or-Right Arrow"
+      ],
+      "answer_index": 1,
+      "explanation": "The correct marking is Give-Way Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-009",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "give_way"
+    },
+    {
+      "id": "Q-M-010",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Marks a pedestrian crossing area; drivers must approach with appropriate caution and yield as required.",
+      "options": [
+        "Zebra Crossing",
+        "Hatched Area",
+        "Directional Arrow — Right",
+        "Stop Line"
+      ],
+      "answer_index": 0,
+      "explanation": "The correct marking is Zebra Crossing. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-010",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "zebra_crossing"
+    },
+    {
+      "id": "Q-M-011",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Provides visual guidance approaching a pedestrian crossing.",
+      "options": [
+        "Pedestrian Crossing Approach Marking",
+        "Directional Arrow — Straight",
+        "Yellow Edge/Restriction Line",
+        "Edge Line"
+      ],
+      "answer_index": 0,
+      "explanation": "The correct marking is Pedestrian Crossing Approach Marking. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-011",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "zebra_crossing"
+    },
+    {
+      "id": "Q-M-012",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Indicates permitted or intended straight-ahead movement for the lane.",
+      "options": [
+        "Directional Arrow — Straight",
+        "Yellow Edge/Restriction Line",
+        "Box Junction",
+        "Bus Stop Marking"
+      ],
+      "answer_index": 0,
+      "explanation": "The correct marking is Directional Arrow — Straight. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-012",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-013",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Indicates permitted or intended left movement for the lane.",
+      "options": [
+        "Parking Bay Marking",
+        "Centre Line",
+        "Directional Arrow — Left",
+        "Chevron/Diagonal Area"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Directional Arrow — Left. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-013",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-014",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Indicates permitted or intended right movement for the lane.",
+      "options": [
+        "Stop Line",
+        "Directional Arrow — Right",
+        "Double Solid Centre Line",
+        "Box Junction"
+      ],
+      "answer_index": 1,
+      "explanation": "The correct marking is Directional Arrow — Right. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-014",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-015",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Indicates that the lane is intended for straight or left movement.",
+      "options": [
+        "Double Solid Centre Line",
+        "Edge Line",
+        "Zebra Crossing",
+        "Straight-or-Left Arrow"
+      ],
+      "answer_index": 3,
+      "explanation": "The correct marking is Straight-or-Left Arrow. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-015",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-016",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Indicates that the lane is intended for straight or right movement.",
+      "options": [
+        "Parking Bay Marking",
+        "No-Stopping Marking",
+        "Straight-or-Right Arrow",
+        "Hatched Area"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Straight-or-Right Arrow. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-016",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-017",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Yellow markings may indicate a stopping/parking restriction depending on the applicable road standard and location.",
+      "options": [
+        "Broken Lane Line",
+        "Stop Line",
+        "Yellow Edge/Restriction Line",
+        "Edge Line"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Yellow Edge/Restriction Line. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-017",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-018",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Marks a location where parking is restricted according to the applicable sign/marking scheme.",
+      "options": [
+        "Broken Lane Line",
+        "Cycle Lane Marking",
+        "No-Parking Marking",
+        "Chevron/Diagonal Area"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is No-Parking Marking. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-018",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-019",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Marks a location where stopping is restricted according to the applicable sign/marking scheme.",
+      "options": [
+        "Zebra Crossing",
+        "Broken Lane Line",
+        "No-Stopping Marking",
+        "Parking Bay Marking"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is No-Stopping Marking. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-019",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-020",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: A marked junction area intended to keep the intersection clear; do not enter unless your exit is clear where the applicable rule requires it.",
+      "options": [
+        "Stop Line",
+        "Yellow Edge/Restriction Line",
+        "Box Junction",
+        "Edge Line"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Box Junction. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-020",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-021",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Separates or channels traffic and should not normally be entered except where permitted by the applicable road marking.",
+      "options": [
+        "Solid Centre Line",
+        "Hatched Area",
+        "Edge Line",
+        "No-Stopping Marking"
+      ],
+      "answer_index": 1,
+      "explanation": "The correct marking is Hatched Area. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-021",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-022",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Guides traffic around an obstruction or traffic island; avoid entering the marked area unless permitted.",
+      "options": [
+        "Box Junction",
+        "Yellow Edge/Restriction Line",
+        "Chevron/Diagonal Area",
+        "Edge Line"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Chevron/Diagonal Area. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-022",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-023",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Identifies a designated stopping area for buses where provided.",
+      "options": [
+        "Give-Way Line",
+        "Bus Stop Marking",
+        "Broken Centre Line",
+        "Solid Centre Line"
+      ],
+      "answer_index": 1,
+      "explanation": "The correct marking is Bus Stop Marking. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-023",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-M-024",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Identifies a lane or space intended for cycles where provided.",
+      "options": [
+        "No-Parking Marking",
+        "Centre Line",
+        "Cycle Lane Marking",
+        "Give-Way Line"
+      ],
+      "answer_index": 2,
+      "explanation": "The correct marking is Cycle Lane Marking. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-024",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "lane_arrow"
+    },
+    {
+      "id": "Q-M-025",
+      "category": "road_marking",
+      "difficulty": "medium",
+      "question": "Which road marking is described by: Defines a marked parking space; use remains subject to signs and local restrictions.",
+      "options": [
+        "Box Junction",
+        "Parking Bay Marking",
+        "Zebra Crossing",
+        "Stop Line"
+      ],
+      "answer_index": 1,
+      "explanation": "The correct marking is Parking Bay Marking. Treat the visual as educational guidance and follow the applicable current road standard.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": "RM-025",
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-001",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Learner licence applications should use the prescribed process and forms and satisfy age, class and medical/fitness requirements applicable to the applicant.",
+      "options": [
+        "Expressway discipline",
+        "Stop line",
+        "Core registration forms",
+        "Learner licence application"
+      ],
+      "answer_index": 3,
+      "explanation": "This question is linked to rule P2-LIC-001. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-001"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-002",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: A learner licence is generally effective for six months from issue, subject to the Act and applicable rules.",
+      "options": [
+        "Overweight vehicle",
+        "Hill driving",
+        "Learner licence validity",
+        "Emergency vehicles"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-LIC-002. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-002"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-003",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: A learner must comply with CMVR Rule 3 and applicable conditions, including prescribed supervision and learner display requirements.",
+      "options": [
+        "Addition of vehicle class",
+        "Helmet violation",
+        "Learner driving conditions",
+        "New registration mark"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-LIC-003. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-003"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-004",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Applicants for a driving licence are required to satisfy the statutory driving test requirements for the relevant vehicle class.",
+      "options": [
+        "Driving licence test",
+        "Duplicate registration certificate",
+        "Braking system requirements",
+        "Night driving"
+      ],
+      "answer_index": 0,
+      "explanation": "This question is linked to rule P2-LIC-004. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-004"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-005",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Parivahan provides Form 1/1A, Form 2, Form 4, Form 8 and Form 9 for specified driving-licence services.",
+      "options": [
+        "Excess passengers",
+        "Core licence forms",
+        "Dangerous driving",
+        "No Objection Certificate"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-LIC-005. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-005"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-006",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: Renewal is handled under section 15 and applicable rules; validity and medical requirements depend on licence category and applicant circumstances.",
+      "options": [
+        "Informatory signs",
+        "Duplicate registration certificate",
+        "Driving licence renewal",
+        "Learner licence validity"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-LIC-006. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-006"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-007",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: A licence holder seeking an additional class should use the prescribed process and satisfy the applicable test/requirements.",
+      "options": [
+        "PUC validity varies by vehicle/category",
+        "Juvenile offences",
+        "Lighting equipment",
+        "Addition of vehicle class"
+      ],
+      "answer_index": 3,
+      "explanation": "This question is linked to rule P2-LIC-007. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-007"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-008",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: International driving permit issuance is governed by section 118/related rules and prescribed administrative procedures.",
+      "options": [
+        "Permit conditions",
+        "Pillion safety",
+        "State-specific penalties",
+        "International Driving Permit"
+      ],
+      "answer_index": 3,
+      "explanation": "This question is linked to rule P2-LIC-008. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-LIC-008"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-009",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: A motor vehicle must be registered before use in a public place, subject to statutory exemptions.",
+      "options": [
+        "Electronic documents/forms",
+        "Motor vehicle tax",
+        "New vehicle registration",
+        "Learner driving conditions"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-REG-001. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-001"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-010",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Parivahan lists Form 20 for registration, Form 26 for duplicate RC, Form 27 for new registration mark, and Forms 29/30 for ownership transfer.",
+      "options": [
+        "Rain/adverse weather",
+        "Core registration forms",
+        "Learner licence application",
+        "Emergency vehicles"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-REG-002. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-002"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-011",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Temporary registration is available subject to the conditions, period and procedure prescribed by the Act and rules.",
+      "options": [
+        "Horn equipment",
+        "Safe overtaking",
+        "Official service portal",
+        "Temporary registration"
+      ],
+      "answer_index": 3,
+      "explanation": "This question is linked to rule P2-REG-003. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-003"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-012",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: Loss or destruction of the registration certificate requires the prescribed duplicate-RC procedure.",
+      "options": [
+        "Night driving",
+        "Duplicate registration certificate",
+        "International Driving Permit",
+        "Driving licence renewal"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-REG-004. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-004"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-013",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Assignment of a new registration mark is governed by the Act/rules and prescribed application process.",
+      "options": [
+        "Pollution Under Control",
+        "Lighting equipment",
+        "New registration mark",
+        "Hill driving"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-REG-005. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-005"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-014",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Moving a registered vehicle to another registering authority/state may require the prescribed NOC process.",
+      "options": [
+        "No Objection Certificate",
+        "Vehicle detention",
+        "Expressway discipline",
+        "Safe overtaking"
+      ],
+      "answer_index": 0,
+      "explanation": "This question is linked to rule P2-REG-006. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-006"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-015",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: Transfer of ownership must be reported and recorded using the prescribed procedure and forms.",
+      "options": [
+        "Driving licence renewal",
+        "New registration mark",
+        "Ownership transfer",
+        "Pedestrian crossing markings"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-REG-007. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-007"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-016",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: A registered owner changing address must follow the prescribed registration-record update process.",
+      "options": [
+        "National permit",
+        "Braking system requirements",
+        "Change of address",
+        "Excess passengers"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-REG-008. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-008"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-017",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Hire-purchase, lease or hypothecation entries and termination are recorded through prescribed procedures.",
+      "options": [
+        "Mobile phone/distraction",
+        "Hypothecation entry/termination",
+        "National permit",
+        "Horn equipment"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-REG-009. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-009"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-018",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: Registration marks/plates must be displayed in the manner prescribed by CMVR and current notifications.",
+      "options": [
+        "No Objection Certificate",
+        "Registration mark display",
+        "Cautionary/warning signs",
+        "National permit"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-REG-010. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-REG-010"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-019",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: A motor vehicle used in a public place must comply with statutory third-party insurance requirements.",
+      "options": [
+        "Parking/stopping restrictions",
+        "Third-party insurance",
+        "Driving licence renewal",
+        "State-specific penalties"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-COMP-001. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-COMP-001"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-020",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Drivers/owners should carry or be able to produce legally accepted evidence of insurance as prescribed.",
+      "options": [
+        "Insurance evidence",
+        "Rear-view/indirect vision",
+        "Unregistered vehicle",
+        "Reflective marking"
+      ],
+      "answer_index": 0,
+      "explanation": "This question is linked to rule P2-COMP-002. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-COMP-002"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-021",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: Vehicles are subject to applicable emission standards and PUC certification requirements; current certificate status can be checked through the official PUC system.",
+      "options": [
+        "Drunk/drugged driving",
+        "Pollution Under Control",
+        "Reflective marking",
+        "Duplicate registration certificate"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-COMP-003. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-COMP-003"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-022",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: PUC validity and test requirements must be taken from the current rules and certificate; do not hard-code one universal validity period without category context.",
+      "options": [
+        "No Objection Certificate",
+        "Mobile phone/distraction",
+        "PUC validity varies by vehicle/category",
+        "Horn equipment"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-COMP-004. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-COMP-004"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-023",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Motor vehicle tax is administered under applicable State/UT law and therefore must be represented as a jurisdiction-specific dataset.",
+      "options": [
+        "Safe overtaking",
+        "Motor vehicle tax",
+        "Racing/trials of speed",
+        "Pedestrian crossing markings"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-TRANS-001. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-TRANS-001"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-024",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: Transport vehicles generally require the applicable permit unless a statutory exemption applies.",
+      "options": [
+        "New vehicle registration",
+        "No permit",
+        "Fitness certificate",
+        "Transport vehicle permit"
+      ],
+      "answer_index": 3,
+      "explanation": "This question is linked to rule P2-TRANS-002. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-TRANS-002"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-025",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: National permits are governed by section 88 and applicable Central/State rules and conditions.",
+      "options": [
+        "Motor vehicle tax",
+        "National permit",
+        "Registration mark display",
+        "Horn equipment"
+      ],
+      "answer_index": 1,
+      "explanation": "This question is linked to rule P2-TRANS-003. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-TRANS-003"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-026",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "Which topic is addressed by this rule summary: Transport vehicles require a certificate of fitness and compliance with applicable testing requirements.",
+      "options": [
+        "Core licence forms",
+        "Excess passengers",
+        "Accident inspection",
+        "Fitness certificate"
+      ],
+      "answer_index": 3,
+      "explanation": "This question is linked to rule P2-TRANS-004. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-TRANS-004"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-R-027",
+      "category": "road_rule",
+      "difficulty": "easy",
+      "question": "Which topic is addressed by this rule summary: A permit holder/driver must comply with the conditions endorsed or prescribed for the permit.",
+      "options": [
+        "Roundabouts",
+        "Rain/adverse weather",
+        "Permit conditions",
+        "Temporary registration"
+      ],
+      "answer_index": 2,
+      "explanation": "This question is linked to rule P2-TRANS-005. Read the full rule card for context.",
+      "rule_ids": [
+        "P2-TRANS-005"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-001",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "What should you do before applying for a learner licence?",
+      "options": [
+        "Confirm the intended vehicle class and selected jurisdiction.",
+        "Choose a vehicle colour",
+        "Confirm the vehicle class and jurisdiction",
+        "Use any State without selecting one.",
+        "Skip the document list"
+      ],
+      "answer_index": 0,
+      "explanation": "The vehicle class and jurisdiction affect the applicable process and requirements.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-002",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "Where should State/UT-specific document requirements be checked?",
+      "options": [
+        "Only an old PDF",
+        "The current official State/UT transport or Sarathi process.",
+        "Only a social-media post",
+        "The current official State/UT transport or Sarathi process",
+        "A random third-party calculator"
+      ],
+      "answer_index": 1,
+      "explanation": "State/UT adaptation can affect the exact document list.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-003",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "Which official form is the physical-fitness self declaration?",
+      "options": [
+        "Form 5",
+        "Form 14",
+        "Form 3",
+        "Form 1",
+        "Form 1"
+      ],
+      "answer_index": 3,
+      "explanation": "Parivahan's current Form 1 is the application-cum-declaration as to physical fitness.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-004",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "Which form is the medical certificate?",
+      "options": [
+        "Form 1A",
+        "Form 2",
+        "Form 4",
+        "Form 8",
+        "Form 1A"
+      ],
+      "answer_index": 0,
+      "explanation": "Form 1A is the medical certificate; applicability depends on the case.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-005",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "What does the preliminary learner test cover?",
+      "options": [
+        "Knowledge such as traffic signs, traffic signals, accident duties and documents.",
+        "Only road tax",
+        "Only insurance pricing",
+        "Traffic signs, signals, accident duties and documents",
+        "Only vehicle repair"
+      ],
+      "answer_index": 0,
+      "explanation": "The official Form 2 material identifies these knowledge areas.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-006",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "What should you do after a wrong practice answer?",
+      "options": [
+        "Repeat the same answer immediately",
+        "Read the explanation and linked knowledge item.",
+        "Delete the question",
+        "Ignore it",
+        "Read the explanation and linked knowledge item"
+      ],
+      "answer_index": 1,
+      "explanation": "RTOBuddy's purpose is learning, not just scoring.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-007",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "Why does RTOBuddy label some jurisdiction data as unverified?",
+      "options": [
+        "Because legal-sensitive State/UT details should be confirmed against current official sources.",
+        "Because the app cannot display JSON",
+        "Because current official verification is still pending",
+        "Because all State rules are identical",
+        "Because signs are optional"
+      ],
+      "answer_index": 0,
+      "explanation": "Unverified data should not be presented as official legal advice.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-008",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "What is the safest source for current application workflow?",
+      "options": [
+        "The current official Parivahan/Sarathi or State transport portal.",
+        "A random video",
+        "The current official portal",
+        "A screenshot from a friend",
+        "An old forum"
+      ],
+      "answer_index": 0,
+      "explanation": "Portal workflows can change.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-009",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "What should you retain after an online application when issued?",
+      "options": [
+        "Only the browser theme",
+        "Only a screenshot of the home page",
+        "Nothing",
+        "Application and appointment references",
+        "Application and appointment references."
+      ],
+      "answer_index": 4,
+      "explanation": "References are useful for status, printing and appointment actions.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-010",
+      "category": "learner_and_process",
+      "difficulty": "easy",
+      "question": "What should a learner do while practising?",
+      "options": [
+        "Follow learner conditions and road rules",
+        "Ignore signs",
+        "Drive only at night",
+        "Follow the learner-licence conditions and applicable road rules.",
+        "Use any vehicle class"
+      ],
+      "answer_index": 3,
+      "explanation": "A learner licence does not remove road-safety obligations.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-011",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "Can every learner be assumed to need Form 1A?",
+      "options": [
+        "Yes, always",
+        "No; applicability depends on the case.",
+        "Only if applying online",
+        "Only for a motorcycle",
+        "No; applicability depends on the case"
+      ],
+      "answer_index": 1,
+      "explanation": "The official document list marks Form 1A as applicable in specified cases.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-012",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "What is the purpose of a document checklist?",
+      "options": [
+        "To calculate insurance",
+        "To guarantee approval",
+        "To prepare the likely required documents before starting the official process.",
+        "To prepare documents before the official process",
+        "To replace the official portal"
+      ],
+      "answer_index": 2,
+      "explanation": "The checklist is a preparation aid, not a substitute for the official process.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-013",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "What should you do if RTOBuddy and the official portal disagree?",
+      "options": [
+        "Prefer the current official source and flag the RTOBuddy content for review.",
+        "Prefer the current official source",
+        "Ignore both",
+        "Always trust the older app data",
+        "Ask another learner to decide"
+      ],
+      "answer_index": 0,
+      "explanation": "RTOBuddy is an educational layer and must yield to current official information.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-014",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "What does 'jurisdiction overlay' mean in RTOBuddy?",
+      "options": [
+        "A login method",
+        "State/UT-specific information layered over the national baseline",
+        "State/UT-specific information layered over the national baseline.",
+        "A traffic signal",
+        "A phone theme"
+      ],
+      "answer_index": 2,
+      "explanation": "This is the core data architecture.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-015",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "Why are fees kept out of the national baseline?",
+      "options": [
+        "They can vary by jurisdiction and change over time",
+        "They can vary by jurisdiction and change over time.",
+        "They never change",
+        "The app cannot store numbers",
+        "They are unrelated to licensing"
+      ],
+      "answer_index": 1,
+      "explanation": "Dynamic/legal-sensitive values should be versioned and jurisdiction-specific.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-016",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "What is the purpose of the learner-test practice bank?",
+      "options": [
+        "To replace the RTO",
+        "To rehearse test knowledge and explanations",
+        "To issue a licence",
+        "To change government records",
+        "To rehearse the knowledge areas likely to be tested and learn from explanations."
+      ],
+      "answer_index": 4,
+      "explanation": "Practice supports preparation; it does not issue a licence.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-017",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "What should you check before a permanent driving test?",
+      "options": [
+        "Nothing",
+        "Only tyre colour",
+        "Only phone battery",
+        "That the learner licence is valid and covers the intended class, plus the current official procedure.",
+        "Licence validity/class and current official procedure"
+      ],
+      "answer_index": 3,
+      "explanation": "The official permanent-licence procedure requires a valid learner licence for the relevant class.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-018",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "Why does RTOBuddy show source IDs?",
+      "options": [
+        "To replace the test",
+        "To make provenance traceable",
+        "For decoration",
+        "To hide the content",
+        "To make the provenance of legal-sensitive content traceable."
+      ],
+      "answer_index": 4,
+      "explanation": "Source metadata makes review and updating easier.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-019",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "What does 'source_verified' mean in RTOBuddy?",
+      "options": [
+        "It is guaranteed by the app forever",
+        "It came from social media",
+        "It was checked against the cited source at the recorded verification date",
+        "The content was checked against the cited source at the recorded verification date.",
+        "It can never change"
+      ],
+      "answer_index": 3,
+      "explanation": "Verification is time-bound; current law can change.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-L-020",
+      "category": "learner_and_process",
+      "difficulty": "medium",
+      "question": "What is the recommended approach for a new learner?",
+      "options": [
+        "Rely on one mock test",
+        "Skip signs",
+        "Memorise only penalties",
+        "Learn, practise, review weak areas, then use the official process.",
+        "Learn, practise, review weak areas, then use the official process"
+      ],
+      "answer_index": 3,
+      "explanation": "The app is designed as a learning companion.",
+      "rule_ids": [],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2",
+        "SRC-PARIVAHAN-LL"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": null
+    },
+    {
+      "id": "Q-SIG-001",
+      "category": "traffic_signal",
+      "difficulty": "easy",
+      "question": "What is the correct meaning of the Red traffic signal?",
+      "options": [
+        "Amber / Yellow",
+        "Flashing Red",
+        "Green",
+        "Red"
+      ],
+      "answer_index": 3,
+      "explanation": "Red signal indicates stop.",
+      "rule_ids": [],
+      "sign_id": null,
+      "signal_id": "SIG-001",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "source_mapped",
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "animation": "signal_red"
+    },
+    {
+      "id": "Q-SIG-002",
+      "category": "traffic_signal",
+      "difficulty": "easy",
+      "question": "What is the correct meaning of the Amber / Yellow traffic signal?",
+      "options": [
+        "Amber / Yellow",
+        "Green",
+        "Flashing Amber / Yellow",
+        "Red"
+      ],
+      "answer_index": 0,
+      "explanation": "Amber/yellow warns of transition to stop and requires appropriate action.",
+      "rule_ids": [],
+      "sign_id": null,
+      "signal_id": "SIG-002",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "source_mapped",
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "animation": "signal_amber"
+    },
+    {
+      "id": "Q-SIG-003",
+      "category": "traffic_signal",
+      "difficulty": "easy",
+      "question": "What is the correct meaning of the Green traffic signal?",
+      "options": [
+        "Amber / Yellow",
+        "Flashing Red",
+        "Green",
+        "Flashing Amber / Yellow"
+      ],
+      "answer_index": 2,
+      "explanation": "Green permits movement subject to other road conditions and controls.",
+      "rule_ids": [],
+      "sign_id": null,
+      "signal_id": "SIG-003",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "source_mapped",
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "animation": "signal_green"
+    },
+    {
+      "id": "Q-SIG-004",
+      "category": "traffic_signal",
+      "difficulty": "easy",
+      "question": "What is the correct meaning of the Flashing Red traffic signal?",
+      "options": [
+        "Flashing Red",
+        "Red",
+        "Amber / Yellow",
+        "Flashing Amber / Yellow"
+      ],
+      "answer_index": 0,
+      "explanation": "Flashing red is a stop control requiring careful compliance.",
+      "rule_ids": [],
+      "sign_id": null,
+      "signal_id": "SIG-004",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "source_mapped",
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "animation": "signal_flashing_red"
+    },
+    {
+      "id": "Q-SIG-005",
+      "category": "traffic_signal",
+      "difficulty": "easy",
+      "question": "What is the correct meaning of the Flashing Amber / Yellow traffic signal?",
+      "options": [
+        "Amber / Yellow",
+        "Green",
+        "Flashing Amber / Yellow",
+        "Flashing Red"
+      ],
+      "answer_index": 2,
+      "explanation": "Flashing amber indicates caution rather than an unconditional free movement.",
+      "rule_ids": [],
+      "sign_id": null,
+      "signal_id": "SIG-005",
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "source_mapped",
+      "source_ids": [
+        "SRC-ROR-1989",
+        "SRC-MVA"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "animation": "signal_flashing_amber"
+    },
+    {
+      "id": "Q-R-028",
+      "category": "road_rule",
+      "difficulty": "medium",
+      "question": "When an ambulance with flashing lights and siren approaches from behind, what must you do?",
+      "options": [
+        "Speed up to get out of its way",
+        "Pull over to the left and let it pass",
+        "Stop in the middle of the road",
+        "Ignore it if you have right of way"
+      ],
+      "answer_index": 1,
+      "explanation": "Under MVA section 194(E), all vehicles must give way to emergency vehicles (ambulance, fire) with active lights/siren by moving to the left side of the road.",
+      "rule_ids": [
+        "P2-DRV-006"
+      ],
+      "sign_id": null,
+      "marking_id": null,
+      "exam_relevance": "high",
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-MVA"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "signal_id": null,
+      "animation": "ambulance_priority"
+    }
+  ]
+}

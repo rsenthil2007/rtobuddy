@@ -1,0 +1,173 @@
+{
+  "dataset": {
+    "version": "2026.08.v6.2",
+    "count": 8,
+    "purpose": "Highlight material State/UT and cross-State differences affecting vehicle owners and riders.",
+    "policy": "Never infer a State-specific exemption, tax amount, enforcement relaxation or restriction without a current authoritative source."
+  },
+  "items": [
+    {
+      "id": "XSC-001",
+      "topic": "Helmet compliance",
+      "category": "road_safety",
+      "scope": "national_plus_jurisdiction",
+      "applies_to": [
+        "motorcycle_rider",
+        "pillion_rider"
+      ],
+      "baseline": "Section 129 of the Motor Vehicles Act requires protective headgear for persons above four years driving, riding or being carried on a motorcycle in a public place, subject to the statutory exemption and applicable rules.",
+      "state_difference": "State/UT enforcement, notifications, exemptions and local implementation must be checked separately. RTOBuddy must never describe an enforcement relaxation as a general exemption from the central requirement.",
+      "owner_action": "Before travelling across a State/UT boundary, check the destination State/UT transport/police guidance for current helmet requirements and exemptions.",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-ROR-1989"
+      ],
+      "verification_status": "source_mapped",
+      "jurisdiction_status": "requires_state_review",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "XSC-002",
+      "topic": "Seat-belt compliance",
+      "category": "road_safety",
+      "scope": "national_plus_jurisdiction",
+      "applies_to": [
+        "car_driver",
+        "car_passenger",
+        "child_passenger"
+      ],
+      "baseline": "Section 194B provides a penalty framework for driving without a safety belt or carrying passengers not wearing seat belts, with a statutory provision allowing specified transport-vehicle exclusions by State Government notification.",
+      "state_difference": "Vehicle class, notification-based exclusions and enforcement details must be checked against the current State/UT position.",
+      "owner_action": "Treat seat-belt use as mandatory by default and verify any claimed exemption against a current official notification.",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR"
+      ],
+      "verification_status": "source_mapped",
+      "jurisdiction_status": "requires_state_review",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "XSC-003",
+      "topic": "Out-of-State vehicle tax",
+      "category": "taxation",
+      "scope": "jurisdiction_specific",
+      "applies_to": [
+        "private_vehicle_owner",
+        "commercial_vehicle_owner"
+      ],
+      "baseline": "Motor-vehicle taxation is substantially a State/UT subject. A vehicle registered in one State can therefore encounter destination-State taxation or compliance provisions when used or kept there under the applicable conditions.",
+      "state_difference": "Tax rates, periods, exemptions, payment procedures and treatment of vehicles registered outside the State vary by jurisdiction.",
+      "owner_action": "Before keeping an out-of-State vehicle in another State for an extended period, check the destination State's motor-vehicle taxation law and transport-department guidance.",
+      "source_ids": [
+        "SRC-MVA"
+      ],
+      "verification_status": "source_mapped",
+      "jurisdiction_status": "requires_state_review",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "XSC-004",
+      "topic": "Karnataka out-of-State vehicle taxation",
+      "category": "taxation",
+      "scope": "Karnataka_specific",
+      "applies_to": [
+        "out_of_state_vehicle_owner"
+      ],
+      "baseline": "Karnataka has a separate Karnataka Motor Vehicles Taxation Act, 1957. The current Act text includes provisions and schedules dealing with motor-vehicle tax, including provisions relevant to vehicles registered outside Karnataka.",
+      "state_difference": "The exact tax liability depends on the vehicle, registration status, period, use and the current Karnataka law/notifications. Do not reduce this to a claim that all outside-State vehicles owe the same tax.",
+      "owner_action": "For a vehicle registered outside Karnataka, check current Karnataka Transport Department guidance and the applicable taxation provision before prolonged use in Karnataka.",
+      "source_ids": [
+        "SRC-KA-MVTA",
+        "SRC-KA-TRANSPORT"
+      ],
+      "verification_status": "source_verified",
+      "jurisdiction_status": "verified_source_scope",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "XSC-005",
+      "topic": "Re-registration / new registration mark",
+      "category": "registration",
+      "scope": "national_plus_jurisdiction",
+      "applies_to": [
+        "vehicle_owner"
+      ],
+      "baseline": "Section 47 of the Motor Vehicles Act addresses assignment of a new registration mark when a motor vehicle registered in one State has been kept in another State beyond the statutory period.",
+      "state_difference": "State procedures, documents, tax-clearance requirements and forms must be checked with the destination registering authority.",
+      "owner_action": "If the vehicle is being relocated rather than temporarily visiting, check re-registration/new-mark requirements early.",
+      "source_ids": [
+        "SRC-MVA"
+      ],
+      "verification_status": "source_mapped",
+      "jurisdiction_status": "requires_state_review",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "XSC-006",
+      "topic": "Permit and inter-State operation",
+      "category": "permit",
+      "scope": "national_plus_jurisdiction",
+      "applies_to": [
+        "transport_vehicle_owner",
+        "commercial_operator"
+      ],
+      "baseline": "Permit validity and use outside the granting region are governed by the Motor Vehicles Act and applicable permit provisions.",
+      "state_difference": "Route, permit class, taxes, authorisations and State-level requirements can differ by destination and vehicle/service type.",
+      "owner_action": "Commercial/transport operators should verify the exact permit and tax requirements before entering another State.",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-ROR-1989"
+      ],
+      "verification_status": "source_mapped",
+      "jurisdiction_status": "requires_state_review",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "XSC-007",
+      "topic": "Vehicle age / fitness / local restrictions",
+      "category": "vehicle_compliance",
+      "scope": "jurisdiction_specific",
+      "applies_to": [
+        "vehicle_owner"
+      ],
+      "baseline": "Vehicle fitness, registration validity and environmental/local restrictions can involve both central rules and State/local measures.",
+      "state_difference": "Age thresholds, restricted zones, fitness practices and local environmental restrictions can differ by jurisdiction and vehicle category.",
+      "owner_action": "Check the destination jurisdiction before long-term relocation or operation of an older vehicle.",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR"
+      ],
+      "verification_status": "source_mapped",
+      "jurisdiction_status": "requires_state_review",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "XSC-008",
+      "topic": "Local traffic restrictions and enforcement",
+      "category": "local_rules",
+      "scope": "jurisdiction_specific",
+      "applies_to": [
+        "all_road_users"
+      ],
+      "baseline": "Local authorities may impose traffic-management restrictions, route controls, parking controls, silence zones and other notified restrictions within their legal powers.",
+      "state_difference": "The actual restriction, location, timing and enforcement mechanism may differ by city, district and State/UT.",
+      "owner_action": "Check current local police/transport notifications when travelling to a new city or region.",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-ROR-1989"
+      ],
+      "verification_status": "source_mapped",
+      "jurisdiction_status": "requires_local_review",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Police Station">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<rect x="34" y="34" width="172" height="172" rx="10" fill="#1565c0"/>
+<path d="M120 58l15 31 34 5-25 24 6 34-30-16-30 16 6-34-25-24 34-5z" fill="#fff"/>
+<circle cx="120" cy="120" r="22" fill="#1565c0"/>
+<rect x="112" y="108" width="16" height="24" rx="2" fill="#fff"/>
+</svg>

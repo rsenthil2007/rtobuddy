@@ -1,0 +1,51 @@
+{
+  "dataset": {
+    "version": "2026.08.v5",
+    "status": "reviewed",
+    "note": "Descriptions are educational. Eligibility, age and exact class mapping must be checked against current rules and the selected jurisdiction."
+  },
+  "classes": [
+    {
+      "id": "VC-001",
+      "code": "MCWOG",
+      "name": "Motorcycle Without Gear",
+      "description": "Two-wheeled motor vehicle category without gear, subject to the applicable licensing classification.",
+      "check": "Verify current class availability and eligibility in the selected State/UT."
+    },
+    {
+      "id": "VC-002",
+      "code": "MCWG",
+      "name": "Motorcycle With Gear",
+      "description": "Motorcycle category with gear, subject to the applicable licensing classification.",
+      "check": "Verify current class availability and eligibility in the selected State/UT."
+    },
+    {
+      "id": "VC-003",
+      "code": "LMV",
+      "name": "Light Motor Vehicle",
+      "description": "Light motor vehicle category used in driving-licence classification.",
+      "check": "Verify the current vehicle-class definition and permitted use for the intended application."
+    },
+    {
+      "id": "VC-004",
+      "code": "Transport",
+      "name": "Transport Vehicle",
+      "description": "Transport-vehicle licensing category with additional requirements that can apply to the applicant and vehicle.",
+      "check": "Verify current medical, training and test requirements before applying."
+    },
+    {
+      "id": "VC-005",
+      "code": "E-Rickshaw / E-Cart",
+      "name": "Electric Three-Wheeler Category",
+      "description": "Electric three-wheeler categories may have their own licensing treatment and vehicle classification.",
+      "check": "Verify the current class mapping and State/UT process."
+    },
+    {
+      "id": "VC-006",
+      "code": "Other / Special Class",
+      "name": "Other or Special Vehicle Class",
+      "description": "Specialised categories can have separate rules, endorsements or eligibility conditions.",
+      "check": "Use the official Sarathi/State process for the exact vehicle class."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "layer": "national_baseline",
+  "version": "2026.08.v6",
+  "status": "active",
+  "architecture": "national_baseline_plus_jurisdiction_overlay",
+  "description": "India-wide educational baseline loaded before jurisdiction overlays.",
+  "loader": "js/data.js",
+  "datasets": {
+    "rules": "data/common/rules.json",
+    "signs": "data/common/traffic_signs.json",
+    "signals": "data/common/traffic_signals.json",
+    "markings": "data/common/road_markings.json",
+    "questions": "data/common/mock_questions.json",
+    "licensing": "data/common/licensing_process.json",
+    "documents": "data/common/documents.json",
+    "learnerRules": "data/common/learner_rules.json",
+    "vehicleClasses": "data/common/vehicle_classes.json",
+    "services": "data/common/official_services.json",
+    "crossState": "data/common/cross_state_compliance.json",
+    "jurisdictionOverlays": "data/common/jurisdiction_overlays.json",
+    "sources": "data/common/sources.json",
+    "manifest": "data/metadata/dataset_manifest.json"
+  },
+  "principles": [
+    "Jurisdiction files inherit this baseline and add verified overlays only.",
+    "Fees, penalties and speed limits are not invented at national level.",
+    "UI resolves baseline + selected jurisdiction via js/jurisdiction.js."
+  ]
+}

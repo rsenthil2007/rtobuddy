@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="No Overtaking">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<circle cx="120" cy="120" r="76" fill="#fff" stroke="#c62828" stroke-width="12"/><g fill="#111"><circle cx="93" cy="144" r="15"/><circle cx="145" cy="144" r="15"/><path d="M77 133l8-34h34l12 34H77z"/><circle cx="145" cy="144" r="15"/><path d="M129 132l6-29h31l10 29h-47z"/></g><path d="M64 65L176 175" stroke="#c62828" stroke-width="13"/>
+</svg>

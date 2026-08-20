@@ -1,0 +1,92 @@
+{
+  "dataset": {
+    "version": "2026.08.v5",
+    "status": "source_verified",
+    "source_ids": [
+      "SRC-PARIVAHAN-MPARIVAHAN",
+      "SRC-TN-EDISTRICT"
+    ]
+  },
+  "services": [
+    {
+      "id": "OS-001",
+      "name": "Parivahan Sewa",
+      "scope": "national",
+      "purpose": "Official transport-services information and navigation.",
+      "url": "https://parivahan.gov.in/",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "OS-002",
+      "name": "Sarathi / Learner & Driving Licence",
+      "scope": "national",
+      "purpose": "Licence-related online services; select the concerned State/UT in the official portal.",
+      "url": "https://sarathi.parivahan.gov.in/",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "OS-003",
+      "name": "mParivahan",
+      "scope": "national",
+      "purpose": "Gateway exposing Sarathi, Vahan and eChallan services.",
+      "url": "https://mparivahan.parivahan.gov.in/",
+      "source_ids": [
+        "SRC-PARIVAHAN-MPARIVAHAN"
+      ]
+    },
+    {
+      "id": "OS-004",
+      "name": "eChallan",
+      "scope": "national",
+      "purpose": "Official eChallan service.",
+      "url": "https://echallan.parivahan.gov.in/",
+      "source_ids": [
+        "SRC-PARIVAHAN-MPARIVAHAN"
+      ]
+    },
+    {
+      "id": "OS-005",
+      "name": "Tamil Nadu e-District Transport Services",
+      "scope": "TN",
+      "purpose": "Government service catalogue including learner-licence online application and driving-licence appointment services.",
+      "url": "https://it.tn.gov.in/en/TNEGA/e-District",
+      "source_ids": [
+        "SRC-TN-EDISTRICT"
+      ]
+    },
+    {
+      "id": "OS-006",
+      "name": "Tamil Nadu Driving Licence Project",
+      "scope": "TN",
+      "purpose": "Government information on the State driving-licence project and Sarathi implementation.",
+      "url": "https://www.it.tn.gov.in/en/ELCOT/Driving_Licence_Project",
+      "source_ids": [
+        "SRC-TN-DLPROJECT"
+      ]
+    },
+    {
+      "id": "OS-007",
+      "name": "Print Learner Licence guidance",
+      "scope": "national",
+      "purpose": "Official instructions for printing a learner licence where the service is available.",
+      "url": "https://parivahan.gov.in/parivahan/en/content/i-am-unable-print-learner-license",
+      "source_ids": [
+        "SRC-PARIVAHAN-PRINTLL"
+      ]
+    },
+    {
+      "id": "OS-008",
+      "name": "Permanent Licence procedure",
+      "scope": "national",
+      "purpose": "Official procedure guidance for the permanent driving licence competence test.",
+      "url": "https://staging.parivahan.gov.in/parivahan/en/print/pdf/node/7",
+      "source_ids": [
+        "SRC-PARIVAHAN-PERMDL"
+      ]
+    }
+  ]
+}
