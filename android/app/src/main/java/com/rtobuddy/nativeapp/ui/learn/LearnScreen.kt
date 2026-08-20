@@ -1,6 +1,5 @@
 package com.rtobuddy.nativeapp.ui.learn
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,9 +9,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
@@ -49,7 +48,6 @@ private enum class LearnTab(val label: String) {
     State("State / UT"),
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LearnScreen(
     repository: RtoBuddyRepository,
@@ -120,88 +118,145 @@ fun LearnScreen(
 
         when (LearnTab.entries[tabIndex]) {
             LearnTab.Signs -> {
-                selectedSign?.let { sign ->
-                    SignDetail(sign) {
-                        selectedSign = null
-                    }
-                } ?: LazyColumn(
-                    contentPadding = PaddingValues(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp),
-                ) {
-                    items(signs, key = { it.id }) { sign ->
-                        SectionCard(title = sign.name, body = "${sign.category} · ${sign.id}") {
-                            FilterChip(selected = false, onClick = {
-                                selectedSign = sign
-                                scope.launch { repository.trackSignView(sign.id) }
-                            }, label = { Text("Open") })
+                val sign = selectedSign
+                if (sign != null) {
+                    SignDetail(sign) { selectedSign = null }
+                } else {
+                    LazyColumn(
+                        contentPadding = PaddingValues(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        items(signs, key = { it.id }) { item ->
+                            SectionCard(title = item.name, body = "${item.category} · ${item.id}") {
+                                FilterChip(
+                                    selected = false,
+                                    onClick = {
+                                        selectedSign = item
+                                        scope.launch { repository.trackSignView(item.id) }
+                                    },
+                                    label = { Text("Open") },
+                                )
+                            }
                         }
                     }
                 }
             }
 
             LearnTab.Signals -> {
-                selectedSignal?.let { signal ->
-                    Column(Modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(signal.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                        Text(signal.meaning)
-                        FilterChip(selected = false, onClick = { selectedSignal = null }, label = { Text("Back") })
-                    }
-                } ?: LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    items(signals, key = { it.id }) { signal ->
-                        SectionCard(title = signal.name, body = signal.meaning) {
-                            FilterChip(selected = false, onClick = { selectedSignal = signal }, label = { Text("Open") })
+                val signal = selectedSignal
+                if (signal != null) {
+                    DetailPane(
+                        title = signal.name,
+                        body = signal.meaning,
+                        onBack = { selectedSignal = null },
+                    )
+                } else {
+                    LazyColumn(
+                        contentPadding = PaddingValues(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        items(signals, key = { it.id }) { item ->
+                            SectionCard(title = item.name, body = item.meaning) {
+                                FilterChip(
+                                    selected = false,
+                                    onClick = { selectedSignal = item },
+                                    label = { Text("Open") },
+                                )
+                            }
                         }
                     }
                 }
             }
 
             LearnTab.Markings -> {
-                selectedMarking?.let { marking ->
-                    Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(marking.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                        Text(marking.meaning)
-                        FilterChip(selected = false, onClick = { selectedMarking = null }, label = { Text("Back") })
-                    }
-                } ?: LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    items(markings, key = { it.id }) { marking ->
-                        SectionCard(title = marking.name, body = marking.meaning) {
-                            FilterChip(selected = false, onClick = { selectedMarking = marking }, label = { Text("Open") })
+                val marking = selectedMarking
+                if (marking != null) {
+                    DetailPane(
+                        title = marking.name,
+                        body = marking.meaning,
+                        onBack = { selectedMarking = null },
+                    )
+                } else {
+                    LazyColumn(
+                        contentPadding = PaddingValues(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        items(markings, key = { it.id }) { item ->
+                            SectionCard(title = item.name, body = item.meaning) {
+                                FilterChip(
+                                    selected = false,
+                                    onClick = { selectedMarking = item },
+                                    label = { Text("Open") },
+                                )
+                            }
                         }
                     }
                 }
             }
 
             LearnTab.Rules -> {
-                selectedRule?.let { rule ->
-                    Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(rule.title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                        Text(rule.summary)
-                        FilterChip(selected = false, onClick = { selectedRule = null }, label = { Text("Back") })
-                    }
-                } ?: LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    items(rules, key = { it.id }) { rule ->
-                        SectionCard(title = rule.title, body = rule.summary.take(140) + if (rule.summary.length > 140) "…" else "") {
-                            FilterChip(selected = false, onClick = { selectedRule = rule }, label = { Text("Open") })
+                val rule = selectedRule
+                if (rule != null) {
+                    DetailPane(
+                        title = rule.title,
+                        body = rule.summary,
+                        onBack = { selectedRule = null },
+                    )
+                } else {
+                    LazyColumn(
+                        contentPadding = PaddingValues(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        items(rules, key = { it.id }) { item ->
+                            val preview = if (item.summary.length > 140) {
+                                item.summary.take(140) + "…"
+                            } else {
+                                item.summary
+                            }
+                            SectionCard(title = item.title, body = preview) {
+                                FilterChip(
+                                    selected = false,
+                                    onClick = { selectedRule = item },
+                                    label = { Text("Open") },
+                                )
+                            }
                         }
                     }
                 }
             }
 
             LearnTab.State -> {
-                LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                LazyColumn(
+                    contentPadding = PaddingValues(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
                     if (stateRules.isEmpty()) {
                         item { Text("No State/UT overlay rules for the current selection.") }
                     }
                     items(stateRules, key = { it.id }) { rule ->
                         SectionCard(title = rule.title, body = rule.summary) {
-                            FilterChip(selected = false, onClick = {
-                                scope.launch { repository.trackStateRuleView() }
-                            }, label = { Text("Mark reviewed") })
+                            FilterChip(
+                                selected = false,
+                                onClick = { scope.launch { repository.trackStateRuleView() } },
+                                label = { Text("Mark reviewed") },
+                            )
                         }
                     }
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun DetailPane(title: String, body: String, onBack: () -> Unit) {
+    Column(
+        modifier = Modifier.padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+        Text(body)
+        OutlinedButton(onClick = onBack) { Text("Back") }
     }
 }
 
@@ -216,7 +271,8 @@ private fun SignDetail(sign: TrafficSign, onBack: () -> Unit) {
     ) {
         Text(sign.name, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         Text(sign.category)
-        sign.image_asset?.let { asset ->
+        val asset = sign.image_asset
+        if (asset != null) {
             AsyncImage(
                 model = ImageRequest.Builder(context)
                     .data("file:///android_asset/signs/$asset")
@@ -230,6 +286,6 @@ private fun SignDetail(sign: TrafficSign, onBack: () -> Unit) {
             )
         }
         Text(sign.meaning)
-        Text("Back", modifier = Modifier.clickable(onClick = onBack), color = MaterialTheme.colorScheme.primary)
+        OutlinedButton(onClick = onBack) { Text("Back") }
     }
 }
