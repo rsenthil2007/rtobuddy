@@ -22,7 +22,9 @@ import kotlinx.coroutines.flow.first
 
 interface RtoBuddyRepository {
     val jurisdictionCode: Flow<String>
+    val themeId: Flow<String>
     suspend fun setJurisdiction(code: String)
+    suspend fun setThemeId(theme: String)
     suspend fun getJurisdictions(): List<JurisdictionInfo>
     suspend fun getReadinessSnapshot(): ReadinessSnapshot
     suspend fun getMissionProgress(): MissionProgress
@@ -49,8 +51,10 @@ class OfflineFirstRtoBuddyRepository(
     private val progress: ProgressStore,
 ) : RtoBuddyRepository {
     override val jurisdictionCode: Flow<String> = progress.jurisdictionCode
+    override val themeId: Flow<String> = progress.themeId
 
     override suspend fun setJurisdiction(code: String) = progress.setJurisdiction(code)
+    override suspend fun setThemeId(theme: String) = progress.setThemeId(theme)
 
     override suspend fun getJurisdictions(): List<JurisdictionInfo> = catalog.jurisdictions
 

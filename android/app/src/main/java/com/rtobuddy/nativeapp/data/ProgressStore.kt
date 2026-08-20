@@ -19,6 +19,7 @@ private val Context.progressDataStore by preferencesDataStore(name = "rtobuddy_p
 class ProgressStore(private val context: Context) {
     private val json = Json { ignoreUnknownKeys = true }
     private val jurisdictionKey = stringPreferencesKey("jurisdiction_code")
+    private val themeKey = stringPreferencesKey("theme_id")
     private val attemptsKey = stringPreferencesKey("attempts_json")
     private val activityKey = stringPreferencesKey("activity_json")
     private val mistakesKey = stringPreferencesKey("recent_mistakes_json")
@@ -27,8 +28,16 @@ class ProgressStore(private val context: Context) {
         prefs[jurisdictionKey] ?: "TN"
     }
 
+    val themeId: Flow<String> = context.progressDataStore.data.map { prefs ->
+        prefs[themeKey] ?: "CLASSIC"
+    }
+
     suspend fun setJurisdiction(code: String) {
         context.progressDataStore.edit { it[jurisdictionKey] = code }
+    }
+
+    suspend fun setThemeId(theme: String) {
+        context.progressDataStore.edit { it[themeKey] = theme }
     }
 
     suspend fun getAttempts(): List<ExamAttempt> {

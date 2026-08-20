@@ -35,6 +35,7 @@ import com.rtobuddy.nativeapp.domain.model.MissionProgress
 import com.rtobuddy.nativeapp.domain.model.ReadinessSnapshot
 import com.rtobuddy.nativeapp.domain.model.SevenDayStep
 import com.rtobuddy.nativeapp.ui.components.SectionCard
+import com.rtobuddy.nativeapp.ui.theme.AppThemeId
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -61,6 +62,7 @@ fun HomeScreen(
     var reminder by remember { mutableStateOf<LocalReminder?>(null) }
     var jurisdictions by remember { mutableStateOf<List<JurisdictionInfo>>(emptyList()) }
     var selectedCode by remember { mutableStateOf("TN") }
+    var selectedTheme by remember { mutableStateOf(AppThemeId.CLASSIC) }
     var menuOpen by remember { mutableStateOf(false) }
 
     suspend fun load() {
@@ -71,6 +73,7 @@ fun HomeScreen(
         reminder = repository.getLocalReminder()
         jurisdictions = repository.getJurisdictions()
         selectedCode = repository.jurisdictionCode.first()
+        selectedTheme = AppThemeId.fromStored(repository.themeId.first())
     }
 
     LaunchedEffect(refreshToken) { load() }
@@ -83,9 +86,25 @@ fun HomeScreen(
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         item {
-            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text("RTOBuddy", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
                 Text("Offline-first learner training", style = MaterialTheme.typography.bodyMedium)
+                Text("Theme", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold)
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    AppThemeId.entries.forEach { theme ->
+                        FilterChip(
+                            selected = selectedTheme == theme,
+                            onClick = {
+                                selectedTheme = theme
+                                scope.launch { repository.setThemeId(theme.name) }
+                            },
+                            label = { Text(theme.label) },
+                        )
+                    }
+                }
             }
         }
 
@@ -160,22 +179,46 @@ fun HomeScreen(
 
         item {
             SectionCard(title = "Quick drills") {
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                    FilterChip(selected = false, onClick = { onLaunchExam(HomeLaunch("traffic_sign", 8)) }, label = { Text("Signs") })
-                    FilterChip(selected = false, onClick = { onLaunchExam(HomeLaunch("traffic_signal", 5)) }, label = { Text("Signals") })
-                    FilterChip(selected = false, onClick = { onLaunchExam(HomeLaunch("road_marking", 5)) }, label = { Text("Markings") })
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    OutlinedButton(onClick = { onLaunchExam(HomeLaunch("all", 10, "simulator")) }) { Text("Simulator") }
-                    OutlinedButton(onClick = {
-                        scope.launch {
-                            val ids = repository.getRecentMistakeIds()
-                            if (ids.isNotEmpty()) {
-                                onLaunchExam(HomeLaunch(count = ids.size.coerceAtMost(10), mode = "replay"))
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        FilterChip(
+                            selected = false,
+                            onClick = { onLaunchExam(HomeLaunch("traffic_sign", 8)) },
+                            label = { Text("Signs") },
+                        )
+                        FilterChip(
+                            selected = false,
+                            onClick = { onLaunchExam(HomeLaunch("traffic_signal", 5)) },
+                            label = { Text("Signals") },
+                        )
+                        FilterChip(
+                            selected = false,
+                            onClick = { onLaunchExam(HomeLaunch("road_marking", 5)) },
+                            label = { Text("Markings") },
+                        )
+                    }
+                    OutlinedButton(
+                        onClick = { onLaunchExam(HomeLaunch("all", 10, "simulator")) },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) { Text("Simulator") }
+                    OutlinedButton(
+                        onClick = {
+                            scope.launch {
+                                val ids = repository.getRecentMistakeIds()
+                                if (ids.isNotEmpty()) {
+                                    onLaunchExam(HomeLaunch(count = ids.size.coerceAtMost(10), mode = "replay"))
+                                }
                             }
-                        }
-                    }) { Text("Replay mistakes") }
-                    OutlinedButton(onClick = { onOpenLearn("signs") }) { Text("Learn signs") }
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) { Text("Replay mistakes") }
+                    OutlinedButton(
+                        onClick = { onOpenLearn("signs") },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) { Text("Learn signs") }
                 }
             }
         }
