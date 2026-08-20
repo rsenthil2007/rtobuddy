@@ -36,7 +36,9 @@ object ExamEngine {
             else -> all.filter { it.category == category }
         }.ifEmpty { all }
 
-        val selected = pool.shuffled().take(count.coerceAtMost(pool.size).coerceAtLeast(1))
+        val selected = pool.shuffled()
+            .take(count.coerceAtMost(pool.size).coerceAtLeast(1))
+            .map { shuffleOptions(it) }
         val label = when (mode) {
             "simulator" -> "Exam Simulator"
             "challenge" -> "Challenge Mode"
@@ -51,6 +53,17 @@ object ExamEngine {
             }
         }
         return ExamSession(selected, category, mode, label)
+    }
+
+    /** Shuffle choice order so the correct option is not stuck in one position. */
+    fun shuffleOptions(question: ExamQuestion): ExamQuestion {
+        if (question.options.size <= 1) return question
+        val pairs = question.options.mapIndexed { index, text -> index to text }.shuffled()
+        val newAnswer = pairs.indexOfFirst { it.first == question.answer_index }.coerceAtLeast(0)
+        return question.copy(
+            options = pairs.map { it.second },
+            answer_index = newAnswer,
+        )
     }
 
     fun score(

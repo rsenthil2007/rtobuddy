@@ -38,7 +38,9 @@ import com.rtobuddy.nativeapp.domain.ExamEngine
 import com.rtobuddy.nativeapp.domain.ExamResult
 import com.rtobuddy.nativeapp.domain.ExamSession
 import com.rtobuddy.nativeapp.domain.model.readinessStatus
+import com.rtobuddy.nativeapp.ui.components.ScenarioAnimationView
 import com.rtobuddy.nativeapp.ui.components.SectionCard
+import com.rtobuddy.nativeapp.ui.components.hasScenarioAnimation
 import com.rtobuddy.nativeapp.ui.home.HomeLaunch
 import kotlinx.coroutines.launch
 
@@ -157,32 +159,36 @@ fun ExamScreen(
                 Text("Question ${index + 1} of ${session.questions.size}")
                 Text(q.question, style = MaterialTheme.typography.titleMedium)
 
-                val sign = catalog.signById(q.sign_id)
-                sign?.image_asset?.let { asset ->
-                    val context = LocalContext.current
-                    AsyncImage(
-                        model = ImageRequest.Builder(context)
-                            .data("file:///android_asset/signs/$asset")
-                            .decoderFactory(SvgDecoder.Factory())
-                            .build(),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(140.dp),
-                        contentScale = ContentScale.Fit,
-                    )
-                    if (revealed || session.mode == "simulator") {
-                        // keep label hidden in practice until reveal; never show name before answer in practice
-                    }
-                    if (revealed) {
-                        Text(sign.name, fontWeight = FontWeight.SemiBold)
-                    }
-                } ?: run {
-                    catalog.signalById(q.signal_id)?.let {
-                        if (revealed) Text("Signal: ${it.name}", fontWeight = FontWeight.SemiBold)
-                    }
-                    catalog.markingById(q.marking_id)?.let {
-                        if (revealed) Text("Marking: ${it.name}", fontWeight = FontWeight.SemiBold)
+                if (hasScenarioAnimation(q.animation)) {
+                    ScenarioAnimationView(animationType = q.animation!!)
+                } else {
+                    val sign = catalog.signById(q.sign_id)
+                    val asset = sign?.image_asset
+                    if (asset != null) {
+                        val context = LocalContext.current
+                        AsyncImage(
+                            model = ImageRequest.Builder(context)
+                                .data("file:///android_asset/signs/$asset")
+                                .decoderFactory(SvgDecoder.Factory())
+                                .build(),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(140.dp),
+                            contentScale = ContentScale.Fit,
+                        )
+                        if (revealed) {
+                            Text(sign.name, fontWeight = FontWeight.SemiBold)
+                        }
+                    } else {
+                        if (revealed) {
+                            catalog.signalById(q.signal_id)?.let {
+                                Text("Signal: ${it.name}", fontWeight = FontWeight.SemiBold)
+                            }
+                            catalog.markingById(q.marking_id)?.let {
+                                Text("Marking: ${it.name}", fontWeight = FontWeight.SemiBold)
+                            }
+                        }
                     }
                 }
 

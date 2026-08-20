@@ -47,6 +47,7 @@ import com.rtobuddy.nativeapp.domain.model.LocalReminder
 import com.rtobuddy.nativeapp.domain.model.MissionProgress
 import com.rtobuddy.nativeapp.domain.model.ReadinessSnapshot
 import com.rtobuddy.nativeapp.ui.components.SectionCard
+import com.rtobuddy.nativeapp.ui.theme.AppThemeId
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -75,6 +76,7 @@ fun HomeScreen(
     var reminder by remember { mutableStateOf<LocalReminder?>(null) }
     var jurisdictions by remember { mutableStateOf<List<JurisdictionInfo>>(emptyList()) }
     var selectedCode by remember { mutableStateOf("TN") }
+    var selectedTheme by remember { mutableStateOf(AppThemeId.BALANCED) }
     var menuOpen by remember { mutableStateOf(false) }
     var recentScores by remember { mutableStateOf<List<Int>>(emptyList()) }
 
@@ -86,6 +88,7 @@ fun HomeScreen(
         reminder = repository.getLocalReminder()
         jurisdictions = repository.getJurisdictions()
         selectedCode = repository.jurisdictionCode.first()
+        selectedTheme = AppThemeId.fromStored(repository.themeId.first())
         recentScores = repository.getRecentScores()
     }
 
@@ -153,6 +156,20 @@ fun HomeScreen(
                             onClick = { onLaunchExam(HomeLaunch(count = 5)) },
                             modifier = Modifier.weight(1f),
                         ) { Text("Quick 5") }
+                    }
+                    Text("Theme", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold)
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+                        AppThemeId.entries.forEach { theme ->
+                            OutlinedButton(
+                                onClick = {
+                                    selectedTheme = theme
+                                    scope.launch { repository.setThemeId(theme.name) }
+                                },
+                                modifier = Modifier.weight(1f),
+                            ) {
+                                Text(if (selectedTheme == theme) "✓ ${theme.label}" else theme.label)
+                            }
+                        }
                     }
                 }
             }

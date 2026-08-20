@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -63,20 +62,16 @@ fun ToolsScreen(
 
         item {
             SectionCard(title = "Theme") {
-                Text("Pick the look that fits how you train.")
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    AppThemeId.entries.forEach { theme ->
-                        FilterChip(
-                            selected = selectedTheme == theme,
-                            onClick = {
-                                selectedTheme = theme
-                                scope.launch { repository.setThemeId(theme.name) }
-                            },
-                            label = { Text(theme.label) },
-                        )
+                Text("Pick Classic, Balanced, or Hardcore — changes apply instantly.")
+                AppThemeId.entries.forEach { theme ->
+                    OutlinedButton(
+                        onClick = {
+                            selectedTheme = theme
+                            scope.launch { repository.setThemeId(theme.name) }
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        Text(if (selectedTheme == theme) "✓ ${theme.label}" else theme.label)
                     }
                 }
             }
