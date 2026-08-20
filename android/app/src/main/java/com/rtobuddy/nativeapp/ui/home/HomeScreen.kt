@@ -8,18 +8,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenu
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.Button
+import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -47,7 +44,6 @@ data class HomeLaunch(
     val mode: String = "practice",
 )
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     repository: RtoBuddyRepository,
@@ -120,18 +116,14 @@ fun HomeScreen(
         item {
             val selectedName = jurisdictions.firstOrNull { it.code == selectedCode }?.name ?: selectedCode
             SectionCard(title = "Your State / UT") {
-                ExposedDropdownMenuBox(expanded = menuOpen, onExpandedChange = { menuOpen = it }) {
-                    TextField(
-                        value = selectedName,
-                        onValueChange = {},
-                        readOnly = true,
-                        label = { Text("Jurisdiction") },
-                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = menuOpen) },
-                        modifier = Modifier
-                            .menuAnchor()
-                            .fillMaxWidth(),
-                    )
-                    ExposedDropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
+                Box {
+                    OutlinedButton(
+                        onClick = { menuOpen = true },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        Text(selectedName)
+                    }
+                    DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
                         jurisdictions.forEach { item ->
                             DropdownMenuItem(
                                 text = { Text("${item.code} — ${item.name}") },
