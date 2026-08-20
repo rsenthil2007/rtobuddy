@@ -1,0 +1,33 @@
+{
+  "product": "RTOBuddy",
+  "version": "6.2.0",
+  "dataset_version": "2026.08.v6.2",
+  "release_date": "2026-08-18",
+  "architecture": "offline-first national baseline + jurisdiction overlays",
+  "default_jurisdiction": "TN",
+  "content_policy": "Legal-sensitive content must be checked against current official Act, Rules, Gazette/notification and State/UT transport authority before relying on it.",
+  "quality_states": [
+    "draft",
+    "reviewed",
+    "source_verified",
+    "jurisdiction_verified",
+    "expired",
+    "superseded"
+  ],
+  "counts": {
+    "national_rules": 75,
+    "traffic_signs": 28,
+    "road_markings": 25,
+    "exam_questions": 100,
+    "licensing_steps": 8,
+    "documents": 10,
+    "learner_rules": 10,
+    "vehicle_classes": 6,
+    "official_services": 8
+  },
+  "quality_gate": "schema + references + unique_assets + source_resolution + jurisdiction_count",
+  "architecture_reference": "data/metadata/architecture.json",
+  "knowledge_model": "data/metadata/knowledge_schema.json",
+  "audit_queue": "data/metadata/content_audit_queue.json",
+  "cross_state_compliance": "data/common/cross_state_compliance.json"
+}

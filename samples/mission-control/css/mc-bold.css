@@ -1,0 +1,77 @@
+/* Bold Gaming HUD — stronger console energy */
+
+:root {
+  --mc-bg: #060a12;
+  --mc-surface: #0d1420;
+  --mc-surface-2: #141c2e;
+  --mc-border: #1e3a5f;
+  --mc-glow: rgba(245, 158, 11, 0.4);
+}
+
+.mc-header {
+  border-bottom: 2px solid var(--mc-amber);
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.08);
+}
+
+.mc-panel {
+  border-left: 3px solid var(--mc-amber);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.mc-panel::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mc-amber);
+  box-shadow: 0 0 8px var(--mc-amber);
+}
+
+.mc-cta {
+  background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.mc-ring {
+  background: conic-gradient(var(--mc-amber) 72%, #1a2438 0);
+  box-shadow: 0 0 24px var(--mc-glow);
+}
+
+.mc-ring b { color: var(--mc-amber); }
+
+.mc-stat b { color: var(--mc-amber); }
+
+.mc-tile {
+  border-color: #2563eb44;
+  background: linear-gradient(145deg, #141c2e 0%, #0d1420 100%);
+}
+
+.mc-tile:hover {
+  border-color: var(--mc-amber);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.15);
+}
+
+.mc-rank-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #1a2438 0%, #0d1420 100%);
+  border: 1px solid var(--mc-amber);
+  border-radius: var(--mc-radius-sm);
+  font-size: 0.78rem;
+}
+
+.mc-rank-strip b { color: var(--mc-amber); }
+
+.mc-nav button.active {
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}

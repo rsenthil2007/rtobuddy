@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="No Parking">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<circle cx="120" cy="120" r="76" fill="#1565c0" stroke="#c62828" stroke-width="12"/>
+<text x="120" y="142" text-anchor="middle" font-family="Arial" font-size="72" font-weight="700" fill="#fff">P</text>
+<path d="M65 65L175 175" stroke="#c62828" stroke-width="13"/>
+</svg>

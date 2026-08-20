@@ -1,0 +1,903 @@
+{
+  "version": "6.0.0",
+  "generated": "2026-08-18",
+  "policy": "Do not convert pending items into source_verified merely because the schema is valid.",
+  "items": [
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-005",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-006",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-007",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-LIC-008",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-005",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-006",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-007",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-008",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-009",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-REG-010",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-COMP-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-COMP-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-COMP-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-COMP-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-TRANS-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-TRANS-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-TRANS-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-TRANS-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-TRANS-005",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-EQP-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-EQP-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-EQP-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-EQP-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-EQP-005",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-EQP-006",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SAFE-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SAFE-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SAFE-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SAFE-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SAFE-005",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SIGN-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SIGN-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-SIGN-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-MARK-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-MARK-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-MARK-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-MARK-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-005",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-006",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-007",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-008",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-009",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-DRV-010",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-004",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-005",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-006",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-007",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-008",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-009",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-010",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-011",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-012",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-013",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-OFF-014",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-ACC-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-ACC-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-ACC-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-ADM-001",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-ADM-002",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "rule",
+      "entity_id": "P2-ADM-003",
+      "priority": "high",
+      "status": "pending_source_review",
+      "action": "Compare exact proposition against current authoritative Act/Rules/notification and retain citation."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-001",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-002",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-003",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-004",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-005",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-006",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-007",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-008",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-009",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-M-010",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-001",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-002",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-003",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-004",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-005",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-006",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-007",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-008",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-009",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-W-010",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-001",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-002",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-003",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-004",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-005",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-006",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-007",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "traffic_sign",
+      "entity_id": "TS-I-008",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify identity, class, geometry, symbol and meaning against current prescribed sign standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-001",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-002",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-003",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-004",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-005",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-006",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-007",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-008",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-009",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-010",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-011",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-012",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-013",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-014",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-015",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-016",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-017",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-018",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-019",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-020",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-021",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-022",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-023",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-024",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    },
+    {
+      "entity_type": "road_marking",
+      "entity_id": "RM-025",
+      "priority": "high",
+      "status": "pending_visual_standard_review",
+      "action": "Verify geometry, use and meaning against current road-marking standard."
+    }
+  ]
+}

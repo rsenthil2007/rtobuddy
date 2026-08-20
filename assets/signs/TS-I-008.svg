@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="No Through Road">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<rect x="34" y="34" width="172" height="172" rx="10" fill="#1565c0"/>
+<path d="M120 72v96" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+<path d="M88 88h64" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+<circle cx="120" cy="168" r="14" fill="none" stroke="#fff" stroke-width="10"/>
+</svg>

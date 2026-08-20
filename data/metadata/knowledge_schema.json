@@ -1,0 +1,123 @@
+{
+  "version": "6.0.0",
+  "entities": {
+    "rule": {
+      "id": "RULE-*",
+      "required": [
+        "id",
+        "title",
+        "summary",
+        "category",
+        "source_ids",
+        "verification_status"
+      ],
+      "relations": [
+        "sign_ids",
+        "signal_ids",
+        "marking_ids"
+      ]
+    },
+    "traffic_sign": {
+      "id": "SIGN-*",
+      "required": [
+        "id",
+        "name",
+        "category",
+        "meaning",
+        "image_asset",
+        "source_ids",
+        "verification_status"
+      ],
+      "relations": [
+        "rule_ids"
+      ]
+    },
+    "traffic_signal": {
+      "id": "SIG-*",
+      "required": [
+        "id",
+        "name",
+        "states",
+        "meaning",
+        "source_ids",
+        "verification_status"
+      ],
+      "relations": [
+        "rule_ids"
+      ]
+    },
+    "road_marking": {
+      "id": "MRK-*",
+      "required": [
+        "id",
+        "name",
+        "category",
+        "meaning",
+        "source_ids",
+        "verification_status"
+      ],
+      "relations": [
+        "rule_ids"
+      ]
+    },
+    "question": {
+      "id": "Q-*",
+      "required": [
+        "id",
+        "category",
+        "difficulty",
+        "question",
+        "options",
+        "answer_index",
+        "explanation",
+        "source_ids"
+      ],
+      "relations": [
+        "rule_ids",
+        "sign_id",
+        "signal_id",
+        "marking_id"
+      ]
+    },
+    "jurisdiction": {
+      "required": [
+        "jurisdiction",
+        "data_quality"
+      ],
+      "relations": [
+        "rules",
+        "services",
+        "dynamic_data"
+      ]
+    },
+    "cross_state_compliance": {
+      "id": "XSC-*",
+      "required": [
+        "id",
+        "topic",
+        "category",
+        "scope",
+        "baseline",
+        "state_difference",
+        "owner_action",
+        "source_ids",
+        "verification_status"
+      ],
+      "relations": [
+        "jurisdiction_codes"
+      ]
+    }
+  },
+  "verification_statuses": [
+    "source_verified",
+    "jurisdiction_verified",
+    "reviewed",
+    "source_mapped",
+    "pending",
+    "superseded",
+    "verified_source_scope",
+    "requires_state_review",
+    "requires_local_review"
+  ],
+  "principle": "UI consumes resolved knowledge; UI must not be the source of legal facts."
+}

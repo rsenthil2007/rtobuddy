@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="School Ahead">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<polygon points="120,24 204,188 36,188" fill="#fff" stroke="#c62828" stroke-width="12"/><circle cx="103" cy="87" r="9" fill="#111"/><circle cx="137" cy="87" r="9" fill="#111"/><path d="M103 99l-12 39m12-39l18 32m16-32l-12 39m12-39l18 32M85 151l20-13m50 13l-20-13" stroke="#111" stroke-width="8" fill="none"/>
+</svg>

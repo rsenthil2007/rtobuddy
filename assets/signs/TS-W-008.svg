@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Men at Work">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<polygon points="120,24 204,188 36,188" fill="#fff" stroke="#c62828" stroke-width="12"/>
+<circle cx="118" cy="78" r="9" fill="#111"/>
+<path d="M118 90l-16 38m16-38l20 36m-20-22l-24 16m24-16l26 4" stroke="#111" stroke-width="9" fill="none"/>
+<path d="M146 118l18 34" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+<path d="M158 148l12 8 6-10" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M78 158h84" stroke="#111" stroke-width="7"/>
+<path d="M92 166h56" stroke="#111" stroke-width="5"/>
+</svg>

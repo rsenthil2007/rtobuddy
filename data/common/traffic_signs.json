@@ -1,0 +1,603 @@
+{
+  "dataset": {
+    "version": "2026.08.v6",
+    "count": 28,
+    "status": "source_mapped",
+    "standard_reference": "IRC:67",
+    "source_ids": [
+      "SRC-IRC67",
+      "SRC-MORTH-SIGNS"
+    ]
+  },
+  "signs": [
+    {
+      "id": "TS-M-001",
+      "name": "Stop",
+      "category": "mandatory",
+      "meaning": "Stop before proceeding when this sign controls the approach.",
+      "image_asset": "TS-M-001.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-M-002",
+      "name": "Give Way",
+      "category": "mandatory",
+      "meaning": "Give way to traffic as required at the controlled junction.",
+      "image_asset": "TS-M-002.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-M-003",
+      "name": "No Entry",
+      "category": "mandatory",
+      "meaning": "Entry is prohibited in the direction controlled by the sign.",
+      "image_asset": "TS-M-003.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-REG-006",
+        "P2-REG-010",
+        "P2-COMP-004"
+      ]
+    },
+    {
+      "id": "TS-M-004",
+      "name": "No Motor Vehicles",
+      "category": "mandatory",
+      "meaning": "Motor vehicles are prohibited beyond the sign where the restriction applies.",
+      "image_asset": "TS-M-004.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-REG-006",
+        "P2-REG-010",
+        "P2-COMP-004"
+      ]
+    },
+    {
+      "id": "TS-M-005",
+      "name": "No Overtaking",
+      "category": "mandatory",
+      "meaning": "Overtaking is prohibited where the restriction applies.",
+      "image_asset": "TS-M-005.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-REG-006",
+        "P2-REG-010",
+        "P2-COMP-004"
+      ]
+    },
+    {
+      "id": "TS-M-006",
+      "name": "Maximum Speed Limit",
+      "category": "mandatory",
+      "meaning": "Do not exceed the speed shown on the sign.",
+      "image_asset": "TS-M-006.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-M-007",
+      "name": "No Parking",
+      "category": "mandatory",
+      "meaning": "Parking is prohibited where this restriction applies.",
+      "image_asset": "TS-M-007.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-REG-006",
+        "P2-REG-010",
+        "P2-COMP-004"
+      ]
+    },
+    {
+      "id": "TS-M-008",
+      "name": "No Stopping",
+      "category": "mandatory",
+      "meaning": "Stopping is prohibited where this restriction applies.",
+      "image_asset": "TS-M-008.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-REG-006",
+        "P2-REG-010",
+        "P2-COMP-004"
+      ]
+    },
+    {
+      "id": "TS-M-009",
+      "name": "Compulsory Keep Left",
+      "category": "mandatory",
+      "meaning": "Pass to the left of the traffic island or obstruction as indicated.",
+      "image_asset": "TS-M-009.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-M-010",
+      "name": "Compulsory Ahead",
+      "category": "mandatory",
+      "meaning": "Proceed straight ahead in the direction indicated by the sign.",
+      "image_asset": "TS-M-010.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-001",
+      "name": "Left Hand Curve",
+      "category": "warning",
+      "meaning": "A left-hand curve is ahead.",
+      "image_asset": "TS-W-001.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-002",
+      "name": "Right Hand Curve",
+      "category": "warning",
+      "meaning": "A right-hand curve is ahead.",
+      "image_asset": "TS-W-002.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002",
+        "P2-MARK-003"
+      ]
+    },
+    {
+      "id": "TS-W-003",
+      "name": "Hairpin Bend",
+      "category": "warning",
+      "meaning": "A very sharp bend is ahead; slow down and proceed carefully.",
+      "image_asset": "TS-W-003.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-004",
+      "name": "Narrow Road Ahead",
+      "category": "warning",
+      "meaning": "The road narrows ahead; reduce speed and be prepared for conflicting traffic.",
+      "image_asset": "TS-W-004.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-005",
+      "name": "Narrow Bridge Ahead",
+      "category": "warning",
+      "meaning": "A narrow bridge is ahead; approach with care.",
+      "image_asset": "TS-W-005.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-006",
+      "name": "Pedestrian Crossing Ahead",
+      "category": "warning",
+      "meaning": "A pedestrian crossing is ahead; slow down and be prepared to yield as required.",
+      "image_asset": "TS-W-006.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-007",
+      "name": "School Ahead",
+      "category": "warning",
+      "meaning": "A school or school-zone activity is ahead; exercise extra caution.",
+      "image_asset": "TS-W-007.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-008",
+      "name": "Men at Work",
+      "category": "warning",
+      "meaning": "Road works or workmen may be present ahead; slow down and follow temporary controls.",
+      "image_asset": "TS-W-008.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-LIC-001",
+        "P2-LIC-003",
+        "P2-LIC-004",
+        "P2-LIC-006"
+      ]
+    },
+    {
+      "id": "TS-W-009",
+      "name": "Slippery Road",
+      "category": "warning",
+      "meaning": "The road surface may be slippery; reduce speed and avoid sudden manoeuvres.",
+      "image_asset": "TS-W-009.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-W-010",
+      "name": "Speed Breaker",
+      "category": "warning",
+      "meaning": "A speed breaker/hump is ahead; slow down before crossing it.",
+      "image_asset": "TS-W-010.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-001",
+      "name": "Parking",
+      "category": "informatory",
+      "meaning": "Identifies a parking facility or designated parking location.",
+      "image_asset": "TS-I-001.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-002",
+      "name": "Hospital",
+      "category": "informatory",
+      "meaning": "Indicates a hospital or hospital facility.",
+      "image_asset": "TS-I-002.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-003",
+      "name": "First Aid Post",
+      "category": "informatory",
+      "meaning": "Indicates a first-aid facility.",
+      "image_asset": "TS-I-003.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-004",
+      "name": "Filling Station",
+      "category": "informatory",
+      "meaning": "Indicates a petrol/fuel filling station.",
+      "image_asset": "TS-I-004.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-005",
+      "name": "Bus Stop",
+      "category": "informatory",
+      "meaning": "Identifies a designated bus stop.",
+      "image_asset": "TS-I-005.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-006",
+      "name": "Taxi Stand",
+      "category": "informatory",
+      "meaning": "Identifies a location where taxis may wait when not engaged.",
+      "image_asset": "TS-I-006.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-007",
+      "name": "Police Station",
+      "category": "informatory",
+      "meaning": "Indicates a nearby police station.",
+      "image_asset": "TS-I-007.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-EQP-003",
+        "P2-SIGN-001",
+        "P2-SIGN-002"
+      ]
+    },
+    {
+      "id": "TS-I-008",
+      "name": "No Through Road",
+      "category": "informatory",
+      "meaning": "Indicates that the road ahead does not provide through passage.",
+      "image_asset": "TS-I-008.svg",
+      "source_ids": [
+        "SRC-IRC67",
+        "SRC-MORTH-SIGNS"
+      ],
+      "verification_status": "source_mapped",
+      "valid_from": null,
+      "valid_to": null,
+      "visual_note": "Educational vector rendering; not a substitute for the current prescribed road-sign artwork.",
+      "rule_ids": [
+        "P2-REG-005",
+        "P2-REG-006",
+        "P2-REG-010",
+        "P2-COMP-004"
+      ]
+    }
+  ]
+}

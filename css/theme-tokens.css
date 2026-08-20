@@ -1,0 +1,147 @@
+/* Theme token layer — every visual property that changes per theme.
+   The [data-theme] selectors in theme-*.css override these defaults.
+   app.css reads only these variables, never raw hex. */
+
+:root {
+  /* Core palette */
+  --th-bg: #f3f6fa;
+  --th-text: #172033;
+  --th-muted: #667085;
+  --th-card: #fff;
+  --th-card-border: #e8ecf2;
+  --th-card-shadow: 0 3px 10px rgba(0,0,0,.04);
+
+  /* Accents */
+  --th-primary: #163b75;
+  --th-accent: #f59e0b;
+  --th-accent-text: #172033;
+  --th-ok: #087f5b;
+  --th-bad: #b42318;
+
+  /* Lines & surfaces */
+  --th-line: #e5e7eb;
+  --th-soft: #f8fafc;
+  --th-surface: #162033;
+  --th-surface-2: #1c2840;
+  --th-border: #2d3f5c;
+  --th-glow: rgba(59,130,246,.2);
+
+  /* Header */
+  --th-header-bg: linear-gradient(180deg,#162033 0%,#0f1729 100%);
+  --th-header-text: #fff;
+  --th-header-muted: #94a3b8;
+  --th-header-border: #2d3f5c;
+
+  /* Nav */
+  --th-nav-bg: #fff;
+  --th-nav-border: #e5e7eb;
+  --th-nav-text: #667085;
+  --th-nav-active: #163b75;
+
+  /* Page hero */
+  --th-hero-bg: linear-gradient(180deg,#162033 0%,#0f1729 100%);
+  --th-hero-text: #fff;
+  --th-hero-muted: #c7d2e4;
+  --th-hero-kicker: #93c5fd;
+  --th-hero-meta-bg: #1c2840;
+  --th-hero-meta-border: #2d3f5c;
+  --th-hero-meta-text: #bfdbfe;
+
+  /* Mission Control home card */
+  --th-mc-bg: linear-gradient(180deg,#162033 0%,#0f1729 100%);
+  --th-mc-border: #2d3f5c;
+  --th-mc-text: #eef2f8;
+  --th-mc-kicker: #93c5fd;
+  --th-mc-copy: #c7d2e4;
+  --th-mc-tile-bg: #1c2840;
+  --th-mc-tile-border: #2d3f5c;
+  --th-mc-tile-hover-bg: #22324f;
+  --th-mc-tile-hover-border: #3b82f6;
+  --th-mc-ring-track: #1c2840;
+  --th-mc-ring-fill: #3b82f6;
+  --th-mc-ring-glow: rgba(59,130,246,.2);
+
+  /* Pill / badge */
+  --th-pill-bg: #eef2ff;
+  --th-pill-text: #163b75;
+  --th-badge-bg: #eef4ff;
+  --th-badge-text: #163b75;
+  --th-badge-border: #c7d9f5;
+
+  /* Inputs */
+  --th-input-bg: #fff;
+  --th-input-border: #d0d5dd;
+  --th-input-text: #172033;
+
+  /* Options (exam) */
+  --th-option-bg: #f8fafc;
+  --th-option-border: #d0d5dd;
+  --th-option-hover-bg: #eef4ff;
+  --th-option-hover-border: #163b75;
+  --th-option-correct-bg: #ecfdf3;
+  --th-option-correct-border: #12b76a;
+  --th-option-wrong-bg: #fef3f2;
+  --th-option-wrong-border: #f04438;
+
+  /* Signs / signals / cross cards */
+  --th-sign-bg: #fff;
+  --th-sign-border: #eaecf0;
+  --th-sign-hover-border: #c7d2e4;
+  --th-signal-head-bg: #252b36;
+
+  /* Notice / info blocks */
+  --th-notice-bg: #fff8e7;
+  --th-notice-border: #f59e0b;
+  --th-ok-bg: #ecfdf3;
+  --th-ok-border: #087f5b;
+  --th-bad-bg: #fef3f2;
+  --th-bad-border: #b42318;
+
+  /* Progress bar */
+  --th-progress-track: #e2e8f0;
+  --th-progress-fill: linear-gradient(90deg,#3b82f6,#60a5fa);
+
+  /* Quality badge */
+  --th-quality-bg: #fff8e7;
+  --th-quality-text: #9a6700;
+
+  /* Section head count */
+  --th-count-bg: #eef4ff;
+  --th-count-text: #163b75;
+
+  /* Architecture badge */
+  --th-arch-bg: #eef4ff;
+  --th-arch-text: #163b75;
+
+  /* Mission toggles */
+  --th-mission-bg: #f8fafc;
+  --th-mission-border: #e5e7eb;
+  --th-mission-done-bg: #ecfdf3;
+  --th-mission-done-border: #12b76a;
+  --th-check-border: #d0d5dd;
+  --th-check-done-bg: #12b76a;
+
+  /* Step / timeline */
+  --th-step-bg: #fafbfc;
+  --th-step-border: #e5e7eb;
+  --th-stepno-bg: #163b75;
+
+  /* Service links */
+  --th-service-bg: #f8fafc;
+  --th-service-border: #e5e7eb;
+  --th-service-title: #163b75;
+  --th-service-ok: #087f5b;
+
+  /* Exam start button glow */
+  --th-accent-glow: rgba(245,158,11,.35);
+
+  /* Theme-color for PWA */
+  --th-meta-color: #163b75;
+
+  /* Button text */
+  --th-btn-text: #fff;
+
+  /* Animation intensity — themes can dial this up/down */
+  --th-transition-speed: .15s;
+  --th-hover-lift: 0;
+}

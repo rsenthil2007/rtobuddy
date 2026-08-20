@@ -1,0 +1,18 @@
+# Archives / local packs
+*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Python / caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local env / secrets
+.env
+.env.*

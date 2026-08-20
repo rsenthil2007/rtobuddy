@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Slippery Road">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<polygon points="120,24 204,188 36,188" fill="#fff" stroke="#c62828" stroke-width="12"/>
+<path d="M70 142c25-25 43 25 68 0s42 25 57 0M70 160c25-25 43 25 68 0s42 25 57 0" fill="none" stroke="#111" stroke-width="9"/>
+<g fill="#111">
+<circle cx="158" cy="96" r="8"/>
+<path d="M150 108l-8 24m8-24l14 22m-14-14l-18 12m18-12l16-2"/>
+</g>
+</svg>

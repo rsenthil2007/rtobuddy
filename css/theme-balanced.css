@@ -1,0 +1,15 @@
+/* Balanced — dark professional, current default */
+[data-theme="balanced"] {
+  --th-bg: #f3f6fa;
+  --th-text: #172033;
+  --th-muted: #667085;
+  --th-card: #fff;
+  --th-card-border: #e8ecf2;
+  --th-card-shadow: 0 3px 10px rgba(0,0,0,.04);
+  --th-primary: #163b75;
+  --th-accent: #f59e0b;
+  --th-accent-text: #172033;
+  --th-meta-color: #163b75;
+  --th-transition-speed: .15s;
+  --th-hover-lift: 0;
+}

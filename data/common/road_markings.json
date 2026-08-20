@@ -1,0 +1,475 @@
+{
+  "dataset": {
+    "version": "2026.08.v6",
+    "count": 25,
+    "status": "reviewed"
+  },
+  "markings": [
+    {
+      "id": "RM-001",
+      "name": "Centre Line",
+      "category": "centre_line",
+      "meaning": "Separates opposing streams of traffic; follow the applicable road marking and traffic rules.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-002",
+      "name": "Broken Centre Line",
+      "category": "centre_line",
+      "meaning": "A broken centre line generally indicates that crossing may be permitted when safe and otherwise lawful.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-003",
+      "name": "Solid Centre Line",
+      "category": "centre_line",
+      "meaning": "A solid centre line indicates a restriction on crossing that line; follow the applicable marking and road conditions.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-004",
+      "name": "Double Solid Centre Line",
+      "category": "centre_line",
+      "meaning": "Double solid lines indicate a stronger restriction against crossing between opposing traffic streams.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001"
+      ]
+    },
+    {
+      "id": "RM-005",
+      "name": "Lane Line",
+      "category": "lane_line",
+      "meaning": "Separates lanes travelling in the same direction.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-004",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-006",
+      "name": "Broken Lane Line",
+      "category": "lane_line",
+      "meaning": "Marks lane separation where a lane change may be possible when safe and lawful.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-004",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-007",
+      "name": "Edge Line",
+      "category": "edge_line",
+      "meaning": "Marks the edge of the carriageway.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-REG-010",
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-008",
+      "name": "Stop Line",
+      "category": "stop_line",
+      "meaning": "Indicates where a vehicle should stop at a controlled stop point.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-MARK-004",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-009",
+      "name": "Give-Way Line",
+      "category": "give_way_line",
+      "meaning": "Indicates where a driver should yield according to the applicable give-way control.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-010",
+      "name": "Zebra Crossing",
+      "category": "pedestrian",
+      "meaning": "Marks a pedestrian crossing area; drivers must approach with appropriate caution and yield as required.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-REG-010",
+        "P2-MARK-003",
+        "P2-DRV-005"
+      ]
+    },
+    {
+      "id": "RM-011",
+      "name": "Pedestrian Crossing Approach Marking",
+      "category": "pedestrian",
+      "meaning": "Provides visual guidance approaching a pedestrian crossing.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-002",
+        "P2-MARK-003",
+        "P2-DRV-005",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-012",
+      "name": "Directional Arrow — Straight",
+      "category": "arrow",
+      "meaning": "Indicates permitted or intended straight-ahead movement for the lane.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-DRV-009"
+      ]
+    },
+    {
+      "id": "RM-013",
+      "name": "Directional Arrow — Left",
+      "category": "arrow",
+      "meaning": "Indicates permitted or intended left movement for the lane.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-DRV-009"
+      ]
+    },
+    {
+      "id": "RM-014",
+      "name": "Directional Arrow — Right",
+      "category": "arrow",
+      "meaning": "Indicates permitted or intended right movement for the lane.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-DRV-009"
+      ]
+    },
+    {
+      "id": "RM-015",
+      "name": "Straight-or-Left Arrow",
+      "category": "arrow",
+      "meaning": "Indicates that the lane is intended for straight or left movement.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-DRV-009"
+      ]
+    },
+    {
+      "id": "RM-016",
+      "name": "Straight-or-Right Arrow",
+      "category": "arrow",
+      "meaning": "Indicates that the lane is intended for straight or right movement.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-DRV-009"
+      ]
+    },
+    {
+      "id": "RM-017",
+      "name": "Yellow Edge/Restriction Line",
+      "category": "restriction",
+      "meaning": "Yellow markings may indicate a stopping/parking restriction depending on the applicable road standard and location.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-DRV-010"
+      ]
+    },
+    {
+      "id": "RM-018",
+      "name": "No-Parking Marking",
+      "category": "parking",
+      "meaning": "Marks a location where parking is restricted according to the applicable sign/marking scheme.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-REG-010",
+        "P2-EQP-006",
+        "P2-MARK-001",
+        "P2-MARK-002"
+      ]
+    },
+    {
+      "id": "RM-019",
+      "name": "No-Stopping Marking",
+      "category": "parking",
+      "meaning": "Marks a location where stopping is restricted according to the applicable sign/marking scheme.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-REG-010",
+        "P2-EQP-006",
+        "P2-MARK-001",
+        "P2-MARK-002"
+      ]
+    },
+    {
+      "id": "RM-020",
+      "name": "Box Junction",
+      "category": "junction",
+      "meaning": "A marked junction area intended to keep the intersection clear; do not enter unless your exit is clear where the applicable rule requires it.",
+      "exam_relevance": "high",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-LIC-001",
+        "P2-LIC-002",
+        "P2-LIC-003",
+        "P2-LIC-004"
+      ]
+    },
+    {
+      "id": "RM-021",
+      "name": "Hatched Area",
+      "category": "channelisation",
+      "meaning": "Separates or channels traffic and should not normally be entered except where permitted by the applicable road marking.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": []
+    },
+    {
+      "id": "RM-022",
+      "name": "Chevron/Diagonal Area",
+      "category": "channelisation",
+      "meaning": "Guides traffic around an obstruction or traffic island; avoid entering the marked area unless permitted.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": []
+    },
+    {
+      "id": "RM-023",
+      "name": "Bus Stop Marking",
+      "category": "public_transport",
+      "meaning": "Identifies a designated stopping area for buses where provided.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-EQP-006",
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-MARK-003"
+      ]
+    },
+    {
+      "id": "RM-024",
+      "name": "Cycle Lane Marking",
+      "category": "cycle",
+      "meaning": "Identifies a lane or space intended for cycles where provided.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-EQP-006",
+        "P2-SAFE-003",
+        "P2-SAFE-004",
+        "P2-MARK-001"
+      ]
+    },
+    {
+      "id": "RM-025",
+      "name": "Parking Bay Marking",
+      "category": "parking",
+      "meaning": "Defines a marked parking space; use remains subject to signs and local restrictions.",
+      "exam_relevance": "medium",
+      "image_asset": null,
+      "verification_status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "rule_ids": [
+        "P2-EQP-006",
+        "P2-MARK-001",
+        "P2-MARK-002",
+        "P2-MARK-003"
+      ]
+    }
+  ]
+}

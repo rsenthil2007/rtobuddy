@@ -1,0 +1,172 @@
+[
+  {
+    "id": "SRC-PARIVAHAN-FORM2",
+    "authority": "Ministry of Road Transport & Highways / Parivahan Sewa",
+    "title": "Form 2 — Application for Learner's Licence / Driving Licence and document list",
+    "url": "https://parivahan.gov.in/parivahan/sites/default/files/DownloadForm/cmvr/FORM-2.pdf",
+    "jurisdiction": "national",
+    "source_type": "government_form",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-PARIVAHAN-FORM1",
+    "authority": "Ministry of Road Transport & Highways / Parivahan Sewa",
+    "title": "Form 1 — Application-cum-Declaration as to Physical Fitness",
+    "url": "https://parivahan.gov.in/parivahan/sites/default/files/DownloadForm/form%201.pdf",
+    "jurisdiction": "national",
+    "source_type": "government_form",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-PARIVAHAN-FORM1A",
+    "authority": "Ministry of Road Transport & Highways / Parivahan Sewa",
+    "title": "Form 1A — Medical Certificate",
+    "url": "https://parivahan.gov.in/sites/default/files/DownloadForm/cmvr/FORM-1A.pdf",
+    "jurisdiction": "national",
+    "source_type": "government_form",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-PARIVAHAN-LL",
+    "authority": "Ministry of Road Transport & Highways / Parivahan Sewa",
+    "title": "Learner Licence / Sarathi guidance",
+    "url": "https://parivahan.gov.in/",
+    "jurisdiction": "national",
+    "source_type": "government_portal",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-PARIVAHAN-MPARIVAHAN",
+    "authority": "Ministry of Road Transport & Highways / NIC",
+    "title": "mParivahan — Sarathi, Vahan and eChallan services",
+    "url": "https://mparivahan.parivahan.gov.in/",
+    "jurisdiction": "national",
+    "source_type": "government_portal",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-PARIVAHAN-PRINTLL",
+    "authority": "Ministry of Road Transport & Highways / Parivahan Sewa",
+    "title": "How to print a Learner Licence",
+    "url": "https://parivahan.gov.in/parivahan/en/content/i-am-unable-print-learner-license",
+    "jurisdiction": "national",
+    "source_type": "government_guidance",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-PARIVAHAN-PERMDL",
+    "authority": "Ministry of Road Transport & Highways / Parivahan Sewa",
+    "title": "Permanent Driving Licence — procedure guidance",
+    "url": "https://staging.parivahan.gov.in/parivahan/en/print/pdf/node/7",
+    "jurisdiction": "national",
+    "source_type": "government_guidance",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-TN-EDISTRICT",
+    "authority": "Government of Tamil Nadu — Information Technology Department",
+    "title": "e-District service catalogue including Transport Department licence services",
+    "url": "https://it.tn.gov.in/en/TNEGA/e-District",
+    "jurisdiction": "TN",
+    "source_type": "government_portal",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-TN-DLPROJECT",
+    "authority": "Government of Tamil Nadu — Information Technology Department",
+    "title": "Tamil Nadu Driving Licence Project",
+    "url": "https://www.it.tn.gov.in/en/ELCOT/Driving_Licence_Project",
+    "jurisdiction": "TN",
+    "source_type": "government_information",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-MVA",
+    "authority": "Government of India / India Code",
+    "title": "Motor Vehicles Act, 1988",
+    "url": "https://www.indiacode.nic.in/handle/123456789/12879",
+    "jurisdiction": "national",
+    "source_type": "central_act",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-CMVR",
+    "authority": "Government of India / India Code",
+    "title": "Central Motor Vehicles Rules, 1989",
+    "url": "https://upload.indiacode.nic.in/showfile?actid=AC_CEN_30_42_00009_198859_1517807326286&filename=Cmvr1989.pdf&type=rule",
+    "jurisdiction": "national",
+    "source_type": "central_rules",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-IRC67",
+    "authority": "Indian Roads Congress / referenced by MoRTH",
+    "title": "IRC:67 Code of Practice for Road Signs",
+    "url": null,
+    "jurisdiction": "national",
+    "source_type": "road_sign_standard",
+    "last_checked": "2026-08-18",
+    "verification_status": "standard_referenced"
+  },
+  {
+    "id": "SRC-MORTH-SIGNS",
+    "authority": "Ministry of Road Transport & Highways",
+    "title": "MoRTH road-sign and pavement-marking guidance",
+    "url": "https://morth.nic.in/sites/default/files/comprehensive_compendium_circular/602.58%20Amendment%20to%20Guidelines%20for%20provision%20on%20Expressway%20and%20National%20Highways_24.12.2024.pdf",
+    "jurisdiction": "national",
+    "source_type": "government_guideline",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-PARIVAHAN",
+    "authority": "Ministry of Road Transport & Highways / Parivahan Sewa",
+    "title": "Parivahan Sewa — national transport services portal",
+    "url": "https://parivahan.gov.in/",
+    "jurisdiction": "national",
+    "source_type": "government_portal",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-ROR-1989",
+    "authority": "Government of India / Ministry of Road Transport & Highways",
+    "title": "Rules of the Road Regulations, 1989",
+    "url": "https://www.indiacode.nic.in/",
+    "jurisdiction": "national",
+    "source_type": "central_regulation",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_mapped"
+  },
+  {
+    "id": "SRC-KA-MVTA",
+    "authority": "Government of Karnataka / India Code",
+    "title": "Karnataka Motor Vehicles Taxation Act, 1957",
+    "url": "https://upload.indiacode.nic.in/showfile?actid=AC_KA_71_588_00001_35_1551338921071&filename=35_of_1957%28e%29_18_of_2022.pdf&type=actfile",
+    "jurisdiction": "Karnataka",
+    "source_type": "state_act",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  },
+  {
+    "id": "SRC-KA-TRANSPORT",
+    "authority": "Government of Karnataka Transport Department",
+    "title": "Karnataka Transport Department",
+    "url": "https://transport.karnataka.gov.in/english",
+    "jurisdiction": "Karnataka",
+    "source_type": "state_transport_portal",
+    "last_checked": "2026-08-18",
+    "verification_status": "source_verified"
+  }
+]

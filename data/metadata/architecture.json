@@ -1,0 +1,50 @@
+{
+  "version": "5.1.0",
+  "flow": [
+    {
+      "order": 1,
+      "layer": "source_catalogue",
+      "path": "data/common/sources.json",
+      "purpose": "Authoritative provenance for every legal-sensitive record."
+    },
+    {
+      "order": 2,
+      "layer": "national_baseline",
+      "path": "data/common/*.json",
+      "purpose": "Common India-wide educational knowledge, signs, markings, licence flow and quiz content."
+    },
+    {
+      "order": 3,
+      "layer": "jurisdiction_overlay",
+      "path": "data/jurisdictions/*.json",
+      "purpose": "State/UT overrides, local rules, dynamic values and official service links."
+    },
+    {
+      "order": 4,
+      "layer": "resolver",
+      "path": "js/jurisdiction.js",
+      "purpose": "Merge baseline + selected jurisdiction without silently replacing common content."
+    },
+    {
+      "order": 5,
+      "layer": "presentation",
+      "path": "js/*.js + index.html",
+      "purpose": "Render Home, Learn, Rules, Exam and Tools from the resolved dataset."
+    },
+    {
+      "order": 6,
+      "layer": "learning_feedback",
+      "path": "localStorage:rtobuddy.v5.attempts",
+      "purpose": "Store local practice attempts and weak-area signals only; no legal source data is mutated."
+    }
+  ],
+  "principles": [
+    "UI never hardcodes legal facts that belong in JSON.",
+    "National baseline and jurisdiction data remain separate.",
+    "Jurisdiction values are shown only with their verification state.",
+    "Dynamic values such as fees, penalties and speed limits require jurisdiction-specific source verification.",
+    "Traffic signs are data records plus dedicated assets; the same asset is never reused for unrelated signs.",
+    "A quiz question references its sign/rule/marking by ID where applicable.",
+    "Official links are navigation aids, not evidence that an action has been completed."
+  ]
+}

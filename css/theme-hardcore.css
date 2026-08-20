@@ -1,0 +1,165 @@
+/* Hardcore — neon cyberpunk gaming */
+[data-theme="hardcore"] {
+  --th-bg: #0a0e17;
+  --th-text: #e0ffe0;
+  --th-muted: #6ee7b7;
+  --th-card: #111827;
+  --th-card-border: #00ffc844;
+  --th-card-shadow: 0 0 18px rgba(0,255,200,.08), 0 4px 12px rgba(0,0,0,.4);
+
+  --th-primary: #00ffc8;
+  --th-accent: #00ffc8;
+  --th-accent-text: #0a0e17;
+  --th-ok: #22d3ee;
+  --th-bad: #f43f5e;
+
+  --th-line: #1e293b;
+  --th-soft: #0f172a;
+  --th-surface: #0d1117;
+  --th-surface-2: #151d2b;
+  --th-border: #00ffc833;
+  --th-glow: rgba(0,255,200,.25);
+
+  --th-header-bg: linear-gradient(180deg,#0d1117 0%,#060a10 100%);
+  --th-header-text: #00ffc8;
+  --th-header-muted: #6ee7b7;
+  --th-header-border: #00ffc844;
+
+  --th-nav-bg: #0d1117;
+  --th-nav-border: #00ffc833;
+  --th-nav-text: #6ee7b7;
+  --th-nav-active: #00ffc8;
+
+  --th-hero-bg: linear-gradient(180deg,#0d1117 0%,#060a10 100%);
+  --th-hero-text: #00ffc8;
+  --th-hero-muted: #6ee7b7;
+  --th-hero-kicker: #00ffc8;
+  --th-hero-meta-bg: #151d2b;
+  --th-hero-meta-border: #00ffc844;
+  --th-hero-meta-text: #00ffc8;
+
+  --th-mc-bg: linear-gradient(135deg,#0d1117 0%,#0a1a1a 50%,#0d1117 100%);
+  --th-mc-border: #00ffc844;
+  --th-mc-text: #e0ffe0;
+  --th-mc-kicker: #00ffc8;
+  --th-mc-copy: #6ee7b7;
+  --th-mc-tile-bg: #151d2b;
+  --th-mc-tile-border: #00ffc833;
+  --th-mc-tile-hover-bg: #1a2e2e;
+  --th-mc-tile-hover-border: #00ffc8;
+  --th-mc-ring-track: #151d2b;
+  --th-mc-ring-fill: #00ffc8;
+  --th-mc-ring-glow: rgba(0,255,200,.35);
+
+  --th-pill-bg: #00ffc81a;
+  --th-pill-text: #00ffc8;
+  --th-badge-bg: #00ffc81a;
+  --th-badge-text: #00ffc8;
+  --th-badge-border: #00ffc844;
+
+  --th-input-bg: #151d2b;
+  --th-input-border: #00ffc844;
+  --th-input-text: #e0ffe0;
+
+  --th-option-bg: #151d2b;
+  --th-option-border: #00ffc833;
+  --th-option-hover-bg: #1a2e2e;
+  --th-option-hover-border: #00ffc8;
+  --th-option-correct-bg: #064e3b;
+  --th-option-correct-border: #00ffc8;
+  --th-option-wrong-bg: #4c0519;
+  --th-option-wrong-border: #f43f5e;
+
+  --th-sign-bg: #111827;
+  --th-sign-border: #1e293b;
+  --th-sign-hover-border: #00ffc888;
+  --th-signal-head-bg: #0a0e17;
+
+  --th-notice-bg: #1a1500;
+  --th-notice-border: #eab308;
+  --th-ok-bg: #052e16;
+  --th-ok-border: #22d3ee;
+  --th-bad-bg: #4c0519;
+  --th-bad-border: #f43f5e;
+
+  --th-progress-track: #1e293b;
+  --th-progress-fill: linear-gradient(90deg,#00ffc8,#22d3ee);
+
+  --th-quality-bg: #1a1500;
+  --th-quality-text: #eab308;
+
+  --th-count-bg: #00ffc81a;
+  --th-count-text: #00ffc8;
+
+  --th-arch-bg: #00ffc81a;
+  --th-arch-text: #00ffc8;
+
+  --th-mission-bg: #151d2b;
+  --th-mission-border: #1e293b;
+  --th-mission-done-bg: #052e16;
+  --th-mission-done-border: #00ffc8;
+  --th-check-border: #00ffc844;
+  --th-check-done-bg: #00ffc8;
+
+  --th-step-bg: #151d2b;
+  --th-step-border: #1e293b;
+  --th-stepno-bg: #00ffc8;
+
+  --th-service-bg: #151d2b;
+  --th-service-border: #1e293b;
+  --th-service-title: #00ffc8;
+  --th-service-ok: #22d3ee;
+
+  --th-btn-text: #0a0e17;
+  --th-accent-glow: rgba(0,255,200,.3);
+  --th-meta-color: #0a0e17;
+  --th-transition-speed: .2s;
+  --th-hover-lift: -2px;
+}
+
+/* Hardcore-specific neon effects */
+[data-theme="hardcore"] .app-header {
+  box-shadow: 0 0 20px rgba(0,255,200,.15), 0 2px 12px rgba(0,0,0,.5);
+}
+[data-theme="hardcore"] .app-header h1 {
+  text-shadow: 0 0 12px rgba(0,255,200,.6);
+}
+[data-theme="hardcore"] .card:hover {
+  box-shadow: 0 0 20px rgba(0,255,200,.12), 0 4px 16px rgba(0,0,0,.4);
+  transform: translateY(var(--th-hover-lift));
+}
+[data-theme="hardcore"] .page-hero {
+  box-shadow: 0 0 30px rgba(0,255,200,.1), 0 6px 20px rgba(0,0,0,.3);
+}
+[data-theme="hardcore"] .mc-home-card {
+  box-shadow: 0 0 30px rgba(0,255,200,.1), 0 8px 24px rgba(0,0,0,.4);
+}
+[data-theme="hardcore"] .accent,
+[data-theme="hardcore"] button.accent {
+  box-shadow: 0 0 16px rgba(0,255,200,.35);
+  text-shadow: 0 0 6px rgba(0,255,200,.4);
+}
+[data-theme="hardcore"] .mc-readiness-ring {
+  box-shadow: 0 0 24px rgba(0,255,200,.4);
+}
+[data-theme="hardcore"] .mc-quick-tile:hover {
+  box-shadow: 0 0 14px rgba(0,255,200,.25);
+}
+[data-theme="hardcore"] .sign:hover {
+  box-shadow: 0 0 14px rgba(0,255,200,.15);
+}
+[data-theme="hardcore"] .option:hover:not(:disabled) {
+  box-shadow: 0 0 10px rgba(0,255,200,.15);
+}
+[data-theme="hardcore"] .app-nav {
+  box-shadow: 0 -2px 16px rgba(0,255,200,.1);
+}
+[data-theme="hardcore"] .app-nav button.active {
+  text-shadow: 0 0 8px rgba(0,255,200,.5);
+}
+[data-theme="hardcore"] .stepno {
+  color: #0a0e17;
+}
+[data-theme="hardcore"] .guide-num {
+  color: #0a0e17;
+}

@@ -1,0 +1,2177 @@
+{
+  "dataset": {
+    "name": "RTOBuddy India Knowledge Base - National Baseline",
+    "version": "2026.08.v6",
+    "generated_on": "2026-08-18",
+    "scope": "India national baseline",
+    "purpose": [
+      "learner training",
+      "RTO exam preparation",
+      "owner guidance",
+      "quiz generation",
+      "state overlay foundation"
+    ],
+    "architecture": "national_baseline_plus_jurisdiction_overlay",
+    "count": 75,
+    "source_policy": "Each legal-sensitive record must resolve to a source ID present in data/common/sources.json."
+  },
+  "rules": [
+    {
+      "id": "P2-LIC-001",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "learner_eligibility",
+      "title": "Learner licence application",
+      "summary": "Learner licence applications should use the prescribed process and forms and satisfy age, class and medical/fitness requirements applicable to the applicant.",
+      "applies_to": [
+        "learner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA ss.3-4; CMVR; Parivahan Forms 1/1A/2",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-LIC-002",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "learner_validity",
+      "title": "Learner licence validity",
+      "summary": "A learner licence is generally effective for six months from issue, subject to the Act and applicable rules.",
+      "applies_to": [
+        "learner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.14",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-LIC-003",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "learner_conditions",
+      "title": "Learner driving conditions",
+      "summary": "A learner must comply with CMVR Rule 3 and applicable conditions, including prescribed supervision and learner display requirements.",
+      "applies_to": [
+        "learner",
+        "owner",
+        "trainer"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "CMVR Rule 3",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-LIC-004",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "driving_test",
+      "title": "Driving licence test",
+      "summary": "Applicants for a driving licence are required to satisfy the statutory driving test requirements for the relevant vehicle class.",
+      "applies_to": [
+        "learner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.9; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-LIC-005",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "forms",
+      "title": "Core licence forms",
+      "summary": "Parivahan provides Form 1/1A, Form 2, Form 4, Form 8 and Form 9 for specified driving-licence services.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "Parivahan official forms",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-LIC-006",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "renewal",
+      "title": "Driving licence renewal",
+      "summary": "Renewal is handled under section 15 and applicable rules; validity and medical requirements depend on licence category and applicant circumstances.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.15; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-LIC-007",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "addition_class",
+      "title": "Addition of vehicle class",
+      "summary": "A licence holder seeking an additional class should use the prescribed process and satisfy the applicable test/requirements.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.10; Parivahan Form 8",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-LIC-008",
+      "scope": "national",
+      "category": "licensing",
+      "subcategory": "international",
+      "title": "International Driving Permit",
+      "summary": "International driving permit issuance is governed by section 118/related rules and prescribed administrative procedures.",
+      "applies_to": [
+        "driver",
+        "traveller"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA; CMVR; Parivahan",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-001",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "new_vehicle",
+      "title": "New vehicle registration",
+      "summary": "A motor vehicle must be registered before use in a public place, subject to statutory exemptions.",
+      "applies_to": [
+        "owner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.39; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-002",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "forms",
+      "title": "Core registration forms",
+      "summary": "Parivahan lists Form 20 for registration, Form 26 for duplicate RC, Form 27 for new registration mark, and Forms 29/30 for ownership transfer.",
+      "applies_to": [
+        "owner",
+        "buyer",
+        "seller"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "Parivahan official forms",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-003",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "temporary_registration",
+      "title": "Temporary registration",
+      "summary": "Temporary registration is available subject to the conditions, period and procedure prescribed by the Act and rules.",
+      "applies_to": [
+        "owner",
+        "dealer"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.43; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-004",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "rc_duplicate",
+      "title": "Duplicate registration certificate",
+      "summary": "Loss or destruction of the registration certificate requires the prescribed duplicate-RC procedure.",
+      "applies_to": [
+        "owner"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "CMVR; Parivahan Form 26",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-005",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "assignment_mark",
+      "title": "New registration mark",
+      "summary": "Assignment of a new registration mark is governed by the Act/rules and prescribed application process.",
+      "applies_to": [
+        "owner"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "CMVR; Parivahan Form 27",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-006",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "nocs",
+      "title": "No Objection Certificate",
+      "summary": "Moving a registered vehicle to another registering authority/state may require the prescribed NOC process.",
+      "applies_to": [
+        "owner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.48; Parivahan Form 28",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-007",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "ownership_transfer",
+      "title": "Ownership transfer",
+      "summary": "Transfer of ownership must be reported and recorded using the prescribed procedure and forms.",
+      "applies_to": [
+        "seller",
+        "buyer",
+        "owner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.50; Parivahan Forms 29/30",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-008",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "address_change",
+      "title": "Change of address",
+      "summary": "A registered owner changing address must follow the prescribed registration-record update process.",
+      "applies_to": [
+        "owner"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.49; Parivahan Form 33",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-009",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "hypothecation",
+      "title": "Hypothecation entry/termination",
+      "summary": "Hire-purchase, lease or hypothecation entries and termination are recorded through prescribed procedures.",
+      "applies_to": [
+        "owner",
+        "financier"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.51; Parivahan Forms 34/35/36",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-REG-010",
+      "scope": "national",
+      "category": "registration",
+      "subcategory": "hsrp",
+      "title": "Registration mark display",
+      "summary": "Registration marks/plates must be displayed in the manner prescribed by CMVR and current notifications.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "CMVR Rule 50/51 and amendments",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-COMP-001",
+      "scope": "national",
+      "category": "compliance",
+      "subcategory": "insurance",
+      "title": "Third-party insurance",
+      "summary": "A motor vehicle used in a public place must comply with statutory third-party insurance requirements.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.146",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-COMP-002",
+      "scope": "national",
+      "category": "compliance",
+      "subcategory": "insurance_document",
+      "title": "Insurance evidence",
+      "summary": "Drivers/owners should carry or be able to produce legally accepted evidence of insurance as prescribed.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.158; rules",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-COMP-003",
+      "scope": "national",
+      "category": "compliance",
+      "subcategory": "puc",
+      "title": "Pollution Under Control",
+      "summary": "Vehicles are subject to applicable emission standards and PUC certification requirements; current certificate status can be checked through the official PUC system.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "CMVR Rule 115; PUC Parivahan",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-COMP-004",
+      "scope": "national",
+      "category": "compliance",
+      "subcategory": "puc_validity",
+      "title": "PUC validity varies by vehicle/category",
+      "summary": "PUC validity and test requirements must be taken from the current rules and certificate; do not hard-code one universal validity period without category context.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "CMVR Rule 115; PUC system",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-TRANS-001",
+      "scope": "national",
+      "category": "transport",
+      "subcategory": "road_tax",
+      "title": "Motor vehicle tax",
+      "summary": "Motor vehicle tax is administered under applicable State/UT law and therefore must be represented as a jurisdiction-specific dataset.",
+      "applies_to": [
+        "owner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "State/UT tax law",
+      "status": "state_overlay",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-TRANS-002",
+      "scope": "national",
+      "category": "transport",
+      "subcategory": "permit",
+      "title": "Transport vehicle permit",
+      "summary": "Transport vehicles generally require the applicable permit unless a statutory exemption applies.",
+      "applies_to": [
+        "transport_owner",
+        "transport_driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.66",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-TRANS-003",
+      "scope": "national",
+      "category": "transport",
+      "subcategory": "national_permit",
+      "title": "National permit",
+      "summary": "National permits are governed by section 88 and applicable Central/State rules and conditions.",
+      "applies_to": [
+        "transport_owner",
+        "transport_driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.88; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-TRANS-004",
+      "scope": "national",
+      "category": "transport",
+      "subcategory": "fitness",
+      "title": "Fitness certificate",
+      "summary": "Transport vehicles require a certificate of fitness and compliance with applicable testing requirements.",
+      "applies_to": [
+        "transport_owner",
+        "transport_driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.56; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-TRANS-005",
+      "scope": "national",
+      "category": "transport",
+      "subcategory": "permit_conditions",
+      "title": "Permit conditions",
+      "summary": "A permit holder/driver must comply with the conditions endorsed or prescribed for the permit.",
+      "applies_to": [
+        "transport_owner",
+        "transport_driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA Chapter V",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-EQP-001",
+      "scope": "national",
+      "category": "vehicle_equipment",
+      "subcategory": "brakes",
+      "title": "Braking system requirements",
+      "summary": "Vehicles must meet prescribed braking and safety-equipment requirements; owners should not use vehicles with unsafe braking systems.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "CMVR; MVA s.190",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-EQP-002",
+      "scope": "national",
+      "category": "vehicle_equipment",
+      "subcategory": "tyres",
+      "title": "Tyres and tread",
+      "summary": "Tyres must comply with applicable construction, condition and safety requirements; unsafe tyres should not be used.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-EQP-003",
+      "scope": "national",
+      "category": "vehicle_equipment",
+      "subcategory": "lights",
+      "title": "Lighting equipment",
+      "summary": "Required lamps, reflectors and signalling equipment are regulated by CMVR and applicable standards.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-EQP-004",
+      "scope": "national",
+      "category": "vehicle_equipment",
+      "subcategory": "mirrors",
+      "title": "Rear-view/indirect vision",
+      "summary": "Vehicles must comply with applicable rear-view/indirect-vision requirements.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-EQP-005",
+      "scope": "national",
+      "category": "vehicle_equipment",
+      "subcategory": "horn",
+      "title": "Horn equipment",
+      "summary": "Horn equipment and use are regulated; prohibited or unsafe horn configurations should not be used.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "CMVR; MVA s.194F",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-EQP-006",
+      "scope": "national",
+      "category": "vehicle_equipment",
+      "subcategory": "reflective_marking",
+      "title": "Reflective marking",
+      "summary": "Certain vehicle classes are required to display prescribed reflective markings/tapes.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SAFE-001",
+      "scope": "national",
+      "category": "safety",
+      "subcategory": "seat_belt",
+      "title": "Seat belts",
+      "summary": "Drivers and occupants must comply with applicable seat-belt requirements.",
+      "applies_to": [
+        "driver",
+        "passenger"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.194B; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SAFE-002",
+      "scope": "national",
+      "category": "safety",
+      "subcategory": "child_restraint",
+      "title": "Child restraint/safety",
+      "summary": "Current statutory requirements for children and safety belts/child restraint systems must be followed.",
+      "applies_to": [
+        "driver",
+        "parent"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.194B; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SAFE-003",
+      "scope": "national",
+      "category": "safety",
+      "subcategory": "helmet",
+      "title": "Protective headgear",
+      "summary": "Motorcycle drivers and pillion riders must comply with protective-headgear requirements and applicable exceptions.",
+      "applies_to": [
+        "two_wheeler_rider",
+        "pillion"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA ss.129,194D",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SAFE-004",
+      "scope": "national",
+      "category": "safety",
+      "subcategory": "pillion",
+      "title": "Pillion safety",
+      "summary": "Motorcycles must comply with statutory passenger/safety requirements.",
+      "applies_to": [
+        "two_wheeler_rider",
+        "pillion"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.128; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SAFE-005",
+      "scope": "national",
+      "category": "safety",
+      "subcategory": "mobile",
+      "title": "Mobile phone/distraction",
+      "summary": "Drivers must comply with current restrictions on handheld communication devices and distracted driving.",
+      "applies_to": [
+        "all_drivers"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA/CMVR/Driving Regulations; enforcement notifications",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SIGN-001",
+      "scope": "national",
+      "category": "traffic_signs",
+      "subcategory": "mandatory",
+      "title": "Mandatory signs",
+      "summary": "Learners must recognise mandatory/regulatory signs and obey them.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.119; Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SIGN-002",
+      "scope": "national",
+      "category": "traffic_signs",
+      "subcategory": "warning",
+      "title": "Cautionary/warning signs",
+      "summary": "Learners must recognise warning signs and adjust speed/behaviour to the hazard.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-SIGN-003",
+      "scope": "national",
+      "category": "traffic_signs",
+      "subcategory": "informatory",
+      "title": "Informatory signs",
+      "summary": "Learners should recognise signs giving route, facility and service information.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-MARK-001",
+      "scope": "national",
+      "category": "road_markings",
+      "subcategory": "centre_line",
+      "title": "Centre/lane lines",
+      "summary": "Drivers must interpret centre and lane markings and not cross continuous restrictions except where legally permitted.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-MARK-002",
+      "scope": "national",
+      "category": "road_markings",
+      "subcategory": "stop_line",
+      "title": "Stop line",
+      "summary": "Drivers approaching a stop line must stop as required by the applicable signal/sign/control.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.119; Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-MARK-003",
+      "scope": "national",
+      "category": "road_markings",
+      "subcategory": "pedestrian_crossing",
+      "title": "Pedestrian crossing markings",
+      "summary": "Drivers must approach marked pedestrian crossings with caution and comply with applicable right-of-way/control rules.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-MARK-004",
+      "scope": "national",
+      "category": "road_markings",
+      "subcategory": "yellow_lines",
+      "title": "Parking/stopping restrictions",
+      "summary": "Road markings/signs indicating parking or stopping restrictions must be obeyed.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA ss.117,119; local orders",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-001",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "following_distance",
+      "title": "Safe following distance",
+      "summary": "Drivers should maintain sufficient following distance for speed, visibility, traffic and road conditions.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-002",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "overtaking",
+      "title": "Safe overtaking",
+      "summary": "Overtaking must comply with prescribed side, visibility, signalling and safety requirements and must not be attempted where prohibited.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-003",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "intersections",
+      "title": "Intersections",
+      "summary": "Drivers must obey signals/signs and apply applicable priority/right-of-way rules at intersections.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA ss.118-121; Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-004",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "roundabout",
+      "title": "Roundabouts",
+      "summary": "Drivers must follow lane, signalling and priority rules applicable to roundabouts and local traffic control.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017; local signs",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-005",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "railway",
+      "title": "Railway crossings",
+      "summary": "Drivers must take prescribed precautions at unguarded railway crossings.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.131",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-006",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "emergency_vehicle",
+      "title": "Emergency vehicles",
+      "summary": "Drivers must give free passage to specified emergency vehicles when required.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.194E",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-007",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "night",
+      "title": "Night driving",
+      "summary": "Use required lighting, reduce speed for visibility and avoid glare-related unsafe driving.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017; CMVR",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-008",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "rain",
+      "title": "Rain/adverse weather",
+      "summary": "Adjust speed, visibility and braking behaviour for rain and other adverse conditions.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017; safety guidance",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-009",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "hill",
+      "title": "Hill driving",
+      "summary": "Use safe positioning, speed control and right-of-way practices appropriate to gradients and narrow roads.",
+      "applies_to": [
+        "learner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "Driving Regulations 2017",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-DRV-010",
+      "scope": "national",
+      "category": "driving",
+      "subcategory": "expressway",
+      "title": "Expressway discipline",
+      "summary": "Follow posted speed, lane, stopping, pedestrian and access restrictions on controlled-access roads.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.115/116; road authority notifications",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-001",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "drunk_driving",
+      "title": "Drunk/drugged driving",
+      "summary": "Driving under the influence in excess of statutory limits or while incapable of proper control is prohibited.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.185",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-002",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "dangerous_driving",
+      "title": "Dangerous driving",
+      "summary": "Dangerous driving is an offence and can lead to severe statutory consequences.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.184",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-003",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "racing",
+      "title": "Racing/trials of speed",
+      "summary": "Unauthorised racing or trials of speed in specified circumstances are offences.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.189",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-004",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "unsafe_vehicle",
+      "title": "Unsafe vehicle",
+      "summary": "Using a vehicle in an unsafe condition is regulated and punishable.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.190",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-005",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "unregistered",
+      "title": "Unregistered vehicle",
+      "summary": "Using a vehicle without required registration is an offence.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.192",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-006",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "no_permit",
+      "title": "No permit",
+      "summary": "Using a transport vehicle without required permit is an offence.",
+      "applies_to": [
+        "transport_owner",
+        "transport_driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.192A",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-007",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "overweight",
+      "title": "Overweight vehicle",
+      "summary": "Exceeding permissible weight limits is an offence and can trigger additional enforcement measures.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.194",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-008",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "excess_passengers",
+      "title": "Excess passengers",
+      "summary": "Carrying excess passengers is regulated and punishable.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.194A",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-009",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "helmet",
+      "title": "Helmet violation",
+      "summary": "Failure to comply with protective-headgear requirements attracts statutory consequences.",
+      "applies_to": [
+        "two_wheeler_rider",
+        "owner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.194D",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-010",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "insurance",
+      "title": "Uninsured vehicle",
+      "summary": "Driving uninsured is an offence.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.196",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-011",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "juvenile",
+      "title": "Juvenile offences",
+      "summary": "Section 199A creates special consequences for offences involving juveniles; current statutory wording should be used.",
+      "applies_to": [
+        "parent",
+        "juvenile",
+        "owner"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.199A",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-012",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "impound",
+      "title": "Document impounding",
+      "summary": "Police have statutory powers to impound documents in prescribed cases.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.206",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-013",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "detention",
+      "title": "Vehicle detention",
+      "summary": "Vehicles may be detained in specified cases involving registration, permit or licence-related violations.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.207",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-OFF-014",
+      "scope": "national",
+      "category": "offences",
+      "subcategory": "state_penalties",
+      "title": "State-specific penalties",
+      "summary": "Penalty schedules must be resolved by jurisdiction; section 210A allows State Governments to increase penalties in specified circumstances.",
+      "applies_to": [
+        "all_users"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.210A",
+      "status": "state_overlay",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-ACC-001",
+      "scope": "national",
+      "category": "accident",
+      "subcategory": "immediate_duty",
+      "title": "Post-accident duty",
+      "summary": "Drivers involved in accidents causing injury/damage have statutory duties under section 134; app content should teach the required reporting/assistance steps.",
+      "applies_to": [
+        "driver"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.134",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-ACC-002",
+      "scope": "national",
+      "category": "accident",
+      "subcategory": "good_samaritan",
+      "title": "Good Samaritan",
+      "summary": "Statutory protections apply to Good Samaritans under section 134A and associated rules.",
+      "applies_to": [
+        "public",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.134A",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-ACC-003",
+      "scope": "national",
+      "category": "accident",
+      "subcategory": "inspection",
+      "title": "Accident inspection",
+      "summary": "Accident-involved vehicles may be inspected under statutory authority.",
+      "applies_to": [
+        "owner",
+        "driver"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.136",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-ADM-001",
+      "scope": "national",
+      "category": "administration",
+      "subcategory": "electronic_documents",
+      "title": "Electronic documents/forms",
+      "summary": "The Act provides for electronic forms and documents; the app should distinguish legally recognised digital records from screenshots or unofficial copies.",
+      "applies_to": [
+        "all_users"
+      ],
+      "severity": "important",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.211A; rules",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-ADM-002",
+      "scope": "national",
+      "category": "administration",
+      "subcategory": "official_portal",
+      "title": "Official service portal",
+      "summary": "Use official Parivahan/State Transport Department portals for current application status, fees, appointments and administrative procedures.",
+      "applies_to": [
+        "all_users"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "Parivahan",
+      "status": "central_baseline",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    },
+    {
+      "id": "P2-ADM-003",
+      "scope": "national",
+      "category": "administration",
+      "subcategory": "fees",
+      "title": "Fees are dynamic",
+      "summary": "Government fees and service charges should not be hard-coded into the legal-rule master; store them in a versioned administrative dataset.",
+      "applies_to": [
+        "all_users"
+      ],
+      "severity": "critical",
+      "exam_relevant": true,
+      "legal_reference": "MVA s.211; current notifications",
+      "status": "dynamic",
+      "verified_on": "2026-08-18",
+      "source_ids": [
+        "SRC-MVA",
+        "SRC-CMVR",
+        "SRC-PARIVAHAN"
+      ],
+      "legal_safety_note": "Educational summary. Do not treat this record as a substitute for the current Act, Rules, notification or State/UT order.",
+      "verification_status": "baseline_reviewed",
+      "valid_from": null,
+      "valid_to": null,
+      "sign_ids": [],
+      "signal_ids": [],
+      "marking_ids": []
+    }
+  ]
+}

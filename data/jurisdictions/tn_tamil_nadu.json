@@ -1,0 +1,142 @@
+{
+  "jurisdiction": {
+    "code": "TN",
+    "name": "Tamil Nadu",
+    "type": "state"
+  },
+  "dataset_version": "0.4.0",
+  "generated_on": "2026-08-18",
+  "inherits": "../common/national_baseline.json",
+  "rules": {
+    "national_overrides": [],
+    "state_ut_rules": [],
+    "local_rules": []
+  },
+  "dynamic_data": {
+    "penalties": [],
+    "fees": [],
+    "tax": [],
+    "speed_limits": [],
+    "parking_restrictions": [],
+    "permit_details": [],
+    "administrative_procedures": []
+  },
+  "official_sources": [
+    {
+      "source_id": "SRC-TN-EDISTRICT",
+      "purpose": "Transport Department e-District service catalogue"
+    },
+    {
+      "source_id": "SRC-TN-DLPROJECT",
+      "purpose": "Tamil Nadu driving licence project information"
+    },
+    {
+      "source_id": "SRC-PARIVAHAN-MPARIVAHAN",
+      "purpose": "National Sarathi/Vahan/eChallan service gateway"
+    }
+  ],
+  "verification_queue": [
+    {
+      "topic": "learner_licence_process",
+      "priority": "high",
+      "status": "source_mapped",
+      "next": "Verify current Tamil Nadu workflow and State-specific document requirements."
+    },
+    {
+      "topic": "fees",
+      "priority": "high",
+      "status": "pending",
+      "next": "Verify current official fee schedule before publishing values."
+    },
+    {
+      "topic": "penalties",
+      "priority": "high",
+      "status": "pending",
+      "next": "Verify current applicable penalty notifications/official source before publishing values."
+    },
+    {
+      "topic": "speed_limits",
+      "priority": "high",
+      "status": "pending",
+      "next": "Verify current category/location-specific limits from authoritative sources."
+    },
+    {
+      "topic": "documents",
+      "priority": "high",
+      "status": "source_mapped",
+      "next": "Verify Tamil Nadu additions/adaptations to the national document list."
+    },
+    {
+      "topic": "vehicle_classes",
+      "priority": "medium",
+      "status": "source_mapped",
+      "next": "Verify State-specific workflow/class selection guidance."
+    },
+    {
+      "topic": "official_services",
+      "priority": "done",
+      "status": "source_mapped",
+      "next": "Keep links current."
+    },
+    {
+      "topic": "RTO_contacts",
+      "priority": "medium",
+      "status": "pending",
+      "next": "Verify current official RTO directory before publishing contacts."
+    },
+    {
+      "topic": "local_rules",
+      "priority": "medium",
+      "status": "pending",
+      "next": "Add only source-verified local restrictions/notifications."
+    },
+    {
+      "topic": "knowledge_relationships",
+      "priority": "medium",
+      "status": "schema_ready",
+      "next": "Add State-specific rule/sign/marking overrides only after authoritative verification."
+    }
+  ],
+  "data_quality": {
+    "legal_content_verified": false,
+    "status": "national_baseline_plus_source_mapped_TN",
+    "last_checked": "2026-08-18",
+    "note": "Tamil Nadu service links and source references are mapped, but State-specific legal values such as fees, penalties, speed limits and detailed local restrictions remain intentionally unpopulated until source-by-source verification.",
+    "architecture_role": "reference jurisdiction overlay"
+  },
+  "notes": [
+    "Verified-data scaffold: no unverified state-specific values are invented.",
+    "Keep common national rules in the national baseline and put only additions/overrides here.",
+    "Penalty values must be versioned because State Governments may prescribe increased fines under section 210A."
+  ],
+  "architecture": "national_baseline_plus_jurisdiction_overlay",
+  "schema_version": "6.0",
+  "services": [
+    {
+      "id": "TN-SVC-001",
+      "name": "Learner Licence Online Application",
+      "url": "https://sarathi.parivahan.gov.in/",
+      "source_ids": [
+        "SRC-TN-EDISTRICT",
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "TN-SVC-002",
+      "name": "Driving Licence Appointment",
+      "url": "https://sarathi.parivahan.gov.in/",
+      "source_ids": [
+        "SRC-TN-EDISTRICT",
+        "SRC-TN-DLPROJECT"
+      ]
+    },
+    {
+      "id": "TN-SVC-003",
+      "name": "Transport Department Service Catalogue",
+      "url": "https://it.tn.gov.in/en/TNEGA/e-District",
+      "source_ids": [
+        "SRC-TN-EDISTRICT"
+      ]
+    }
+  ]
+}

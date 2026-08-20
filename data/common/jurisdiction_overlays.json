@@ -1,0 +1,2241 @@
+{
+  "dataset": {
+    "version": "2026.08.v6",
+    "count": 36,
+    "status": "source_mapped"
+  },
+  "overlays": {
+    "AN": {
+      "state_ut_rules": [
+        {
+          "id": "AN-R-LOC-001",
+          "title": "Andaman and Nicobar Islands \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Andaman and Nicobar Islands are processed through the national Sarathi portal with Andaman and Nicobar Islands selected, and through the official Andaman and Nicobar Islands transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Andaman and Nicobar Islands Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "AN-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Andaman and Nicobar Islands, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "AN-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "AN-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Andaman and Nicobar Islands",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Andaman and Nicobar Islands as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "AP": {
+      "state_ut_rules": [
+        {
+          "id": "AP-R-LOC-001",
+          "title": "Andhra Pradesh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Andhra Pradesh are processed through the national Sarathi portal with Andhra Pradesh selected, and through the official Andhra Pradesh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Andhra Pradesh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "AP-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Andhra Pradesh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "AP-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "AP-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Andhra Pradesh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Andhra Pradesh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "AP-SVC-TRANSPORT",
+          "name": "Andhra Pradesh Transport Department",
+          "url": "https://transport.ap.gov.in/",
+          "purpose": "Official Andhra Pradesh transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "AR": {
+      "state_ut_rules": [
+        {
+          "id": "AR-R-LOC-001",
+          "title": "Arunachal Pradesh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Arunachal Pradesh are processed through the national Sarathi portal with Arunachal Pradesh selected, and through the official Arunachal Pradesh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Arunachal Pradesh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "AR-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Arunachal Pradesh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "AR-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "AR-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Arunachal Pradesh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Arunachal Pradesh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "AS": {
+      "state_ut_rules": [
+        {
+          "id": "AS-R-LOC-001",
+          "title": "Assam \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Assam are processed through the national Sarathi portal with Assam selected, and through the official Assam transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Assam Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "AS-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Assam, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "AS-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "AS-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Assam",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Assam as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "AS-SVC-TRANSPORT",
+          "name": "Assam Transport Department",
+          "url": "https://transport.assam.gov.in/",
+          "purpose": "Official Assam transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "BR": {
+      "state_ut_rules": [
+        {
+          "id": "BR-R-LOC-001",
+          "title": "Bihar \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Bihar are processed through the national Sarathi portal with Bihar selected, and through the official Bihar transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Bihar Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "BR-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Bihar, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "BR-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "BR-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Bihar",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Bihar as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "BR-SVC-TRANSPORT",
+          "name": "Bihar Transport Department",
+          "url": "https://transport.bih.nic.in/",
+          "purpose": "Official Bihar transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "CH": {
+      "state_ut_rules": [
+        {
+          "id": "CH-R-LOC-001",
+          "title": "Chandigarh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Chandigarh are processed through the national Sarathi portal with Chandigarh selected, and through the official Chandigarh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Chandigarh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "CH-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Chandigarh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "CH-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "CH-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Chandigarh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Chandigarh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "CH-SVC-TRANSPORT",
+          "name": "Chandigarh Transport Department",
+          "url": "https://chdtransport.gov.in/",
+          "purpose": "Official Chandigarh transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "CG": {
+      "state_ut_rules": [
+        {
+          "id": "CG-R-LOC-001",
+          "title": "Chhattisgarh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Chhattisgarh are processed through the national Sarathi portal with Chhattisgarh selected, and through the official Chhattisgarh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Chhattisgarh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "CG-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Chhattisgarh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "CG-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "CG-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Chhattisgarh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Chhattisgarh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "CG-SVC-TRANSPORT",
+          "name": "Chhattisgarh Transport Department",
+          "url": "https://transport.cgstate.gov.in/",
+          "purpose": "Official Chhattisgarh transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "DNHDD": {
+      "state_ut_rules": [
+        {
+          "id": "DNHDD-R-LOC-001",
+          "title": "Dadra and Nagar Haveli and Daman and Diu \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Dadra and Nagar Haveli and Daman and Diu are processed through the national Sarathi portal with Dadra and Nagar Haveli and Daman and Diu selected, and through the official Dadra and Nagar Haveli and Daman and Diu transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Dadra and Nagar Haveli and Daman and Diu Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "DNHDD-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Dadra and Nagar Haveli and Daman and Diu, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "DNHDD-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "DNHDD-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Dadra and Nagar Haveli and Daman and Diu",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Dadra and Nagar Haveli and Daman and Diu as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "DL": {
+      "state_ut_rules": [
+        {
+          "id": "DL-R-LOC-001",
+          "title": "Delhi \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Delhi are processed through the national Sarathi portal with Delhi selected, and through the official Delhi transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Delhi Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "DL-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Delhi, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "DL-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "DL-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Delhi",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Delhi as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "DL-SVC-TRANSPORT",
+          "name": "Delhi Transport Department",
+          "url": "https://transport.delhi.gov.in/",
+          "purpose": "Official Delhi transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "GA": {
+      "state_ut_rules": [
+        {
+          "id": "GA-R-LOC-001",
+          "title": "Goa \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Goa are processed through the national Sarathi portal with Goa selected, and through the official Goa transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Goa Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "GA-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Goa, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "GA-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "GA-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Goa",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Goa as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "GA-SVC-TRANSPORT",
+          "name": "Goa Transport Department",
+          "url": "https://goa.gov.in/department/transport",
+          "purpose": "Official Goa transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "GJ": {
+      "state_ut_rules": [
+        {
+          "id": "GJ-R-LOC-001",
+          "title": "Gujarat \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Gujarat are processed through the national Sarathi portal with Gujarat selected, and through the official Gujarat transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Gujarat Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "GJ-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Gujarat, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "GJ-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "GJ-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Gujarat",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Gujarat as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "GJ-SVC-TRANSPORT",
+          "name": "Gujarat Transport Department",
+          "url": "https://rtogujarat.gov.in/",
+          "purpose": "Official Gujarat transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "HR": {
+      "state_ut_rules": [
+        {
+          "id": "HR-R-LOC-001",
+          "title": "Haryana \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Haryana are processed through the national Sarathi portal with Haryana selected, and through the official Haryana transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Haryana Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "HR-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Haryana, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "HR-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "HR-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Haryana",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Haryana as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "HR-SVC-TRANSPORT",
+          "name": "Haryana Transport Department",
+          "url": "https://haryanatransport.gov.in/",
+          "purpose": "Official Haryana transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "HP": {
+      "state_ut_rules": [
+        {
+          "id": "HP-R-LOC-001",
+          "title": "Himachal Pradesh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Himachal Pradesh are processed through the national Sarathi portal with Himachal Pradesh selected, and through the official Himachal Pradesh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Himachal Pradesh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "HP-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Himachal Pradesh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "HP-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "HP-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Himachal Pradesh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Himachal Pradesh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "HP-SVC-TRANSPORT",
+          "name": "Himachal Pradesh Transport Department",
+          "url": "https://himachal.nic.in/transport/",
+          "purpose": "Official Himachal Pradesh transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "JK": {
+      "state_ut_rules": [
+        {
+          "id": "JK-R-LOC-001",
+          "title": "Jammu and Kashmir \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Jammu and Kashmir are processed through the national Sarathi portal with Jammu and Kashmir selected, and through the official Jammu and Kashmir transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Jammu and Kashmir Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "JK-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Jammu and Kashmir, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "JK-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "JK-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Jammu and Kashmir",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Jammu and Kashmir as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "JH": {
+      "state_ut_rules": [
+        {
+          "id": "JH-R-LOC-001",
+          "title": "Jharkhand \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Jharkhand are processed through the national Sarathi portal with Jharkhand selected, and through the official Jharkhand transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Jharkhand Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "JH-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Jharkhand, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "JH-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "JH-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Jharkhand",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Jharkhand as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "JH-SVC-TRANSPORT",
+          "name": "Jharkhand Transport Department",
+          "url": "https://transport.jharkhand.gov.in/",
+          "purpose": "Official Jharkhand transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "KA": {
+      "state_ut_rules": [
+        {
+          "id": "KA-R-LOC-001",
+          "title": "Karnataka \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Karnataka are processed through the national Sarathi portal with Karnataka selected, and through the official Karnataka transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Karnataka Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "KA-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Karnataka, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "KA-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "KA-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Karnataka",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Karnataka as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "KA-SVC-TRANSPORT",
+          "name": "Karnataka Transport Department",
+          "url": "https://transport.karnataka.gov.in/",
+          "purpose": "Official Karnataka transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "KL": {
+      "state_ut_rules": [
+        {
+          "id": "KL-R-LOC-001",
+          "title": "Kerala \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Kerala are processed through the national Sarathi portal with Kerala selected, and through the official Kerala transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Kerala Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "KL-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Kerala, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "KL-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "KL-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Kerala",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Kerala as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "KL-SVC-TRANSPORT",
+          "name": "Kerala Transport Department",
+          "url": "https://mvd.kerala.gov.in/",
+          "purpose": "Official Kerala transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "LA": {
+      "state_ut_rules": [
+        {
+          "id": "LA-R-LOC-001",
+          "title": "Ladakh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Ladakh are processed through the national Sarathi portal with Ladakh selected, and through the official Ladakh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Ladakh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "LA-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Ladakh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "LA-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "LA-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Ladakh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Ladakh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "LD": {
+      "state_ut_rules": [
+        {
+          "id": "LD-R-LOC-001",
+          "title": "Lakshadweep \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Lakshadweep are processed through the national Sarathi portal with Lakshadweep selected, and through the official Lakshadweep transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Lakshadweep Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "LD-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Lakshadweep, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "LD-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "LD-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Lakshadweep",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Lakshadweep as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "MP": {
+      "state_ut_rules": [
+        {
+          "id": "MP-R-LOC-001",
+          "title": "Madhya Pradesh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Madhya Pradesh are processed through the national Sarathi portal with Madhya Pradesh selected, and through the official Madhya Pradesh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Madhya Pradesh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "MP-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Madhya Pradesh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "MP-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "MP-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Madhya Pradesh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Madhya Pradesh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "MP-SVC-TRANSPORT",
+          "name": "Madhya Pradesh Transport Department",
+          "url": "https://transport.mp.gov.in/",
+          "purpose": "Official Madhya Pradesh transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "MH": {
+      "state_ut_rules": [
+        {
+          "id": "MH-R-LOC-001",
+          "title": "Maharashtra \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Maharashtra are processed through the national Sarathi portal with Maharashtra selected, and through the official Maharashtra transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Maharashtra Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "MH-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Maharashtra, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "MH-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "MH-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Maharashtra",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Maharashtra as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "MH-SVC-TRANSPORT",
+          "name": "Maharashtra Transport Department",
+          "url": "https://transport.maharashtra.gov.in/",
+          "purpose": "Official Maharashtra transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "MN": {
+      "state_ut_rules": [
+        {
+          "id": "MN-R-LOC-001",
+          "title": "Manipur \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Manipur are processed through the national Sarathi portal with Manipur selected, and through the official Manipur transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Manipur Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "MN-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Manipur, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "MN-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "MN-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Manipur",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Manipur as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "ML": {
+      "state_ut_rules": [
+        {
+          "id": "ML-R-LOC-001",
+          "title": "Meghalaya \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Meghalaya are processed through the national Sarathi portal with Meghalaya selected, and through the official Meghalaya transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Meghalaya Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "ML-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Meghalaya, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "ML-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "ML-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Meghalaya",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Meghalaya as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "MZ": {
+      "state_ut_rules": [
+        {
+          "id": "MZ-R-LOC-001",
+          "title": "Mizoram \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Mizoram are processed through the national Sarathi portal with Mizoram selected, and through the official Mizoram transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Mizoram Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "MZ-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Mizoram, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "MZ-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "MZ-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Mizoram",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Mizoram as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "NL": {
+      "state_ut_rules": [
+        {
+          "id": "NL-R-LOC-001",
+          "title": "Nagaland \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Nagaland are processed through the national Sarathi portal with Nagaland selected, and through the official Nagaland transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Nagaland Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "NL-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Nagaland, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "NL-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "NL-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Nagaland",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Nagaland as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "OD": {
+      "state_ut_rules": [
+        {
+          "id": "OD-R-LOC-001",
+          "title": "Odisha \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Odisha are processed through the national Sarathi portal with Odisha selected, and through the official Odisha transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Odisha Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "OD-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Odisha, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "OD-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "OD-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Odisha",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Odisha as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "OD-SVC-TRANSPORT",
+          "name": "Odisha Transport Department",
+          "url": "https://odishatransport.gov.in/",
+          "purpose": "Official Odisha transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "PY": {
+      "state_ut_rules": [
+        {
+          "id": "PY-R-LOC-001",
+          "title": "Puducherry \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Puducherry are processed through the national Sarathi portal with Puducherry selected, and through the official Puducherry transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Puducherry Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "PY-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Puducherry, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "PY-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "PY-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Puducherry",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Puducherry as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "PY-SVC-TRANSPORT",
+          "name": "Puducherry Transport Department",
+          "url": "https://transport.py.gov.in/",
+          "purpose": "Official Puducherry transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "PB": {
+      "state_ut_rules": [
+        {
+          "id": "PB-R-LOC-001",
+          "title": "Punjab \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Punjab are processed through the national Sarathi portal with Punjab selected, and through the official Punjab transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Punjab Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "PB-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Punjab, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "PB-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "PB-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Punjab",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Punjab as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "PB-SVC-TRANSPORT",
+          "name": "Punjab Transport Department",
+          "url": "https://olps.punjabtransport.org/",
+          "purpose": "Official Punjab transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "RJ": {
+      "state_ut_rules": [
+        {
+          "id": "RJ-R-LOC-001",
+          "title": "Rajasthan \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Rajasthan are processed through the national Sarathi portal with Rajasthan selected, and through the official Rajasthan transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Rajasthan Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "RJ-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Rajasthan, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "RJ-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "RJ-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Rajasthan",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Rajasthan as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "RJ-SVC-TRANSPORT",
+          "name": "Rajasthan Transport Department",
+          "url": "https://transport.rajasthan.gov.in/",
+          "purpose": "Official Rajasthan transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "SK": {
+      "state_ut_rules": [
+        {
+          "id": "SK-R-LOC-001",
+          "title": "Sikkim \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Sikkim are processed through the national Sarathi portal with Sikkim selected, and through the official Sikkim transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Sikkim Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "SK-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Sikkim, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "SK-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "SK-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Sikkim",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Sikkim as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "TN": {
+      "state_ut_rules": [
+        {
+          "id": "TN-R-LOC-001",
+          "title": "Tamil Nadu \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Tamil Nadu are processed through the national Sarathi portal with Tamil Nadu selected, and through the official Tamil Nadu transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Tamil Nadu Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "TN-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Tamil Nadu, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "TN-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "TN-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Tamil Nadu",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Tamil Nadu as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "TN-SVC-TRANSPORT",
+          "name": "Tamil Nadu Transport Department",
+          "url": "https://tnsta.gov.in/",
+          "purpose": "Official Tamil Nadu transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "TS": {
+      "state_ut_rules": [
+        {
+          "id": "TS-R-LOC-001",
+          "title": "Telangana \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Telangana are processed through the national Sarathi portal with Telangana selected, and through the official Telangana transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Telangana Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "TS-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Telangana, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "TS-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "TS-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Telangana",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Telangana as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "TS-SVC-TRANSPORT",
+          "name": "Telangana Transport Department",
+          "url": "https://transport.telangana.gov.in/",
+          "purpose": "Official Telangana transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "TR": {
+      "state_ut_rules": [
+        {
+          "id": "TR-R-LOC-001",
+          "title": "Tripura \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Tripura are processed through the national Sarathi portal with Tripura selected, and through the official Tripura transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Tripura Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "TR-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Tripura, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "TR-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "TR-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Tripura",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Tripura as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ]
+    },
+    "UK": {
+      "state_ut_rules": [
+        {
+          "id": "UK-R-LOC-001",
+          "title": "Uttarakhand \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Uttarakhand are processed through the national Sarathi portal with Uttarakhand selected, and through the official Uttarakhand transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Uttarakhand Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "UK-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Uttarakhand, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "UK-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "UK-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Uttarakhand",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Uttarakhand as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "UK-SVC-TRANSPORT",
+          "name": "Uttarakhand Transport Department",
+          "url": "https://transport.uk.gov.in/",
+          "purpose": "Official Uttarakhand transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "UP": {
+      "state_ut_rules": [
+        {
+          "id": "UP-R-LOC-001",
+          "title": "Uttar Pradesh \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for Uttar Pradesh are processed through the national Sarathi portal with Uttar Pradesh selected, and through the official Uttar Pradesh transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "Uttar Pradesh Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "UP-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select Uttar Pradesh, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "UP-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "UP-SVC-SARATHI",
+          "name": "Sarathi \u2014 select Uttar Pradesh",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose Uttar Pradesh as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "UP-SVC-TRANSPORT",
+          "name": "Uttar Pradesh Transport Department",
+          "url": "https://uptransport.upsdc.gov.in/",
+          "purpose": "Official Uttar Pradesh transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    },
+    "WB": {
+      "state_ut_rules": [
+        {
+          "id": "WB-R-LOC-001",
+          "title": "West Bengal \u2014 use State/UT services",
+          "summary": "Licence application, appointments and many transport services for West Bengal are processed through the national Sarathi portal with West Bengal selected, and through the official West Bengal transport authority where applicable.",
+          "category": "licensing",
+          "subcategory": "state_ut",
+          "applies_to": [
+            "learner",
+            "driver"
+          ],
+          "legal_reference": "West Bengal Motor Vehicles Rules (as applicable)",
+          "verification_status": "source_mapped",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        }
+      ],
+      "dynamic_data": {
+        "administrative_procedures": [
+          {
+            "id": "WB-PROC-LL",
+            "topic": "Learner licence application",
+            "summary": "Apply online via Sarathi, select West Bengal, complete Form 2 requirements, pay the official fee and book an RTO slot as prompted.",
+            "official_url": "https://sarathi.parivahan.gov.in/",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-PARIVAHAN-LL"
+            ]
+          }
+        ],
+        "speed_limits": [
+          {
+            "id": "WB-SPD-NOTE",
+            "topic": "Speed limits",
+            "summary": "Default national limits apply unless a notified local or State/UT limit is posted. Always follow posted signs and current official notifications.",
+            "verification_status": "source_mapped",
+            "source_ids": [
+              "SRC-MVA"
+            ]
+          }
+        ]
+      },
+      "services": [
+        {
+          "id": "WB-SVC-SARATHI",
+          "name": "Sarathi \u2014 select West Bengal",
+          "url": "https://sarathi.parivahan.gov.in/",
+          "purpose": "Official learner and driving licence portal. Choose West Bengal as the concerned State/UT.",
+          "source_ids": [
+            "SRC-PARIVAHAN-LL"
+          ]
+        },
+        {
+          "id": "WB-SVC-TRANSPORT",
+          "name": "West Bengal Transport Department",
+          "url": "https://transport.wb.gov.in/",
+          "purpose": "Official West Bengal transport department information and services.",
+          "source_ids": [
+            "SRC-PARIVAHAN-MPARIVAHAN"
+          ]
+        }
+      ]
+    }
+  }
+}

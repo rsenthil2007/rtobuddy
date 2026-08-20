@@ -1,0 +1,35 @@
+/* Balanced Mission Control — premium, practical, trustworthy */
+
+:root {
+  --mc-bg: #0f1729;
+  --mc-surface: #162033;
+  --mc-surface-2: #1c2840;
+  --mc-border: #2d3f5c;
+  --mc-glow: rgba(59, 130, 246, 0.2);
+}
+
+.mc-panel {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.mc-cta {
+  box-shadow: 0 2px 12px rgba(245, 158, 11, 0.25);
+  transition: box-shadow 0.2s;
+}
+
+.mc-cta:hover {
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+}
+
+.mc-ring {
+  box-shadow: 0 0 20px var(--mc-glow);
+}
+
+.mc-tile:hover {
+  border-color: #3b82f688;
+  background: #1e2d4a;
+}
+
+.mc-hero-copy h2 {
+  font-weight: 600;
+}

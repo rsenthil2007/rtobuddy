@@ -1,0 +1,81 @@
+{
+  "version": "5.0.0",
+  "entities": {
+    "rule": {
+      "required": [
+        "id",
+        "title",
+        "summary"
+      ],
+      "recommended": [
+        "category",
+        "subcategory",
+        "applies_to",
+        "source_ids",
+        "verification_status",
+        "valid_from",
+        "valid_to"
+      ]
+    },
+    "sign": {
+      "required": [
+        "id",
+        "name",
+        "category",
+        "meaning"
+      ],
+      "recommended": [
+        "image_asset",
+        "source_ids",
+        "verification_status",
+        "valid_from",
+        "valid_to"
+      ]
+    },
+    "marking": {
+      "required": [
+        "id",
+        "name",
+        "category",
+        "meaning"
+      ],
+      "recommended": [
+        "image_asset",
+        "source_ids",
+        "verification_status",
+        "valid_from",
+        "valid_to"
+      ]
+    },
+    "question": {
+      "required": [
+        "id",
+        "category",
+        "difficulty",
+        "question",
+        "options",
+        "answer_index",
+        "explanation"
+      ],
+      "recommended": [
+        "rule_ids",
+        "sign_id",
+        "marking_id",
+        "source_ids",
+        "verification_status"
+      ]
+    },
+    "jurisdiction": {
+      "required": [
+        "jurisdiction",
+        "data_quality"
+      ],
+      "recommended": [
+        "official_sources",
+        "services",
+        "verification_queue",
+        "dynamic_data"
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Pedestrian Crossing Ahead">
+<rect width="240" height="240" rx="18" fill="#f5f7fa"/>
+<polygon points="120,24 204,188 36,188" fill="#fff" stroke="#c62828" stroke-width="12"/><circle cx="120" cy="76" r="9" fill="#111"/><path d="M120 90l-20 42m20-42l18 38m-18-22l-28 18m28-18l25-2" stroke="#111" stroke-width="9" fill="none"/><path d="M80 158h80M88 168h64" stroke="#111" stroke-width="7"/>
+</svg>

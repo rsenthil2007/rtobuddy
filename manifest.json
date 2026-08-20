@@ -1,0 +1,18 @@
+{
+  "name": "RTOBuddy",
+  "short_name": "RTOBuddy",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#163b75",
+  "description": "Offline-first learner licence and road-safety study companion for India.",
+  "version": "6.2.1",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

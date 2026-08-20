@@ -1,0 +1,102 @@
+{
+  "dataset": {
+    "version": "2026.08.v5",
+    "status": "source_verified",
+    "source_ids": [
+      "SRC-PARIVAHAN-FORM2",
+      "SRC-PARIVAHAN-LL",
+      "SRC-PARIVAHAN-PERMDL"
+    ]
+  },
+  "steps": [
+    {
+      "id": "LP-001",
+      "order": 1,
+      "title": "Check eligibility",
+      "summary": "Confirm that you meet the applicable eligibility requirements for the vehicle class and jurisdiction.",
+      "action": "Choose the intended vehicle class and jurisdiction before starting the application.",
+      "status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LP-002",
+      "order": 2,
+      "title": "Prepare documents",
+      "summary": "Keep the required identity, age and address proofs and applicable declarations/certificates ready.",
+      "action": "Use the RTOBuddy document checklist, then verify the State/UT-specific list.",
+      "status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "LP-003",
+      "order": 3,
+      "title": "Apply for Learner Licence",
+      "summary": "Use the applicable Sarathi/State process to submit the learner-licence application.",
+      "action": "Select the concerned State/UT in the official service before proceeding.",
+      "status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL",
+        "SRC-PARIVAHAN-MPARIVAHAN"
+      ]
+    },
+    {
+      "id": "LP-004",
+      "order": 4,
+      "title": "Complete document and fee steps",
+      "summary": "Upload/submit documents and complete the applicable fee or appointment steps shown by the official portal.",
+      "action": "Follow the portal instructions for your jurisdiction; service availability can vary by State/UT.",
+      "status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LP-005",
+      "order": 5,
+      "title": "Prepare for the learner test",
+      "summary": "Study traffic signs, signals, driver duties, documents and core road-safety rules.",
+      "action": "Use RTOBuddy practice mode and review explanations for every wrong answer.",
+      "status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "LP-006",
+      "order": 6,
+      "title": "Take the preliminary/learner test",
+      "summary": "The preliminary test covers prescribed knowledge areas such as traffic signs, traffic signals, accident duties and documents.",
+      "action": "Use the official appointment/test process applicable to your jurisdiction.",
+      "status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-FORM2"
+      ]
+    },
+    {
+      "id": "LP-007",
+      "order": 7,
+      "title": "Practice with the Learner Licence",
+      "summary": "Follow all learner conditions and display requirements applicable to the licence and vehicle.",
+      "action": "Read the conditions printed with the learner licence and follow the applicable rules.",
+      "status": "reviewed",
+      "source_ids": [
+        "SRC-PARIVAHAN-LL"
+      ]
+    },
+    {
+      "id": "LP-008",
+      "order": 8,
+      "title": "Apply for and take the driving test",
+      "summary": "When eligible, follow the official process for the permanent driving licence and competence test.",
+      "action": "Check the current official procedure before booking the test.",
+      "status": "source_verified",
+      "source_ids": [
+        "SRC-PARIVAHAN-PERMDL"
+      ]
+    }
+  ]
+}
