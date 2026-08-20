@@ -1,0 +1,459 @@
+{
+  "version": "1.0",
+  "title": "Road Quest",
+  "world": "Roadsville",
+  "guide": "Buddy",
+  "stages": ["CURIOUS", "AWARE", "CAREFUL", "CONFIDENT", "ROAD READY"],
+  "appreciation": [
+    "Good observation!",
+    "Nice catch.",
+    "Exactly.",
+    "You noticed the important part.",
+    "That was the safer choice.",
+    "Good road sense.",
+    "Well judged.",
+    "You are getting quicker.",
+    "That is how a responsible road user thinks.",
+    "Excellent awareness."
+  ],
+  "corrections": [
+    "Let's pause there.",
+    "That could create a problem.",
+    "Look once more.",
+    "Something important was easy to miss.",
+    "Not the safest option.",
+    "The road gave us another clue.",
+    "Good attempt. Now let's make it safer.",
+    "This is why that rule exists."
+  ],
+  "streakLines": [
+    "Three safe decisions in a row!",
+    "You are reading the road well.",
+    "Your observation skills are improving.",
+    "Roadsville feels safer already."
+  ],
+  "chapters": [
+    {
+      "id": "welcome",
+      "order": 1,
+      "title": "Welcome to Roadsville",
+      "subtitle": "Arrive, look around, feel the road",
+      "emoji": "🗺️",
+      "playable": true,
+      "objectives": [
+        "Roads are shared spaces",
+        "Actions affect others",
+        "Observation matters",
+        "Rules improve predictability"
+      ],
+      "scenes": [
+        {
+          "id": "welcome_arrive",
+          "type": "story",
+          "buddy": "Welcome to Roadsville!",
+          "body": "Lots of people. Lots of vehicles. Lots of places to go.",
+          "continueLabel": "Look around"
+        },
+        {
+          "id": "welcome_chaos",
+          "type": "story",
+          "buddy": "Imagine if everyone simply did whatever they wanted.",
+          "body": "The road would become a very noisy puzzle! Luckily, roads have a system.",
+          "continueLabel": "Explore with Buddy"
+        },
+        {
+          "id": "welcome_explore",
+          "type": "explore",
+          "buddy": "Tap what you notice. Small things matter on a busy street.",
+          "hotspots": [
+            {
+              "id": "bus",
+              "label": "Bus at the stop",
+              "reveal": "People are boarding and alighting. Give them space and time."
+            },
+            {
+              "id": "scooter",
+              "label": "Awkwardly parked scooter",
+              "reveal": "A parked vehicle can block sightlines for everyone else."
+            },
+            {
+              "id": "crossing",
+              "label": "Pedestrian waiting",
+              "reveal": "Someone is waiting to cross. Your next move affects them."
+            },
+            {
+              "id": "signal",
+              "label": "Changing signal",
+              "reveal": "Signals create shared timing so traffic is predictable."
+            }
+          ],
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "welcome_decide",
+          "type": "choose",
+          "buddy": "A vehicle ahead tries an unsafe cut. What should we do?",
+          "prompt": "What is the safest response?",
+          "choices": [
+            "Speed up and squeeze through",
+            "Slow down, create space, stay predictable",
+            "Honk continuously until they move"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Good road sense. Predictability keeps everyone safer.",
+            "incorrect": "Rushing or aggression makes the puzzle worse. Slow and steady wins here."
+          },
+          "knowledgeRefs": ["P2-REG-001"],
+          "continueLabel": "Enter Roadsville"
+        }
+      ]
+    },
+    {
+      "id": "road_basics",
+      "order": 2,
+      "title": "The Road Basics",
+      "subtitle": "A road is not an empty strip",
+      "emoji": "🛣️",
+      "playable": true,
+      "objectives": [
+        "Keep to the appropriate side",
+        "Lane discipline",
+        "Follow markings",
+        "Move predictably"
+      ],
+      "scenes": [
+        {
+          "id": "basics_intro",
+          "type": "story",
+          "buddy": "A road is not just a big empty strip.",
+          "body": "Edges, lanes, centre lines, and crossings all carry meaning. Let's touch each part.",
+          "continueLabel": "Explore the road"
+        },
+        {
+          "id": "basics_explore",
+          "type": "explore",
+          "buddy": "Tap each part of the road to see why it exists.",
+          "hotspots": [
+            {
+              "id": "edge",
+              "label": "Road edge",
+              "reveal": "Edges mark where the carriageway ends. Stay within the usable road."
+            },
+            {
+              "id": "lane",
+              "label": "Lane",
+              "reveal": "Lanes organise flow. Sudden wandering forces others to guess."
+            },
+            {
+              "id": "centre",
+              "label": "Centre line",
+              "reveal": "Centre markings separate opposing or adjacent streams of traffic."
+            },
+            {
+              "id": "crossing",
+              "label": "Pedestrian area",
+              "reveal": "Crossings remind us the road is shared with people on foot."
+            }
+          ],
+          "continueLabel": "Next"
+        },
+        {
+          "id": "basics_lane",
+          "type": "choose",
+          "buddy": "This vehicle is drifting. Help it settle into the correct lane.",
+          "prompt": "What should the driver do?",
+          "choices": [
+            "Stay drifting — others will adapt",
+            "Check, indicate if needed, and settle into the correct lane",
+            "Cut across quickly without looking"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Much better. Other road users should not have to guess what you are about to do.",
+            "incorrect": "Wandering or sudden cuts create confusion. Make your intention clear and calm."
+          },
+          "knowledgeRefs": ["P2-REG-002"],
+          "continueLabel": "Finish chapter"
+        }
+      ]
+    },
+    {
+      "id": "sign_forest",
+      "order": 3,
+      "title": "Sign Forest",
+      "subtitle": "Roads cannot talk — so they use signs",
+      "emoji": "🌲",
+      "playable": true,
+      "objectives": [
+        "Understand sign families",
+        "Stop means stop",
+        "Warnings ask for attention",
+        "Prohibitions block unsafe moves"
+      ],
+      "scenes": [
+        {
+          "id": "signs_intro",
+          "type": "story",
+          "buddy": "Roads cannot talk.",
+          "body": "So they use signs. First we learn what they mean by looking — not by memorising a list.",
+          "continueLabel": "Enter the forest"
+        },
+        {
+          "id": "signs_stop",
+          "type": "choose",
+          "buddy": "This one is very clear.",
+          "prompt": "You reach a Stop sign. What should you do?",
+          "signId": "TS-M-001",
+          "choices": [
+            "Slow a little and roll through if it looks clear",
+            "Stop fully, look carefully, then proceed when safe",
+            "Honk and continue because you are in a hurry"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Stop means stop. Look carefully before continuing.",
+            "incorrect": "Rolling through skips the whole point of the sign. Give yourself time to see."
+          },
+          "knowledgeRefs": ["P2-REG-005", "P2-SIGN-001"],
+          "continueLabel": "Next sign"
+        },
+        {
+          "id": "signs_warning",
+          "type": "choose",
+          "buddy": "A warning sign says: pay attention.",
+          "prompt": "You see a warning sign ahead. Best response?",
+          "signId": "TS-W-001",
+          "choices": [
+            "Ignore it until something happens",
+            "Prepare — slow down or heighten attention as needed",
+            "Speed up to get past the hazard faster"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Warnings buy you time. Use that time.",
+            "incorrect": "Warnings exist because the road ahead may surprise you."
+          },
+          "knowledgeRefs": ["P2-SIGN-002"],
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "signs_match",
+          "type": "match",
+          "buddy": "Match the situation to the right kind of sign.",
+          "prompt": "Which sign family fits: movement not allowed here?",
+          "choices": [
+            "Information sign",
+            "Prohibitory / mandatory restriction",
+            "Facility sign"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Sometimes the road is not asking. It is telling.",
+            "incorrect": "When a movement is not allowed, look for prohibitory or mandatory guidance."
+          },
+          "continueLabel": "Leave the forest"
+        }
+      ]
+    },
+    {
+      "id": "busy_junction",
+      "order": 4,
+      "title": "Busy Junction",
+      "subtitle": "Where observation becomes everything",
+      "emoji": "🚦",
+      "playable": true,
+      "objectives": [
+        "Slow and observe",
+        "Yield when needed",
+        "Do not block the junction",
+        "Watch vulnerable users"
+      ],
+      "scenes": [
+        {
+          "id": "junction_intro",
+          "type": "story",
+          "buddy": "Junctions are where observation becomes really important.",
+          "body": "Cross traffic, turns, pedestrians, signals — look wider than the car in front of you.",
+          "continueLabel": "Approach the junction"
+        },
+        {
+          "id": "junction_pedestrian",
+          "type": "choose",
+          "buddy": "A pedestrian is still crossing.",
+          "prompt": "What should we do?",
+          "choices": [
+            "Continue immediately",
+            "Wait until it is safe",
+            "Repeatedly honk"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Good choice. The road is shared. Give people time and space.",
+            "incorrect": "Being bigger does not mean you are always more important."
+          },
+          "knowledgeRefs": ["P2-REG-003"],
+          "continueLabel": "Next situation"
+        },
+        {
+          "id": "junction_blocked",
+          "type": "choose",
+          "buddy": "The signal says you may move. But can you actually clear the junction?",
+          "prompt": "The light permits movement, yet traffic ahead is packed solid.",
+          "choices": [
+            "Enter anyway — the signal said go",
+            "Wait until you can clear the junction without blocking it",
+            "Nose in and hope others make space"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Permission to move does not always mean it is safe or appropriate to enter.",
+            "incorrect": "Blocking a junction traps everyone — including you."
+          },
+          "knowledgeRefs": ["P2-REG-004"],
+          "continueLabel": "Next"
+        },
+        {
+          "id": "junction_spot",
+          "type": "spot",
+          "buddy": "Scan the junction. What is the biggest risk right now?",
+          "prompt": "Spot the priority risk.",
+          "choices": [
+            "A child near the kerb looking toward the road",
+            "A shop sign across the street",
+            "A parked car two streets away"
+          ],
+          "correct": 0,
+          "feedback": {
+            "correct": "You spotted the risk early. Vulnerable users need extra care.",
+            "incorrect": "Look for people who may step into the road with little warning."
+          },
+          "continueLabel": "Clear the junction"
+        }
+      ]
+    },
+    {
+      "id": "scenario_challenge",
+      "order": 5,
+      "title": "First Road Challenge",
+      "subtitle": "Put observation and patience together",
+      "emoji": "⭐",
+      "playable": true,
+      "objectives": [
+        "Combine lessons from earlier chapters",
+        "Choose patience when unsure",
+        "Feel progress toward Road Ready"
+      ],
+      "scenes": [
+        {
+          "id": "challenge_story",
+          "type": "story",
+          "buddy": "Ready for a short challenge? I will talk less. You decide more.",
+          "body": "Use what you learned in Roadsville so far — observe, think, decide safely.",
+          "continueLabel": "Start challenge"
+        },
+        {
+          "id": "challenge_overtake",
+          "type": "choose",
+          "buddy": "Before asking ‘Can I pass?’ ask ‘Can I pass safely?’",
+          "prompt": "Oncoming traffic is close and the road curves ahead.",
+          "choices": [
+            "Overtake now to save time",
+            "Wait and observe — do nothing yet",
+            "Flash lights and force a gap"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "Patience should be rewarded. Doing nothing yet can be the safest move.",
+            "incorrect": "Overtaking is not a race. Visibility and space come first."
+          },
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "challenge_final",
+          "type": "choose",
+          "buddy": "One more. Night is falling and a cyclist is hard to see.",
+          "prompt": "Best approach?",
+          "choices": [
+            "Keep normal day speed",
+            "Reduce speed, increase observation, give space",
+            "Pass as close as possible to finish quickly"
+          ],
+          "correct": 1,
+          "feedback": {
+            "correct": "At night you may also have less time to react. Well judged.",
+            "incorrect": "Lower visibility means more caution — not the same pace as daytime."
+          },
+          "continueLabel": "Complete challenge"
+        },
+        {
+          "id": "challenge_ready",
+          "type": "story",
+          "buddy": "Do you remember your first minute in Roadsville?",
+          "body": "The roads have not changed very much. But you have started to. Keep learning. Keep observing. Keep everyone safer.",
+          "continueLabel": "Back to the map"
+        }
+      ]
+    },
+    {
+      "id": "people_road",
+      "order": 6,
+      "title": "People on the Road",
+      "subtitle": "Coming next",
+      "emoji": "🚶",
+      "playable": false,
+      "teaser": "Pedestrians, cyclists, children, and shared space.",
+      "scenes": []
+    },
+    {
+      "id": "safe_ride",
+      "order": 7,
+      "title": "Safe Ride Station",
+      "subtitle": "Coming next",
+      "emoji": "🪖",
+      "playable": false,
+      "teaser": "Helmets, belts, mirrors, and starting ready.",
+      "scenes": []
+    },
+    {
+      "id": "lane_movement",
+      "order": 8,
+      "title": "Lane and Movement",
+      "subtitle": "Coming next",
+      "emoji": "↔️",
+      "playable": false,
+      "teaser": "Predictable movement without making others guess.",
+      "scenes": []
+    },
+    {
+      "id": "parking_puzzle",
+      "order": 9,
+      "title": "Parking Puzzle",
+      "subtitle": "Coming next",
+      "emoji": "🅿️",
+      "playable": false,
+      "teaser": "Stopping is easy. Stopping in the right place is clever.",
+      "scenes": []
+    },
+    {
+      "id": "licence_journey",
+      "order": 10,
+      "title": "The Licence Journey",
+      "subtitle": "Coming later",
+      "emoji": "🪪",
+      "playable": false,
+      "teaser": "Learn → Prepare → Apply → Practice → Test → Licence.",
+      "scenes": []
+    },
+    {
+      "id": "road_ready",
+      "order": 11,
+      "title": "Road Ready Challenge",
+      "subtitle": "Final destination",
+      "emoji": "🏁",
+      "playable": false,
+      "teaser": "Return to Roadsville with new eyes — and earn ROAD READY.",
+      "scenes": []
+    }
+  ]
+}

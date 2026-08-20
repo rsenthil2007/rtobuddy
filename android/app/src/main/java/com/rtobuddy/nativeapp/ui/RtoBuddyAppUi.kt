@@ -2,6 +2,7 @@ package com.rtobuddy.nativeapp.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Explore
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.MenuBook
 import androidx.compose.material.icons.outlined.QueryStats
@@ -26,10 +27,12 @@ import com.rtobuddy.nativeapp.ui.home.HomeLaunch
 import com.rtobuddy.nativeapp.ui.home.HomeScreen
 import com.rtobuddy.nativeapp.ui.learn.LearnScreen
 import com.rtobuddy.nativeapp.ui.progress.ProgressScreen
+import com.rtobuddy.nativeapp.ui.quest.QuestScreen
 import com.rtobuddy.nativeapp.ui.tools.ToolsScreen
 
 private enum class RootTab(val label: String) {
     Home("Home"),
+    Quest("Quest"),
     Library("Library"),
     Drill("Drill"),
     Progress("Progress"),
@@ -46,6 +49,7 @@ fun RtoBuddyAppUi(
     var pendingExam by remember { mutableStateOf<HomeLaunch?>(null) }
     var homeRefresh by remember { mutableIntStateOf(0) }
     var progressRefresh by remember { mutableIntStateOf(0) }
+    var questRefresh by remember { mutableIntStateOf(0) }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -59,6 +63,15 @@ fun RtoBuddyAppUi(
                     },
                     icon = { Icon(Icons.Outlined.Home, contentDescription = null) },
                     label = { Text(RootTab.Home.label) },
+                )
+                NavigationBarItem(
+                    selected = tab == RootTab.Quest,
+                    onClick = {
+                        tab = RootTab.Quest
+                        questRefresh += 1
+                    },
+                    icon = { Icon(Icons.Outlined.Explore, contentDescription = null) },
+                    label = { Text(RootTab.Quest.label) },
                 )
                 NavigationBarItem(
                     selected = tab == RootTab.Library,
@@ -111,6 +124,16 @@ fun RtoBuddyAppUi(
                     libraryTab = "state"
                     tab = RootTab.Library
                 },
+                onOpenQuest = {
+                    questRefresh += 1
+                    tab = RootTab.Quest
+                },
+            )
+
+            RootTab.Quest -> QuestScreen(
+                repository = repository,
+                padding = padding,
+                refreshToken = questRefresh,
             )
 
             RootTab.Library -> LearnScreen(

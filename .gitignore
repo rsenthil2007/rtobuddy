@@ -29,3 +29,6 @@ android/.cxx/
 *.aab
 *.keystore
 *.jks
+
+tools/
+

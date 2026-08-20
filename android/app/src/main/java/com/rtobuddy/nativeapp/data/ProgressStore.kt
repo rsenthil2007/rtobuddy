@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.rtobuddy.nativeapp.domain.model.DailyActivity
 import com.rtobuddy.nativeapp.domain.model.ExamAttempt
+import com.rtobuddy.nativeapp.domain.model.RoadQuestProgress
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -23,6 +24,7 @@ class ProgressStore(private val context: Context) {
     private val attemptsKey = stringPreferencesKey("attempts_json")
     private val activityKey = stringPreferencesKey("activity_json")
     private val mistakesKey = stringPreferencesKey("recent_mistakes_json")
+    private val questKey = stringPreferencesKey("road_quest_json")
 
     val jurisdictionCode: Flow<String> = context.progressDataStore.data.map { prefs ->
         prefs[jurisdictionKey] ?: "TN"
@@ -69,6 +71,16 @@ class ProgressStore(private val context: Context) {
 
     suspend fun setRecentMistakes(ids: List<String>) {
         context.progressDataStore.edit { it[mistakesKey] = json.encodeToString(ids.take(20)) }
+    }
+
+    suspend fun getQuestProgress(): RoadQuestProgress {
+        val raw = context.progressDataStore.data.first()[questKey].orEmpty()
+        if (raw.isBlank()) return RoadQuestProgress()
+        return runCatching { json.decodeFromString<RoadQuestProgress>(raw) }.getOrDefault(RoadQuestProgress())
+    }
+
+    suspend fun saveQuestProgress(progress: RoadQuestProgress) {
+        context.progressDataStore.edit { it[questKey] = json.encodeToString(progress) }
     }
 
     companion object {

@@ -67,6 +67,7 @@ fun HomeScreen(
     onOpenLibrary: (String) -> Unit,
     onOpenProgress: () -> Unit,
     onOpenState: () -> Unit,
+    onOpenQuest: () -> Unit = {},
 ) {
     val scope = rememberCoroutineScope()
     var readiness by remember { mutableStateOf(ReadinessSnapshot()) }
@@ -157,6 +158,10 @@ fun HomeScreen(
                             modifier = Modifier.weight(1f),
                         ) { Text("Quick 5") }
                     }
+                    Button(
+                        onClick = onOpenQuest,
+                        modifier = Modifier.fillMaxWidth(),
+                    ) { Text("Enter Road Quest · Roadsville") }
                     Text("Theme", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold)
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
                         AppThemeId.entries.forEach { theme ->

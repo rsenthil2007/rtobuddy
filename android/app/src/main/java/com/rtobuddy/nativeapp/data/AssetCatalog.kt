@@ -5,6 +5,7 @@ import com.rtobuddy.nativeapp.domain.model.ExamQuestion
 import com.rtobuddy.nativeapp.domain.model.JurisdictionInfo
 import com.rtobuddy.nativeapp.domain.model.OfficialService
 import com.rtobuddy.nativeapp.domain.model.RoadMarking
+import com.rtobuddy.nativeapp.domain.model.RoadQuestFile
 import com.rtobuddy.nativeapp.domain.model.RoadRule
 import com.rtobuddy.nativeapp.domain.model.StateUtRule
 import com.rtobuddy.nativeapp.domain.model.TrafficSign
@@ -28,6 +29,7 @@ class AssetCatalog(context: Context) {
     val rules: List<RoadRule> by lazy { read("data/common/rules.json", RulesFile.serializer()).rules }
     val questions: List<ExamQuestion> by lazy { read("data/common/mock_questions.json", QuestionsFile.serializer()).questions }
     val services: List<OfficialService> by lazy { read("data/common/official_services.json", ServicesFile.serializer()).services }
+    val roadQuest: RoadQuestFile by lazy { read("data/common/road_quest.json", RoadQuestFile.serializer()) }
 
     private val overlaysRoot: JsonObject by lazy {
         json.parseToJsonElement(assets.open("data/common/jurisdiction_overlays.json").bufferedReader().use { it.readText() })

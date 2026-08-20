@@ -12,8 +12,12 @@ import com.rtobuddy.nativeapp.domain.model.JurisdictionInfo
 import com.rtobuddy.nativeapp.domain.model.LocalReminder
 import com.rtobuddy.nativeapp.domain.model.MissionProgress
 import com.rtobuddy.nativeapp.domain.model.OfficialService
+import com.rtobuddy.nativeapp.domain.model.QuestChapter
+import com.rtobuddy.nativeapp.domain.model.QuestChapterStatus
+import com.rtobuddy.nativeapp.domain.model.QuestOverview
 import com.rtobuddy.nativeapp.domain.model.ReadinessSnapshot
 import com.rtobuddy.nativeapp.domain.model.RoadMarking
+import com.rtobuddy.nativeapp.domain.model.RoadQuestProgress
 import com.rtobuddy.nativeapp.domain.model.RoadRule
 import com.rtobuddy.nativeapp.domain.model.SevenDayStep
 import com.rtobuddy.nativeapp.domain.model.StateUtRule
@@ -47,6 +51,9 @@ interface RtoBuddyRepository {
     suspend fun getSpotItQuestionIds(): List<String>
     suspend fun getServices(): List<OfficialService>
     suspend fun getStateRules(): List<StateUtRule>
+    suspend fun getQuestOverview(): QuestOverview
+    suspend fun getQuestChapter(chapterId: String): QuestChapter?
+    suspend fun completeQuestScene(chapterId: String, sceneId: String, safeChoice: Boolean?): RoadQuestProgress
     suspend fun trackSignView(signId: String)
     suspend fun trackStateRuleView()
     suspend fun saveExamResult(result: ExamResult)
@@ -127,6 +134,7 @@ class OfflineFirstRtoBuddyRepository(
         val attempts = progress.getAttempts()
         val activity = ensureActivityDay()
         val best = attempts.maxOfOrNull { it.percent } ?: 0
+        val questProgress = progress.getQuestProgress()
         return listOf(
             Achievement("first_drill", "First drill", "Complete any practice run", attempts.isNotEmpty()),
             Achievement("streak_3", "3-day streak", "Learn across 3 consecutive days", activity.streakDays >= 3),
@@ -134,6 +142,9 @@ class OfflineFirstRtoBuddyRepository(
             Achievement("exam_ready", "Exam Ready", "Hit 75%+ on any attempt", best >= 75),
             Achievement("simulator", "Simulator pilot", "Finish an exam simulator", attempts.any { it.mode == "simulator" }),
             Achievement("state_aware", "State aware", "Review a State/UT rule", activity.stateRuleReviewed),
+            Achievement("roadsville", "Roadsville arrival", "Complete Welcome to Roadsville", questProgress.completedChapterIds.contains("welcome")),
+            Achievement("sign_forest", "Sign forest walker", "Complete Sign Forest", questProgress.completedChapterIds.contains("sign_forest")),
+            Achievement("first_challenge", "First challenge", "Finish the First Road Challenge", questProgress.completedChapterIds.contains("scenario_challenge")),
         )
     }
 
@@ -191,6 +202,130 @@ class OfflineFirstRtoBuddyRepository(
     override suspend fun getStateRules(): List<StateUtRule> {
         val code = progress.jurisdictionCode.first()
         return catalog.stateRules(code)
+    }
+
+    override suspend fun getQuestOverview(): QuestOverview {
+        val quest = catalog.roadQuest
+        val questProgress = progress.getQuestProgress()
+        val completedIds = questProgress.completedChapterIds.toSet()
+        val completedScenes = questProgress.completedSceneIds.toSet()
+        val sorted = quest.chapters.sortedBy { it.order }
+        val playable = sorted.filter { it.playable }
+        val completedPlayable = playable.count { it.id in completedIds }
+        val stage = questStage(quest.stages, completedPlayable)
+
+        val statuses = sorted.map { chapter ->
+            val unlocked = isQuestChapterUnlocked(chapter, playable, completedIds, completedPlayable)
+            val sceneIds = chapter.scenes.map { it.id }
+            QuestChapterStatus(
+                chapter = chapter,
+                unlocked = unlocked,
+                completed = chapter.id in completedIds,
+                sceneCount = sceneIds.size,
+                completedScenes = sceneIds.count { it in completedScenes },
+            )
+        }
+        val nextChapterId = statuses
+            .firstOrNull { it.chapter.playable && it.unlocked && !it.completed }
+            ?.chapter?.id
+
+        return QuestOverview(
+            title = quest.title,
+            world = quest.world,
+            guide = quest.guide,
+            stage = stage,
+            stars = questProgress.stars,
+            safeStreak = questProgress.safeStreak,
+            bestSafeStreak = questProgress.bestSafeStreak,
+            completedPlayable = completedPlayable,
+            totalPlayable = playable.size,
+            chapters = statuses,
+            nextChapterId = nextChapterId,
+            completedSceneIds = questProgress.completedSceneIds,
+            appreciation = quest.appreciation,
+            corrections = quest.corrections,
+            streakLines = quest.streakLines,
+        )
+    }
+
+    override suspend fun getQuestChapter(chapterId: String): QuestChapter? {
+        val quest = catalog.roadQuest
+        val chapter = quest.chapters.firstOrNull { it.id == chapterId } ?: return null
+        val sorted = quest.chapters.sortedBy { it.order }
+        val playable = sorted.filter { it.playable }
+        val questProgress = progress.getQuestProgress()
+        val completedIds = questProgress.completedChapterIds.toSet()
+        val completedPlayable = playable.count { it.id in completedIds }
+        if (!chapter.playable) return chapter
+        return if (isQuestChapterUnlocked(chapter, playable, completedIds, completedPlayable)) chapter else null
+    }
+
+    override suspend fun completeQuestScene(
+        chapterId: String,
+        sceneId: String,
+        safeChoice: Boolean?,
+    ): RoadQuestProgress {
+        val quest = catalog.roadQuest
+        val chapter = quest.chapters.firstOrNull { it.id == chapterId }
+        var updated = progress.getQuestProgress()
+
+        // Wrong choices teach — they do not complete the scene.
+        if (safeChoice != false) {
+            val scenesDone = (updated.completedSceneIds + sceneId).distinct()
+            updated = updated.copy(completedSceneIds = scenesDone)
+
+            if (chapter != null) {
+                val allDone = chapter.scenes.isNotEmpty() &&
+                    chapter.scenes.all { it.id in scenesDone }
+                if (allDone && chapter.id !in updated.completedChapterIds) {
+                    updated = updated.copy(
+                        completedChapterIds = updated.completedChapterIds + chapter.id,
+                        stars = updated.stars + 1,
+                    )
+                }
+            }
+        }
+
+        updated = when (safeChoice) {
+            true -> {
+                val streak = updated.safeStreak + 1
+                updated.copy(
+                    safeStreak = streak,
+                    bestSafeStreak = maxOf(updated.bestSafeStreak, streak),
+                )
+            }
+            false -> updated.copy(safeStreak = 0)
+            null -> updated
+        }
+
+        progress.saveQuestProgress(updated)
+        val activity = ensureActivityDay()
+        progress.saveActivity(bumpStreak(activity))
+        return updated
+    }
+
+    private fun isQuestChapterUnlocked(
+        chapter: QuestChapter,
+        playableSorted: List<QuestChapter>,
+        completedChapterIds: Set<String>,
+        completedPlayable: Int,
+    ): Boolean {
+        if (!chapter.playable) return completedPlayable >= 5
+        val index = playableSorted.indexOfFirst { it.id == chapter.id }
+        if (index <= 0) return true
+        return playableSorted[index - 1].id in completedChapterIds
+    }
+
+    private fun questStage(stages: List<String>, completedPlayable: Int): String {
+        if (stages.isEmpty()) return "CURIOUS"
+        val index = when {
+            completedPlayable <= 0 -> 0
+            completedPlayable <= 2 -> 1
+            completedPlayable == 3 -> 2
+            completedPlayable == 4 -> 3
+            else -> 4
+        }.coerceAtMost(stages.lastIndex)
+        return stages[index]
     }
 
     override suspend fun trackSignView(signId: String) {
