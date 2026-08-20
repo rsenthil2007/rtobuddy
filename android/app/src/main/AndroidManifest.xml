@@ -7,13 +7,14 @@
         android:name=".RtoBuddyApp"
         android:allowBackup="true"
         android:icon="@android:drawable/sym_def_app_icon"
-        android:label="RTOBuddy"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.RTOBuddy">
 
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.RTOBuddy">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

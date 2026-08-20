@@ -1,4 +1,4 @@
-name: Android Debug APK
+name: Android debug APK
 
 on:
   workflow_dispatch:
@@ -8,43 +8,42 @@ on:
       - ".github/workflows/android-debug-apk.yml"
 
 jobs:
-  build-debug-apk:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    defaults:
-      run:
-        working-directory: android
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+      - uses: android-actions/setup-android@v4
+      - name: Install Android SDK platform
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - uses: gradle/actions/setup-gradle@v6
         with:
           gradle-version: "8.9"
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android 35 SDK packages
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
-
-      - name: Verify Gradle
-        run: gradle --version
-
-      - name: Build debug APK
-        run: gradle :app:assembleDebug --stacktrace
-
-      - name: Upload debug APK
-        uses: actions/upload-artifact@v4
+          cache-disabled: true
+      - name: Assemble debug APK
+        working-directory: android
+        run: |
+          echo "sdk.dir=${ANDROID_SDK_ROOT:-$ANDROID_HOME}" > local.properties
+          set +e
+          set -o pipefail
+          gradle :app:assembleDebug --stacktrace --no-daemon --no-build-cache --no-configuration-cache 2>&1 | tee gradle-assemble.log
+          status=$?
+          if [ "$status" -ne 0 ]; then
+            excerpt=$(grep -E '^(e: |FAILURE:|\* What went wrong:|> Task .* FAILED)' gradle-assemble.log | tail -n 30)
+            echo "$excerpt"
+            echo "::error::${excerpt}"
+            exit "$status"
+          fi
+      - uses: actions/upload-artifact@v6
+        if: success()
         with:
           name: rtobuddy-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: gradle-assemble-log
+          path: android/gradle-assemble.log
