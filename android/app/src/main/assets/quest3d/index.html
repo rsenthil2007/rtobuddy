@@ -98,7 +98,9 @@
       display: flex; flex-direction: column; justify-content: flex-end;
       padding: 20px 16px 28px; gap: 10px;
       box-sizing: border-box;
+      overflow-y: auto; -webkit-overflow-scrolling: touch;
     }
+    #menuList { display: flex; flex-direction: column; gap: 10px; }
     #bootError {
       display: none; margin: 0 0 8px; padding: 10px 12px;
       background: rgba(180,40,40,0.35); border: 1px solid #ff7b72;
@@ -128,11 +130,20 @@
 <body>
   <div id="menu">
     <h1>Roadsville</h1>
-    <p>Lean 3D Quest prototype — tap the world, decide safely. Minimal reading.</p>
+    <p>Lean 3D Quest — tap, decide, learn. Minimal reading.</p>
     <div id="bootError"></div>
-    <button class="scenario-btn" data-id="welcome"><strong>1 · Arrival Street</strong><span>Notice what’s alive around you</span></button>
-    <button class="scenario-btn" data-id="junction"><strong>2 · Busy Junction</strong><span>One decision. Shared road.</span></button>
-    <button class="scenario-btn" data-id="signstop"><strong>3 · Stop Ahead</strong><span>The sign speaks for the road</span></button>
+    <div id="menuList">
+      <button class="scenario-btn" data-id="welcome"><strong>1 · Arrival Street</strong><span>Notice what’s alive around you</span></button>
+      <button class="scenario-btn" data-id="basics"><strong>2 · Road Basics</strong><span>Edge, lane, centre, crossing</span></button>
+      <button class="scenario-btn" data-id="lanes"><strong>3 · Stay Predictable</strong><span>Settle the drifting vehicle</span></button>
+      <button class="scenario-btn" data-id="signstop"><strong>4 · Stop Ahead</strong><span>The sign speaks for the road</span></button>
+      <button class="scenario-btn" data-id="warning"><strong>5 · Warning Ahead</strong><span>Prepare — don’t ignore</span></button>
+      <button class="scenario-btn" data-id="junction"><strong>6 · Busy Junction</strong><span>Someone is still crossing</span></button>
+      <button class="scenario-btn" data-id="blocked"><strong>7 · Clear the Junction</strong><span>Green light ≠ enter if blocked</span></button>
+      <button class="scenario-btn" data-id="spotrisk"><strong>8 · Spot the Risk</strong><span>Who needs care first?</span></button>
+      <button class="scenario-btn" data-id="overtake"><strong>9 · Overtaking Trail</strong><span>Can I pass safely?</span></button>
+      <button class="scenario-btn" data-id="night"><strong>10 · Night Road</strong><span>See less. React sooner.</span></button>
+    </div>
   </div>
   <canvas id="c"></canvas>
   <div id="hud" style="display:none">
