@@ -399,45 +399,255 @@
       "id": "people_road",
       "order": 6,
       "title": "People on the Road",
-      "subtitle": "Coming next",
+      "subtitle": "Shared space — walkers, kids, two-wheelers",
       "emoji": "🚶",
-      "playable": false,
-      "teaser": "Pedestrians, cyclists, children, and shared space.",
-      "scenes": []
+      "playable": true,
+      "objectives": [
+        "Expect sudden movement near kerbs",
+        "Give unprotected riders space",
+        "School zones need lower speed"
+      ],
+      "scenes": [
+        {
+          "id": "people",
+          "type": "story",
+          "buddy": "People share this street. In Roadsville 3D, tap what you notice.",
+          "body": "Walkers, children, and scooters move differently from cars. District: People on the Road.",
+          "continueLabel": "Open 3D district"
+        },
+        {
+          "id": "helmet",
+          "type": "story",
+          "buddy": "A rider without a helmet is more vulnerable.",
+          "body": "Slow down and leave space. District: No-Helmet Rider.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "school",
+          "type": "story",
+          "buddy": "Near schools, expect sudden steps into the road.",
+          "body": "District: School Zone — slow and watch the kerb.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "zebra",
+          "type": "story",
+          "buddy": "Zebra means their turn.",
+          "body": "Stop and let people finish crossing. District: Zebra Crossing.",
+          "continueLabel": "Continue"
+        }
+      ]
     },
     {
       "id": "safe_ride",
       "order": 7,
       "title": "Safe Ride Station",
-      "subtitle": "Coming next",
+      "subtitle": "Helmets, belts, lights, and starting ready",
       "emoji": "🪖",
-      "playable": false,
-      "teaser": "Helmets, belts, mirrors, and starting ready.",
-      "scenes": []
+      "playable": true,
+      "objectives": [
+        "Buckle before you roll",
+        "Wear your helmet before you start",
+        "Broken lights keep you off the road"
+      ],
+      "scenes": [
+        {
+          "id": "seatbelt",
+          "type": "story",
+          "buddy": "Belts only protect if they are on before the surprise.",
+          "body": "District: Seatbelt First.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "helmetown",
+          "type": "story",
+          "buddy": "Helmet before kickstand up.",
+          "body": "District: Helmet On.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "lightsfault",
+          "type": "story",
+          "buddy": "If they cannot see you, you do not belong on the road yet.",
+          "body": "District: Faulty Lights.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "phone",
+          "type": "story",
+          "buddy": "The road needs your full attention.",
+          "body": "District: Phone Distraction.",
+          "continueLabel": "Continue"
+        }
+      ]
     },
     {
       "id": "lane_movement",
       "order": 8,
       "title": "Lane and Movement",
-      "subtitle": "Coming next",
+      "subtitle": "Predictable moves — hills, beams, fog, priority",
       "emoji": "↔️",
-      "playable": false,
-      "teaser": "Predictable movement without making others guess.",
-      "scenes": []
+      "playable": true,
+      "objectives": [
+        "Yield correctly at junctions",
+        "Use the right beam",
+        "Respect hills and fog"
+      ],
+      "scenes": [
+        {
+          "id": "priority",
+          "type": "story",
+          "buddy": "At many uncontrolled junctions, give way to traffic from the right.",
+          "body": "District: Who Goes First?",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "hillright",
+          "type": "story",
+          "buddy": "On narrow hills, the climbing vehicle usually keeps the way.",
+          "body": "District: Hill Right of Way.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "beams",
+          "type": "story",
+          "buddy": "Dip beams so the other driver can still see.",
+          "body": "District: Beam Sense.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "fog",
+          "type": "story",
+          "buddy": "Fog needs low beam, lower speed, and honest gaps.",
+          "body": "District: Foggy Stretch.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "overtake",
+          "type": "story",
+          "buddy": "Before asking can I pass — ask can I pass safely.",
+          "body": "District: Overtaking Trail.",
+          "continueLabel": "Continue"
+        }
+      ]
     },
     {
       "id": "parking_puzzle",
       "order": 9,
       "title": "Parking Puzzle",
-      "subtitle": "Coming next",
+      "subtitle": "Stopping is easy — stopping in the right place is clever",
       "emoji": "🅿️",
-      "playable": false,
-      "teaser": "Stopping is easy. Stopping in the right place is clever.",
-      "scenes": []
+      "playable": true,
+      "objectives": [
+        "Keep crossings clear",
+        "Use marked bays",
+        "Avoid blocking sightlines"
+      ],
+      "scenes": [
+        {
+          "id": "parking",
+          "type": "story",
+          "buddy": "Where you stop can hide people and signs.",
+          "body": "District: Parking Puzzle — use the marked bay.",
+          "continueLabel": "Continue"
+        }
+      ]
+    },
+    {
+      "id": "real_world_roads",
+      "order": 10,
+      "title": "Real-World Roads",
+      "subtitle": "Crashes, potholes, hospitals, wrong-way riders",
+      "emoji": "🛣️",
+      "playable": true,
+      "objectives": [
+        "Help without becoming the next crash",
+        "Read the road surface",
+        "Stay calm near hospitals"
+      ],
+      "scenes": [
+        {
+          "id": "accident",
+          "type": "story",
+          "buddy": "Protect the scene, then help.",
+          "body": "District: Crash Ahead.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "twowheel",
+          "type": "story",
+          "buddy": "Two-wheelers need room. Treat them as vulnerable road users.",
+          "body": "District: Two-Wheelers.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "pothole",
+          "type": "story",
+          "buddy": "Slow early. Only move aside when the path is truly clear.",
+          "body": "District: Pothole Path.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "speedbump",
+          "type": "story",
+          "buddy": "Speed breakers work when you slow early and smoothly.",
+          "body": "District: Speed Breaker.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "hospital",
+          "type": "story",
+          "buddy": "Near hospitals, quiet and calm keep the road humane.",
+          "body": "District: Hospital Zone.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "wrongway",
+          "type": "story",
+          "buddy": "Do not inherit a wrong-way risk.",
+          "body": "District: Wrong-Way Rider.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "rain",
+          "type": "story",
+          "buddy": "Wet roads need earlier, gentler control.",
+          "body": "District: Rainy Day.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "night",
+          "type": "story",
+          "buddy": "At night you may also have less time to react.",
+          "body": "District: Night Road.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "emergency",
+          "type": "story",
+          "buddy": "Clear a safe path without creating new hazards.",
+          "body": "District: Give Way.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "railway",
+          "type": "story",
+          "buddy": "Trains win every race. Waiting is the only win.",
+          "body": "District: Railway Crossing.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "uturn",
+          "type": "story",
+          "buddy": "A patient gap keeps everyone predictable.",
+          "body": "District: Busy U-Turn.",
+          "continueLabel": "Continue"
+        }
+      ]
     },
     {
       "id": "licence_journey",
-      "order": 10,
+      "order": 11,
       "title": "The Licence Journey",
       "subtitle": "Coming later",
       "emoji": "🪪",
@@ -447,7 +657,7 @@
     },
     {
       "id": "road_ready",
-      "order": 11,
+      "order": 12,
       "title": "Road Ready Challenge",
       "subtitle": "Final destination",
       "emoji": "🏁",

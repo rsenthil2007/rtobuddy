@@ -13,9 +13,22 @@ android {
         applicationId = "com.rtobuddy.nativeapp"
         minSdk = 26
         targetSdk = 35
-        versionCode = 15
-        versionName = "1.7.1"
+        versionCode = 16
+        versionName = "1.8.0"
         vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Host this JSON on InterServer (or keep GitHub raw during closed group).
+        // Flip "ads": "Enabled" remotely to turn AdMob on. App defaults to Disabled.
+        buildConfigField(
+            "String",
+            "REMOTE_ADS_CONFIG_URL",
+            "\"https://raw.githubusercontent.com/rsenthil2007/rtobuddy/main/remote/ads-config.json\"",
+        )
+        // Google sample units (safe for closed testing). Replace with your AdMob IDs for production.
+        buildConfigField("String", "ADMOB_BANNER_UNIT_ID", "\"ca-app-pub-3940256099942544/6300978111\"")
+        buildConfigField("String", "ADMOB_INTERSTITIAL_UNIT_ID", "\"ca-app-pub-3940256099942544/1033173712\"")
+        buildConfigField("String", "ADMOB_APP_ID", "\"ca-app-pub-3940256099942544~3347511713\"")
     }
 
     buildTypes {
@@ -64,5 +77,13 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("io.coil-kt:coil-compose:2.7.0")
     implementation("io.coil-kt:coil-svg:2.7.0")
+    implementation("com.google.android.gms:play-services-ads:23.6.0")
+
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    androidTestImplementation(composeBom)
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 }

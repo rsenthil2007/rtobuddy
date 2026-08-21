@@ -24,17 +24,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.rtobuddy.nativeapp.ads.AdsManager
 import com.rtobuddy.nativeapp.data.RtoBuddyRepository
 import com.rtobuddy.nativeapp.domain.model.CatalogStats
 import com.rtobuddy.nativeapp.domain.model.OfficialService
 import com.rtobuddy.nativeapp.ui.components.SectionCard
 import com.rtobuddy.nativeapp.ui.theme.AppThemeId
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 @Composable
 fun ToolsScreen(
     repository: RtoBuddyRepository,
+    adsManager: AdsManager,
     padding: PaddingValues,
 ) {
     val context = LocalContext.current
@@ -42,6 +45,7 @@ fun ToolsScreen(
     var services by remember { mutableStateOf<List<OfficialService>>(emptyList()) }
     var stats by remember { mutableStateOf(CatalogStats()) }
     var selectedTheme by remember { mutableStateOf(AppThemeId.BALANCED) }
+    val adsCfg by adsManager.config.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
         services = repository.getServices()
@@ -73,6 +77,25 @@ fun ToolsScreen(
                     ) {
                         Text(if (selectedTheme == theme) "✓ ${theme.label}" else theme.label)
                     }
+                }
+            }
+        }
+
+        item {
+            SectionCard(title = "Ads (remote)") {
+                Text(
+                    "Status: ${if (adsCfg.adsEnabled) "Enabled" else "Disabled"} · " +
+                        "banner=${adsCfg.bannerEnabled} · cooldown=${adsCfg.interstitialCooldownSec}s",
+                )
+                Text(
+                    adsCfg.message ?: "Controlled by remote JSON. Default is Disabled until the server says Enabled.",
+                    style = MaterialTheme.typography.bodySmall,
+                )
+                OutlinedButton(
+                    onClick = { adsManager.refreshConfig() },
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Text("Refresh remote ads config")
                 }
             }
         }

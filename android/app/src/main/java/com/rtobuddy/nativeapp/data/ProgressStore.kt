@@ -1,6 +1,7 @@
 package com.rtobuddy.nativeapp.data
 
 import android.content.Context
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -25,6 +26,7 @@ class ProgressStore(private val context: Context) {
     private val activityKey = stringPreferencesKey("activity_json")
     private val mistakesKey = stringPreferencesKey("recent_mistakes_json")
     private val questKey = stringPreferencesKey("road_quest_json")
+    private val onboardingDoneKey = booleanPreferencesKey("onboarding_done")
 
     val jurisdictionCode: Flow<String> = context.progressDataStore.data.map { prefs ->
         prefs[jurisdictionKey] ?: "TN"
@@ -32,6 +34,14 @@ class ProgressStore(private val context: Context) {
 
     val themeId: Flow<String> = context.progressDataStore.data.map { prefs ->
         prefs[themeKey] ?: "BALANCED"
+    }
+
+    val onboardingDone: Flow<Boolean> = context.progressDataStore.data.map { prefs ->
+        prefs[onboardingDoneKey] ?: false
+    }
+
+    suspend fun setOnboardingDone(done: Boolean) {
+        context.progressDataStore.edit { it[onboardingDoneKey] = done }
     }
 
     suspend fun setJurisdiction(code: String) {

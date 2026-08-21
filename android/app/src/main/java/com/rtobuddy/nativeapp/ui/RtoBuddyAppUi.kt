@@ -1,5 +1,6 @@
 package com.rtobuddy.nativeapp.ui
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Explore
@@ -18,17 +19,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.rtobuddy.nativeapp.ads.AdMobBanner
+import com.rtobuddy.nativeapp.ads.AdsManager
 import com.rtobuddy.nativeapp.data.AssetCatalog
 import com.rtobuddy.nativeapp.data.RtoBuddyRepository
 import com.rtobuddy.nativeapp.ui.exam.ExamScreen
 import com.rtobuddy.nativeapp.ui.home.HomeLaunch
 import com.rtobuddy.nativeapp.ui.home.HomeScreen
 import com.rtobuddy.nativeapp.ui.learn.LearnScreen
+import com.rtobuddy.nativeapp.ui.onboarding.OnboardingScreen
 import com.rtobuddy.nativeapp.ui.progress.ProgressScreen
 import com.rtobuddy.nativeapp.ui.quest.QuestScreen
 import com.rtobuddy.nativeapp.ui.tools.ToolsScreen
+import kotlinx.coroutines.launch
 
 private enum class RootTab(val label: String) {
     Home("Home"),
@@ -43,7 +50,10 @@ private enum class RootTab(val label: String) {
 fun RtoBuddyAppUi(
     repository: RtoBuddyRepository,
     catalog: AssetCatalog,
+    adsManager: AdsManager,
 ) {
+    val scope = rememberCoroutineScope()
+    val onboardingDone by repository.onboardingDone.collectAsStateWithLifecycle(initialValue = false)
     var tab by remember { mutableStateOf(RootTab.Home) }
     var libraryTab by remember { mutableStateOf<String?>(null) }
     var pendingExam by remember { mutableStateOf<HomeLaunch?>(null) }
@@ -51,55 +61,78 @@ fun RtoBuddyAppUi(
     var progressRefresh by remember { mutableIntStateOf(0) }
     var questRefresh by remember { mutableIntStateOf(0) }
 
+    if (!onboardingDone) {
+        OnboardingScreen(
+            onFinished = {
+                scope.launch { repository.setOnboardingDone(true) }
+            },
+        )
+        return
+    }
+
+    val adsCfg by adsManager.config.collectAsStateWithLifecycle()
+    val showBanner = adsCfg.adsEnabled && adsCfg.bannerEnabled
+    val bannerBottom = !adsCfg.bannerPosition.equals("top", ignoreCase = true)
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        topBar = {
+            if (showBanner && !bannerBottom) {
+                AdMobBanner(adsManager = adsManager)
+            }
+        },
         bottomBar = {
-            NavigationBar {
-                NavigationBarItem(
-                    selected = tab == RootTab.Home,
-                    onClick = {
-                        tab = RootTab.Home
-                        homeRefresh += 1
-                    },
-                    icon = { Icon(Icons.Outlined.Home, contentDescription = null) },
-                    label = { Text(RootTab.Home.label) },
-                )
-                NavigationBarItem(
-                    selected = tab == RootTab.Quest,
-                    onClick = {
-                        tab = RootTab.Quest
-                        questRefresh += 1
-                    },
-                    icon = { Icon(Icons.Outlined.Explore, contentDescription = null) },
-                    label = { Text(RootTab.Quest.label) },
-                )
-                NavigationBarItem(
-                    selected = tab == RootTab.Library,
-                    onClick = { tab = RootTab.Library },
-                    icon = { Icon(Icons.Outlined.MenuBook, contentDescription = null) },
-                    label = { Text(RootTab.Library.label) },
-                )
-                NavigationBarItem(
-                    selected = tab == RootTab.Drill,
-                    onClick = { tab = RootTab.Drill },
-                    icon = { Icon(Icons.Outlined.Quiz, contentDescription = null) },
-                    label = { Text(RootTab.Drill.label) },
-                )
-                NavigationBarItem(
-                    selected = tab == RootTab.Progress,
-                    onClick = {
-                        tab = RootTab.Progress
-                        progressRefresh += 1
-                    },
-                    icon = { Icon(Icons.Outlined.QueryStats, contentDescription = null) },
-                    label = { Text(RootTab.Progress.label) },
-                )
-                NavigationBarItem(
-                    selected = tab == RootTab.Tools,
-                    onClick = { tab = RootTab.Tools },
-                    icon = { Icon(Icons.Outlined.Settings, contentDescription = null) },
-                    label = { Text(RootTab.Tools.label) },
-                )
+            Column {
+                if (showBanner && bannerBottom) {
+                    AdMobBanner(adsManager = adsManager)
+                }
+                NavigationBar {
+                    NavigationBarItem(
+                        selected = tab == RootTab.Home,
+                        onClick = {
+                            tab = RootTab.Home
+                            homeRefresh += 1
+                        },
+                        icon = { Icon(Icons.Outlined.Home, contentDescription = null) },
+                        label = { Text(RootTab.Home.label) },
+                    )
+                    NavigationBarItem(
+                        selected = tab == RootTab.Quest,
+                        onClick = {
+                            tab = RootTab.Quest
+                            questRefresh += 1
+                        },
+                        icon = { Icon(Icons.Outlined.Explore, contentDescription = null) },
+                        label = { Text(RootTab.Quest.label) },
+                    )
+                    NavigationBarItem(
+                        selected = tab == RootTab.Library,
+                        onClick = { tab = RootTab.Library },
+                        icon = { Icon(Icons.Outlined.MenuBook, contentDescription = null) },
+                        label = { Text(RootTab.Library.label) },
+                    )
+                    NavigationBarItem(
+                        selected = tab == RootTab.Drill,
+                        onClick = { tab = RootTab.Drill },
+                        icon = { Icon(Icons.Outlined.Quiz, contentDescription = null) },
+                        label = { Text(RootTab.Drill.label) },
+                    )
+                    NavigationBarItem(
+                        selected = tab == RootTab.Progress,
+                        onClick = {
+                            tab = RootTab.Progress
+                            progressRefresh += 1
+                        },
+                        icon = { Icon(Icons.Outlined.QueryStats, contentDescription = null) },
+                        label = { Text(RootTab.Progress.label) },
+                    )
+                    NavigationBarItem(
+                        selected = tab == RootTab.Tools,
+                        onClick = { tab = RootTab.Tools },
+                        icon = { Icon(Icons.Outlined.Settings, contentDescription = null) },
+                        label = { Text(RootTab.Tools.label) },
+                    )
+                }
             }
         },
     ) { padding ->
@@ -132,6 +165,7 @@ fun RtoBuddyAppUi(
 
             RootTab.Quest -> QuestScreen(
                 repository = repository,
+                adsManager = adsManager,
                 padding = padding,
                 refreshToken = questRefresh,
             )
@@ -166,6 +200,7 @@ fun RtoBuddyAppUi(
 
             RootTab.Tools -> ToolsScreen(
                 repository = repository,
+                adsManager = adsManager,
                 padding = padding,
             )
         }

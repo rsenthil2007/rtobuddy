@@ -1,0 +1,8 @@
+{
+  "ads": "Disabled",
+  "bannerEnabled": true,
+  "bannerPosition": "bottom",
+  "interstitialBetweenQuests": true,
+  "interstitialCooldownSec": 5,
+  "message": "Closed-group default: ads off until enabled remotely."
+}

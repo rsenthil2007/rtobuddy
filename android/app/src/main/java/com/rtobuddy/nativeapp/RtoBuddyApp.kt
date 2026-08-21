@@ -9,5 +9,7 @@ class RtoBuddyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         container = AppContainer(this)
+        // Fetch remote ads flag (fail-closed → Disabled). Does not block UI.
+        container.adsManager.start()
     }
 }

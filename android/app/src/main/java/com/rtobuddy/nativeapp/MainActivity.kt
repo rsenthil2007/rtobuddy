@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
                     RtoBuddyAppUi(
                         repository = app.container.repository,
                         catalog = app.container.catalog,
+                        adsManager = app.container.adsManager,
                     )
                 }
             }

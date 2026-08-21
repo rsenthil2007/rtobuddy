@@ -282,9 +282,8 @@ private fun SignalThumb(name: String) {
 
 @Composable
 private fun MarkingThumb(id: String, name: String, category: String) {
-    val key = remember(id, name, category) {
-        id.uppercase().ifBlank { name }.lowercase()
-    }
+    // Draw strictly by marking id so name/category never pick the wrong pattern.
+    val markingId = remember(id) { id.trim().uppercase() }
     Canvas(
         modifier = Modifier
             .fillMaxWidth()
@@ -310,9 +309,8 @@ private fun MarkingThumb(id: String, name: String, category: String) {
             }
         }
 
-        fun arrow(cx: Float, cy: Float, color: Color, rotateDeg: Float = 0f, alsoLeft: Boolean = false, alsoRight: Boolean = false) {
+        fun arrow(cx: Float, cy: Float, color: Color, alsoLeft: Boolean = false, alsoRight: Boolean = false) {
             val path = Path()
-            // shaft + head pointing up (straight)
             path.moveTo(cx - 8f, cy + 22f)
             path.lineTo(cx + 8f, cy + 22f)
             path.lineTo(cx + 8f, cy - 2f)
@@ -338,19 +336,41 @@ private fun MarkingThumb(id: String, name: String, category: String) {
                 p.close()
                 drawPath(p, color)
             }
-            @Suppress("UNUSED_VARIABLE")
-            val unused = rotateDeg
         }
 
-        when {
-            key.contains("rm-010") || name.contains("Zebra", ignoreCase = true) -> {
+        when (markingId) {
+            "RM-001" -> {
+                // Generic centre line: long dashes
+                dashedLine(amber, midY, 6f, 44f, 14f)
+            }
+            "RM-002" -> dashedLine(amber, midY, 6f, 22f, 18f)
+            "RM-003" -> drawLine(amber, Offset(left, midY), Offset(right, midY), 6f)
+            "RM-004" -> {
+                drawLine(amber, Offset(left, midY - 7f), Offset(right, midY - 7f), 5f)
+                drawLine(amber, Offset(left, midY + 7f), Offset(right, midY + 7f), 5f)
+            }
+            "RM-005" -> dashedLine(white, midY, 5f, 36f, 14f)
+            "RM-006" -> dashedLine(white, midY, 5f, 18f, 16f)
+            "RM-007" -> drawLine(white, Offset(left, size.height * 0.78f), Offset(right, size.height * 0.78f), 7f)
+            "RM-008" -> {
+                drawLine(white, Offset(size.width * 0.28f, size.height * 0.2f), Offset(size.width * 0.28f, size.height * 0.8f), 10f)
+                dashedLine(amber, midY, 4f)
+            }
+            "RM-009" -> {
+                var x = size.width * 0.22f
+                while (x < size.width * 0.38f) {
+                    drawLine(white, Offset(x, size.height * 0.25f), Offset(x + 10f, size.height * 0.75f), 4f)
+                    x += 14f
+                }
+            }
+            "RM-010" -> {
                 var x = left
                 while (x < right) {
                     drawRect(white, Offset(x, size.height * 0.18f), Size(16f, size.height * 0.64f))
                     x += 28f
                 }
             }
-            key.contains("rm-011") || name.contains("Approach", ignoreCase = true) -> {
+            "RM-011" -> {
                 dashedLine(white, midY - 10f, 5f, 18f, 12f)
                 dashedLine(white, midY + 10f, 5f, 18f, 12f)
                 var x = left + 40f
@@ -359,43 +379,8 @@ private fun MarkingThumb(id: String, name: String, category: String) {
                     x += 22f
                 }
             }
-            key.contains("rm-004") || name.contains("Double Solid", ignoreCase = true) -> {
-                drawLine(amber, Offset(left, midY - 7f), Offset(right, midY - 7f), 5f)
-                drawLine(amber, Offset(left, midY + 7f), Offset(right, midY + 7f), 5f)
-            }
-            key.contains("rm-002") || name.contains("Broken Centre", ignoreCase = true) -> {
-                dashedLine(amber, midY, 6f)
-            }
-            key.contains("rm-003") || (name.contains("Solid Centre", ignoreCase = true) && !name.contains("Double")) -> {
-                drawLine(amber, Offset(left, midY), Offset(right, midY), 6f)
-            }
-            key.contains("rm-001") || name.equals("Centre Line", ignoreCase = true) -> {
-                dashedLine(amber, midY, 6f, 40f, 16f)
-            }
-            key.contains("rm-006") || name.contains("Broken Lane", ignoreCase = true) -> {
-                dashedLine(white, midY, 5f, 24f, 16f)
-            }
-            key.contains("rm-005") || name.equals("Lane Line", ignoreCase = true) -> {
-                dashedLine(white, midY, 5f)
-            }
-            key.contains("rm-007") || name.equals("Edge Line", ignoreCase = true) -> {
-                drawLine(white, Offset(left, size.height * 0.78f), Offset(right, size.height * 0.78f), 7f)
-            }
-            key.contains("rm-008") || name.contains("Stop Line", ignoreCase = true) -> {
-                drawLine(white, Offset(size.width * 0.28f, size.height * 0.2f), Offset(size.width * 0.28f, size.height * 0.8f), 10f)
-                dashedLine(amber, midY, 4f)
-            }
-            key.contains("rm-009") || name.contains("Give-Way", ignoreCase = true) || name.contains("Give Way", ignoreCase = true) -> {
-                var x = size.width * 0.22f
-                while (x < size.width * 0.38f) {
-                    drawLine(white, Offset(x, size.height * 0.25f), Offset(x + 10f, size.height * 0.75f), 4f)
-                    x += 14f
-                }
-            }
-            key.contains("rm-012") || name.contains("Straight", ignoreCase = true) && !name.contains("Left") && !name.contains("Right") && !name.contains("or") -> {
-                arrow(size.width / 2f, midY, white)
-            }
-            key.contains("rm-013") || (name.contains("Arrow", ignoreCase = true) && name.contains("Left", ignoreCase = true) && !name.contains("or")) -> {
+            "RM-012" -> arrow(size.width / 2f, midY, white)
+            "RM-013" -> {
                 val p = Path()
                 p.moveTo(size.width * 0.62f, midY - 8f)
                 p.lineTo(size.width * 0.62f, midY + 8f)
@@ -404,7 +389,7 @@ private fun MarkingThumb(id: String, name: String, category: String) {
                 drawPath(p, white)
                 drawLine(white, Offset(size.width * 0.62f, midY), Offset(size.width * 0.78f, midY), 10f)
             }
-            key.contains("rm-014") || (name.contains("Arrow", ignoreCase = true) && name.contains("Right", ignoreCase = true) && !name.contains("or")) -> {
+            "RM-014" -> {
                 val p = Path()
                 p.moveTo(size.width * 0.38f, midY - 8f)
                 p.lineTo(size.width * 0.38f, midY + 8f)
@@ -413,65 +398,56 @@ private fun MarkingThumb(id: String, name: String, category: String) {
                 drawPath(p, white)
                 drawLine(white, Offset(size.width * 0.22f, midY), Offset(size.width * 0.38f, midY), 10f)
             }
-            key.contains("rm-015") || name.contains("Straight-or-Left", ignoreCase = true) -> {
-                arrow(size.width * 0.45f, midY, white, alsoLeft = true)
-            }
-            key.contains("rm-016") || name.contains("Straight-or-Right", ignoreCase = true) -> {
-                arrow(size.width * 0.55f, midY, white, alsoRight = true)
-            }
-            key.contains("rm-017") || name.contains("Yellow Edge", ignoreCase = true) -> {
-                drawLine(yellow, Offset(left, size.height * 0.78f), Offset(right, size.height * 0.78f), 8f)
-            }
-            key.contains("rm-018") || name.contains("No-Parking", ignoreCase = true) -> {
+            "RM-015" -> arrow(size.width * 0.45f, midY, white, alsoLeft = true)
+            "RM-016" -> arrow(size.width * 0.55f, midY, white, alsoRight = true)
+            "RM-017" -> drawLine(yellow, Offset(left, size.height * 0.78f), Offset(right, size.height * 0.78f), 8f)
+            "RM-018" -> {
                 drawLine(yellow, Offset(left, size.height * 0.72f), Offset(right, size.height * 0.72f), 6f)
                 drawLine(yellow, Offset(left, size.height * 0.82f), Offset(right, size.height * 0.82f), 6f)
             }
-            key.contains("rm-019") || name.contains("No-Stopping", ignoreCase = true) -> {
+            "RM-019" -> {
                 drawLine(yellow, Offset(left, size.height * 0.7f), Offset(right, size.height * 0.7f), 5f)
                 drawLine(Color(0xFFEF4444), Offset(left, size.height * 0.8f), Offset(right, size.height * 0.8f), 5f)
             }
-            key.contains("rm-020") || name.contains("Box Junction", ignoreCase = true) -> {
+            "RM-020" -> {
                 drawRect(yellow, Offset(w * 0.25f + left, size.height * 0.2f), Size(w * 0.5f, size.height * 0.6f), style = Stroke(width = 3f))
-                // criss-cross
                 drawLine(yellow, Offset(w * 0.25f + left, size.height * 0.2f), Offset(w * 0.75f + left, size.height * 0.8f), 3f)
                 drawLine(yellow, Offset(w * 0.75f + left, size.height * 0.2f), Offset(w * 0.25f + left, size.height * 0.8f), 3f)
             }
-            key.contains("rm-021") || name.contains("Hatched", ignoreCase = true) -> {
+            "RM-021" -> {
                 var x = left
                 while (x < right) {
                     drawLine(yellow, Offset(x, size.height * 0.2f), Offset(x + 24f, size.height * 0.8f), 3f)
                     x += 16f
                 }
             }
-            key.contains("rm-022") || name.contains("Chevron", ignoreCase = true) || name.contains("Diagonal", ignoreCase = true) -> {
+            "RM-022" -> {
                 var x = left
                 while (x < right) {
                     drawLine(white, Offset(x, size.height * 0.75f), Offset(x + 20f, size.height * 0.25f), 4f)
                     x += 22f
                 }
             }
-            key.contains("rm-023") || name.contains("Bus Stop", ignoreCase = true) -> {
+            "RM-023" -> {
                 drawRoundRect(yellow, Offset(left, size.height * 0.25f), Size(w, size.height * 0.5f), CornerRadius(6f, 6f), style = Stroke(4f))
                 drawLine(yellow, Offset(left + 12f, midY), Offset(right - 12f, midY), 4f)
             }
-            key.contains("rm-024") || name.contains("Cycle", ignoreCase = true) -> {
+            "RM-024" -> {
                 dashedLine(white, midY, 4f, 16f, 10f)
                 drawCircle(white, 10f, Offset(size.width * 0.35f, midY), style = Stroke(3f))
                 drawCircle(white, 10f, Offset(size.width * 0.55f, midY), style = Stroke(3f))
             }
-            key.contains("rm-025") || name.contains("Parking Bay", ignoreCase = true) -> {
+            "RM-025" -> {
                 drawRect(white, Offset(left + w * 0.15f, size.height * 0.15f), Size(w * 0.7f, size.height * 0.7f), style = Stroke(4f))
                 drawLine(white, Offset(left + w * 0.5f, size.height * 0.15f), Offset(left + w * 0.5f, size.height * 0.85f), 3f)
             }
-            category.contains("pedestrian", ignoreCase = true) -> {
-                var x = left
-                while (x < right) {
-                    drawRect(white, Offset(x, size.height * 0.2f), Size(14f, size.height * 0.6f))
-                    x += 26f
-                }
-            }
             else -> {
+                // Unknown id — still show asphalt + caption-safe line (never a wrong pattern).
                 drawLine(white, Offset(left, midY), Offset(right, midY), 5f)
+                @Suppress("UNUSED_VARIABLE")
+                val unusedName = name
+                @Suppress("UNUSED_VARIABLE")
+                val unusedCat = category
             }
         }
     }

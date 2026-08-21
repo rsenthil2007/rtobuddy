@@ -33,6 +33,8 @@ interface RtoBuddyRepository {
     val themeId: Flow<String>
     suspend fun setJurisdiction(code: String)
     suspend fun setThemeId(theme: String)
+    val onboardingDone: Flow<Boolean>
+    suspend fun setOnboardingDone(done: Boolean)
     suspend fun getJurisdictions(): List<JurisdictionInfo>
     suspend fun getReadinessSnapshot(): ReadinessSnapshot
     suspend fun getMissionProgress(): MissionProgress
@@ -68,9 +70,11 @@ class OfflineFirstRtoBuddyRepository(
 ) : RtoBuddyRepository {
     override val jurisdictionCode: Flow<String> = progress.jurisdictionCode
     override val themeId: Flow<String> = progress.themeId
+    override val onboardingDone: Flow<Boolean> = progress.onboardingDone
 
     override suspend fun setJurisdiction(code: String) = progress.setJurisdiction(code)
     override suspend fun setThemeId(theme: String) = progress.setThemeId(theme)
+    override suspend fun setOnboardingDone(done: Boolean) = progress.setOnboardingDone(done)
 
     override suspend fun getJurisdictions(): List<JurisdictionInfo> = catalog.jurisdictions
 
