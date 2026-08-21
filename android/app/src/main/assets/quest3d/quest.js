@@ -310,6 +310,244 @@
       bridgeScene: "junction_blocked",
       build: "uturn",
     },
+    accident: {
+      id: "accident",
+      label: "Crash Ahead",
+      buddyStart: "Two vehicles have collided. People are shaken.",
+      hint: "What should you do?",
+      mode: "choose",
+      choices: [
+        { label: "Stop safely, warn others, help / call aid", safe: true },
+        { label: "Crowd in close to film the crash", safe: false },
+        { label: "Squeeze between the wrecks and go", safe: false },
+      ],
+      feedbackSafe: "Protect the scene, then help. Don’t become the next crash.",
+      feedbackUnsafe: "Crowding or cutting through worsens danger for everyone.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "accident",
+    },
+    twowheel: {
+      id: "twowheel",
+      label: "Two-Wheelers",
+      buddyStart: "Scooters and bikes share this lane — they’re people too.",
+      hint: "How do you share the road?",
+      mode: "choose",
+      choices: [
+        { label: "Squeeze past — they can squeeze back", safe: false },
+        { label: "Leave space, expect weave, pass wide", safe: true },
+        { label: "Honk until they leave the lane", safe: false },
+      ],
+      feedbackSafe: "Two-wheelers need room. Treat them as vulnerable road users.",
+      feedbackUnsafe: "Close passes and pressure create falls and panic.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_overtake",
+      build: "twowheel",
+    },
+    pothole: {
+      id: "pothole",
+      label: "Pothole Path",
+      buddyStart: "A deep pothole sits in your lane.",
+      hint: "Best reaction?",
+      mode: "choose",
+      choices: [
+        { label: "Hit it at full speed", safe: false },
+        { label: "Slow early; avoid safely if clear", safe: true },
+        { label: "Swerve hard into oncoming traffic", safe: false },
+      ],
+      feedbackSafe: "Slow first. Only move aside when the path is truly clear.",
+      feedbackUnsafe: "A bad hole is safer than a sudden head-on conflict.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "pothole",
+    },
+    speedbump: {
+      id: "speedbump",
+      label: "Speed Breaker",
+      buddyStart: "Yellow speed breakers ahead.",
+      hint: "How do you cross?",
+      mode: "choose",
+      choices: [
+        { label: "Fly over to save time", safe: false },
+        { label: "Slow down and cross gently", safe: true },
+        { label: "Brake hard only at the last metre", safe: false },
+      ],
+      feedbackSafe: "Speed breakers work when you slow early and smoothly.",
+      feedbackUnsafe: "Jumping or last-second braking shocks following traffic.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "speedbump",
+    },
+    seatbelt: {
+      id: "seatbelt",
+      label: "Seatbelt First",
+      buddyStart: "The car is ready to roll — belt is still off.",
+      hint: "When do you buckle?",
+      mode: "choose",
+      choices: [
+        { label: "Drive first, buckle later", safe: false },
+        { label: "Buckle before moving", safe: true },
+        { label: "Hold the belt while turning", safe: false },
+      ],
+      feedbackSafe: "Belts only protect if they’re on before the surprise.",
+      feedbackUnsafe: "Crashes don’t wait for you to finish buckling.",
+      bridgeChapter: "welcome",
+      bridgeScene: "welcome_decide",
+      build: "seatbelt",
+    },
+    helmetown: {
+      id: "helmetown",
+      label: "Helmet On",
+      buddyStart: "You’re about to ride. Helmet is still in your hand.",
+      hint: "Start now or gear up?",
+      mode: "choose",
+      choices: [
+        { label: "Ride without it — short trip", safe: false },
+        { label: "Wear the helmet, then start", safe: true },
+        { label: "Hang it on the arm while riding", safe: false },
+      ],
+      feedbackSafe: "Helmet before kickstand up. Every ride.",
+      feedbackUnsafe: "A helmet in your hand protects nothing.",
+      bridgeChapter: "welcome",
+      bridgeScene: "welcome_decide",
+      build: "helmetown",
+    },
+    lightsfault: {
+      id: "lightsfault",
+      label: "Faulty Lights",
+      buddyStart: "One headlamp is dead. Tail lamp looks dark too.",
+      hint: "Drive like this?",
+      mode: "choose",
+      choices: [
+        { label: "Drive anyway — others will see me", safe: false },
+        { label: "Don’t drive until lights work", safe: true },
+        { label: "Use only high beam to compensate", safe: false },
+      ],
+      feedbackSafe: "If they can’t see you, you don’t belong on the road yet.",
+      feedbackUnsafe: "Broken lights hide you from both sides of traffic.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "lightsfault",
+    },
+    hospital: {
+      id: "hospital",
+      label: "Hospital Zone",
+      buddyStart: "Hospital zone — silence matters here.",
+      hint: "Horn or patience?",
+      mode: "choose",
+      choices: [
+        { label: "Long blasts to clear the road", safe: false },
+        { label: "No unnecessary honking — move calmly", safe: true },
+        { label: "Continuous horn until traffic parts", safe: false },
+      ],
+      feedbackSafe: "Near hospitals, quiet and calm keep the road humane.",
+      feedbackUnsafe: "Noise here doesn’t heal anyone — it only adds stress.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "hospital",
+    },
+    priority: {
+      id: "priority",
+      label: "Who Goes First?",
+      buddyStart: "Uncontrolled junction. Vehicles from left and right.",
+      hint: "Who has priority?",
+      mode: "choose",
+      choices: [
+        { label: "Force through — I arrived first", safe: false },
+        { label: "Yield to the vehicle from the right", safe: true },
+        { label: "Race both sides at once", safe: false },
+      ],
+      feedbackSafe: "At many uncontrolled junctions, give way to traffic from the right.",
+      feedbackUnsafe: "Assuming priority is how side-impacts happen.",
+      bridgeChapter: "busy_junction",
+      bridgeScene: "junction_blocked",
+      build: "priority",
+    },
+    hillright: {
+      id: "hillright",
+      label: "Hill Right of Way",
+      buddyStart: "Narrow hill road. One vehicle climbing, one descending.",
+      hint: "Who should wait?",
+      mode: "choose",
+      choices: [
+        { label: "Downhill forces past — gravity helps", safe: false },
+        { label: "Uphill has priority — downhill waits", safe: true },
+        { label: "Both squeeze and hope", safe: false },
+      ],
+      feedbackSafe: "On narrow hills, the climbing vehicle usually keeps way.",
+      feedbackUnsafe: "Forcing past on a slope turns a squeeze into a slide.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "hillright",
+    },
+    beams: {
+      id: "beams",
+      label: "Beam Sense",
+      buddyStart: "Night road. Oncoming headlights approach.",
+      hint: "High beam or low beam?",
+      mode: "choose",
+      choices: [
+        { label: "Keep high beam on — I need to see", safe: false },
+        { label: "Dip to low beam for oncoming traffic", safe: true },
+        { label: "Flash high beam continuously", safe: false },
+      ],
+      feedbackSafe: "Dip beams so the other driver can still see the road.",
+      feedbackUnsafe: "Blinding others steals the vision you both need.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "beams",
+    },
+    fog: {
+      id: "fog",
+      label: "Foggy Stretch",
+      buddyStart: "Fog eats distance. High beam only makes a white wall.",
+      hint: "Best lighting and pace?",
+      mode: "choose",
+      choices: [
+        { label: "High beam + normal speed", safe: false },
+        { label: "Low beam, slow down, bigger gaps", safe: true },
+        { label: "Follow the car ahead bumper-close", safe: false },
+      ],
+      feedbackSafe: "Fog needs low beam, lower speed, and honest following distance.",
+      feedbackUnsafe: "High beam and tight gaps fail first in fog.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_final",
+      build: "fog",
+    },
+    zebra: {
+      id: "zebra",
+      label: "Zebra Crossing",
+      buddyStart: "People are on the zebra. No signal here.",
+      hint: "Stop or roll?",
+      mode: "choose",
+      choices: [
+        { label: "Roll through — they can wait", safe: false },
+        { label: "Stop and let them finish crossing", safe: true },
+        { label: "Honk so they hurry across", safe: false },
+      ],
+      feedbackSafe: "Zebra means their turn. Your turn comes after.",
+      feedbackUnsafe: "Pressure at a crossing turns walking into a gamble.",
+      bridgeChapter: "busy_junction",
+      bridgeScene: "junction_pedestrian",
+      build: "zebra",
+    },
+    wrongway: {
+      id: "wrongway",
+      label: "Wrong-Way Rider",
+      buddyStart: "A scooter is coming against the flow.",
+      hint: "Safe response?",
+      mode: "choose",
+      choices: [
+        { label: "Mirror their wrong way to pass faster", safe: false },
+        { label: "Slow, give space, don’t copy the mistake", safe: true },
+        { label: "Close the gap to teach them", safe: false },
+      ],
+      feedbackSafe: "Don’t inherit a wrong-way risk. Create space and stay legal.",
+      feedbackUnsafe: "Two wrong ways don’t make a safe road.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "challenge_overtake",
+      build: "wrongway",
+    },
   };
 
   var canvas = document.getElementById("c");
@@ -576,15 +814,49 @@
     g.add(cabin);
     var hlL = box(0.22, 0.12, 0.08, 0xfff2c2, -0.5, 0.5, 1.52);
     var hlR = box(0.22, 0.12, 0.08, 0xfff2c2, 0.5, 0.5, 1.52);
-    if (opts.headlights) {
+    var tlL = box(0.18, 0.1, 0.06, 0xff3333, -0.55, 0.5, -1.52);
+    var tlR = box(0.18, 0.1, 0.06, 0xff3333, 0.55, 0.5, -1.52);
+    if (opts.headlights || opts.highBeam) {
       hlL.material.emissive = new THREE.Color(0xfff0c0);
       hlR.material.emissive = new THREE.Color(0xfff0c0);
-      hlL.material.emissiveIntensity = 1.6;
-      hlR.material.emissiveIntensity = 1.6;
+      hlL.material.emissiveIntensity = opts.highBeam ? 2.4 : 1.6;
+      hlR.material.emissiveIntensity = opts.highBeam ? 2.4 : 1.6;
+    }
+    if (opts.brokenHead) {
+      hlL.material.color = new THREE.Color(0x333333);
+      hlL.material.emissiveIntensity = 0.05;
+      hlR.material.emissive = new THREE.Color(0xfff0c0);
+      hlR.material.emissiveIntensity = 0.35;
+    }
+    if (opts.brokenTail) {
+      tlL.material.color = new THREE.Color(0x331111);
+      tlR.material.color = new THREE.Color(0x331111);
+      tlL.material.emissiveIntensity = 0.05;
+      tlR.material.emissiveIntensity = 0.05;
+    } else if (opts.tailLights) {
+      tlL.material.emissive = new THREE.Color(0xff2200);
+      tlR.material.emissive = new THREE.Color(0xff2200);
+      tlL.material.emissiveIntensity = 1.2;
+      tlR.material.emissiveIntensity = 1.2;
     }
     g.add(hlL);
     g.add(hlR);
+    g.add(tlL);
+    g.add(tlR);
     g.userData.headlights = [hlL, hlR];
+    g.userData.taillights = [tlL, tlR];
+    if (opts.seatbeltOff) {
+      var warn = box(0.35, 0.12, 0.04, 0xff4444, 0.25, 1.05, 0.35);
+      warn.material.emissive = new THREE.Color(0xff2200);
+      warn.material.emissiveIntensity = 1.4;
+      g.add(warn);
+      state.animActors.push({ type: "phonePulse", mesh: warn });
+    }
+    if (opts.crumpled) {
+      body.scale.set(1, 0.85, 0.75);
+      cabin.rotation.z = 0.18;
+      cabin.position.x = 0.2;
+    }
     attachWheels(g, [
       [-0.72, 0.28, 0.95],
       [0.72, 0.28, 0.95],
@@ -592,6 +864,7 @@
       [0.72, 0.28, -0.95],
     ]);
     g.position.set(x, 0, z);
+    if (opts.yaw != null) g.rotation.y = opts.yaw;
     worldRoot.add(g);
     return g;
   }
@@ -684,6 +957,12 @@
     g.add(body);
     g.add(box(0.4, 0.14, 0.5, 0x222222, 0, 0.68, -0.2));
     g.add(box(0.7, 0.06, 0.06, 0x111111, 0, 0.95, 0.55));
+    var hl = box(0.16, 0.12, 0.08, 0xfff2c2, 0, 0.62, 0.9);
+    if (opts.headlights) {
+      hl.material.emissive = new THREE.Color(0xfff0c0);
+      hl.material.emissiveIntensity = 1.5;
+    }
+    g.add(hl);
     var w1 = makeWheel(0, 0.28, 0.7);
     var w2 = makeWheel(0, 0.28, -0.7);
     g.add(w1);
@@ -697,11 +976,73 @@
     });
     rider.position.set(0, 0.2, -0.1);
     g.add(rider);
+    if (!opts.noHelmet) {
+      var helm = new THREE.Mesh(
+        new THREE.SphereGeometry(0.2, 10, 10),
+        new THREE.MeshStandardMaterial({ color: opts.helmetColor || 0x1f6feb, roughness: 0.4 })
+      );
+      helm.position.set(0, 1.35, -0.05);
+      rider.add(helm);
+    } else if (opts.helmetInHand) {
+      var held = new THREE.Mesh(
+        new THREE.SphereGeometry(0.18, 10, 10),
+        new THREE.MeshStandardMaterial({ color: 0x1f6feb })
+      );
+      held.position.set(0.45, 0.9, 0.1);
+      g.add(held);
+    }
     makeTapTarget(opts.tapId || "bike", body, opts.tapLabel || (opts.noHelmet ? "Rider without helmet" : "Motorcycle"));
     g.position.set(x, 0, z);
     g.rotation.y = opts.yaw != null ? opts.yaw : -0.3;
     worldRoot.add(g);
     return g;
+  }
+
+  function makePothole(x, z) {
+    var hole = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.6, 0.75, 0.14, 12),
+      new THREE.MeshStandardMaterial({ color: 0x141414, roughness: 1 })
+    );
+    hole.position.set(x, 0.05, z);
+    worldRoot.add(hole);
+    worldRoot.add(box(0.35, 0.08, 0.35, 0x5a4a3a, x + 0.55, 0.06, z + 0.2));
+    return hole;
+  }
+
+  function makeSpeedBreaker(z) {
+    for (var i = -2; i <= 2; i++) {
+      worldRoot.add(box(0.72, 0.2, 0.5, i % 2 ? 0xf2e9a8 : 0x1f2933, i * 0.78, 0.12, z));
+    }
+  }
+
+  function makeHospital(x, z) {
+    worldRoot.add(box(3.4, 2.9, 2.5, 0xe8eef5, x, 1.45, z));
+    worldRoot.add(box(0.9, 0.22, 0.12, 0xe74c3c, x, 2.35, z + 1.28));
+    worldRoot.add(box(0.22, 0.9, 0.12, 0xe74c3c, x, 2.35, z + 1.28));
+    worldRoot.add(box(1.4, 0.55, 0.08, 0x2c3e50, x, 1.7, z + 1.3));
+  }
+
+  function makeSilentZoneSign(x, z) {
+    worldRoot.add(cyl(0.06, 1.5, 0x777777, x, 0.75, z));
+    var disc = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.45, 0.45, 0.06, 20),
+      new THREE.MeshStandardMaterial({ color: 0xf5f5f5 })
+    );
+    disc.rotation.x = Math.PI / 2;
+    disc.position.set(x, 1.55, z);
+    worldRoot.add(disc);
+    worldRoot.add(box(0.35, 0.08, 0.05, 0xe74c3c, x, 1.55, z + 0.04));
+  }
+
+  function makeHillGround() {
+    var slope = new THREE.Mesh(
+      new THREE.BoxGeometry(8, 0.2, 18),
+      new THREE.MeshStandardMaterial({ color: 0x3a3f48, roughness: 0.95 })
+    );
+    slope.rotation.x = -0.18;
+    slope.position.set(0, 0.8, 0);
+    worldRoot.add(slope);
+    worldRoot.add(box(12, 0.2, 12, 0x3f7a45, 0, 0.05, 0));
   }
 
   function makePerson(x, z, opts) {
@@ -1550,6 +1891,221 @@
     state.animCars.push({ mesh: makeCar(0x4f7cac, -1.4, 12), speed: -4.8 });
   }
 
+  function buildAccident() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addTrees();
+    var a = makeCar(0x5b8def, -0.6, 2.2, { crumpled: true, yaw: 0.55 });
+    var b = makeCar(0xd9843b, 0.8, 3.4, { crumpled: true, yaw: -0.9 });
+    makePerson(-1.8, 1.4, { shirtColor: 0x3d6bb3, label: "Bystander" });
+    makePerson(1.9, 1.0, { shirtColor: 0xc97b63, label: "Caller" });
+    var bike = makeMotorcycle(-1.5, 4.2, { noHelmet: false, color: 0x222222, yaw: 1.1 });
+    pushClip({ type: "rollForward", mesh: bike, speed: 0.35, zStart: 4.2, zMax: 5.5, zMin: 3.5, t0: 0 });
+    var ego = makeCar(0x4f7cac, -1.3, 10);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 10, zStop: 5.5, t0: 0, dur: 3.2, hold: 3, loop: true });
+    worldRoot.add(box(0.2, 0.7, 0.2, 0xffaa00, -2.2, 0.4, 4.8));
+  }
+
+  function buildTwowheel() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addTrees();
+    var scooter = makeScooter(-0.2, 6, { rider: true, yaw: 0, color: 0x4cc9c0, tapId: "scooter", tapLabel: "Scooter in lane" });
+    scooter.rotation.y = 0;
+    pushClip({ type: "rollForward", mesh: scooter, speed: -2.2, zMax: 6, zMin: -4, zStart: 6, t0: 0 });
+    var bike = makeMotorcycle(0.5, -8, { color: 0x222222, yaw: 0, headlights: true });
+    bike.rotation.y = 0;
+    pushClip({ type: "oncomingPass", mesh: bike, x: 0.5, zFar: -12, zNear: 14, speed: 6.5, t0: 0.4 });
+    var ego = makeCar(0x5b8def, -1.4, 9);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 9, zStop: 3.8, t0: 0.2, dur: 3.5, hold: 1.8, loop: true });
+    makeMotorcycle(1.7, 1.5, { noHelmet: true, color: 0x444444, yaw: 0.4, tapLabel: "Bike without helmet" });
+  }
+
+  function buildPothole() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    makePothole(-1.1, 2.4);
+    makePothole(-0.4, 3.6);
+    var ego = makeCar(0x4f7cac, -1.2, 10);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 10, zStop: 5.2, t0: 0, dur: 3.4, hold: 2.2, loop: true });
+    state.animCars.push({ mesh: makeCar(0xb85c38, 1.3, -10), speed: 6.5 });
+    var scooter = makeScooter(1.6, 1.2, { rider: true, yaw: -0.4 });
+    pushClip({ type: "crossWalk", mesh: scooter, x0: 1.6, x1: -0.2, z: 1.2, t0: 0.5, dur: 4, loop: true });
+  }
+
+  function buildSpeedbump() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addTrees();
+    makeSpeedBreaker(2.8);
+    makeSpeedBreaker(3.5);
+    var ego = makeCar(0xd9843b, -1.2, 10);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 10, zStop: 4.6, t0: 0, dur: 3.6, hold: 1.5, loop: true });
+    var bike = makeMotorcycle(-1.0, 12, { color: 0x1a1a1a, yaw: 0 });
+    bike.rotation.y = 0;
+    pushClip({ type: "approachStop", mesh: bike, zStart: 12, zStop: 5.8, t0: 0.8, dur: 3.2, hold: 2, loop: true });
+  }
+
+  function buildSeatbelt() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    var ego = makeCar(0x5b8def, -1.2, 3.5, { seatbeltOff: true });
+    pushClip({ type: "approachStop", mesh: ego, zStart: 6, zStop: 3.5, t0: 0, dur: 2.8, hold: 3.5, loop: true });
+    makePerson(1.8, 1.5, { shirtColor: 0x3d6bb3, label: "Passenger waiting" });
+    state.animCars.push({ mesh: makeCar(0x888888, 1.3, -12), speed: 5.5 });
+  }
+
+  function buildHelmetown() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addTrees();
+    var bike = makeMotorcycle(-1.0, 2.5, {
+      noHelmet: true,
+      helmetInHand: true,
+      color: 0x222222,
+      yaw: 0.2,
+      tapId: "bike",
+      tapLabel: "Helmet still in hand",
+    });
+    pushClip({ type: "rollForward", mesh: bike, speed: 0.15, zStart: 2.5, zMax: 3.2, zMin: 2.2, t0: 0 });
+    makeCar(0x4f7cac, 1.3, -2);
+    makePerson(1.7, 2.0, { shirtColor: 0xc97b63 });
+  }
+
+  function buildLightsfault() {
+    setNightTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    var bad = makeCar(0x4f7cac, -1.2, 3.2, { brokenHead: true, brokenTail: true });
+    pushClip({ type: "approachStop", mesh: bad, zStart: 7, zStop: 3.2, t0: 0, dur: 3, hold: 3, loop: true });
+    var good = makeCar(0xd9843b, 1.3, -10, { headlights: true, tailLights: true });
+    pushClip({ type: "oncomingPass", mesh: good, x: 1.3, zFar: -14, zNear: 14, speed: 6, t0: 0 });
+    makeMotorcycle(1.6, 1.5, { headlights: true, color: 0x333333, yaw: 0.5 });
+  }
+
+  function buildHospital() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    makeHospital(-6.5, 1.5);
+    makeSilentZoneSign(-2.4, 2.8);
+    var ego = makeCar(0x5b8def, -1.2, 9);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 9, zStop: 4.0, t0: 0, dur: 3.5, hold: 2.5, loop: true });
+    makeAmbulance(1.2, -6);
+    makeScooter(1.7, 1.2, { rider: true, yaw: -0.5 });
+    makePerson(-2.0, 1.0, { shirtColor: 0xe8eef5, label: "Visitor" });
+  }
+
+  function buildPriority() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addCrossRoad();
+    addBuildings();
+    makeSignal(2.2, 2.2);
+    var fromRight = makeCar(0xd9843b, 8, 1.2, { yaw: Math.PI / 2 });
+    fromRight.rotation.y = Math.PI / 2;
+    pushClip({ type: "pullOutAbort", mesh: fromRight, x0: 5.5, xPeek: 1.8, t0: 0, dur: 3.2, loop: true });
+    var fromLeft = makeCar(0x888888, -8, -1.0, { yaw: -Math.PI / 2 });
+    fromLeft.rotation.y = -Math.PI / 2;
+    pushClip({ type: "pullOutAbort", mesh: fromLeft, x0: -5.5, xPeek: -1.6, t0: 1.0, dur: 3.4, loop: true });
+    var ego = makeCar(0x5b8def, -1.2, 10);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 10, zStop: 4.2, t0: 0.3, dur: 3.2, hold: 2.5, loop: true });
+    var bike = makeMotorcycle(1.4, -10, { color: 0x222222, yaw: 0 });
+    bike.rotation.y = 0;
+    pushClip({ type: "oncomingPass", mesh: bike, x: 1.4, zFar: -12, zNear: 12, speed: 5.5, t0: 0.6 });
+  }
+
+  function buildHillright() {
+    setDayTheme();
+    if (renderer && scene) {
+      renderer.setClearColor(0x8fb7d8, 1);
+      scene.fog = new THREE.Fog(0x8fb7d8, 14, 42);
+    }
+    addLights();
+    makeHillGround();
+    addTrees();
+    var uphill = makeCar(0x5b8def, -0.9, 4.5);
+    uphill.position.y = 0.55;
+    pushClip({ type: "approachStop", mesh: uphill, zStart: 7, zStop: 3.2, t0: 0, dur: 3.5, hold: 2.5, loop: true });
+    var down = makeCar(0xd9843b, 0.9, -5);
+    down.position.y = 1.3;
+    pushClip({ type: "approachStop", mesh: down, zStart: -7, zStop: -2.2, t0: 0.4, dur: 3.2, hold: 2.8, loop: true });
+    var bike = makeMotorcycle(-1.5, 1.5, { color: 0x333333, yaw: 0.2 });
+    bike.position.y = 0.7;
+  }
+
+  function buildBeams() {
+    setNightTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    var ego = makeCar(0x4f7cac, -1.2, 4, { highBeam: true });
+    pushClip({ type: "approachStop", mesh: ego, zStart: 8, zStop: 4, t0: 0, dur: 3, hold: 3, loop: true });
+    var oncoming = makeCar(0xd9843b, 1.3, -12, { headlights: true });
+    pushClip({ type: "oncomingPass", mesh: oncoming, x: 1.3, zFar: -14, zNear: 12, speed: 5.8, t0: 0 });
+    makeMotorcycle(1.6, 2.0, { headlights: true, color: 0x222222, yaw: 0.4 });
+    makePerson(-2.0, 1.5, { shirtColor: 0x3d6bb3 });
+  }
+
+  function buildFog() {
+    setRainTheme();
+    if (scene) scene.fog = new THREE.Fog(0x9aa8b4, 4, 16);
+    if (renderer) renderer.setClearColor(0x8a96a2, 1);
+    addLights();
+    addGroundRoad({ wet: true });
+    addBuildings();
+    var ego = makeCar(0x5b8def, -1.2, 4, { headlights: true });
+    pushClip({ type: "approachStop", mesh: ego, zStart: 8, zStop: 4, t0: 0, dur: 4, hold: 2.5, loop: true });
+    state.animCars.push({ mesh: makeCar(0x888888, 1.2, -10, { headlights: true }), speed: 3.2 });
+    makeScooter(1.6, 1.0, { rider: true, yaw: -0.3 });
+  }
+
+  function buildZebra() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addZebra(2.4);
+    var p1 = makePerson(-1.8, 2.4, { id: "crossing", shirtColor: 0x3d6bb3 });
+    pushClip({ type: "crossWalk", mesh: p1, x0: -1.8, x1: 1.8, z: 2.4, t0: 0, dur: 3.0, loop: true });
+    var child = makeChild(1.6, 2.4);
+    pushClip({ type: "childStep", mesh: child, x: 1.6, zSafe: 3.2, zRisk: 2.2, period: 2.8, t0: 0.5 });
+    var ego = makeCar(0xd9843b, -1.2, 10);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 10, zStop: 4.5, t0: 0.2, dur: 3.2, hold: 2.5, loop: true });
+    makeMotorcycle(1.5, -6, { color: 0x333333, yaw: 0 });
+  }
+
+  function buildWrongway() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addTrees();
+    var wrong = makeScooter(-1.2, -8, { rider: true, yaw: Math.PI, color: 0xff7a59, tapId: "scooter", tapLabel: "Wrong-way scooter" });
+    wrong.rotation.y = Math.PI;
+    pushClip({ type: "oncomingPass", mesh: wrong, x: -1.2, zFar: -12, zNear: 12, speed: 5.5, t0: 0 });
+    var ego = makeCar(0x5b8def, -1.2, 9);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 9, zStop: 3.5, t0: 0.3, dur: 3.2, hold: 2.2, loop: true });
+    var bike = makeMotorcycle(1.3, 8, { color: 0x222222, yaw: 0 });
+    bike.rotation.y = 0;
+    pushClip({ type: "rollForward", mesh: bike, speed: -2.0, zMax: 8, zMin: -4, zStart: 8, t0: 0.5 });
+  }
+
   function buildById(buildId) {
     if (buildId === "welcome") buildWelcome();
     else if (buildId === "basics") buildBasics();
@@ -1570,6 +2126,20 @@
     else if (buildId === "phone") buildPhone();
     else if (buildId === "railway") buildRailway();
     else if (buildId === "uturn") buildUturn();
+    else if (buildId === "accident") buildAccident();
+    else if (buildId === "twowheel") buildTwowheel();
+    else if (buildId === "pothole") buildPothole();
+    else if (buildId === "speedbump") buildSpeedbump();
+    else if (buildId === "seatbelt") buildSeatbelt();
+    else if (buildId === "helmetown") buildHelmetown();
+    else if (buildId === "lightsfault") buildLightsfault();
+    else if (buildId === "hospital") buildHospital();
+    else if (buildId === "priority") buildPriority();
+    else if (buildId === "hillright") buildHillright();
+    else if (buildId === "beams") buildBeams();
+    else if (buildId === "fog") buildFog();
+    else if (buildId === "zebra") buildZebra();
+    else if (buildId === "wrongway") buildWrongway();
     else buildWelcome();
   }
 
@@ -1702,6 +2272,9 @@
     "junction", "blocked", "spotrisk", "people", "helmet",
     "parking", "overtake", "rain", "night", "emergency",
     "school", "phone", "railway", "uturn",
+    "accident", "twowheel", "pothole", "speedbump", "seatbelt",
+    "helmetown", "lightsfault", "hospital", "priority", "hillright",
+    "beams", "fog", "zebra", "wrongway",
   ];
 
   function completedIds() {
