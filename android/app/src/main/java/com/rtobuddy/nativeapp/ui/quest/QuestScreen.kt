@@ -4,11 +4,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -89,43 +89,34 @@ fun QuestScreen(
             )
             Surface(
                 shape = RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp),
-                color = MaterialTheme.colorScheme.surface.copy(alpha = 0.88f),
+                color = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f),
                 modifier = Modifier
                     .align(Alignment.TopCenter)
                     .fillMaxWidth(),
             ) {
-                Column(
-                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                Row(
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Text(
-                        "Road Quest · 3D prototype",
-                        style = MaterialTheme.typography.labelLarge,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary,
-                    )
                     val snap = overview
-                    Text(
-                        "${snap?.stage ?: "CURIOUS"} · ★ ${snap?.stars ?: 0} · ${snap?.completedPlayable ?: 0}/${snap?.totalPlayable ?: 5}",
-                        style = MaterialTheme.typography.bodySmall,
-                    )
-                    LinearProgressIndicator(
-                        progress = {
-                            val total = (snap?.totalPlayable ?: 1).coerceAtLeast(1)
-                            (snap?.completedPlayable ?: 0).toFloat() / total
-                        },
-                        modifier = Modifier.fillMaxWidth(),
-                    )
-                    Text(statusLine, style = MaterialTheme.typography.labelSmall)
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            "Road Quest",
+                            style = MaterialTheme.typography.labelLarge,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.primary,
+                        )
+                        Text(
+                            "${snap?.stage ?: "CURIOUS"} · ★ ${snap?.stars ?: 0} · $statusLine",
+                            style = MaterialTheme.typography.labelSmall,
+                            maxLines = 1,
+                        )
+                    }
+                    OutlinedButton(onClick = { immersive = false }) {
+                        Text("List")
+                    }
                 }
-            }
-            OutlinedButton(
-                onClick = { immersive = false },
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(12.dp),
-            ) {
-                Text("Text map")
             }
         }
         return

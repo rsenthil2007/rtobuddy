@@ -43,13 +43,16 @@ fun QuestWorldView(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT,
                 )
-                val webView = WebView(ctx).apply {
+                    val webView = WebView(ctx).apply {
                     layoutParams = FrameLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT,
                     )
                     setBackgroundColor(Color.parseColor("#0B1220"))
                     setLayerType(WebView.LAYER_TYPE_HARDWARE, null)
+                    isVerticalScrollBarEnabled = true
+                    isHorizontalScrollBarEnabled = false
+                    overScrollMode = WebView.OVER_SCROLL_IF_CONTENT_SCROLLS
                     settings.javaScriptEnabled = true
                     settings.domStorageEnabled = true
                     settings.allowFileAccess = true
@@ -61,6 +64,18 @@ fun QuestWorldView(
                     settings.allowFileAccessFromFileURLs = true
                     @Suppress("DEPRECATION")
                     settings.allowUniversalAccessFromFileURLs = true
+                    // Let the district list scroll inside WebView without Compose stealing gestures.
+                    setOnTouchListener { v, event ->
+                        when (event.actionMasked) {
+                            android.view.MotionEvent.ACTION_DOWN,
+                            android.view.MotionEvent.ACTION_MOVE,
+                            -> v.parent?.requestDisallowInterceptTouchEvent(true)
+                            android.view.MotionEvent.ACTION_UP,
+                            android.view.MotionEvent.ACTION_CANCEL,
+                            -> v.parent?.requestDisallowInterceptTouchEvent(false)
+                        }
+                        false
+                    }
                     webChromeClient = object : WebChromeClient() {
                         override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
                             android.util.Log.d(

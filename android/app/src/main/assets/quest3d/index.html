@@ -9,11 +9,13 @@
       margin: 0; padding: 0; width: 100%; height: 100%;
       overflow: hidden; background: #0b1220;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      color: #f4f7fb; touch-action: none;
+      color: #f4f7fb;
+      touch-action: manipulation;
     }
     #c {
       position: absolute; inset: 0; z-index: 1;
       display: block; width: 100%; height: 100%;
+      touch-action: none;
     }
     #hud {
       position: absolute; inset: 0; z-index: 5; pointer-events: none;
@@ -31,11 +33,8 @@
       padding: 8px 12px;
       font-size: 12px;
       letter-spacing: 0.04em;
-      backdrop-filter: blur(8px);
     }
-    button.pill {
-      color: #e8eef8; cursor: pointer;
-    }
+    button.pill { color: #e8eef8; cursor: pointer; }
     .buddy {
       max-width: 78%;
       margin: 0 12px 10px;
@@ -57,10 +56,7 @@
       padding: 0 12px 14px;
       display: flex; flex-direction: column; gap: 8px;
     }
-    .choices {
-      display: flex; flex-direction: column; gap: 8px;
-      pointer-events: auto;
-    }
+    .choices { display: flex; flex-direction: column; gap: 8px; pointer-events: auto; }
     .choice {
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(20, 30, 46, 0.88);
@@ -73,9 +69,7 @@
     }
     .choice.good { border-color: #3dd68c; background: rgba(22, 70, 48, 0.9); }
     .choice.bad { border-color: #ff7b72; background: rgba(70, 28, 28, 0.85); }
-    .choice:disabled { opacity: 0.95; }
     .hint {
-      pointer-events: none;
       text-align: center;
       font-size: 12px;
       color: rgba(244,247,251,0.72);
@@ -94,55 +88,73 @@
     }
     #menu {
       position: absolute; inset: 0; z-index: 10;
-      background: linear-gradient(160deg, #0b1220 0%, #152238 55%, #1a3a2a 100%);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 20px 16px 28px; gap: 10px;
+      background: linear-gradient(160deg, #0b1220 0%, #152238 45%, #1a3a2a 100%);
+      display: flex;
+      flex-direction: column;
       box-sizing: border-box;
-      overflow-y: auto; -webkit-overflow-scrolling: touch;
+      padding: 56px 14px 18px;
+      touch-action: pan-y;
     }
-    #menuList { display: flex; flex-direction: column; gap: 10px; }
+    #menuHeader { flex: 0 0 auto; padding-bottom: 8px; }
+    #menu h1 { margin: 0 0 4px; font-size: 26px; letter-spacing: 0.02em; }
+    #menu p { margin: 0; color: rgba(244,247,251,0.78); font-size: 13px; }
     #bootError {
-      display: none; margin: 0 0 8px; padding: 10px 12px;
+      display: none; margin: 8px 0 0; padding: 10px 12px;
       background: rgba(180,40,40,0.35); border: 1px solid #ff7b72;
       border-radius: 10px; font-size: 13px;
     }
-    #menu h1 {
-      margin: 0 0 4px; font-size: 28px; letter-spacing: 0.02em;
+    #menuList {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px 2px 12px;
+      touch-action: pan-y;
     }
-    #menu p { margin: 0 0 12px; color: rgba(244,247,251,0.78); font-size: 14px; max-width: 28rem; }
     .scenario-btn {
       pointer-events: auto;
       width: 100%;
-      border: 0;
+      flex: 0 0 auto;
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 14px;
-      padding: 14px 16px;
+      padding: 12px 14px;
       text-align: left;
       background: rgba(255,255,255,0.08);
       color: #fff;
       font-size: 15px;
-      border: 1px solid rgba(255,255,255,0.12);
     }
-    .scenario-btn strong { display: block; font-size: 16px; margin-bottom: 2px; }
+    .scenario-btn strong { display: block; font-size: 15px; margin-bottom: 2px; }
     .scenario-btn span { opacity: 0.75; font-size: 12px; }
     .scenario-btn:active { transform: scale(0.99); }
   </style>
 </head>
 <body>
   <div id="menu">
-    <h1>Roadsville</h1>
-    <p>Lean 3D Quest — tap, decide, learn. Minimal reading.</p>
-    <div id="bootError"></div>
+    <div id="menuHeader">
+      <h1>Roadsville</h1>
+      <p>Scroll the list · tap a district · decide safely</p>
+      <div id="bootError"></div>
+    </div>
     <div id="menuList">
-      <button class="scenario-btn" data-id="welcome"><strong>1 · Arrival Street</strong><span>Notice what’s alive around you</span></button>
+      <button class="scenario-btn" data-id="welcome"><strong>1 · Arrival Street</strong><span>Notice the living road</span></button>
       <button class="scenario-btn" data-id="basics"><strong>2 · Road Basics</strong><span>Edge, lane, centre, crossing</span></button>
-      <button class="scenario-btn" data-id="lanes"><strong>3 · Stay Predictable</strong><span>Settle the drifting vehicle</span></button>
-      <button class="scenario-btn" data-id="signstop"><strong>4 · Stop Ahead</strong><span>The sign speaks for the road</span></button>
+      <button class="scenario-btn" data-id="lanes"><strong>3 · Stay Predictable</strong><span>Settle the drifting car</span></button>
+      <button class="scenario-btn" data-id="signstop"><strong>4 · Stop Ahead</strong><span>Stop means stop</span></button>
       <button class="scenario-btn" data-id="warning"><strong>5 · Warning Ahead</strong><span>Prepare — don’t ignore</span></button>
       <button class="scenario-btn" data-id="junction"><strong>6 · Busy Junction</strong><span>Someone is still crossing</span></button>
-      <button class="scenario-btn" data-id="blocked"><strong>7 · Clear the Junction</strong><span>Green light ≠ enter if blocked</span></button>
-      <button class="scenario-btn" data-id="spotrisk"><strong>8 · Spot the Risk</strong><span>Who needs care first?</span></button>
-      <button class="scenario-btn" data-id="overtake"><strong>9 · Overtaking Trail</strong><span>Can I pass safely?</span></button>
-      <button class="scenario-btn" data-id="night"><strong>10 · Night Road</strong><span>See less. React sooner.</span></button>
+      <button class="scenario-btn" data-id="blocked"><strong>7 · Clear the Junction</strong><span>Green ≠ enter if blocked</span></button>
+      <button class="scenario-btn" data-id="spotrisk"><strong>8 · Spot the Risk</strong><span>Child near the kerb</span></button>
+      <button class="scenario-btn" data-id="people"><strong>9 · People on the Road</strong><span>Share space with walkers</span></button>
+      <button class="scenario-btn" data-id="helmet"><strong>10 · Safe Ride</strong><span>Protect before you start</span></button>
+      <button class="scenario-btn" data-id="parking"><strong>11 · Parking Puzzle</strong><span>Stop in the right place</span></button>
+      <button class="scenario-btn" data-id="overtake"><strong>12 · Overtaking Trail</strong><span>Can I pass safely?</span></button>
+      <button class="scenario-btn" data-id="rain"><strong>13 · Rainy Day</strong><span>Same road, new conditions</span></button>
+      <button class="scenario-btn" data-id="night"><strong>14 · Night Road</strong><span>See less. React sooner.</span></button>
+      <button class="scenario-btn" data-id="emergency"><strong>15 · Give Way</strong><span>Emergency vehicle approaching</span></button>
     </div>
   </div>
   <canvas id="c"></canvas>
