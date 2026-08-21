@@ -978,6 +978,38 @@
     glowMarkers.push({ el: el, obj: mesh, id: mesh.userData.questId });
   }
 
+  // Elevated on-screen beacon so flat road markings stay findable on phones.
+  function makePoiBeacon(id, x, z, label, tapMesh) {
+    var g = new THREE.Group();
+    var stem = box(0.1, 0.85, 0.1, 0xffe08a, 0, 0.5, 0);
+    stem.material.emissive = new THREE.Color(0xffb300);
+    stem.material.emissiveIntensity = 0.85;
+    var ball = new THREE.Mesh(
+      new THREE.SphereGeometry(0.2, 12, 12),
+      new THREE.MeshStandardMaterial({
+        color: 0xfff6c2,
+        emissive: new THREE.Color(0xffcc33),
+        emissiveIntensity: 1.35,
+        roughness: 0.35,
+      })
+    );
+    ball.position.y = 1.05;
+    g.add(stem);
+    g.add(ball);
+    g.position.set(x, 0, z);
+    g.userData.questId = id;
+    g.userData.label = label;
+    worldRoot.add(g);
+    if (tapMesh) {
+      makeTapTarget(id, tapMesh, label);
+    }
+    // Beacon itself is also tappable and carries the glow.
+    if (interactives.indexOf(g) < 0) interactives.push(g);
+    projectGlow(g);
+    state.animActors.push({ type: "bob", mesh: ball, amp: 0.1, speed: 2.2, baseY: 1.05, phase: Math.random() * 4 });
+    return g;
+  }
+
   function updateGlows() {
     if (!renderer || !camera) return;
     // Explore-mode highlights only — keep inside a safe on-screen band.
@@ -1000,20 +1032,16 @@
       var y = (-v.y * 0.5 + 0.5) * h;
       var off =
         v.z > 1 ||
-        v.x < -0.92 ||
-        v.x > 0.92 ||
-        v.y < -0.85 ||
-        v.y > 0.85 ||
-        x < pad ||
-        x > w - pad ||
-        y < pad + 40 ||
-        y > h - pad - 80;
+        v.x < -1.05 ||
+        v.x > 1.05 ||
+        v.y < -1.05 ||
+        v.y > 1.05;
       if (off) {
         g.el.style.display = "none";
       } else {
         g.el.style.display = "block";
         g.el.style.left = Math.max(pad, Math.min(w - pad, x)) + "px";
-        g.el.style.top = Math.max(pad + 40, Math.min(h - pad - 80, y)) + "px";
+        g.el.style.top = Math.max(pad + 48, Math.min(h - pad - 100, y)) + "px";
       }
     });
   }
@@ -1195,19 +1223,19 @@
     addGroundRoad();
     addBuildings();
     addTrees();
-    // Keep interactives near frame centre so glow markers stay on-screen.
-    makeBus(-2.0, -2.2);
-    makeScooter(2.2, 1.2, { rider: false });
-    var ped = makePerson(-2.4, 2.2, {
+    // Safe phone frame: |x| <= 2.0, z roughly 0..3.5
+    makeBus(-1.8, -1.6);
+    makeScooter(1.8, 1.0, { rider: false });
+    var ped = makePerson(-1.8, 2.0, {
       id: "crossing",
       shirtColor: 0x3d6bb3,
       label: "Someone waiting to cross",
     });
-    pushClip({ type: "crossWalk", mesh: ped, x0: -2.4, x1: 2.4, z: 2.2, t0: 0, dur: 2.6, loop: true });
-    makeSignal(2.6, -1.2);
-    makeDog(-2.0, 0.8);
-    state.animCars.push({ mesh: makeCar(0x4f7cac, -1.5, 9), speed: -7.5 });
-    state.animCars.push({ mesh: makeCar(0xb85c38, 1.5, -10), speed: 8.0 });
+    pushClip({ type: "crossWalk", mesh: ped, x0: -1.8, x1: 1.8, z: 2.0, t0: 0, dur: 2.6, loop: true });
+    makeSignal(1.9, -0.8);
+    makeDog(-1.5, 0.5);
+    state.animCars.push({ mesh: makeCar(0x4f7cac, -1.3, 9), speed: -7.5 });
+    state.animCars.push({ mesh: makeCar(0xb85c38, 1.3, -10), speed: 8.0 });
     interactives.forEach(projectGlow);
   }
 
@@ -1216,21 +1244,22 @@
     addLights();
     addGroundRoad();
     addBuildings();
-    var edge = box(0.35, 0.08, 8, 0xf8fafc, -3.4, 0.06, 0);
-    var lane = box(1.4, 0.05, 6, 0x5b8def, -1.4, 0.05, 2);
-    var centre = box(0.25, 0.06, 8, 0xf2e9a8, 0, 0.06, 0);
-    var cross = box(4.5, 0.05, 1.6, 0xffffff, 0, 0.05, 5.5);
+    // Compact markings kept inside the camera frustum (portrait phones).
+    var edge = box(0.5, 0.14, 3.0, 0xf8fafc, -1.95, 0.1, 1.1);
+    var lane = box(1.35, 0.06, 3.2, 0x5b8def, -0.9, 0.05, 1.7);
+    var centre = box(0.3, 0.08, 3.2, 0xf2e9a8, 0.2, 0.06, 1.4);
+    var cross = box(3.4, 0.06, 1.35, 0xffffff, 0, 0.05, 3.35);
     worldRoot.add(edge);
     worldRoot.add(lane);
     worldRoot.add(centre);
     worldRoot.add(cross);
-    makeTapTarget("edge", edge, "Road edge");
-    makeTapTarget("lane", lane, "Lane");
-    makeTapTarget("centre", centre, "Centre line");
-    makeTapTarget("crossing", cross, "Pedestrian area");
-    var demo = makeCar(0x4f7cac, -1.4, 10);
-    pushClip({ type: "approachStop", mesh: demo, zStart: 10, zStop: 1.5, t0: 0, dur: 3.2, hold: 1.0, loop: true });
-    interactives.forEach(projectGlow);
+    // Beacons sit above each marking so highlights never slide off-screen.
+    makePoiBeacon("edge", -1.95, 1.1, "Road edge", edge);
+    makePoiBeacon("lane", -0.9, 1.7, "Lane", lane);
+    makePoiBeacon("centre", 0.2, 1.4, "Centre line", centre);
+    makePoiBeacon("crossing", 0, 3.35, "Pedestrian area", cross);
+    var demo = makeCar(0x4f7cac, -1.2, 9);
+    pushClip({ type: "approachStop", mesh: demo, zStart: 9, zStop: 2.2, t0: 0, dur: 3.0, hold: 1.0, loop: true });
   }
 
   function buildLanes() {
@@ -1311,12 +1340,12 @@
     addGroundRoad();
     addCrossRoad();
     addBuildings();
-    makeSignal(3.4, 3.4);
-    var child = makeChild(2.6, 4.2);
-    pushClip({ type: "childStep", mesh: child, x: 2.6, zSafe: 4.2, zRisk: 2.0, period: 3.0, t0: 0 });
-    makePerson(-2.5, 2.0, { id: "crossing", shirtColor: 0x5b8def });
-    var car = makeCar(0x4f7cac, -1.4, 11);
-    pushClip({ type: "approachStop", mesh: car, zStart: 11, zStop: 4.0, t0: 0.4, dur: 4, hold: 2, loop: true });
+    makeSignal(2.0, 2.8);
+    var child = makeChild(1.8, 3.2);
+    pushClip({ type: "childStep", mesh: child, x: 1.8, zSafe: 3.2, zRisk: 1.6, period: 2.6, t0: 0 });
+    makePerson(-1.8, 1.6, { id: "crossing", shirtColor: 0x5b8def });
+    var car = makeCar(0x4f7cac, -1.2, 10);
+    pushClip({ type: "approachStop", mesh: car, zStart: 10, zStop: 3.2, t0: 0.4, dur: 3.5, hold: 1.6, loop: true });
     addZebra(1.4);
   }
 
@@ -1327,20 +1356,20 @@
     addCrossRoad();
     addBuildings();
     addTrees();
-    makeSignal(3.4, 3.4);
-    var p1 = makePerson(2.4, 3.2, { id: "crossing", shirtColor: 0x3d6bb3 });
-    pushClip({ type: "crossWalk", mesh: p1, x0: 2.4, x1: -2.4, z: 3.2, t0: 0, dur: 3.2, loop: true });
-    var p2 = makePerson(-2.4, 1.8, { id: "walker", shirtColor: 0xc97b63 });
-    pushClip({ type: "crossWalk", mesh: p2, x0: -2.4, x1: 2.4, z: 1.8, t0: 1.0, dur: 2.9, loop: true });
-    var child = makeChild(2.4, 1.2);
-    pushClip({ type: "childStep", mesh: child, x: 2.4, zSafe: 1.2, zRisk: 0.1, period: 2.6, t0: 0.5 });
-    var scooter = makeScooter(2.6, 5, { rider: true, yaw: 0, tapId: "scooter", tapLabel: "Moving scooter" });
+    makeSignal(2.0, 2.6);
+    var p1 = makePerson(1.8, 2.8, { id: "crossing", shirtColor: 0x3d6bb3 });
+    pushClip({ type: "crossWalk", mesh: p1, x0: 1.8, x1: -1.8, z: 2.8, t0: 0, dur: 3.0, loop: true });
+    var p2 = makePerson(-1.8, 1.5, { id: "walker", shirtColor: 0xc97b63 });
+    pushClip({ type: "crossWalk", mesh: p2, x0: -1.8, x1: 1.8, z: 1.5, t0: 1.0, dur: 2.7, loop: true });
+    var child = makeChild(1.8, 1.0);
+    pushClip({ type: "childStep", mesh: child, x: 1.8, zSafe: 1.0, zRisk: 0.05, period: 2.4, t0: 0.5 });
+    var scooter = makeScooter(1.9, 4.2, { rider: true, yaw: 0, tapId: "scooter", tapLabel: "Moving scooter" });
     scooter.rotation.y = 0;
-    pushClip({ type: "rollForward", mesh: scooter, speed: -1.6, zMax: 5, zMin: -3, zStart: 5, t0: 0 });
-    makeDog(-2.2, 0.6);
-    var truck = makeTruck(0x6b7a5a, 1.5, -14);
-    pushClip({ type: "oncomingPass", mesh: truck, x: 1.5, zFar: -16, zNear: 16, speed: 7.5, t0: 0 });
-    state.animCars.push({ mesh: makeCar(0x5b8def, -1.4, 10), speed: -6.5 });
+    pushClip({ type: "rollForward", mesh: scooter, speed: -1.6, zMax: 4.2, zMin: -2.5, zStart: 4.2, t0: 0 });
+    makeDog(-1.7, 0.4);
+    var truck = makeTruck(0x6b7a5a, 1.3, -14);
+    pushClip({ type: "oncomingPass", mesh: truck, x: 1.3, zFar: -16, zNear: 16, speed: 7.5, t0: 0 });
+    state.animCars.push({ mesh: makeCar(0x5b8def, -1.2, 10), speed: -6.5 });
     interactives.forEach(projectGlow);
   }
 
