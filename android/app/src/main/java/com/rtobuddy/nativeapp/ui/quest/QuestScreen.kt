@@ -53,6 +53,7 @@ fun QuestScreen(
     ) {
         QuestWorldView(
             modifier = Modifier.fillMaxSize(),
+            completedScenarioIds = overview?.completedSceneIds.orEmpty(),
             events = QuestWorldEvents(
                 onReady = {
                     mainHandler.post { statusLine = "Roadsville ready · unlock step by step" }

@@ -271,8 +271,14 @@ class OfflineFirstRtoBuddyRepository(
 
         // Wrong choices teach — they do not complete the scene.
         if (safeChoice != false) {
+            val wasNew = sceneId !in updated.completedSceneIds
             val scenesDone = (updated.completedSceneIds + sceneId).distinct()
             updated = updated.copy(completedSceneIds = scenesDone)
+
+            // Closed-group MVP: one star per newly cleared district/scene.
+            if (wasNew && safeChoice == true) {
+                updated = updated.copy(stars = updated.stars + 1)
+            }
 
             if (chapter != null) {
                 val allDone = chapter.scenes.isNotEmpty() &&
@@ -280,7 +286,6 @@ class OfflineFirstRtoBuddyRepository(
                 if (allDone && chapter.id !in updated.completedChapterIds) {
                     updated = updated.copy(
                         completedChapterIds = updated.completedChapterIds + chapter.id,
-                        stars = updated.stars + 1,
                     )
                 }
             }

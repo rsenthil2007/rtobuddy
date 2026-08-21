@@ -46,7 +46,7 @@
     signstop: {
       id: "signstop",
       label: "Stop Ahead",
-      buddyStart: "This one is very clear.",
+      buddyStart: "Red Stop sign ahead — full stop required.",
       hint: "You reach the Stop.",
       mode: "choose",
       choices: [
@@ -59,6 +59,7 @@
       bridgeChapter: "sign_forest",
       bridgeScene: "signs_stop",
       build: "signstop",
+      blurb: "Stop means stop",
     },
     warning: {
       id: "warning",
@@ -130,19 +131,19 @@
     },
     people: {
       id: "people",
-      label: "People Sharing",
+      label: "People on the Road",
       buddyStart: "People share this street. Tap what you notice.",
-      hint: "Tap · walkers · child · scooter · traffic",
+      hint: "Tap · walkers · child · scooter",
       mode: "explore",
       needNotices: 3,
       buddyDone: "Good eye. Expect sudden movement near kerbs.",
       bridgeChapter: "busy_junction",
-      bridgeScene: "junction_spot",
+      bridgeScene: "people",
       build: "people",
     },
     helmet: {
       id: "helmet",
-      label: "Helmet Habit",
+      label: "No-Helmet Rider",
       buddyStart: "That rider has no helmet.",
       hint: "What’s the safer move?",
       mode: "choose",
@@ -154,13 +155,14 @@
       feedbackSafe: "Unprotected riders need more room and patience.",
       feedbackUnsafe: "A missing helmet raises the stakes of any mistake.",
       bridgeChapter: "welcome",
-      bridgeScene: "welcome_decide",
+      bridgeScene: "helmet",
       build: "helmet",
+      blurb: "Give space to an unprotected rider",
     },
     parking: {
       id: "parking",
-      label: "Park Smart",
-      buddyStart: "Where you stop can hide people and signs.",
+      label: "Parking Puzzle",
+      buddyStart: "A car is rolling onto the crossing. Bays are on the side.",
       hint: "Best place to stop?",
       mode: "choose",
       choices: [
@@ -171,14 +173,15 @@
       feedbackSafe: "Keep crossings and sightlines clear.",
       feedbackUnsafe: "Blocking views or access puts others at risk.",
       bridgeChapter: "welcome",
-      bridgeScene: "welcome_decide",
+      bridgeScene: "parking",
       build: "parking",
+      blurb: "Stop in the right place",
     },
     overtake: {
       id: "overtake",
       label: "Overtaking Trail",
-      buddyStart: "Before ‘Can I pass?’ ask ‘Can I pass safely?’",
-      hint: "Curve ahead · oncoming traffic",
+      buddyStart: "A slow truck ahead. Oncoming traffic keeps coming.",
+      hint: "Truck ahead · oncoming traffic",
       mode: "choose",
       choices: [
         { label: "Overtake now", safe: false },
@@ -188,12 +191,13 @@
       feedbackSafe: "Patience can be the safest move.",
       feedbackUnsafe: "Overtaking is not a race. Visibility and space first.",
       bridgeChapter: "scenario_challenge",
-      bridgeScene: "challenge_overtake",
+      bridgeScene: "overtake",
       build: "overtake",
+      blurb: "Can I pass safely?",
     },
     rain: {
       id: "rain",
-      label: "Wet Road",
+      label: "Rainy Day",
       buddyStart: "Rain shortens grip and sight.",
       hint: "How should you drive?",
       mode: "choose",
@@ -205,8 +209,9 @@
       feedbackSafe: "Wet roads need earlier, gentler control.",
       feedbackUnsafe: "Rain reduces grip — leave yourself room.",
       bridgeChapter: "scenario_challenge",
-      bridgeScene: "challenge_final",
+      bridgeScene: "rain",
       build: "rain",
+      blurb: "Same road, new conditions",
     },
     night: {
       id: "night",
@@ -222,12 +227,13 @@
       feedbackSafe: "Well judged. Lower visibility needs more caution.",
       feedbackUnsafe: "Night is not the same pace as day.",
       bridgeChapter: "scenario_challenge",
-      bridgeScene: "challenge_final",
+      bridgeScene: "night",
       build: "night",
+      blurb: "See less. React sooner.",
     },
     emergency: {
       id: "emergency",
-      label: "Emergency Ahead",
+      label: "Give Way",
       buddyStart: "An emergency vehicle is approaching.",
       hint: "What should you do?",
       mode: "choose",
@@ -239,8 +245,9 @@
       feedbackSafe: "Clear a safe path without creating new hazards.",
       feedbackUnsafe: "Emergency vehicles need a clear, predictable path.",
       bridgeChapter: "scenario_challenge",
-      bridgeScene: "challenge_overtake",
+      bridgeScene: "emergency",
       build: "emergency",
+      blurb: "Emergency vehicle approaching",
     },
     school: {
       id: "school",
@@ -1128,7 +1135,8 @@
     return g;
   }
 
-  function makeDog(x, z) {
+  function makeDog(x, z, opts) {
+    opts = opts || {};
     var g = new THREE.Group();
     var body = box(0.35, 0.28, 0.7, 0x8b6914, 0, 0.35, 0);
     g.add(body);
@@ -1140,7 +1148,9 @@
     g.add(box(0.06, 0.06, 0.25, 0x6b4a1a, 0, 0.4, -0.45));
     g.position.set(x, 0, z);
     worldRoot.add(g);
-    makeTapTarget("dog", body, "Dog near road");
+    if (opts.tap !== false) {
+      makeTapTarget("dog", body, "Dog near road");
+    }
     state.animActors.push({ type: "bob", mesh: body, amp: 0.14, speed: 3.2, baseY: 0.35, phase: 1 });
     return g;
   }
@@ -1574,7 +1584,7 @@
     });
     pushClip({ type: "crossWalk", mesh: ped, x0: -1.8, x1: 1.8, z: 2.0, t0: 0, dur: 2.6, loop: true });
     makeSignal(1.9, -0.8);
-    makeDog(-1.5, 0.5);
+    makeDog(-1.5, 0.5, { tap: false });
     state.animCars.push({ mesh: makeCar(0x4f7cac, -1.3, 9), speed: -7.5 });
     state.animCars.push({ mesh: makeCar(0xb85c38, 1.3, -10), speed: 8.0 });
     interactives.forEach(projectGlow);
@@ -1739,20 +1749,18 @@
     addLights();
     addGroundRoad();
     addBuildings();
-    for (var i = 0; i < 3; i++) {
-      var bay = box(2.2, 0.03, 4.2, 0x4a5560, -5.2, 0.04, -6 + i * 5);
-      worldRoot.add(bay);
-    }
-    makeCar(0x4f7cac, -5.2, -6);
-    makeCar(0x888888, -5.2, -1);
-    worldRoot.add(box(2.0, 0.02, 3.8, 0x5a8f6a, -5.2, 0.05, 4));
-    makeBus(-2.8, -8);
-    addZebra(5.5);
-    makePerson(0.2, 5.2, { id: "crossing", shirtColor: 0x3d6bb3 });
-    // wrong park: ease toward crossing then pause
-    var wrong = makeCar(0xd9843b, 0.2, 10);
-    pushClip({ type: "approachStop", mesh: wrong, zStart: 10, zStop: 5.8, t0: 0, dur: 4.5, hold: 3.5, loop: true });
-    makeTruck(0x6b7a5a, 5.5, -4);
+    // Marked bay kept inside phone frame (right side of road).
+    worldRoot.add(box(1.8, 0.04, 3.2, 0x5a8f6a, 2.1, 0.05, 1.2));
+    worldRoot.add(box(0.08, 0.06, 3.2, 0xf2e9a8, 1.3, 0.06, 1.2));
+    worldRoot.add(box(0.08, 0.06, 3.2, 0xf2e9a8, 2.9, 0.06, 1.2));
+    makeCar(0x4f7cac, 2.1, -2.2);
+    makeBus(-2.0, -3.5);
+    addZebra(2.6);
+    makePerson(-0.2, 2.6, { id: "crossing", shirtColor: 0x3d6bb3, label: "Person on crossing" });
+    // Wrong stop: rolling onto the zebra.
+    var wrong = makeCar(0xd9843b, -1.2, 9);
+    pushClip({ type: "approachStop", mesh: wrong, zStart: 9, zStop: 3.8, t0: 0, dur: 3.5, hold: 3.0, loop: true });
+    makeScooter(1.8, 3.5, { rider: false, yaw: -0.5, tapLabel: "Scooter near bay" });
   }
 
   function buildOvertake() {
@@ -1760,12 +1768,13 @@
     addLights();
     addGroundRoad();
     addTrees();
-    makeTruck(0x888888, -1.4, 2);
-    var oncoming = makeCar(0xb85c38, 1.5, -16);
-    pushClip({ type: "oncomingPass", mesh: oncoming, x: 1.5, zFar: -16, zNear: 16, speed: 8.5, t0: 0 });
-    var ego = makeCar(0x5b8def, -1.4, 7);
-    pushClip({ type: "pullOutAbort", mesh: ego, x0: -1.4, xPeek: 0.6, t0: 0.8, dur: 3.2, loop: true });
-    worldRoot.add(box(4, 2.2, 3, 0x6b7a5a, 4.5, 1.1, -1));
+    makeTruck(0x888888, -1.3, 2.2);
+    var oncoming = makeCar(0xb85c38, 1.4, -16);
+    pushClip({ type: "oncomingPass", mesh: oncoming, x: 1.4, zFar: -16, zNear: 16, speed: 8.5, t0: 0 });
+    var ego = makeCar(0x5b8def, -1.3, 7);
+    pushClip({ type: "pullOutAbort", mesh: ego, x0: -1.3, xPeek: 0.5, t0: 0.8, dur: 3.2, loop: true });
+    // Blind hill / bend cue (not a distant off-screen wall).
+    worldRoot.add(box(2.4, 1.4, 2.2, 0x6b7a5a, 3.2, 0.7, -2.5));
   }
 
   function buildRain() {
@@ -1797,8 +1806,8 @@
     var glow = new THREE.PointLight(0xffe6a8, 1.1, 12);
     glow.position.set(3.2, 3.3, 1);
     worldRoot.add(glow);
-    var cyclist = makeCyclist(-3.0, 2.5);
-    pushClip({ type: "crossWalk", mesh: cyclist, x0: -3.0, x1: 3.0, z: 2.5, t0: 0, dur: 6, loop: true });
+    var cyclist = makeCyclist(-1.8, 2.2);
+    pushClip({ type: "crossWalk", mesh: cyclist, x0: -1.8, x1: 1.8, z: 2.2, t0: 0, dur: 4.5, loop: true });
     var nightCar = makeCar(0x5b8def, -1.4, 12, { headlights: true });
     pushClip({ type: "approachStop", mesh: nightCar, zStart: 12, zStop: 4.5, t0: 0, dur: 4.5, hold: 2, loop: true });
   }
@@ -2162,7 +2171,7 @@
       state.decided = true;
       say(sc.feedbackSafe);
       hintEl.textContent = "Nice. Returning…";
-      bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.bridgeScene || sc.id, "1");
+      bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.id, "1");
       setTimeout(function () {
         markScenarioDone(sc.id);
         showMenu();
@@ -2172,7 +2181,7 @@
       btn.classList.add("bad");
       say(sc.feedbackUnsafe);
       hintEl.textContent = "Try again";
-      bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.bridgeScene || sc.id, "0");
+      bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.id, "0");
       setTimeout(function () {
         Array.prototype.forEach.call(choicesEl.children, function (el) {
           el.disabled = false;
@@ -2207,7 +2216,7 @@
     if (state.notices >= sc.needNotices) {
       say(sc.buddyDone);
       hintEl.textContent = "District noticed";
-      bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.bridgeScene || sc.id, "1");
+      bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.id, "1");
       setTimeout(function () {
         markScenarioDone(sc.id);
         showMenu();
@@ -2315,11 +2324,43 @@
     });
   }
 
-  Array.prototype.forEach.call(document.querySelectorAll(".scenario-btn"), function (btn) {
-    btn.addEventListener("click", function () {
-      loadScenario(btn.getAttribute("data-id"));
-    });
-  });
+  function rebuildMenu() {
+    var list = document.getElementById("menuList");
+    if (!list) return;
+    list.innerHTML = "";
+    for (var i = 0; i < SCENARIO_ORDER.length; i++) {
+      var id = SCENARIO_ORDER[i];
+      var sc = SCENARIOS[id];
+      if (!sc) continue;
+      var btn = document.createElement("button");
+      btn.className = "scenario-btn";
+      btn.setAttribute("data-id", id);
+      var blurb = sc.blurb || sc.hint || "";
+      btn.innerHTML = "<strong>" + (i + 1) + " · " + sc.label + "</strong><span>" + blurb + "</span>";
+      btn.addEventListener("click", function (ev) {
+        loadScenario(ev.currentTarget.getAttribute("data-id"));
+      });
+      list.appendChild(btn);
+    }
+    refreshMenuLocks();
+  }
+
+  function applyProgress(ids) {
+    if (!ids || !ids.length) {
+      refreshMenuLocks();
+      return;
+    }
+    var merged = completedIds();
+    for (var i = 0; i < ids.length; i++) {
+      if (SCENARIOS[ids[i]] && merged.indexOf(ids[i]) < 0) merged.push(ids[i]);
+    }
+    try {
+      localStorage.setItem("rtobuddy_quest_done", JSON.stringify(merged));
+    } catch (e) { /* ignore */ }
+    refreshMenuLocks();
+  }
+
+  rebuildMenu();
   btnMap.addEventListener("click", function () {
     showMenu();
     bridge("onExitToMap");
@@ -2432,6 +2473,7 @@
     loadScenario: loadScenario,
     showMenu: showMenu,
     ensureSized: resize,
+    applyProgress: applyProgress,
     scenarios: Object.keys(SCENARIOS),
   };
 

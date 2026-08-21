@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
+import org.json.JSONArray
 
 data class QuestWorldEvents(
     val onReady: () -> Unit = {},
@@ -29,11 +30,15 @@ data class QuestWorldEvents(
 @Composable
 fun QuestWorldView(
     modifier: Modifier = Modifier,
+    completedScenarioIds: List<String> = emptyList(),
     events: QuestWorldEvents,
 ) {
     val context = LocalContext.current
     val bridge = remember { QuestJsBridge(events) }
     bridge.events = events
+    val progressJson = remember(completedScenarioIds) {
+        JSONArray(completedScenarioIds).toString()
+    }
 
     AndroidView(
         modifier = modifier.fillMaxSize(),
@@ -43,7 +48,7 @@ fun QuestWorldView(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT,
                 )
-                    val webView = WebView(ctx).apply {
+                val webView = WebView(ctx).apply {
                     layoutParams = FrameLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT,
@@ -64,7 +69,6 @@ fun QuestWorldView(
                     settings.allowFileAccessFromFileURLs = true
                     @Suppress("DEPRECATION")
                     settings.allowUniversalAccessFromFileURLs = true
-                    // Let the district list scroll inside WebView without Compose stealing gestures.
                     setOnTouchListener { v, event ->
                         when (event.actionMasked) {
                             android.view.MotionEvent.ACTION_DOWN,
@@ -87,8 +91,16 @@ fun QuestWorldView(
                     }
                     webViewClient = object : WebViewClient() {
                         override fun onPageFinished(view: WebView?, url: String?) {
+                            val sync = progressJson
                             view?.evaluateJavascript(
-                                "(function(){if(window.QuestWorld&&QuestWorld.ensureSized)QuestWorld.ensureSized();})();",
+                                """
+                                (function(){
+                                  if(window.QuestWorld&&QuestWorld.applyProgress){
+                                    try{QuestWorld.applyProgress($sync);}catch(e){}
+                                  }
+                                  if(window.QuestWorld&&QuestWorld.ensureSized)QuestWorld.ensureSized();
+                                })();
+                                """.trimIndent(),
                                 null,
                             )
                         }
@@ -97,27 +109,52 @@ fun QuestWorldView(
                     loadQuestHtml(this)
                 }
                 addView(webView)
+                tag = webView
             }
         },
-        update = { bridge.events = events },
+        update = { frame ->
+            bridge.events = events
+            val webView = frame.tag as? WebView
+            webView?.evaluateJavascript(
+                """
+                (function(){
+                  if(window.QuestWorld&&QuestWorld.applyProgress){
+                    try{QuestWorld.applyProgress($progressJson);}catch(e){}
+                  }
+                })();
+                """.trimIndent(),
+                null,
+            )
+        },
     )
 }
 
 private fun loadQuestHtml(webView: WebView) {
-    val assets = webView.context.assets
-    val html = assets.open("quest3d/index.html").bufferedReader().use { it.readText() }
-    val three = assets.open("quest3d/three.min.js").bufferedReader().use { it.readText() }
-    val quest = assets.open("quest3d/quest.js").bufferedReader().use { it.readText() }
-    val inlined = html
-        .replace("""<script src="three.min.js"></script>""", "<script>\n$three\n</script>")
-        .replace("""<script src="quest.js"></script>""", "<script>\n$quest\n</script>")
-    webView.loadDataWithBaseURL(
-        "https://appassets.androidplatform.net/quest3d/",
-        inlined,
-        "text/html",
-        "UTF-8",
-        null,
-    )
+    try {
+        val assets = webView.context.assets
+        val html = assets.open("quest3d/index.html").bufferedReader().use { it.readText() }
+        val three = assets.open("quest3d/three.min.js").bufferedReader().use { it.readText() }
+        val quest = assets.open("quest3d/quest.js").bufferedReader().use { it.readText() }
+        val inlined = html
+            .replace("""<script src="three.min.js"></script>""", "<script>\n$three\n</script>")
+            .replace("""<script src="quest.js"></script>""", "<script>\n$quest\n</script>")
+        webView.loadDataWithBaseURL(
+            "https://appassets.androidplatform.net/quest3d/",
+            inlined,
+            "text/html",
+            "UTF-8",
+            null,
+        )
+    } catch (err: Exception) {
+        android.util.Log.e("Quest3D", "Failed to load Quest assets", err)
+        val fallback = """
+            <html><body style="background:#0B1220;color:#fff;font-family:sans-serif;padding:24px">
+            <h2>Roadsville unavailable</h2>
+            <p>Quest assets failed to load. Reinstall the app or try again.</p>
+            </body></html>
+        """.trimIndent()
+        webView.loadDataWithBaseURL(null, fallback, "text/html", "UTF-8", null)
+    }
 }
 
 private class QuestJsBridge(
