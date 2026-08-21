@@ -11,9 +11,12 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color: #f4f7fb; touch-action: none;
     }
-    #c { display: block; width: 100%; height: 100%; }
+    #c {
+      position: absolute; inset: 0; z-index: 1;
+      display: block; width: 100%; height: 100%;
+    }
     #hud {
-      position: absolute; inset: 0; pointer-events: none;
+      position: absolute; inset: 0; z-index: 5; pointer-events: none;
       display: flex; flex-direction: column; justify-content: space-between;
     }
     .top-bar {
@@ -90,10 +93,16 @@
       50% { opacity: 1; transform: translate(-50%, -50%) scale(1.25); }
     }
     #menu {
-      position: absolute; inset: 0;
+      position: absolute; inset: 0; z-index: 10;
       background: linear-gradient(160deg, #0b1220 0%, #152238 55%, #1a3a2a 100%);
       display: flex; flex-direction: column; justify-content: flex-end;
       padding: 20px 16px 28px; gap: 10px;
+      box-sizing: border-box;
+    }
+    #bootError {
+      display: none; margin: 0 0 8px; padding: 10px 12px;
+      background: rgba(180,40,40,0.35); border: 1px solid #ff7b72;
+      border-radius: 10px; font-size: 13px;
     }
     #menu h1 {
       margin: 0 0 4px; font-size: 28px; letter-spacing: 0.02em;
@@ -120,6 +129,7 @@
   <div id="menu">
     <h1>Roadsville</h1>
     <p>Lean 3D Quest prototype — tap the world, decide safely. Minimal reading.</p>
+    <div id="bootError"></div>
     <button class="scenario-btn" data-id="welcome"><strong>1 · Arrival Street</strong><span>Notice what’s alive around you</span></button>
     <button class="scenario-btn" data-id="junction"><strong>2 · Busy Junction</strong><span>One decision. Shared road.</span></button>
     <button class="scenario-btn" data-id="signstop"><strong>3 · Stop Ahead</strong><span>The sign speaks for the road</span></button>

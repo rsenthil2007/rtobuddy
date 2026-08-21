@@ -56,26 +56,61 @@
   var hintEl = document.getElementById("hint");
   var sceneLabel = document.getElementById("sceneLabel");
   var btnMap = document.getElementById("btnMap");
+  var bootError = document.getElementById("bootError");
 
-  var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  renderer.setClearColor(0x87b7e8, 1);
-  renderer.shadowMap.enabled = true;
+  var renderer = null;
+  var scene = null;
+  var camera = null;
+  var clock = null;
+  var raycaster = null;
+  var pointer = null;
+  var worldRoot = null;
+  var glReady = false;
+  var animStarted = false;
 
-  var scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x87b7e8, 18, 55);
+  function showBootError(msg) {
+    if (!bootError) return;
+    bootError.style.display = "block";
+    bootError.textContent = msg;
+  }
 
-  var camera = new THREE.PerspectiveCamera(50, 1, 0.1, 120);
-  camera.position.set(0, 7.2, 12.5);
-  camera.lookAt(0, 0.5, 0);
+  function initGl() {
+    if (glReady) return true;
+    if (typeof THREE === "undefined") {
+      showBootError("3D engine failed to load. Reinstall the APK or try Text map.");
+      return false;
+    }
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setClearColor(0x87b7e8, 1);
+      renderer.shadowMap.enabled = true;
+      scene = new THREE.Scene();
+      scene.fog = new THREE.Fog(0x87b7e8, 18, 55);
+      camera = new THREE.PerspectiveCamera(50, 1, 0.1, 120);
+      camera.position.set(0, 7.2, 12.5);
+      camera.lookAt(0, 0.5, 0);
+      clock = new THREE.Clock();
+      raycaster = new THREE.Raycaster();
+      pointer = new THREE.Vector2();
+      worldRoot = new THREE.Group();
+      scene.add(worldRoot);
+      glReady = true;
+      if (!animStarted) {
+        animStarted = true;
+        animate();
+      }
+      resize();
+      return true;
+    } catch (err) {
+      showBootError("WebGL not available on this device. Use Text map for now.");
+      console.error(err);
+      return false;
+    }
+  }
 
-  var clock = new THREE.Clock();
-  var raycaster = new THREE.Raycaster();
-  var pointer = new THREE.Vector2();
   var interactives = [];
   var glowMarkers = [];
-  var worldRoot = new THREE.Group();
-  scene.add(worldRoot);
 
   var state = {
     scenario: null,
@@ -99,8 +134,9 @@
   }
 
   function resize() {
-    var w = window.innerWidth || canvas.clientWidth || 360;
-    var h = window.innerHeight || canvas.clientHeight || 640;
+    if (!renderer || !camera) return;
+    var w = Math.max(canvas.clientWidth || window.innerWidth || 360, 2);
+    var h = Math.max(canvas.clientHeight || window.innerHeight || 640, 2);
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
@@ -135,6 +171,7 @@
   }
 
   function clearWorld() {
+    if (!worldRoot) return;
     while (worldRoot.children.length) worldRoot.remove(worldRoot.children[0]);
     interactives = [];
     glowMarkers.forEach(function (g) { if (g.el.parentNode) g.el.parentNode.removeChild(g.el); });
@@ -287,6 +324,7 @@
   }
 
   function updateGlows() {
+    if (!renderer || !camera) return;
     var w = renderer.domElement.clientWidth;
     var h = renderer.domElement.clientHeight;
     glowMarkers.forEach(function (g) {
@@ -418,6 +456,7 @@
   }
 
   function pickObject(clientX, clientY) {
+    if (!glReady || !raycaster || !camera || !renderer) return;
     var rect = renderer.domElement.getBoundingClientRect();
     pointer.x = ((clientX - rect.left) / rect.width) * 2 - 1;
     pointer.y = -((clientY - rect.top) / rect.height) * 2 + 1;
@@ -438,6 +477,7 @@
   function loadScenario(id) {
     var sc = SCENARIOS[id];
     if (!sc) return;
+    if (!initGl()) return;
     clearWorld();
     state.scenario = sc;
     menu.style.display = "none";
@@ -450,7 +490,8 @@
     else if (id === "signstop") buildSignStop();
     if (sc.mode === "choose") showChoices(sc);
     bridge("onScenarioStart", id);
-    resize();
+    setTimeout(resize, 50);
+    setTimeout(resize, 250);
   }
 
   function showMenu() {
@@ -473,6 +514,7 @@
 
   function animate() {
     requestAnimationFrame(animate);
+    if (!glReady || !renderer) return;
     var t = clock.getElapsedTime();
     var dt = Math.min(clock.getDelta(), 0.05);
     state.animCars.forEach(function (c) {
@@ -496,10 +538,15 @@
   window.QuestWorld = {
     loadScenario: loadScenario,
     showMenu: showMenu,
+    ensureSized: resize,
     scenarios: Object.keys(SCENARIOS),
   };
 
-  resize();
-  animate();
+  // Keep menu visible; init GL lazily on first scenario.
+  menu.style.display = "flex";
+  hud.style.display = "none";
+  if (typeof THREE === "undefined") {
+    showBootError("3D engine script missing.");
+  }
   bridge("onReady");
 })();
