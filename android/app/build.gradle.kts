@@ -13,17 +13,22 @@ android {
         applicationId = "com.rtobuddy.nativeapp"
         minSdk = 26
         targetSdk = 35
-        versionCode = 16
-        versionName = "1.8.0"
+        versionCode = 17
+        versionName = "1.8.1"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Host this JSON on InterServer (or keep GitHub raw during closed group).
-        // Flip "ads": "Enabled" remotely to turn AdMob on. App defaults to Disabled.
+        // Public HTTPS URL for InterServer ads toggle (SFTP path is only for uploading the file).
+        // File on server: /opt/rtobuddy/ads-config.json  →  served as /rtobuddy/ads-config.json
         buildConfigField(
             "String",
             "REMOTE_ADS_CONFIG_URL",
-            "\"https://raw.githubusercontent.com/rsenthil2007/rtobuddy/main/remote/ads-config.json\"",
+            "\"https://157.250.205.140/rtobuddy/ads-config.json\"",
+        )
+        buildConfigField(
+            "String",
+            "REMOTE_ADS_CONFIG_URL_FALLBACK",
+            "\"http://157.250.205.140/rtobuddy/ads-config.json\"",
         )
         // Google sample units (safe for closed testing). Replace with your AdMob IDs for production.
         buildConfigField("String", "ADMOB_BANNER_UNIT_ID", "\"ca-app-pub-3940256099942544/6300978111\"")
