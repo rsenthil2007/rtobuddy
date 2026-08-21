@@ -130,13 +130,20 @@
     .scenario-btn strong { display: block; font-size: 15px; margin-bottom: 2px; }
     .scenario-btn span { opacity: 0.75; font-size: 12px; }
     .scenario-btn:active { transform: scale(0.99); }
+    .scenario-btn.locked {
+      opacity: 0.45;
+      pointer-events: none;
+      border-style: dashed;
+    }
+    .scenario-btn.locked strong::before { content: "🔒 "; }
+    .scenario-btn.done strong::before { content: "✓ "; }
   </style>
 </head>
 <body>
   <div id="menu">
     <div id="menuHeader">
       <h1>Roadsville</h1>
-      <p>Scroll the list · tap a district · decide safely</p>
+      <p>Finish each district to unlock the next · scroll for more</p>
       <div id="bootError"></div>
     </div>
     <div id="menuList">

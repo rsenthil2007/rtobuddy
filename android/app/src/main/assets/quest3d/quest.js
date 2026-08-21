@@ -342,7 +342,7 @@
   function initGl() {
     if (glReady) return true;
     if (typeof THREE === "undefined") {
-      showBootError("3D engine failed to load. Reinstall the APK or try Text map.");
+      showBootError("3D engine failed to load. Reinstall the APK.");
       return false;
     }
     try {
@@ -352,9 +352,9 @@
       renderer.shadowMap.enabled = true;
       scene = new THREE.Scene();
       scene.fog = new THREE.Fog(0x87b7e8, 18, 55);
-      camera = new THREE.PerspectiveCamera(50, 1, 0.1, 120);
-      camera.position.set(0, 7.2, 12.5);
-      camera.lookAt(0, 0.5, 0);
+      camera = new THREE.PerspectiveCamera(48, 1, 0.1, 120);
+      camera.position.set(0, 6.2, 10.5);
+      camera.lookAt(0, 0.5, 1);
       clock = new THREE.Clock();
       raycaster = new THREE.Raycaster();
       pointer = new THREE.Vector2();
@@ -368,7 +368,7 @@
       resize();
       return true;
     } catch (err) {
-      showBootError("WebGL not available on this device. Use Text map for now.");
+      showBootError("WebGL not available on this device.");
       console.error(err);
       return false;
     }
@@ -980,8 +980,14 @@
 
   function updateGlows() {
     if (!renderer || !camera) return;
+    // Explore-mode highlights only — keep inside a safe on-screen band.
+    if (!state.scenario || state.scenario.mode !== "explore") {
+      glowMarkers.forEach(function (g) { g.el.style.display = "none"; });
+      return;
+    }
     var w = renderer.domElement.clientWidth;
     var h = renderer.domElement.clientHeight;
+    var pad = 28;
     glowMarkers.forEach(function (g) {
       if (state.noticed[g.id]) {
         g.el.style.display = "none";
@@ -992,12 +998,22 @@
       v.project(camera);
       var x = (v.x * 0.5 + 0.5) * w;
       var y = (-v.y * 0.5 + 0.5) * h;
-      if (v.z > 1) {
+      var off =
+        v.z > 1 ||
+        v.x < -0.92 ||
+        v.x > 0.92 ||
+        v.y < -0.85 ||
+        v.y > 0.85 ||
+        x < pad ||
+        x > w - pad ||
+        y < pad + 40 ||
+        y > h - pad - 80;
+      if (off) {
         g.el.style.display = "none";
       } else {
         g.el.style.display = "block";
-        g.el.style.left = x + "px";
-        g.el.style.top = y + "px";
+        g.el.style.left = Math.max(pad, Math.min(w - pad, x)) + "px";
+        g.el.style.top = Math.max(pad + 40, Math.min(h - pad - 80, y)) + "px";
       }
     });
   }
@@ -1179,19 +1195,19 @@
     addGroundRoad();
     addBuildings();
     addTrees();
-    makeBus(-2.6, -4.5);
-    makeScooter(3.2, 1.5, { rider: false });
-    var ped = makePerson(-3.2, 3.5, {
+    // Keep interactives near frame centre so glow markers stay on-screen.
+    makeBus(-2.0, -2.2);
+    makeScooter(2.2, 1.2, { rider: false });
+    var ped = makePerson(-2.4, 2.2, {
       id: "crossing",
       shirtColor: 0x3d6bb3,
       label: "Someone waiting to cross",
     });
-    pushClip({ type: "crossWalk", mesh: ped, x0: -3.2, x1: 3.2, z: 4.2, t0: 0, dur: 4.5, loop: true });
-    makeSignal(3.6, -2);
-    makeDog(-3.2, 2.2);
-    state.animCars.push({ mesh: makeCar(0x4f7cac, -1.5, 10), speed: -5.2 });
-    state.animCars.push({ mesh: makeCar(0xb85c38, 1.6, -12), speed: 5.8 });
-    worldRoot.add(box(0.55, 0.35, 0.9, 0x8d6e4c, -3.5, 0.25, 2.5));
+    pushClip({ type: "crossWalk", mesh: ped, x0: -2.4, x1: 2.4, z: 2.2, t0: 0, dur: 2.6, loop: true });
+    makeSignal(2.6, -1.2);
+    makeDog(-2.0, 0.8);
+    state.animCars.push({ mesh: makeCar(0x4f7cac, -1.5, 9), speed: -7.5 });
+    state.animCars.push({ mesh: makeCar(0xb85c38, 1.5, -10), speed: 8.0 });
     interactives.forEach(projectGlow);
   }
 
@@ -1213,7 +1229,7 @@
     makeTapTarget("centre", centre, "Centre line");
     makeTapTarget("crossing", cross, "Pedestrian area");
     var demo = makeCar(0x4f7cac, -1.4, 10);
-    pushClip({ type: "approachStop", mesh: demo, zStart: 10, zStop: 1.5, t0: 0, dur: 5, hold: 1.5, loop: true });
+    pushClip({ type: "approachStop", mesh: demo, zStart: 10, zStop: 1.5, t0: 0, dur: 3.2, hold: 1.0, loop: true });
     interactives.forEach(projectGlow);
   }
 
@@ -1237,9 +1253,9 @@
     makeSignal(3.4, 3.4);
     addZebra(1.4);
     var ped = makePerson(-3.5, 1.4, { id: "crossing", shirtColor: 0x3d6bb3, label: "Pedestrian crossing" });
-    pushClip({ type: "crossWalk", mesh: ped, x0: -3.5, x1: 3.5, z: 1.4, t0: 0, dur: 4, loop: true });
+    pushClip({ type: "crossWalk", mesh: ped, x0: -2.6, x1: 2.6, z: 1.4, t0: 0, dur: 2.8, loop: true });
     var car = makeCar(0x5b8def, -1.4, 11);
-    pushClip({ type: "approachStop", mesh: car, zStart: 11, zStop: 3.4, t0: 0.3, dur: 4.2, hold: 2.5, loop: true });
+    pushClip({ type: "approachStop", mesh: car, zStart: 11, zStop: 3.4, t0: 0.3, dur: 3.0, hold: 1.6, loop: true });
     var side = makeCar(0xd9843b, 8, 1.4);
     side.rotation.y = Math.PI / 2;
   }
@@ -1312,19 +1328,19 @@
     addBuildings();
     addTrees();
     makeSignal(3.4, 3.4);
-    var p1 = makePerson(2.8, 5.5, { id: "crossing", shirtColor: 0x3d6bb3 });
-    pushClip({ type: "crossWalk", mesh: p1, x0: 2.8, x1: -2.8, z: 5.2, t0: 0, dur: 5, loop: true });
-    var p2 = makePerson(-2.8, 3.0, { id: "walker", shirtColor: 0xc97b63 });
-    pushClip({ type: "crossWalk", mesh: p2, x0: -2.8, x1: 2.8, z: 3.0, t0: 1.2, dur: 4.5, loop: true });
-    var child = makeChild(2.6, 1.5);
-    pushClip({ type: "childStep", mesh: child, x: 2.6, zSafe: 1.5, zRisk: 0.2, period: 3.5, t0: 0.5 });
-    var scooter = makeScooter(3.0, 6, { rider: true, yaw: 0, tapId: "scooter", tapLabel: "Moving scooter" });
+    var p1 = makePerson(2.4, 3.2, { id: "crossing", shirtColor: 0x3d6bb3 });
+    pushClip({ type: "crossWalk", mesh: p1, x0: 2.4, x1: -2.4, z: 3.2, t0: 0, dur: 3.2, loop: true });
+    var p2 = makePerson(-2.4, 1.8, { id: "walker", shirtColor: 0xc97b63 });
+    pushClip({ type: "crossWalk", mesh: p2, x0: -2.4, x1: 2.4, z: 1.8, t0: 1.0, dur: 2.9, loop: true });
+    var child = makeChild(2.4, 1.2);
+    pushClip({ type: "childStep", mesh: child, x: 2.4, zSafe: 1.2, zRisk: 0.1, period: 2.6, t0: 0.5 });
+    var scooter = makeScooter(2.6, 5, { rider: true, yaw: 0, tapId: "scooter", tapLabel: "Moving scooter" });
     scooter.rotation.y = 0;
-    pushClip({ type: "rollForward", mesh: scooter, speed: -0.9, zMax: 6, zMin: -4, zStart: 6, t0: 0 });
-    makeDog(-3.2, 2.8);
+    pushClip({ type: "rollForward", mesh: scooter, speed: -1.6, zMax: 5, zMin: -3, zStart: 5, t0: 0 });
+    makeDog(-2.2, 0.6);
     var truck = makeTruck(0x6b7a5a, 1.5, -14);
-    pushClip({ type: "oncomingPass", mesh: truck, x: 1.5, zFar: -16, zNear: 16, speed: 5.5, t0: 0 });
-    state.animCars.push({ mesh: makeCar(0x5b8def, -1.4, 10), speed: -4.5 });
+    pushClip({ type: "oncomingPass", mesh: truck, x: 1.5, zFar: -16, zNear: 16, speed: 7.5, t0: 0 });
+    state.animCars.push({ mesh: makeCar(0x5b8def, -1.4, 10), speed: -6.5 });
     interactives.forEach(projectGlow);
   }
 
@@ -1549,6 +1565,7 @@
       hintEl.textContent = "Nice. Returning…";
       bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.bridgeScene || sc.id, "1");
       setTimeout(function () {
+        markScenarioDone(sc.id);
         showMenu();
         bridge("onScenarioComplete", sc.id, "1");
       }, 1400);
@@ -1593,6 +1610,7 @@
       hintEl.textContent = "District noticed";
       bridge("onSceneResult", sc.bridgeChapter || sc.id, sc.bridgeScene || sc.id, "1");
       setTimeout(function () {
+        markScenarioDone(sc.id);
         showMenu();
         bridge("onScenarioComplete", sc.id, "1");
       }, 1600);
@@ -1621,6 +1639,10 @@
   function loadScenario(id) {
     var sc = SCENARIOS[id];
     if (!sc) return;
+    if (!isScenarioUnlocked(id)) {
+      say("Finish the previous district first.");
+      return;
+    }
     if (!initGl()) return;
     clearWorld();
     state.scenario = sc;
@@ -1643,6 +1665,52 @@
     hud.style.display = "none";
     menu.style.display = "flex";
     say("");
+    refreshMenuLocks();
+  }
+
+  var SCENARIO_ORDER = [
+    "welcome", "basics", "lanes", "signstop", "warning",
+    "junction", "blocked", "spotrisk", "people", "helmet",
+    "parking", "overtake", "rain", "night", "emergency",
+    "school", "phone", "railway", "uturn",
+  ];
+
+  function completedIds() {
+    try {
+      return JSON.parse(localStorage.getItem("rtobuddy_quest_done") || "[]");
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function markScenarioDone(id) {
+    var done = completedIds();
+    if (done.indexOf(id) < 0) {
+      done.push(id);
+      try {
+        localStorage.setItem("rtobuddy_quest_done", JSON.stringify(done));
+      } catch (e) { /* ignore */ }
+    }
+    refreshMenuLocks();
+  }
+
+  function isScenarioUnlocked(id) {
+    var idx = SCENARIO_ORDER.indexOf(id);
+    if (idx <= 0) return true;
+    var done = completedIds();
+    return done.indexOf(SCENARIO_ORDER[idx - 1]) >= 0;
+  }
+
+  function refreshMenuLocks() {
+    var done = completedIds();
+    Array.prototype.forEach.call(document.querySelectorAll(".scenario-btn"), function (btn) {
+      var id = btn.getAttribute("data-id");
+      var unlocked = isScenarioUnlocked(id);
+      var finished = done.indexOf(id) >= 0;
+      btn.classList.toggle("locked", !unlocked);
+      btn.classList.toggle("done", finished);
+      btn.disabled = !unlocked;
+    });
   }
 
   Array.prototype.forEach.call(document.querySelectorAll(".scenario-btn"), function (btn) {
@@ -1655,16 +1723,22 @@
     bridge("onExitToMap");
   });
 
+  var _lastFrameMs = 0;
   function animate() {
     requestAnimationFrame(animate);
     if (!glReady || !renderer) return;
-    var t = clock.getElapsedTime();
-    var dt = Math.min(clock.getDelta(), 0.05);
+    // Android WebView often returns 0 from THREE.Clock.getDelta — drive time ourselves.
+    var nowMs = (typeof performance !== "undefined" ? performance.now() : Date.now());
+    var dt = _lastFrameMs ? Math.min((nowMs - _lastFrameMs) / 1000, 0.05) : 1 / 30;
+    if (dt <= 0) dt = 1 / 30;
+    _lastFrameMs = nowMs;
+    var t = nowMs / 1000;
 
     if (state.scenario) {
-      camera.position.x = Math.sin(t * 0.25) * 0.35;
-      camera.position.y = 7.2 + Math.sin(t * 0.4) * 0.08;
-      camera.lookAt(0, 0.6, 0);
+      camera.position.x = Math.sin(t * 0.2) * 0.12;
+      camera.position.y = 6.2 + Math.sin(t * 0.35) * 0.05;
+      camera.position.z = 10.5;
+      camera.lookAt(0, 0.5, 1);
       state.sceneT += dt;
     }
 
@@ -1762,6 +1836,7 @@
   // Keep menu visible; init GL lazily on first scenario.
   menu.style.display = "flex";
   hud.style.display = "none";
+  refreshMenuLocks();
   if (typeof THREE === "undefined") {
     showBootError("3D engine script missing.");
   }

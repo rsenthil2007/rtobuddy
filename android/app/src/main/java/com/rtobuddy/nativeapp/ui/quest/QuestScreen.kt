@@ -1,5 +1,7 @@
 package com.rtobuddy.nativeapp.ui.quest
 
+import android.os.Handler
+import android.os.Looper
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,8 +25,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import android.os.Handler
-import android.os.Looper
 import com.rtobuddy.nativeapp.data.RtoBuddyRepository
 import com.rtobuddy.nativeapp.domain.model.QuestOverview
 import kotlinx.coroutines.launch
@@ -39,8 +38,7 @@ fun QuestScreen(
     val scope = rememberCoroutineScope()
     val mainHandler = remember { Handler(Looper.getMainLooper()) }
     var overview by remember { mutableStateOf<QuestOverview?>(null) }
-    var immersive by remember { mutableStateOf(true) }
-    var statusLine by remember { mutableStateOf("Enter a district in the 3D world") }
+    var statusLine by remember { mutableStateOf("Finish districts in order") }
 
     suspend fun reload() {
         overview = repository.getQuestOverview()
@@ -48,116 +46,71 @@ fun QuestScreen(
 
     LaunchedEffect(refreshToken) { reload() }
 
-    if (immersive) {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-        ) {
-            QuestWorldView(
-                modifier = Modifier.fillMaxSize(),
-                events = QuestWorldEvents(
-                    onReady = {
-                        mainHandler.post { statusLine = "Roadsville ready · pick a scenario" }
-                    },
-                    onScenarioStart = { id ->
-                        mainHandler.post { statusLine = "Playing · $id" }
-                    },
-                    onSceneResult = { chapterId, sceneId, safe ->
-                        mainHandler.post {
-                            scope.launch {
-                                if (chapterId.isNotBlank() && sceneId.isNotBlank()) {
-                                    repository.completeQuestScene(chapterId, sceneId, safe)
-                                    reload()
-                                }
-                            }
-                        }
-                    },
-                    onScenarioComplete = { id, safe ->
-                        mainHandler.post {
-                            statusLine = if (safe) "Cleared · $id" else "Retry · $id"
-                            scope.launch { reload() }
-                        }
-                    },
-                    onExitToMap = {
-                        mainHandler.post {
-                            statusLine = "Back at scenario select"
-                            scope.launch { reload() }
-                        }
-                    },
-                ),
-            )
-            Surface(
-                shape = RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp),
-                color = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f),
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .fillMaxWidth(),
-            ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    val snap = overview
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            "Road Quest",
-                            style = MaterialTheme.typography.labelLarge,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.primary,
-                        )
-                        Text(
-                            "${snap?.stage ?: "CURIOUS"} · ★ ${snap?.stars ?: 0} · $statusLine",
-                            style = MaterialTheme.typography.labelSmall,
-                            maxLines = 1,
-                        )
-                    }
-                    OutlinedButton(onClick = { immersive = false }) {
-                        Text("List")
-                    }
-                }
-            }
-        }
-        return
-    }
-
-    // Fallback: compact chapter list (legacy text journey)
-    QuestTextMap(
-        overview = overview,
-        padding = padding,
-        onEnterWorld = { immersive = true },
-    )
-}
-
-@Composable
-private fun QuestTextMap(
-    overview: QuestOverview?,
-    padding: PaddingValues,
-    onEnterWorld: () -> Unit,
-) {
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(padding)
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
+            .padding(padding),
     ) {
-        Text("District list", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-        Text(
-            "Prefer the 3D world for learning. This list is only a progress checklist.",
-            style = MaterialTheme.typography.bodyMedium,
+        QuestWorldView(
+            modifier = Modifier.fillMaxSize(),
+            events = QuestWorldEvents(
+                onReady = {
+                    mainHandler.post { statusLine = "Roadsville ready · unlock step by step" }
+                },
+                onScenarioStart = { id ->
+                    mainHandler.post { statusLine = "Playing · $id" }
+                },
+                onSceneResult = { chapterId, sceneId, safe ->
+                    mainHandler.post {
+                        scope.launch {
+                            if (chapterId.isNotBlank() && sceneId.isNotBlank()) {
+                                repository.completeQuestScene(chapterId, sceneId, safe)
+                                reload()
+                            }
+                        }
+                    }
+                },
+                onScenarioComplete = { id, safe ->
+                    mainHandler.post {
+                        statusLine = if (safe) "Cleared · $id · next unlocked" else "Retry · $id"
+                        scope.launch { reload() }
+                    }
+                },
+                onExitToMap = {
+                    mainHandler.post {
+                        statusLine = "District map"
+                        scope.launch { reload() }
+                    }
+                },
+            ),
         )
-        OutlinedButton(onClick = onEnterWorld, modifier = Modifier.fillMaxWidth()) {
-            Text("Back to Roadsville 3D")
-        }
-        overview?.chapters?.take(8)?.forEach { status ->
-            val mark = when {
-                status.completed -> "✓"
-                status.unlocked -> "·"
-                else -> "🔒"
+        Surface(
+            shape = RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp),
+            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f),
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .fillMaxWidth(),
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                val snap = overview
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        "Road Quest",
+                        style = MaterialTheme.typography.labelLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary,
+                    )
+                    Text(
+                        "${snap?.stage ?: "CURIOUS"} · ★ ${snap?.stars ?: 0} · $statusLine",
+                        style = MaterialTheme.typography.labelSmall,
+                        maxLines = 1,
+                    )
+                }
             }
-            Text("$mark  ${status.chapter.title}")
         }
     }
 }
