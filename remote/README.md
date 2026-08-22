@@ -1,81 +1,28 @@
-# Serve ads-config.json from InterServer
+# Remote ads config (simple: use myChat HTTPS root)
 
-## Important
+Temporarily host the file **next to myChat `index.html`**. No nginx changes.
 
-| Path | Purpose |
-|------|---------|
-| `sftp://root@157.250.205.140/opt/rtobuddy/ads-config.json` | **Upload/edit** the file (you / admin) |
-| `https://157.250.205.140/rtobuddy/ads-config.json` | **What the app downloads** on every launch |
+## Public URL the app uses
 
-The Android app cannot use SFTP. Nginx must expose `/opt/rtobuddy/` over HTTP(S).
+`https://157.250.205.140/ads-config.json`
 
-## 1. Put the JSON on the server (SFTP)
+## Sequence
 
-Upload this content to `/opt/rtobuddy/ads-config.json`:
+1. SFTP into the **same folder** that already serves myChat (`https://157.250.205.140/` — that folder contains `index.html`).
+2. Upload `ads-config.json` there (copy from this repo’s `remote/ads-config.json`).
+3. In a browser or terminal, open:
+   `https://157.250.205.140/ads-config.json`  
+   You should see JSON, not 404.
+4. Install the new APK (1.8.2+). On launch it reads that URL.
+5. To turn ads on later, edit the server file only:
+   `"ads": "Enabled"`
 
-```json
-{
-  "ads": "Disabled",
-  "bannerEnabled": true,
-  "bannerPosition": "bottom",
-  "interstitialBetweenQuests": true,
-  "interstitialCooldownSec": 5,
-  "message": "Controlled from InterServer /opt/rtobuddy/ads-config.json"
-}
-```
-
-To turn ads on later, change only:
-
-```json
-"ads": "Enabled"
-```
-
-## 2. Nginx — expose the folder
-
-Create `/etc/nginx/sites-available/rtobuddy-ads` (or add to your existing site):
-
-```nginx
-server {
-    listen 80;
-    listen 443 ssl;
-    server_name 157.250.205.140;
-
-    # Keep your existing SSL certs here if already configured.
-
-    location /rtobuddy/ {
-        alias /opt/rtobuddy/;
-        default_type application/json;
-        add_header Cache-Control "no-store";
-        add_header Access-Control-Allow-Origin *;
-    }
-}
-```
-
-Then:
+If you don’t know the disk folder, on the VPS:
 
 ```bash
-sudo mkdir -p /opt/rtobuddy
-sudo chmod -R a+rX /opt/rtobuddy
-sudo nginx -t && sudo systemctl reload nginx
-```
-
-## 3. Verify from any PC
-
-```bash
-curl -k https://157.250.205.140/rtobuddy/ads-config.json
+sudo nginx -T 2>/dev/null | grep -A2 "root "
 # or
-curl http://157.250.205.140/rtobuddy/ads-config.json
+find /var/www /opt /home -name 'index.html' 2>/dev/null | head
 ```
 
-You should see the JSON (not 404 HTML).
-
-## 4. App behaviour
-
-On every launch (and Tools → Refresh remote ads config):
-
-1. App GETs `https://157.250.205.140/rtobuddy/ads-config.json`
-2. If that fails, tries `http://…` fallback
-3. If both fail → **ads stay Disabled** (safe default)
-4. If `"ads": "Enabled"` → banner + quest interstitial turn on
-
-No app rebuild is needed to flip Enabled/Disabled — only edit the server JSON.
+Put `ads-config.json` beside that `index.html`.

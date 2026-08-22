@@ -13,22 +13,21 @@ android {
         applicationId = "com.rtobuddy.nativeapp"
         minSdk = 26
         targetSdk = 35
-        versionCode = 17
-        versionName = "1.8.1"
+        versionCode = 18
+        versionName = "1.8.2"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Public HTTPS URL for InterServer ads toggle (SFTP path is only for uploading the file).
-        // File on server: /opt/rtobuddy/ads-config.json  →  served as /rtobuddy/ads-config.json
+        // Temporarily hosted in the existing myChat HTTPS web root (same folder as index.html).
         buildConfigField(
             "String",
             "REMOTE_ADS_CONFIG_URL",
-            "\"https://157.250.205.140/rtobuddy/ads-config.json\"",
+            "\"https://157.250.205.140/ads-config.json\"",
         )
         buildConfigField(
             "String",
             "REMOTE_ADS_CONFIG_URL_FALLBACK",
-            "\"http://157.250.205.140/rtobuddy/ads-config.json\"",
+            "\"http://157.250.205.140/ads-config.json\"",
         )
         // Google sample units (safe for closed testing). Replace with your AdMob IDs for production.
         buildConfigField("String", "ADMOB_BANNER_UNIT_ID", "\"ca-app-pub-3940256099942544/6300978111\"")

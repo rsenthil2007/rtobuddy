@@ -4,5 +4,7 @@
   "bannerPosition": "bottom",
   "interstitialBetweenQuests": true,
   "interstitialCooldownSec": 5,
-  "message": "Closed-group default: ads off until enabled remotely."
+  "message": "Hosted next to myChat at https://157.250.205.140/ads-config.json"
 }
+
+
