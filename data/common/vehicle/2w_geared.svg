@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Geared motorcycle controls">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2332"/>
+      <stop offset="100%" stop-color="#0d1219"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b8c0cc"/>
+      <stop offset="50%" stop-color="#8a939f"/>
+      <stop offset="100%" stop-color="#6b737d"/>
+    </linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#111"/>
+    </linearGradient>
+    <linearGradient id="dash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#222831"/>
+      <stop offset="100%" stop-color="#151920"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <text x="400" y="28" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="14" font-weight="600">GEARED MOTORCYCLE  RIDER VIEW</text>
+
+  <!-- Mirrors -->
+  <g filter="url(#shadow)">
+    <rect x="24" y="36" width="88" height="52" rx="8" fill="#334155" stroke="#64748b" stroke-width="2"/>
+    <ellipse cx="68" cy="62" rx="28" ry="18" fill="#475569" stroke="#94a3b8"/>
+    <rect x="688" y="36" width="88" height="52" rx="8" fill="#334155" stroke="#64748b" stroke-width="2"/>
+    <ellipse cx="732" cy="62" rx="28" ry="18" fill="#475569" stroke="#94a3b8"/>
+  </g>
+
+  <!-- Instrument cluster -->
+  <g filter="url(#shadow)">
+    <rect x="272" y="18" width="256" height="96" rx="14" fill="url(#dash)" stroke="#475569" stroke-width="2"/>
+    <circle cx="340" cy="66" r="34" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+    <text x="340" y="72" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">60</text>
+    <text x="340" y="88" text-anchor="middle" fill="#64748b" font-size="10">km/h</text>
+    <circle cx="460" cy="66" r="34" fill="#0f172a" stroke="#f97316" stroke-width="2"/>
+    <text x="460" y="72" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">4K</text>
+    <text x="460" y="88" text-anchor="middle" fill="#64748b" font-size="10">rpm</text>
+    <circle cx="520" cy="44" r="5" fill="#22c55e"/>
+    <circle cx="540" cy="44" r="5" fill="#eab308"/>
+    <circle cx="560" cy="44" r="5" fill="#ef4444"/>
+  </g>
+
+  <!-- Handlebar -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="118" width="640" height="18" rx="9" fill="url(#metal)"/>
+    <!-- Clutch lever -->
+    <path d="M80 136 L40 136 L24 168 L56 176 L80 152 Z" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+    <rect x="100" y="136" width="72" height="28" rx="6" fill="url(#grip)"/>
+    <!-- Right grip + brake -->
+    <rect x="628" y="136" width="72" height="28" rx="6" fill="url(#grip)"/>
+    <path d="M720 136 L760 136 L776 168 L744 176 L720 152 Z" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+  </g>
+
+  <!-- Switch blocks -->
+  <g filter="url(#shadow)">
+    <rect x="160" y="178" width="96" height="56" rx="8" fill="#1e293b" stroke="#475569"/>
+    <rect x="168" y="188" width="18" height="18" rx="4" fill="#334155" stroke="#94a3b8"/>
+    <rect x="192" y="188" width="18" height="18" rx="4" fill="#334155" stroke="#94a3b8"/>
+    <text x="208" y="222" text-anchor="middle" fill="#64748b" font-size="9">IND / LIGHT</text>
+    <rect x="208" y="148" width="48" height="24" rx="6" fill="#334155" stroke="#64748b"/>
+    <text x="232" y="164" text-anchor="middle" fill="#94a3b8" font-size="9">BEAM</text>
+    <rect x="344" y="198" width="56" height="36" rx="18" fill="#475569" stroke="#94a3b8"/>
+    <text x="372" y="221" text-anchor="middle" fill="#e2e8f0" font-size="10">HORN</text>
+    <rect x="448" y="178" width="72" height="56" rx="8" fill="#1e293b" stroke="#475569"/>
+    <rect x="468" y="188" width="32" height="20" rx="4" fill="#ef4444" stroke="#fca5a5"/>
+    <text x="484" y="222" text-anchor="middle" fill="#64748b" font-size="9">KILL</text>
+  </g>
+
+  <!-- Fuel tank / key -->
+  <g filter="url(#shadow)">
+    <ellipse cx="400" cy="300" rx="180" ry="56" fill="#334155" stroke="#64748b" stroke-width="2"/>
+    <rect x="360" y="288" width="80" height="36" rx="6" fill="#1e293b" stroke="#94a3b8"/>
+    <circle cx="400" cy="306" r="10" fill="#eab308" stroke="#ca8a04"/>
+    <text x="400" y="340" text-anchor="middle" fill="#64748b" font-size="11">IGNITION KEY</text>
+  </g>
+
+  <!-- Foot controls bar -->
+  <rect x="40" y="368" width="720" height="8" rx="4" fill="#475569"/>
+  <g filter="url(#shadow)">
+    <rect x="56" y="384" width="140" height="72" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <path d="M120 396 L88 448 L152 448 Z" fill="#94a3b8" stroke="#cbd5e1"/>
+    <text x="126" y="468" text-anchor="middle" fill="#94a3b8" font-size="11">GEAR SHIFT</text>
+    <rect x="604" y="384" width="140" height="72" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <ellipse cx="674" cy="420" rx="36" ry="14" fill="#64748b" stroke="#94a3b8"/>
+    <text x="674" y="468" text-anchor="middle" fill="#94a3b8" font-size="11">REAR BRAKE</text>
+  </g>
+  <text x="400" y="492" text-anchor="middle" fill="#475569" font-size="10">Tap highlighted zones in the app to learn each control</text>
+</svg>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Car driver controls">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#0c1018"/>
+    </linearGradient>
+    <linearGradient id="wheel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#1a202c"/>
+    </linearGradient>
+    <linearGradient id="dash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a3142"/>
+      <stop offset="100%" stop-color="#171c28"/>
+    </linearGradient>
+    <linearGradient id="pedal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#718096"/>
+      <stop offset="100%" stop-color="#4a5568"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <text x="400" y="28" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="14" font-weight="600">CAR (LMV)  DRIVER VIEW</text>
+
+  <!-- Windscreen frame -->
+  <path d="M120 40 L680 40 L720 120 L80 120 Z" fill="#0f172a" opacity="0.6" stroke="#334155"/>
+
+  <!-- Rear mirror -->
+  <g filter="url(#shadow)">
+    <rect x="304" y="12" width="192" height="36" rx="8" fill="#334155" stroke="#64748b"/>
+    <rect x="320" y="18" width="160" height="24" rx="4" fill="#475569"/>
+  </g>
+
+  <!-- Dashboard -->
+  <g filter="url(#shadow)">
+    <path d="M100 120 Q400 80 700 120 L680 200 Q400 180 120 200 Z" fill="url(#dash)" stroke="#475569" stroke-width="2"/>
+    <rect x="224" y="52" width="352" height="88" rx="12" fill="#0f172a" stroke="#64748b"/>
+    <circle cx="300" cy="96" r="36" fill="#111827" stroke="#38bdf8" stroke-width="3"/>
+    <text x="300" y="104" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700">80</text>
+    <rect x="360" y="68" width="80" height="56" rx="8" fill="#1e293b" stroke="#475569"/>
+    <circle cx="400" cy="88" r="6" fill="#ef4444"/>
+    <circle cx="420" cy="88" r="6" fill="#eab308"/>
+    <circle cx="440" cy="88" r="6" fill="#22c55e"/>
+    <text x="400" y="112" text-anchor="middle" fill="#64748b" font-size="9">WARNINGS</text>
+    <circle cx="500" cy="96" r="36" fill="#111827" stroke="#64748b" stroke-width="2"/>
+    <text x="500" y="100" text-anchor="middle" fill="#94a3b8" font-size="12">FUEL</text>
+    <!-- Hazard -->
+    <rect x="356" y="100" width="88" height="28" rx="6" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="400" y="119" text-anchor="middle" fill="#fecaca" font-size="11" font-weight="700">  HAZARD</text>
+  </g>
+
+  <!-- Steering wheel -->
+  <g filter="url(#shadow)">
+    <circle cx="400" cy="220" r="108" fill="none" stroke="url(#wheel)" stroke-width="22"/>
+    <circle cx="400" cy="220" r="36" fill="#1e293b" stroke="#64748b" stroke-width="3"/>
+    <rect x="392" y="112" width="16" height="48" rx="8" fill="#374151"/>
+    <rect x="392" y="280" width="16" height="48" rx="8" fill="#374151"/>
+    <rect x="292" y="212" width="48" height="16" rx="8" fill="#374151"/>
+    <rect x="460" y="212" width="48" height="16" rx="8" fill="#374151"/>
+    <text x="400" y="226" text-anchor="middle" fill="#94a3b8" font-size="10">HORN</text>
+  </g>
+
+  <!-- Stalks -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="168" width="72" height="96" rx="8" fill="#334155" stroke="#64748b"/>
+    <path d="M116 168 L116 140 L132 132 L132 168" fill="#475569" stroke="#94a3b8"/>
+    <text x="116" y="248" text-anchor="middle" fill="#64748b" font-size="9">INDICATOR</text>
+    <rect x="648" y="168" width="72" height="96" rx="8" fill="#334155" stroke="#64748b"/>
+    <path d="M684 168 L684 140 L668 132 L668 168" fill="#475569" stroke="#94a3b8"/>
+    <text x="684" y="248" text-anchor="middle" fill="#64748b" font-size="9">WIPER</text>
+  </g>
+
+  <!-- Centre console -->
+  <g filter="url(#shadow)">
+    <rect x="16" y="240" width="96" height="96" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <rect x="32" y="256" width="64" height="64" rx="8" fill="#374151" stroke="#94a3b8"/>
+    <text x="64" y="352" text-anchor="middle" fill="#64748b" font-size="9">HANDBRAKE</text>
+    <rect x="336" y="260" width="128" height="40" rx="8" fill="#1e293b" stroke="#eab308"/>
+    <circle cx="400" cy="280" r="12" fill="#fbbf24"/>
+    <text x="400" y="312" text-anchor="middle" fill="#64748b" font-size="9">IGNITION</text>
+    <rect x="464" y="240" width="88" height="112" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <circle cx="508" cy="280" r="20" fill="#334155" stroke="#94a3b8"/>
+    <text x="508" y="286" text-anchor="middle" fill="#e2e8f0" font-size="14">D</text>
+    <text x="508" y="364" text-anchor="middle" fill="#64748b" font-size="9">GEAR / PRND</text>
+    <!-- AC panel -->
+    <rect x="240" y="292" width="320" height="48" rx="10" fill="#0f172a" stroke="#475569"/>
+    <rect x="260" y="306" width="48" height="20" rx="4" fill="#334155"/>
+    <rect x="320" y="306" width="120" height="20" rx="4" fill="#334155"/>
+    <rect x="452" y="306" width="48" height="20" rx="4" fill="#334155"/>
+    <text x="400" y="356" text-anchor="middle" fill="#64748b" font-size="9">AC / BLOWER / DEFROST</text>
+  </g>
+
+  <!-- Pedals -->
+  <g filter="url(#shadow)">
+    <rect x="96" y="388" width="120" height="72" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <rect x="112" y="404" width="88" height="40" rx="6" fill="url(#pedal)" stroke="#cbd5e1"/>
+    <text x="156" y="468" text-anchor="middle" fill="#94a3b8" font-size="11">CLUTCH</text>
+    <rect x="304" y="388" width="120" height="72" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <rect x="320" y="404" width="88" height="40" rx="6" fill="url(#pedal)" stroke="#cbd5e1"/>
+    <text x="364" y="468" text-anchor="middle" fill="#94a3b8" font-size="11">BRAKE</text>
+    <rect x="496" y="388" width="120" height="72" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <rect x="512" y="404" width="88" height="40" rx="6" fill="url(#pedal)" stroke="#cbd5e1"/>
+    <text x="556" y="468" text-anchor="middle" fill="#94a3b8" font-size="11">ACCEL</text>
+  </g>
+  <text x="400" y="492" text-anchor="middle" fill="#475569" font-size="10">Manual cars have three pedals; automatics have brake + accelerator only</text>
+</svg>

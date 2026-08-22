@@ -154,6 +154,31 @@ data class RulesCheckEntry(
 )
 
 @Serializable
+data class VehicleControlHotspot(
+    val x: Double,
+    val y: Double,
+    val w: Double,
+    val h: Double,
+)
+
+@Serializable
+data class VehicleControl(
+    val id: String,
+    val label: String,
+    val description: String,
+    val hotspot: VehicleControlHotspot,
+)
+
+@Serializable
+data class VehicleControlVariant(
+    val id: String,
+    val title: String,
+    val subtitle: String,
+    val diagram_asset: String,
+    val controls: List<VehicleControl> = emptyList(),
+)
+
+@Serializable
 data class StateUtRule(
     val id: String,
     val title: String,

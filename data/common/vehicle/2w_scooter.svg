@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Scooter controls">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <text x="400" y="28" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="14" font-weight="600">SCOOTER (AUTOMATIC)  RIDER VIEW</text>
+
+  <!-- Mirrors -->
+  <g filter="url(#shadow)">
+    <rect x="24" y="36" width="88" height="52" rx="8" fill="#475569" stroke="#94a3b8"/>
+    <ellipse cx="68" cy="62" rx="28" ry="18" fill="#64748b"/>
+    <rect x="688" y="36" width="88" height="52" rx="8" fill="#475569" stroke="#94a3b8"/>
+    <ellipse cx="732" cy="62" rx="28" ry="18" fill="#64748b"/>
+  </g>
+
+  <!-- Dashboard fairing -->
+  <g filter="url(#shadow)">
+    <path d="M260 24 Q400 8 540 24 L560 120 Q400 140 240 120 Z" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <rect x="300" y="48" width="200" height="56" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <text x="400" y="82" text-anchor="middle" fill="#e2e8f0" font-size="22" font-weight="700">45</text>
+    <text x="400" y="96" text-anchor="middle" fill="#64748b" font-size="10">km/h ╖ FUEL оооп</text>
+  </g>
+
+  <!-- Wide handlebar -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="128" width="680" height="16" rx="8" fill="url(#metal)"/>
+    <path d="M60 144 L20 144 L8 178 L48 186 L60 162 Z" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+    <rect x="88" y="144" width="80" height="30" rx="8" fill="url(#grip)"/>
+    <rect x="632" y="144" width="80" height="30" rx="8" fill="url(#grip)"/>
+    <path d="M740 144 L780 144 L792 178 L752 186 L740 162 Z" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+  </g>
+
+  <!-- Left switch block -->
+  <g filter="url(#shadow)">
+    <rect x="152" y="184" width="104" height="60" rx="10" fill="#0f172a" stroke="#475569"/>
+    <rect x="164" y="196" width="22" height="22" rx="5" fill="#334155" stroke="#94a3b8"/>
+    <rect x="192" y="196" width="22" height="22" rx="5" fill="#334155" stroke="#94a3b8"/>
+    <rect x="208" y="152" width="52" height="26" rx="6" fill="#334155" stroke="#64748b"/>
+    <text x="208" y="232" text-anchor="middle" fill="#64748b" font-size="9">IND / LIGHT</text>
+    <rect x="336" y="204" width="60" height="38" rx="19" fill="#64748b" stroke="#cbd5e1"/>
+    <text x="366" y="228" text-anchor="middle" fill="#f8fafc" font-size="10">HORN</text>
+  </g>
+
+  <!-- Body / key -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="260" width="240" height="80" rx="16" fill="#475569" stroke="#94a3b8"/>
+    <rect x="360" y="288" width="80" height="36" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+    <circle cx="400" cy="306" r="10" fill="#fbbf24"/>
+    <text x="400" y="356" text-anchor="middle" fill="#94a3b8" font-size="11">KEY / START</text>
+  </g>
+
+  <!-- Floorboard & side stand -->
+  <g filter="url(#shadow)">
+    <rect x="256" y="368" width="288" height="88" rx="12" fill="url(#floor)" stroke="#64748b"/>
+    <text x="400" y="420" text-anchor="middle" fill="#94a3b8" font-size="12">FLOORBOARD</text>
+    <path d="M64 380 L64 440 L96 440 L120 400 L88 372 Z" fill="#64748b" stroke="#94a3b8"/>
+    <text x="88" y="468" text-anchor="middle" fill="#94a3b8" font-size="10">SIDE STAND</text>
+  </g>
+  <text x="400" y="492" text-anchor="middle" fill="#475569" font-size="10">No clutch  left lever often = rear brake, right = front brake</text>
+</svg>
