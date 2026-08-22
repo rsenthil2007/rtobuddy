@@ -3,13 +3,12 @@ package com.rtobuddy.nativeapp.ui.tools
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -24,13 +23,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rtobuddy.nativeapp.ads.AdsManager
 import com.rtobuddy.nativeapp.data.RtoBuddyRepository
 import com.rtobuddy.nativeapp.domain.model.CatalogStats
+import com.rtobuddy.nativeapp.domain.model.EmergencyNumber
 import com.rtobuddy.nativeapp.domain.model.OfficialService
 import com.rtobuddy.nativeapp.ui.components.SectionCard
 import com.rtobuddy.nativeapp.ui.theme.AppThemeId
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -43,12 +43,14 @@ fun ToolsScreen(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     var services by remember { mutableStateOf<List<OfficialService>>(emptyList()) }
+    var emergencyNumbers by remember { mutableStateOf<List<EmergencyNumber>>(emptyList()) }
     var stats by remember { mutableStateOf(CatalogStats()) }
     var selectedTheme by remember { mutableStateOf(AppThemeId.BALANCED) }
     val adsCfg by adsManager.config.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
         services = repository.getServices()
+        emergencyNumbers = repository.getEmergencyNumbers()
         stats = repository.getCatalogStats()
         selectedTheme = AppThemeId.fromStored(repository.themeId.first())
     }
@@ -56,12 +58,78 @@ fun ToolsScreen(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(padding),
-        contentPadding = PaddingValues(16.dp),
+            .padding(padding)
+            .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
+        contentPadding = PaddingValues(vertical = 16.dp),
     ) {
         item {
             Text("Tools", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+            Text(
+                "Emergency numbers, official links, and app settings.",
+                style = MaterialTheme.typography.bodyMedium,
+            )
+        }
+
+        item {
+            SectionCard(
+                title = "Emergency numbers (India)",
+                body = "Prefer 112 when unsure. Tap to open the dialer — confirm before calling.",
+            ) {
+                emergencyNumbers.forEach { entry ->
+                    Column(modifier = Modifier.fillMaxWidth()) {
+                        OutlinedButton(
+                            onClick = {
+                                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${entry.number}"))
+                                context.startActivity(intent)
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                        ) {
+                            Text("${entry.number} · ${entry.name}")
+                        }
+                        Text(
+                            entry.when_to_call,
+                            style = MaterialTheme.typography.bodySmall,
+                            modifier = Modifier.padding(start = 4.dp, bottom = 8.dp),
+                        )
+                    }
+                }
+            }
+        }
+
+        item {
+            SectionCard(
+                title = "After a road crash",
+                body = "1. Switch on hazard lights if safe.\n" +
+                    "2. Call 112 or 108 if anyone is hurt.\n" +
+                    "3. Do not crowd the scene — keep space for ambulances.\n" +
+                    "4. Note location and vehicle details for police (100) if needed.",
+            )
+        }
+
+        item {
+            SectionCard(title = "Official services") {
+                services.take(8).forEach { service ->
+                    OutlinedButton(
+                        onClick = {
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(service.url))
+                            context.startActivity(intent)
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        Text(service.name)
+                    }
+                }
+            }
+        }
+
+        item {
+            SectionCard(title = "Dataset") {
+                Text(
+                    "Signs ${stats.signs} · Signals ${stats.signals} · Markings ${stats.markings} · " +
+                        "Rules ${stats.rules} · Questions ${stats.questions}",
+                )
+            }
         }
 
         item {
@@ -96,30 +164,6 @@ fun ToolsScreen(
                     modifier = Modifier.fillMaxWidth(),
                 ) {
                     Text("Refresh remote ads config")
-                }
-            }
-        }
-
-        item {
-            SectionCard(
-                title = "Offline pack",
-                body = "${stats.signs} signs · ${stats.signals} signals · ${stats.markings} markings · ${stats.rules} rules · ${stats.questions} exam questions · ${stats.jurisdictions} State/UT overlays",
-            )
-        }
-
-        item {
-            SectionCard(
-                title = "About & sources",
-                body = "RTOBuddy packages national baseline learning content plus State/UT overlays for offline study. Legal-sensitive summaries always point back to official sources. This app is educational and not a substitute for the current Act, Rules, or State/UT orders.",
-            )
-        }
-
-        items(services, key = { it.id }) { service ->
-            SectionCard(title = service.name, body = service.purpose) {
-                if (service.url.isNotBlank()) {
-                    OutlinedButton(onClick = {
-                        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(service.url)))
-                    }) { Text("Open official site") }
                 }
             }
         }

@@ -6,7 +6,7 @@ import com.rtobuddy.nativeapp.domain.model.CatalogStats
 import com.rtobuddy.nativeapp.domain.model.ConfidenceItem
 import com.rtobuddy.nativeapp.domain.model.DailyActivity
 import com.rtobuddy.nativeapp.domain.model.DailyRule
-import com.rtobuddy.nativeapp.domain.model.ExamAttempt
+import com.rtobuddy.nativeapp.domain.model.EmergencyNumber
 import com.rtobuddy.nativeapp.domain.model.ExamQuestion
 import com.rtobuddy.nativeapp.domain.model.JurisdictionInfo
 import com.rtobuddy.nativeapp.domain.model.LocalReminder
@@ -52,6 +52,7 @@ interface RtoBuddyRepository {
     suspend fun getQuestions(): List<ExamQuestion>
     suspend fun getSpotItQuestionIds(): List<String>
     suspend fun getServices(): List<OfficialService>
+    suspend fun getEmergencyNumbers(): List<EmergencyNumber>
     suspend fun getStateRules(): List<StateUtRule>
     suspend fun getQuestOverview(): QuestOverview
     suspend fun getQuestChapter(chapterId: String): QuestChapter?
@@ -202,6 +203,8 @@ class OfflineFirstRtoBuddyRepository(
     }
 
     override suspend fun getServices(): List<OfficialService> = catalog.services
+
+    override suspend fun getEmergencyNumbers(): List<EmergencyNumber> = catalog.emergencyNumbers
 
     override suspend fun getStateRules(): List<StateUtRule> {
         val code = progress.jurisdictionCode.first()

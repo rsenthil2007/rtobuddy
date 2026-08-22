@@ -550,6 +550,27 @@
           "buddy": "Where you stop can hide people and signs.",
           "body": "District: Parking Puzzle — use the marked bay.",
           "continueLabel": "Continue"
+        },
+        {
+          "id": "noparking",
+          "type": "story",
+          "buddy": "No-parking signs protect sightlines and emergency access.",
+          "body": "District: No Parking Zone.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "parallelpark",
+          "type": "story",
+          "buddy": "Align, reverse slowly, and finish inside the lines.",
+          "body": "District: Parallel Parking.",
+          "continueLabel": "Continue"
+        },
+        {
+          "id": "emergnumbers",
+          "type": "story",
+          "buddy": "For injuries after a crash, call 108 or 102. When unsure, dial 112.",
+          "body": "District: Who to Call?",
+          "continueLabel": "Continue"
         }
       ]
     },

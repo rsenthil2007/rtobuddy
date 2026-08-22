@@ -177,6 +177,60 @@
       build: "parking",
       blurb: "Stop in the right place",
     },
+    noparking: {
+      id: "noparking",
+      label: "No Parking Zone",
+      buddyStart: "That blue sign with a red slash means no stopping here.",
+      hint: "Can you park beside this kerb?",
+      mode: "choose",
+      choices: [
+        { label: "Park here — I will be quick", safe: false },
+        { label: "Keep moving to a legal bay", safe: true },
+        { label: "Park on the footpath instead", safe: false },
+      ],
+      feedbackSafe: "No-parking zones protect visibility and access. Find a marked bay.",
+      feedbackUnsafe: "Blocking a no-parking zone can hide people and block emergency access.",
+      bridgeChapter: "welcome",
+      bridgeScene: "parking",
+      build: "noparking",
+      blurb: "Read the no-parking sign",
+    },
+    parallelpark: {
+      id: "parallelpark",
+      label: "Parallel Parking",
+      buddyStart: "Two cars already occupy the bay. Can you slot in safely?",
+      hint: "How should you park?",
+      mode: "choose",
+      choices: [
+        { label: "Swing wide and nose in from the wrong angle", safe: false },
+        { label: "Pull alongside, reverse in slowly, straighten", safe: true },
+        { label: "Leave the car sticking out into the lane", safe: false },
+      ],
+      feedbackSafe: "Parallel parking needs patience — align, reverse, and finish inside the lines.",
+      feedbackUnsafe: "Half-in parking blocks the lane and invites sideswipes.",
+      bridgeChapter: "welcome",
+      bridgeScene: "parking",
+      build: "parallelpark",
+      blurb: "Slot in between two cars",
+    },
+    emergnumbers: {
+      id: "emergnumbers",
+      label: "Who to Call?",
+      buddyStart: "Someone is injured after a crash. Which number first?",
+      hint: "Pick the best first call",
+      mode: "choose",
+      choices: [
+        { label: "108 / 102 — ambulance for injuries", safe: true },
+        { label: "1033 — highway breakdown only", safe: false },
+        { label: "1091 — women helpline for medical emergency", safe: false },
+      ],
+      feedbackSafe: "For injuries call 108 or 102. When unsure, 112 routes all emergencies.",
+      feedbackUnsafe: "Match the number to the emergency — medical first when someone is hurt.",
+      bridgeChapter: "scenario_challenge",
+      bridgeScene: "emergency",
+      build: "emergnumbers",
+      blurb: "112 · 100 · 101 · 102 · 108",
+    },
     overtake: {
       id: "overtake",
       label: "Overtaking Trail",
@@ -1348,6 +1402,13 @@
     return lights;
   }
 
+  function kerbSign(side, z) {
+    return {
+      x: side === "right" ? 1.85 : -1.85,
+      z: z != null ? z : 2.6,
+    };
+  }
+
   function makeStopSign(x, z) {
     worldRoot.add(cyl(0.06, 2.2, 0x666666, x, 1.1, z));
     var oct = new THREE.Mesh(
@@ -1374,6 +1435,29 @@
     worldRoot.add(cyl(0.06, 2.0, 0x666666, x, 1.0, z));
     var board = box(1.4, 0.9, 0.08, 0xf2c94c, x, 2.2, z);
     worldRoot.add(board);
+  }
+
+  function makeParkingSign(x, z) {
+    worldRoot.add(cyl(0.06, 1.7, 0x666666, x, 0.85, z));
+    var board = box(0.85, 0.85, 0.08, 0x1565c0, x, 1.85, z);
+    worldRoot.add(board);
+    worldRoot.add(box(0.22, 0.5, 0.1, 0xffffff, x + 0.04, 1.85, z + 0.05));
+    makeTapTarget("parking_sign", board, "Parking allowed here");
+  }
+
+  function makeNoParkingSign(x, z) {
+    worldRoot.add(cyl(0.06, 1.7, 0x666666, x, 0.85, z));
+    var disc = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.48, 0.48, 0.08, 24),
+      new THREE.MeshStandardMaterial({ color: 0x1565c0, emissive: 0x001844, emissiveIntensity: 0.25 })
+    );
+    disc.rotation.x = Math.PI / 2;
+    disc.position.set(x, 1.85, z);
+    worldRoot.add(disc);
+    var bar = box(0.62, 0.1, 0.1, 0xc62828, x, 1.85, z + 0.05);
+    bar.rotation.z = Math.PI / 4;
+    worldRoot.add(bar);
+    makeTapTarget("no_parking", disc, "No parking sign");
   }
 
   function makeRailCrossing(z) {
@@ -1719,6 +1803,41 @@
           c.mesh.position.set(xEnd, 0, zEnd);
           c.mesh.rotation.y = 0;
         }
+      } else if (c.type === "parallelPark") {
+        var durPP = c.dur || 7;
+        var pausePP = c.pause != null ? c.pause : 1.4;
+        var cyclePP = durPP + pausePP;
+        var lp = c.loop !== false ? ((local % cyclePP) + cyclePP) % cyclePP : local;
+        var xS = c.xStart != null ? c.xStart : -1.2;
+        var zS = c.zStart != null ? c.zStart : 9;
+        var xA = c.xAlign != null ? c.xAlign : 2.2;
+        var zA = c.zAlign != null ? c.zAlign : 4.5;
+        var xE = c.xEnd != null ? c.xEnd : 1.9;
+        var zE = c.zEnd != null ? c.zEnd : 0.2;
+        if (lp < 0) {
+          c.mesh.position.set(xS, 0, zS);
+          c.mesh.rotation.y = Math.PI;
+        } else if (lp < durPP * 0.35) {
+          var u1 = easeInOut(clamp01(lp / (durPP * 0.35)));
+          c.mesh.position.x = lerp(xS, xA, u1);
+          c.mesh.position.z = lerp(zS, zA, u1);
+          c.mesh.rotation.y = lerp(Math.PI, Math.PI / 2, u1);
+          spinWheels(c.mesh, 4 * dt);
+        } else if (lp < durPP * 0.75) {
+          var u2 = easeInOut(clamp01((lp - durPP * 0.35) / (durPP * 0.4)));
+          c.mesh.position.x = lerp(xA, xE, u2);
+          c.mesh.position.z = lerp(zA, zE, u2);
+          c.mesh.rotation.y = lerp(Math.PI / 2, Math.PI / 2, u2);
+          spinWheels(c.mesh, 3 * dt);
+        } else if (lp < durPP) {
+          var u3 = easeInOut(clamp01((lp - durPP * 0.75) / (durPP * 0.25)));
+          c.mesh.position.x = lerp(xE, xE, u3);
+          c.mesh.position.z = lerp(zE, zE, u3);
+          c.mesh.rotation.y = Math.PI / 2;
+        } else {
+          c.mesh.position.set(xE, 0, zE);
+          c.mesh.rotation.y = Math.PI / 2;
+        }
       } else if (c.type === "rollForward") {
         var rSpd = c.speed != null ? c.speed : 0.55;
         if (local >= 0) {
@@ -1842,7 +1961,7 @@
     addGroundRoad();
     addTrees();
     addBuildings();
-    makeStopSign(-2.8, 2.5);
+    makeStopSign(kerbSign("left", 2.8).x, kerbSign("left", 2.8).z);
     worldRoot.add(box(2.2, 0.04, 0.12, 0xffffff, -1.4, 0.05, 2.9));
     var car = makeCar(0x5b8def, -1.4, 11);
     pushClip({ type: "approachStop", mesh: car, zStart: 11, zStop: 3.0, t0: 0, dur: 3.8, hold: 2.8, loop: true });
@@ -1855,7 +1974,7 @@
     addGroundRoad();
     addTrees();
     addBuildings();
-    makeWarningSign(-2.6, 3.2);
+    makeWarningSign(kerbSign("left", 3.0).x, kerbSign("left", 3.0).z);
     var fast = makeCar(0x5b8def, -1.4, 14);
     // two-phase: rush in, then crawl near warning, then loop crawl
     pushClip({ type: "approachStop", mesh: fast, zStart: 14, zStop: 7, t0: 0, dur: 1.5, hold: 0.2, loop: false });
@@ -1949,6 +2068,8 @@
     worldRoot.add(box(1.8, 0.04, 3.2, 0x5a8f6a, 2.1, 0.05, 1.2));
     worldRoot.add(box(0.08, 0.06, 3.2, 0xf2e9a8, 1.3, 0.06, 1.2));
     worldRoot.add(box(0.08, 0.06, 3.2, 0xf2e9a8, 2.9, 0.06, 1.2));
+    var ps = kerbSign("right", 2.0);
+    makeParkingSign(ps.x, ps.z);
     makeCar(0x4f7cac, 2.1, -2.2);
     makeBus(-2.0, -3.5);
     addZebra(2.6);
@@ -1957,6 +2078,64 @@
     var wrong = makeCar(0xd9843b, -1.2, 9);
     pushClip({ type: "approachStop", mesh: wrong, zStart: 9, zStop: 3.8, t0: 0, dur: 3.5, hold: 3.0, loop: true });
     makeScooter(1.8, 3.5, { rider: false, yaw: -0.5, tapLabel: "Scooter near bay" });
+  }
+
+  function buildNoParking() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addTrees();
+    var np = kerbSign("left", 2.7);
+    makeNoParkingSign(np.x, np.z);
+    var wrong = makeCar(0xd9843b, -1.85, 9);
+    pushClip({ type: "approachStop", mesh: wrong, zStart: 9, zStop: 2.8, t0: 0, dur: 3.5, hold: 3, loop: true });
+    var ego = makeCar(0x5b8def, -1.2, 11);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 11, zStop: 6.5, t0: 0.2, dur: 3.0, hold: 4, loop: true });
+    worldRoot.add(box(1.6, 0.04, 3.0, 0x5a8f6a, 2.0, 0.05, 1.0));
+  }
+
+  function buildParallelPark() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    worldRoot.add(box(0.08, 0.06, 4.2, 0xf2e9a8, 1.25, 0.06, 0.6));
+    worldRoot.add(box(0.08, 0.06, 4.2, 0xf2e9a8, 2.55, 0.06, 0.6));
+    makeCar(0x888888, 1.9, 1.8, { static: true });
+    makeCar(0x666666, 1.9, -1.6, { static: true });
+    var ps = kerbSign("right", 1.6);
+    makeParkingSign(ps.x, ps.z);
+    var ego = makeCar(0x5b8def, -1.2, 9);
+    pushClip({
+      type: "parallelPark",
+      mesh: ego,
+      xStart: -1.2,
+      zStart: 9,
+      xAlign: 2.4,
+      zAlign: 4.5,
+      xEnd: 1.9,
+      zEnd: 0.2,
+      dur: 7,
+      t0: 0.5,
+      loop: true,
+    });
+  }
+
+  function buildEmergNumbers() {
+    setDayTheme();
+    addLights();
+    addGroundRoad();
+    addBuildings();
+    addTrees();
+    var a = makeCar(0x5b8def, -0.6, 2.2, { crumpled: true, yaw: 0.55 });
+    var b = makeCar(0xd9843b, 0.8, 3.4, { crumpled: true, yaw: -0.9 });
+    makePerson(-1.6, 1.2, { shirtColor: 0x3d6bb3, label: "Injured person", static: true });
+    makePerson(1.7, 1.0, { shirtColor: 0xc97b63, label: "Caller with phone", static: true });
+    worldRoot.add(box(0.35, 0.55, 0.08, 0x222222, 1.55, 1.05, 1.05));
+    worldRoot.add(box(0.28, 0.42, 0.06, 0x4cc9c0, 1.55, 1.05, 1.1));
+    var ego = makeCar(0x4f7cac, -1.3, 10);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 10, zStop: 5.8, t0: 0, dur: 3.0, hold: 4, loop: true });
   }
 
   function buildOvertake() {
@@ -2028,7 +2207,7 @@
     addGroundRoad();
     addBuildings();
     addTrees();
-    makeSchoolSign(-3.0, 2.5);
+    makeSchoolSign(kerbSign("left", 2.5).x, kerbSign("left", 2.5).z);
     worldRoot.add(box(3.5, 2.4, 2.2, 0xc9b48a, -7.0, 1.2, 1));
     var c1 = makeChild(2.8, 4.5, { shirtColor: 0xff7a59 });
     var c2 = makeChild(3.2, 3.6, { shirtColor: 0x5b8def, id: "child2", label: "Child near school" });
@@ -2219,7 +2398,7 @@
     addGroundRoad();
     addBuildings();
     makeHospital(-6.5, 1.5);
-    makeSilentZoneSign(-2.4, 2.8);
+    makeSilentZoneSign(kerbSign("left", 2.6).x, kerbSign("left", 2.6).z);
     var ego = makeCar(0x5b8def, -1.2, 9);
     pushClip({ type: "approachStop", mesh: ego, zStart: 9, zStop: 4.0, t0: 0, dur: 3.5, hold: 2.5, loop: true });
     makeAmbulance(1.2, -6);
@@ -2335,6 +2514,9 @@
     else if (buildId === "people") buildPeople();
     else if (buildId === "helmet") buildHelmet();
     else if (buildId === "parking") buildParking();
+    else if (buildId === "noparking") buildNoParking();
+    else if (buildId === "parallelpark") buildParallelPark();
+    else if (buildId === "emergnumbers") buildEmergNumbers();
     else if (buildId === "overtake") buildOvertake();
     else if (buildId === "rain") buildRain();
     else if (buildId === "night") buildNight();
@@ -2415,6 +2597,8 @@
       child2: "School kids need slow, careful drivers.",
       walker: "People walking — expect unexpected steps.",
       ped: "Pedestrian — give space and time.",
+      parking_sign: "Parking bay — use marked slots.",
+      no_parking: "No parking — keep this stretch clear.",
       dog: "Animals near the road need extra care.",
       bike: "Unprotected rider — slow and give room.",
     };
@@ -2487,7 +2671,7 @@
   var SCENARIO_ORDER = [
     "welcome", "basics", "lanes", "signstop", "warning",
     "junction", "blocked", "spotrisk", "people", "helmet",
-    "parking", "overtake", "rain", "night", "emergency",
+    "parking", "noparking", "parallelpark", "emergnumbers", "overtake", "rain", "night", "emergency",
     "school", "phone", "railway", "uturn",
     "accident", "twowheel", "pothole", "speedbump", "seatbelt",
     "helmetown", "lightsfault", "hospital", "priority", "hillright",

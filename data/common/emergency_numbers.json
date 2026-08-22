@@ -1,0 +1,50 @@
+{
+  "dataset": {
+    "version": "2026.08.v1",
+    "note": "India national helplines for learner reference. Prefer 112 when unsure."
+  },
+  "numbers": [
+    {
+      "id": "EN-112",
+      "number": "112",
+      "name": "Unified emergency",
+      "when_to_call": "Any serious emergency — police, fire, or ambulance. Use when you are not sure which single service to call."
+    },
+    {
+      "id": "EN-100",
+      "number": "100",
+      "name": "Police",
+      "when_to_call": "Crime, theft, assault, hit-and-run, or when you need police at the scene."
+    },
+    {
+      "id": "EN-101",
+      "number": "101",
+      "name": "Fire",
+      "when_to_call": "Fire, smoke, fuel leak, or vehicle burning after a crash."
+    },
+    {
+      "id": "EN-102",
+      "number": "102",
+      "name": "Ambulance",
+      "when_to_call": "Medical emergency — injury, unconscious person, breathing trouble."
+    },
+    {
+      "id": "EN-108",
+      "number": "108",
+      "name": "Ambulance (108)",
+      "when_to_call": "Medical emergency in many States — especially road crashes with injuries."
+    },
+    {
+      "id": "EN-1033",
+      "number": "1033",
+      "name": "Highway helpline",
+      "when_to_call": "Breakdown or incident on a national highway — towing, lane blockage, NHAI assistance."
+    },
+    {
+      "id": "EN-1091",
+      "number": "1091",
+      "name": "Women helpline",
+      "when_to_call": "Harassment or safety threat involving women — also try 112 for immediate danger."
+    }
+  ]
+}

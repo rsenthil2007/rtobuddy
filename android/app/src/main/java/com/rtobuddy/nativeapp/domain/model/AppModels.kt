@@ -133,6 +133,14 @@ data class OfficialService(
 )
 
 @Serializable
+data class EmergencyNumber(
+    val id: String,
+    val number: String,
+    val name: String,
+    val when_to_call: String,
+)
+
+@Serializable
 data class StateUtRule(
     val id: String,
     val title: String,
