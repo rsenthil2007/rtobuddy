@@ -7,6 +7,7 @@ import com.rtobuddy.nativeapp.domain.model.ConfidenceItem
 import com.rtobuddy.nativeapp.domain.model.DailyActivity
 import com.rtobuddy.nativeapp.domain.model.DailyRule
 import com.rtobuddy.nativeapp.domain.model.EmergencyNumber
+import com.rtobuddy.nativeapp.domain.model.ExamAttempt
 import com.rtobuddy.nativeapp.domain.model.ExamQuestion
 import com.rtobuddy.nativeapp.domain.model.JurisdictionInfo
 import com.rtobuddy.nativeapp.domain.model.LocalReminder
