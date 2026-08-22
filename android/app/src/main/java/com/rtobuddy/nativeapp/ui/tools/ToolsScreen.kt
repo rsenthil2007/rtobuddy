@@ -66,9 +66,13 @@ fun ToolsScreen(
         item {
             Text("Tools", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
             Text(
-                "Emergency numbers, official links, and app settings.",
+                "Rules Check, emergency numbers, official links, and app settings.",
                 style = MaterialTheme.typography.bodyMedium,
             )
+        }
+
+        item {
+            RulesCheckSection(repository = repository)
         }
 
         item {

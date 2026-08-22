@@ -6,6 +6,7 @@ import com.rtobuddy.nativeapp.domain.model.ExamQuestion
 import com.rtobuddy.nativeapp.domain.model.JurisdictionInfo
 import com.rtobuddy.nativeapp.domain.model.OfficialService
 import com.rtobuddy.nativeapp.domain.model.RoadMarking
+import com.rtobuddy.nativeapp.domain.model.RulesCheckEntry
 import com.rtobuddy.nativeapp.domain.model.RoadQuestFile
 import com.rtobuddy.nativeapp.domain.model.RoadRule
 import com.rtobuddy.nativeapp.domain.model.StateUtRule
@@ -32,6 +33,9 @@ class AssetCatalog(context: Context) {
     val services: List<OfficialService> by lazy { read("data/common/official_services.json", ServicesFile.serializer()).services }
     val emergencyNumbers: List<EmergencyNumber> by lazy {
         read("data/common/emergency_numbers.json", EmergencyNumbersFile.serializer()).numbers
+    }
+    val rulesCheckEntries: List<RulesCheckEntry> by lazy {
+        read("data/common/rules_check.json", RulesCheckFile.serializer()).entries
     }
     val roadQuest: RoadQuestFile by lazy { read("data/common/road_quest.json", RoadQuestFile.serializer()) }
 
@@ -81,6 +85,9 @@ class AssetCatalog(context: Context) {
 
     @Serializable
     private data class EmergencyNumbersFile(val numbers: List<EmergencyNumber> = emptyList())
+
+    @Serializable
+    private data class RulesCheckFile(val entries: List<RulesCheckEntry> = emptyList())
 
     companion object {
         val JURISDICTION_NAMES = mapOf(

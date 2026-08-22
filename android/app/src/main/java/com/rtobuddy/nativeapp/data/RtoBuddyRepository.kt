@@ -1,6 +1,7 @@
 package com.rtobuddy.nativeapp.data
 
 import com.rtobuddy.nativeapp.domain.ExamResult
+import com.rtobuddy.nativeapp.domain.RulesCheckEngine
 import com.rtobuddy.nativeapp.domain.model.Achievement
 import com.rtobuddy.nativeapp.domain.model.CatalogStats
 import com.rtobuddy.nativeapp.domain.model.ConfidenceItem
@@ -19,6 +20,7 @@ import com.rtobuddy.nativeapp.domain.model.QuestOverview
 import com.rtobuddy.nativeapp.domain.model.ReadinessSnapshot
 import com.rtobuddy.nativeapp.domain.model.RoadMarking
 import com.rtobuddy.nativeapp.domain.model.RoadQuestProgress
+import com.rtobuddy.nativeapp.domain.model.RulesCheckEntry
 import com.rtobuddy.nativeapp.domain.model.RoadRule
 import com.rtobuddy.nativeapp.domain.model.SevenDayStep
 import com.rtobuddy.nativeapp.domain.model.StateUtRule
@@ -54,6 +56,7 @@ interface RtoBuddyRepository {
     suspend fun getSpotItQuestionIds(): List<String>
     suspend fun getServices(): List<OfficialService>
     suspend fun getEmergencyNumbers(): List<EmergencyNumber>
+    suspend fun searchRulesCheck(query: String, vehicleFilter: String? = null): List<RulesCheckEntry>
     suspend fun getStateRules(): List<StateUtRule>
     suspend fun getQuestOverview(): QuestOverview
     suspend fun getQuestChapter(chapterId: String): QuestChapter?
@@ -206,6 +209,9 @@ class OfflineFirstRtoBuddyRepository(
     override suspend fun getServices(): List<OfficialService> = catalog.services
 
     override suspend fun getEmergencyNumbers(): List<EmergencyNumber> = catalog.emergencyNumbers
+
+    override suspend fun searchRulesCheck(query: String, vehicleFilter: String?): List<RulesCheckEntry> =
+        RulesCheckEngine.search(query, catalog.rulesCheckEntries, vehicleFilter)
 
     override suspend fun getStateRules(): List<StateUtRule> {
         val code = progress.jurisdictionCode.first()

@@ -141,6 +141,19 @@ data class EmergencyNumber(
 )
 
 @Serializable
+data class RulesCheckEntry(
+    val id: String,
+    val title: String,
+    val vehicle_types: List<String> = emptyList(),
+    val keywords: List<String> = emptyList(),
+    val simple_rule: String,
+    val legal_reference: String,
+    val should_do: List<String> = emptyList(),
+    val should_not_do: List<String> = emptyList(),
+    val penalty: String,
+)
+
+@Serializable
 data class StateUtRule(
     val id: String,
     val title: String,

@@ -1,0 +1,389 @@
+{
+  "dataset": {
+    "version": "2026.08.v1",
+    "scope": "India national baseline — 2W and 4W passenger (LMV) only",
+    "note": "Educational summaries. Penalty amounts follow Central notifications and may change; verify locally."
+  },
+  "entries": [
+    {
+      "id": "RC-2W-001",
+      "title": "Helmet for rider and pillion",
+      "vehicle_types": ["2W"],
+      "keywords": ["helmet", "194D", "129", "pillion", "headgear", "turban", "scooter", "bike", "motorcycle", "two wheeler"],
+      "simple_rule": "Every person riding a two-wheeler must wear protective headgear of the type prescribed by the Central Government, unless a specific statutory exception applies.",
+      "legal_reference": "MVA s.129 (protective headgear); s.194D (penalty)",
+      "should_do": [
+        "Wear a BIS-compliant helmet with strap fastened before moving.",
+        "Ensure the pillion also wears a helmet unless a notified exception applies.",
+        "Replace damaged or expired helmets."
+      ],
+      "should_not_do": [
+        "Ride without a helmet or with the strap unfastened.",
+        "Carry a pillion without headgear where required.",
+        "Use non-standard or decorative headgear that is not approved."
+      ],
+      "penalty": "Offence under MVA s.194D — compounding fine as per current notification (commonly ₹1,000 for first offence; higher for repeat offences). Disqualification may apply in aggravated cases."
+    },
+    {
+      "id": "RC-4W-001",
+      "title": "Seat belt for driver and front-seat passengers",
+      "vehicle_types": ["4W"],
+      "keywords": ["seatbelt", "seat belt", "194B", "passenger", "front seat", "car", "LMV"],
+      "simple_rule": "Drivers and passengers in the front seats of a motor vehicle must wear seat belts where the vehicle is equipped with them, subject to notified exceptions.",
+      "legal_reference": "MVA s.194B; CMVR safety-belt rules",
+      "should_do": [
+        "Buckle up before starting the engine.",
+        "Ensure all front-seat occupants are belted.",
+        "Adjust the belt across chest and lap, not behind the back."
+      ],
+      "should_not_do": [
+        "Drive with an unbelted front passenger.",
+        "Tuck the belt under the arm or behind the seat.",
+        "Disable or remove mandatory seat belts."
+      ],
+      "penalty": "Offence under MVA s.194B — fine as per current Central notification (commonly ₹1,000 for first offence)."
+    },
+    {
+      "id": "RC-4W-002",
+      "title": "Child restraint in private car",
+      "vehicle_types": ["4W"],
+      "keywords": ["child", "194B", "restraint", "baby", "infant", "car seat", "kid"],
+      "simple_rule": "Children must use prescribed seat belts or child restraint systems suitable for age, height and weight where the law requires it.",
+      "legal_reference": "MVA s.194B; CMVR (child restraint / safety belt provisions)",
+      "should_do": [
+        "Use an age-appropriate rear-facing or booster seat.",
+        "Install restraints as per manufacturer and CMVR guidance.",
+        "Keep children in the rear seat when possible."
+      ],
+      "should_not_do": [
+        "Hold a child on the lap instead of using a restraint.",
+        "Allow under-age children in the front seat with airbag without proper restraint.",
+        "Use expired or damaged child seats."
+      ],
+      "penalty": "Offence under MVA s.194B — fine as per current notification; repeat offences may attract higher penalties."
+    },
+    {
+      "id": "RC-2W-002",
+      "title": "Valid licence for vehicle class",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["licence", "license", "DL", "181", "MCWG", "LMV", "without licence", "invalid licence"],
+      "simple_rule": "No person shall drive a motor vehicle unless they hold an effective driving licence authorising that class of vehicle.",
+      "legal_reference": "MVA s.3 (necessity of driving licence); s.181 (penalty for driving without licence)",
+      "should_do": [
+        "Carry a valid DL for the class you are driving (MCWG for geared two-wheeler, LMV for car).",
+        "Renew before expiry; apply for duplicate if lost.",
+        "Learners must display ‘L’ and follow learner conditions."
+      ],
+      "should_not_do": [
+        "Drive with an expired, suspended or wrong-class licence.",
+        "Allow an unlicensed person to drive your vehicle.",
+        "Use a learner licence without a qualified supervisor where required."
+      ],
+      "penalty": "MVA s.181 — fine up to ₹5,000 and/or imprisonment up to 3 months for first offence; higher for repeat offences."
+    },
+    {
+      "id": "RC-2W-003",
+      "title": "Learner licence conditions (two-wheeler / car)",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["learner", "L plate", "supervisor", "CMVR rule 3", "14", "learner licence"],
+      "simple_rule": "A learner must follow prescribed conditions including supervision, learner plate display and restrictions on certain roads or times where notified.",
+      "legal_reference": "MVA s.14; CMVR Rule 3",
+      "should_do": [
+        "Display ‘L’ sign as prescribed.",
+        "Ride/drive only with a qualified supervisor where required.",
+        "Follow any State/UT learner restrictions."
+      ],
+      "should_not_do": [
+        "Carry pillion on a learner two-wheeler where prohibited.",
+        "Drive on highways or notified routes barred for learners.",
+        "Practice without the required supervisor."
+      ],
+      "penalty": "Breaching learner conditions is an offence under MVA/CMVR — fine and possible cancellation of learner licence."
+    },
+    {
+      "id": "RC-4W-003",
+      "title": "Mandatory third-party insurance",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["insurance", "146", "third party", "TP", "policy", "expired insurance"],
+      "simple_rule": "Every motor vehicle using public roads must have valid third-party insurance as required by law.",
+      "legal_reference": "MVA s.146 (insurance); s.196 (penalty)",
+      "should_do": [
+        "Renew insurance before expiry.",
+        "Keep certificate or digital proof accessible.",
+        "Transfer insurance promptly when buying a used vehicle."
+      ],
+      "should_not_do": [
+        "Drive with lapsed or fake insurance.",
+        "Alter insurance documents.",
+        "Ignore insurer intimation after an accident."
+      ],
+      "penalty": "MVA s.196 — fine up to ₹2,000 or imprisonment up to 3 months (first offence); higher for repeat offences."
+    },
+    {
+      "id": "RC-4W-004",
+      "title": "Pollution Under Control (PUC) certificate",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["PUC", "pollution", "emission", "190", "certificate", "smoke"],
+      "simple_rule": "Motor vehicles must carry a valid PUC certificate showing emissions within prescribed limits.",
+      "legal_reference": "CMVR (emission norms); MVA s.190 (general penalty for contraventions)",
+      "should_do": [
+        "Test emissions at an authorised centre before expiry.",
+        "Service the vehicle if it fails the test.",
+        "Keep the PUC certificate in the vehicle or digital form."
+      ],
+      "should_not_do": [
+        "Drive with an expired or missing PUC.",
+        "Tamper with the exhaust or catalytic system.",
+        "Use fake PUC certificates."
+      ],
+      "penalty": "Fine under MVA s.190 and CMVR — commonly ₹1,000 to ₹2,000; vehicle may be detained until compliance."
+    },
+    {
+      "id": "RC-4W-005",
+      "title": "Registration certificate (RC) and number plate",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["RC", "registration", "39", "50", "number plate", "HSRP", "fancy plate"],
+      "simple_rule": "A vehicle must be registered and display the assigned registration mark in the prescribed form and place.",
+      "legal_reference": "MVA ss.39, 50; CMVR (registration plates)",
+      "should_do": [
+        "Carry RC (physical or DigiLocker/mParivahan).",
+        "Use prescribed size, font and HSRP where notified.",
+        "Update address or ownership through RTO promptly."
+      ],
+      "should_not_do": [
+        "Drive an unregistered or temporarily misused vehicle beyond allowed period.",
+        "Use fancy, unreadable or obscured plates.",
+        "Display a different number or borrowed plates."
+      ],
+      "penalty": "MVA ss.39/50 offences — fine and possible seizure; using false plates is a serious offence."
+    },
+    {
+      "id": "RC-2W-004",
+      "title": "Dangerous or rash driving",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["184", "rash", "dangerous", "racing", "stunt", "wheelie", "overspeed", "speed"],
+      "simple_rule": "No person shall drive dangerously or in a manner that puts others at risk, including racing, stunting or grossly negligent riding/driving.",
+      "legal_reference": "MVA s.184 (dangerous driving)",
+      "should_do": [
+        "Match speed to road, traffic and weather.",
+        "Keep both hands on controls; stay in lane.",
+        "Slow down near schools, junctions and pedestrians."
+      ],
+      "should_not_do": [
+        "Perform stunts, wheelies or street racing.",
+        "Weave through traffic at high speed.",
+        "Overtake on blind curves or junctions."
+      ],
+      "penalty": "MVA s.184 — fine up to ₹5,000 and/or imprisonment up to 6 months (first offence); licence may be suspended."
+    },
+    {
+      "id": "RC-4W-006",
+      "title": "Drunk driving / substance impairment",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["185", "drunk", "alcohol", "DUI", "breathalyser", "drink driving", "intoxication"],
+      "simple_rule": "Driving or riding with blood-alcohol above the prescribed limit, or under the influence of drugs, is prohibited.",
+      "legal_reference": "MVA s.185",
+      "should_do": [
+        "Use a sober driver or taxi after consuming alcohol.",
+        "Wait until fully fit before riding/driving.",
+        "Cooperate with lawful breath/blood tests."
+      ],
+      "should_not_do": [
+        "Drive after drinking even ‘a little’.",
+        "Refuse lawful testing by authorised personnel.",
+        "Mix medicines that impair reaction time and then drive."
+      ],
+      "penalty": "MVA s.185 — fine up to ₹10,000 and/or imprisonment up to 6 months (first offence); higher and licence seizure for repeat offences."
+    },
+    {
+      "id": "RC-4W-007",
+      "title": "Mobile phone while driving",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["184", "mobile", "phone", "cellphone", "handheld", "distraction", "calling"],
+      "simple_rule": "Using a handheld mobile phone while driving or riding, in a way that causes danger or distraction, is treated as dangerous driving.",
+      "legal_reference": "MVA s.184; CMVR / court interpretations on mobile use",
+      "should_do": [
+        "Stop at a safe place to take calls or navigate.",
+        "Use hands-free only where it does not distract.",
+        "Set music/maps before moving off."
+      ],
+      "should_not_do": [
+        "Text, scroll or watch video while moving.",
+        "Hold the phone to the ear in slow traffic without hands-free.",
+        "Live-stream or vlog while riding/driving."
+      ],
+      "penalty": "Treated as dangerous driving under MVA s.184 — fine up to ₹5,000 and possible licence action."
+    },
+    {
+      "id": "RC-4W-008",
+      "title": "Parking and stopping restrictions",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["parking", "no parking", "117", "119", "122", "177", "zebra", "bus stop", "footpath"],
+      "simple_rule": "You must not stop or park where signs, markings or local rules prohibit it, or where it blocks traffic, crossings or emergency access.",
+      "legal_reference": "MVA ss.117, 119, 122; local municipal/RTO orders",
+      "should_do": [
+        "Use marked bays and pay fees where required.",
+        "Stop only briefly at kerb if picking up/dropping off where allowed.",
+        "Keep zebra crossings, bus stops and junctions clear."
+      ],
+      "should_not_do": [
+        "Park on footpaths, flyovers or medians.",
+        "Block driveways, hydrants or hospital entrances.",
+        "Leave the vehicle on a no-parking sign stretch."
+      ],
+      "penalty": "Fine under MVA s.122 / local bylaws — commonly ₹500–₹2,000; towing and detention possible."
+    },
+    {
+      "id": "RC-4W-009",
+      "title": "Jumping red light / ignoring signal",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["177", "signal", "red light", "jump signal", "traffic light", "amber"],
+      "simple_rule": "Drivers and riders must obey traffic signals. Entering the junction on red when required to stop is an offence.",
+      "legal_reference": "MVA s.177 (general penalty); signal rules under CMVR / local traffic police",
+      "should_do": [
+        "Stop at the stop line on amber if safe to do so.",
+        "Wait on red until green.",
+        "Give way to pedestrians on green where turning."
+      ],
+      "should_not_do": [
+        "Accelerate on amber when you cannot clear safely.",
+        "Enter the junction when it is already blocked.",
+        "Ignore a non-working signal without treating it as an all-way caution."
+      ],
+      "penalty": "Fine commonly ₹1,000–₹5,000 under compounding rules; repeat offences may lead to licence suspension."
+    },
+    {
+      "id": "RC-4W-010",
+      "title": "Give way to emergency vehicles",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["194E", "ambulance", "fire", "emergency", "siren", "give way"],
+      "simple_rule": "Give free passage to fire service, ambulance and other notified emergency vehicles with active siren/lights.",
+      "legal_reference": "MVA s.194E",
+      "should_do": [
+        "Pull left and slow or stop safely.",
+        "Do not block junctions or gates.",
+        "Stay calm and avoid sudden U-turns."
+      ],
+      "should_not_do": [
+        "Tailgate an ambulance to skip traffic.",
+        "Refuse to yield or intentionally obstruct.",
+        "Stop in the middle of the lane without clearing space."
+      ],
+      "penalty": "MVA s.194E — fine of ₹10,000 and possible community service for obstruction."
+    },
+    {
+      "id": "RC-4W-011",
+      "title": "Duty after an accident",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["134", "187", "accident", "hit and run", "crash", "injury", "report"],
+      "simple_rule": "If you are involved in an accident causing injury, death or property damage, you must stop, give assistance, and report to police as required.",
+      "legal_reference": "MVA ss.134, 187",
+      "should_do": [
+        "Stop immediately at a safe spot.",
+        "Call 112/108 for injuries; give first aid if trained.",
+        "Share identity, licence and insurance details; cooperate with police."
+      ],
+      "should_not_do": [
+        "Leave the scene (hit-and-run).",
+        "Move injured persons unsafely unless fire/fuel risk.",
+        "Argue on the carriageway and block traffic."
+      ],
+      "penalty": "Hit-and-run and failure to report — imprisonment and fine under MVA ss.134/187; licence may be cancelled."
+    },
+    {
+      "id": "RC-4W-012",
+      "title": "Zebra crossing — pedestrian priority",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["pedestrian", "zebra", "crossing", "walk", "unmarked crossing"],
+      "simple_rule": "Drivers must slow down and give way to pedestrians who are crossing or waiting to cross at a marked crossing or intersection.",
+      "legal_reference": "MVA general duty of care; CMVR / Motor Vehicles (Driving) Regulations",
+      "should_do": [
+        "Slow before every zebra crossing.",
+        "Stop if a pedestrian has stepped on or is clearly waiting to cross.",
+        "Make eye contact and wait until they finish."
+      ],
+      "should_not_do": [
+        "Honk to force pedestrians back.",
+        "Overtake another vehicle that has stopped for a pedestrian.",
+        "Block the crossing while waiting in traffic."
+      ],
+      "penalty": "Fine under traffic compounding rules; dangerous driving (s.184) if grossly negligent."
+    },
+    {
+      "id": "RC-4W-013",
+      "title": "Safe overtaking",
+      "vehicle_types": ["2W", "4W"],
+      "keywords": ["overtake", "overtaking", "pass", "solid line", "wrong side"],
+      "simple_rule": "Overtake only when it is safe, legal and you have clear visibility; return to your lane without cutting in.",
+      "legal_reference": "CMVR / Driving Regulations 2017; MVA s.184 if dangerous",
+      "should_do": [
+        "Check mirrors, signal, and blind spots.",
+        "Ensure oncoming lane is clear and no solid line prohibits crossing.",
+        "Pass with adequate gap and return smoothly."
+      ],
+      "should_not_do": [
+        "Overtake on curves, crests, junctions or zebra crossings.",
+        "Overtake from the left on highways where not permitted.",
+        "Force another driver to brake or swerve."
+      ],
+      "penalty": "Dangerous overtaking — MVA s.184; crossing solid line may attract separate fine under local rules."
+    },
+    {
+      "id": "RC-2W-005",
+      "title": "Wrong-side / contra-flow riding",
+      "vehicle_types": ["2W"],
+      "keywords": ["wrong way", "wrong side", "contra", "one way", "against traffic"],
+      "simple_rule": "Ride only on the correct side of the road and in the lawful direction of traffic unless directed otherwise by police.",
+      "legal_reference": "MVA s.184; local traffic rules",
+      "should_do": [
+        "Use the left side as per Indian rules unless overtaking.",
+        "Obey one-way signs and road markings.",
+        "Take a legal U-turn if you missed a turn."
+      ],
+      "should_not_do": [
+        "Ride facing oncoming traffic to save distance.",
+        "Use footpaths or service lanes against flow.",
+        "Cut through medians illegally."
+      ],
+      "penalty": "Dangerous driving under MVA s.184 — fine and possible licence suspension."
+    },
+    {
+      "id": "RC-4W-014",
+      "title": "Excess passengers in private car",
+      "vehicle_types": ["4W"],
+      "keywords": ["194A", "extra passenger", "overloading", "seating capacity", "5 people"],
+      "simple_rule": "Do not carry more passengers than the seating capacity stated in the registration certificate.",
+      "legal_reference": "MVA s.194A",
+      "should_do": [
+        "Check RC seating capacity (driver included in some interpretations — verify locally).",
+        "Use a second vehicle or trip for extra people.",
+        "Ensure everyone has a seat and belt where required."
+      ],
+      "should_not_do": [
+        "Carry passengers in the boot or on laps beyond capacity.",
+        "Overload a hatchback with six when licensed for five.",
+        "Carry children standing between seats."
+      ],
+      "penalty": "MVA s.194A — fine per excess passenger as per current notification."
+    },
+    {
+      "id": "RC-2W-006",
+      "title": "Pillion rider rules (two-wheeler)",
+      "vehicle_types": ["2W"],
+      "keywords": ["pillion", "129", "pillion footrest", "two on bike", "triple ride"],
+      "simple_rule": "Carry only the permitted number of pillion riders with required footrests and safety gear where the law applies.",
+      "legal_reference": "MVA s.129; CMVR construction requirements",
+      "should_do": [
+        "Carry one pillion on a standard two-wheeler unless vehicle type allows otherwise.",
+        "Ensure footrests and handholds are used.",
+        "Both rider and pillion wear helmets where required."
+      ],
+      "should_not_do": [
+        "Carry two or more pillion passengers (triple riding).",
+        "Carry children standing in front of the rider.",
+        "Allow pillion without foot on pegs."
+      ],
+      "penalty": "Fine under CMVR/MVA for overloading and helmet breaches; dangerous driving if grossly unsafe."
+    }
+  ]
+}
