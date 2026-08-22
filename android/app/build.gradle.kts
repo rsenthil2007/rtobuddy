@@ -1,9 +1,14 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.plugin.serialization")
 }
+
+val ciDebugKeystore = rootProject.file("keystore/rtobuddy-ci-debug.jks")
+val ciDebugProps = rootProject.file("keystore/ci-debug.properties")
 
 android {
     namespace = "com.rtobuddy.nativeapp"
@@ -13,8 +18,8 @@ android {
         applicationId = "com.rtobuddy.nativeapp"
         minSdk = 26
         targetSdk = 35
-        versionCode = 18
-        versionName = "1.8.2"
+        versionCode = 19
+        versionName = "1.8.3"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -35,7 +40,26 @@ android {
         buildConfigField("String", "ADMOB_APP_ID", "\"ca-app-pub-3940256099942544~3347511713\"")
     }
 
+    signingConfigs {
+        if (ciDebugKeystore.exists()) {
+            create("ciDebug") {
+                val props = Properties().apply {
+                    ciDebugProps.takeIf { it.exists() }?.inputStream()?.use { load(it) }
+                }
+                storeFile = ciDebugKeystore
+                storePassword = props.getProperty("storePassword") ?: "rtobuddyci"
+                keyAlias = props.getProperty("keyAlias") ?: "rtobuddyci"
+                keyPassword = props.getProperty("keyPassword") ?: "rtobuddyci"
+            }
+        }
+    }
+
     buildTypes {
+        debug {
+            if (ciDebugKeystore.exists()) {
+                signingConfig = signingConfigs.getByName("ciDebug")
+            }
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(

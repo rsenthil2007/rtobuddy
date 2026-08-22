@@ -23,6 +23,25 @@ jobs:
         with:
           gradle-version: "8.9"
           cache-disabled: true
+      - name: Restore stable debug keystore
+        uses: actions/cache@v4
+        id: debug-keystore
+        with:
+          path: android/keystore
+          key: rtobuddy-debug-keystore-v1
+      - name: Create stable debug keystore
+        if: steps.debug-keystore.outputs.cache-hit != 'true'
+        working-directory: android
+        run: |
+          mkdir -p keystore
+          keytool -genkeypair -v \
+            -keystore keystore/rtobuddy-ci-debug.jks \
+            -storepass rtobuddyci \
+            -keypass rtobuddyci \
+            -alias rtobuddyci \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=RTOBuddy CI Debug, OU=RTOBuddy, O=RTOBuddy, L=Chennai, ST=TN, C=IN"
+          printf 'storePassword=rtobuddyci\nkeyPassword=rtobuddyci\nkeyAlias=rtobuddyci\n' > keystore/ci-debug.properties
       - name: Assemble debug APK
         working-directory: android
         run: |

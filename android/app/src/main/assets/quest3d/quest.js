@@ -629,6 +629,8 @@
     decided: false,
     animCars: [],
     animActors: [],
+    movers: [],
+    crashPairs: {},
     sceneT: 0,
     clips: [],
     fx: [],
@@ -636,6 +638,127 @@
 
   function pushClip(clip) {
     state.clips.push(clip);
+    if (clip.mesh) registerMover(clip.mesh);
+  }
+
+  function registerMover(mesh) {
+    if (!mesh || mesh.userData.collisionRegistered) return;
+    mesh.userData.collisionRegistered = true;
+    if (!mesh.userData.collisionKind) {
+      mesh.userData.collisionKind = mesh.userData.legL ? "person" : "vehicle";
+    }
+    if (mesh.userData.collisionRadius == null) {
+      mesh.userData.collisionRadius = mesh.userData.collisionKind === "person" ? 0.42 : 0.95;
+    }
+    state.movers.push(mesh);
+  }
+
+  function unregisterMover(mesh) {
+    if (!mesh) return;
+    mesh.userData.collisionRegistered = false;
+    var idx = state.movers.indexOf(mesh);
+    if (idx >= 0) state.movers.splice(idx, 1);
+  }
+
+  function meshBoundsXZ(mesh) {
+    var r = mesh.userData.collisionRadius != null ? mesh.userData.collisionRadius : 0.9;
+    return {
+      minX: mesh.position.x - r,
+      maxX: mesh.position.x + r,
+      minZ: mesh.position.z - r,
+      maxZ: mesh.position.z + r,
+    };
+  }
+
+  function boundsOverlap(a, b) {
+    return !(a.maxX < b.minX || a.minX > b.maxX || a.maxZ < b.minZ || a.minZ > b.maxZ);
+  }
+
+  function triggerCrash(a, b) {
+    var key = a.uuid + "|" + b.uuid;
+    if (state.crashPairs[key]) return;
+    state.crashPairs[key] = true;
+    var ax = (a.position.x + b.position.x) * 0.5;
+    var az = (a.position.z + b.position.z) * 0.5;
+    spawnCrashFx(ax, az);
+    freezeMesh(a);
+    freezeMesh(b);
+    if (a.userData.collisionKind === "person" || b.userData.collisionKind === "person") {
+      knockDownPerson(a.userData.collisionKind === "person" ? a : b);
+    } else {
+      crumpleVehicle(a);
+      crumpleVehicle(b);
+    }
+  }
+
+  function freezeMesh(mesh) {
+    mesh.userData.frozen = true;
+    unregisterMover(mesh);
+    for (var i = 0; i < state.clips.length; i++) {
+      if (state.clips[i].mesh === mesh) {
+        state.clips.splice(i, 1);
+        i--;
+      }
+    }
+    for (var j = 0; j < state.animCars.length; j++) {
+      if (state.animCars[j].mesh === mesh) {
+        state.animCars.splice(j, 1);
+        j--;
+      }
+    }
+    for (var k = 0; k < state.animActors.length; k++) {
+      if (state.animActors[k].mesh === mesh) {
+        state.animActors.splice(k, 1);
+        k--;
+      }
+    }
+  }
+
+  function crumpleVehicle(mesh) {
+    if (mesh.userData.crumpled) return;
+    mesh.userData.crumpled = true;
+    mesh.rotation.z += (Math.random() - 0.5) * 0.35;
+    mesh.traverse(function (obj) {
+      if (obj.isMesh && obj.geometry && obj.geometry.type === "BoxGeometry") {
+        obj.scale.y *= 0.88;
+        obj.scale.z *= 0.82;
+      }
+    });
+  }
+
+  function knockDownPerson(mesh) {
+    if (!mesh || mesh.userData.knockedDown) return;
+    mesh.userData.knockedDown = true;
+    mesh.rotation.x = -Math.PI / 2.4;
+    mesh.position.y = 0.18;
+  }
+
+  function spawnCrashFx(x, z) {
+    var g = new THREE.Group();
+    var core = new THREE.Mesh(
+      new THREE.SphereGeometry(0.35, 8, 8),
+      new THREE.MeshBasicMaterial({ color: 0xffaa44, transparent: true, opacity: 0.85 })
+    );
+    core.position.set(0, 0.45, 0);
+    g.add(core);
+    g.add(box(0.5, 0.08, 0.5, 0x333333, 0, 0.05, 0));
+    g.position.set(x, 0, z);
+    worldRoot.add(g);
+    state.fx.push({ type: "crashBurst", mesh: g, life: 0, maxLife: 1.4 });
+  }
+
+  function processCollisions() {
+    var movers = state.movers;
+    for (var i = 0; i < movers.length; i++) {
+      var a = movers[i];
+      if (!a || a.userData.frozen) continue;
+      var ba = meshBoundsXZ(a);
+      for (var j = i + 1; j < movers.length; j++) {
+        var b = movers[j];
+        if (!b || b.userData.frozen) continue;
+        if (boundsOverlap(ba, meshBoundsXZ(b))) triggerCrash(a, b);
+      }
+    }
   }
 
   function lerp(a, b, t) {
@@ -708,6 +831,8 @@
     glowMarkers = [];
     state.animCars = [];
     state.animActors = [];
+    state.movers = [];
+    state.crashPairs = {};
     state.clips = [];
     state.fx = [];
     state.sceneT = 0;
@@ -872,7 +997,10 @@
     ]);
     g.position.set(x, 0, z);
     if (opts.yaw != null) g.rotation.y = opts.yaw;
+    g.userData.collisionKind = "vehicle";
+    g.userData.collisionRadius = opts.collisionRadius != null ? opts.collisionRadius : 0.95;
     worldRoot.add(g);
+    if (!opts.static && !opts.crumpled) registerMover(g);
     return g;
   }
 
@@ -893,7 +1021,10 @@
       [0.8, 0.32, -1.85],
     ]);
     g.position.set(x, 0, z);
+    g.userData.collisionKind = "vehicle";
+    g.userData.collisionRadius = 1.15;
     worldRoot.add(g);
+    registerMover(g);
     return g;
   }
 
@@ -913,7 +1044,10 @@
       [0.95, 0.32, -1.7],
     ]);
     g.position.set(x, 0, z);
+    g.userData.collisionKind = "vehicle";
+    g.userData.collisionRadius = 1.25;
     worldRoot.add(g);
+    registerMover(g);
     makeTapTarget("bus", body, "Bus stop");
     return g;
   }
@@ -953,7 +1087,10 @@
     }
     g.position.set(x, 0, z);
     g.rotation.y = opts.yaw != null ? opts.yaw : 0.55;
+    g.userData.collisionKind = "vehicle";
+    g.userData.collisionRadius = 0.72;
     worldRoot.add(g);
+    registerMover(g);
     return g;
   }
 
@@ -1001,7 +1138,10 @@
     makeTapTarget(opts.tapId || "bike", body, opts.tapLabel || (opts.noHelmet ? "Rider without helmet" : "Motorcycle"));
     g.position.set(x, 0, z);
     g.rotation.y = opts.yaw != null ? opts.yaw : -0.3;
+    g.userData.collisionKind = "vehicle";
+    g.userData.collisionRadius = 0.78;
     worldRoot.add(g);
+    registerMover(g);
     return g;
   }
 
@@ -1078,9 +1218,12 @@
     g.userData.legL = legL;
     g.userData.legR = legR;
     g.userData.walkPhase = Math.random() * Math.PI * 2;
+    g.userData.collisionKind = "person";
+    g.userData.collisionRadius = 0.42 * scale;
     g.position.set(x, 0, z);
     if (opts.addToWorld !== false) {
       worldRoot.add(g);
+      if (!opts.static) registerMover(g);
     }
     if (opts.tap !== false) {
       makeTapTarget(opts.id || (opts.child ? "child" : "ped"), torso, opts.label || (opts.child ? "Child" : "Pedestrian"));
@@ -1413,7 +1556,7 @@
     var st = state.sceneT;
     for (var i = 0; i < state.clips.length; i++) {
       var c = state.clips[i];
-      if (!c || !c.mesh) continue;
+      if (!c || !c.mesh || c.mesh.userData.frozen) continue;
       var t0 = c.t0 || 0;
       var local = st - t0;
 
@@ -1537,6 +1680,45 @@
         if (local < 0) c.mesh.position.x = c.x0;
         else if (local < durS) c.mesh.position.x = lerp(c.x0, c.x1, uS);
         else c.mesh.position.x = c.x1;
+      } else if (c.type === "uTurnArc") {
+        var durU = c.dur || 5.5;
+        var pauseU = c.pause != null ? c.pause : 1.6;
+        var cycleU = durU + pauseU;
+        var lu = c.loop !== false ? ((local % cycleU) + cycleU) % cycleU : local;
+        var xLane = c.xLane != null ? c.xLane : -1.4;
+        var zStartU = c.zStart != null ? c.zStart : 7;
+        var zTurn = c.zTurn != null ? c.zTurn : 2;
+        var xEnd = c.xEnd != null ? c.xEnd : 1.5;
+        var zEnd = c.zEnd != null ? c.zEnd : -4;
+        var cx = (xLane + xEnd) * 0.5;
+        var cz = (zStartU + zTurn) * 0.5;
+        var rx = Math.max(0.8, Math.abs(xEnd - xLane) * 0.5);
+        var rz = Math.max(0.8, Math.abs(zStartU - zTurn) * 0.5);
+        if (lu < 0) {
+          c.mesh.position.set(xLane, 0, zStartU);
+          c.mesh.rotation.y = Math.PI;
+        } else if (lu < durU * 0.42) {
+          var u1 = easeInOut(clamp01(lu / (durU * 0.42)));
+          var ang1 = Math.PI + u1 * (Math.PI * 0.5);
+          c.mesh.position.x = cx + Math.cos(ang1) * rx;
+          c.mesh.position.z = cz + Math.sin(ang1) * rz;
+          c.mesh.rotation.y = ang1 - Math.PI / 2;
+          spinWheels(c.mesh, 5 * dt);
+        } else if (lu < durU) {
+          var u2 = easeInOut(clamp01((lu - durU * 0.42) / (durU * 0.58)));
+          var ang2 = Math.PI * 1.5 + u2 * (Math.PI * 0.5);
+          var cx2 = (xEnd + xLane) * 0.5;
+          var cz2 = (zTurn + zEnd) * 0.5;
+          var rx2 = Math.max(0.8, Math.abs(xEnd - xLane) * 0.5);
+          var rz2 = Math.max(0.8, Math.abs(zTurn - zEnd) * 0.5);
+          c.mesh.position.x = cx2 + Math.cos(ang2) * rx2;
+          c.mesh.position.z = cz2 + Math.sin(ang2) * rz2;
+          c.mesh.rotation.y = ang2 - Math.PI / 2;
+          spinWheels(c.mesh, 5 * dt);
+        } else {
+          c.mesh.position.set(xEnd, 0, zEnd);
+          c.mesh.rotation.y = 0;
+        }
       } else if (c.type === "rollForward") {
         var rSpd = c.speed != null ? c.speed : 0.55;
         if (local >= 0) {
@@ -1552,7 +1734,21 @@
   function processFx(dt) {
     for (var i = 0; i < state.fx.length; i++) {
       var fx = state.fx[i];
-      if (fx.type === "rain" && fx.drops) {
+      if (fx.type === "crashBurst" && fx.mesh) {
+        fx.life += dt;
+        var tFx = clamp01(fx.life / (fx.maxLife || 1.4));
+        fx.mesh.scale.setScalar(1 + tFx * 1.6);
+        fx.mesh.traverse(function (obj) {
+          if (obj.material && obj.material.opacity != null) {
+            obj.material.opacity = Math.max(0, 0.85 * (1 - tFx));
+          }
+        });
+        if (fx.life >= (fx.maxLife || 1.4)) {
+          worldRoot.remove(fx.mesh);
+          state.fx.splice(i, 1);
+          i--;
+        }
+      } else if (fx.type === "rain" && fx.drops) {
         for (var d = 0; d < fx.drops.length; d++) {
           var drop = fx.drops[d];
           drop.mesh.position.y -= drop.speed * dt;
@@ -1891,13 +2087,25 @@
     addCrossRoad();
     addBuildings();
     makeSignal(3.4, 3.4);
-    var ego = makeCar(0xd9843b, -1.4, 5);
-    pushClip({ type: "pullOutAbort", mesh: ego, x0: -1.4, xPeek: 1.2, t0: 0.5, dur: 3.8, loop: true });
+    var ego = makeCar(0x4f7cac, -1.4, 11);
+    pushClip({ type: "approachStop", mesh: ego, zStart: 11, zStop: 6.2, t0: 0, dur: 3.2, hold: 4, loop: true });
+    var risky = makeCar(0xd9843b, -1.4, 7.5);
+    pushClip({
+      type: "uTurnArc",
+      mesh: risky,
+      xLane: -1.4,
+      zStart: 7.5,
+      zTurn: 1.8,
+      xEnd: 1.5,
+      zEnd: -5,
+      dur: 5.8,
+      t0: 1.0,
+      loop: true,
+    });
     var stream1 = makeCar(0x5b8def, 1.5, -14);
     var stream2 = makeCar(0x888888, 1.5, -8);
     pushClip({ type: "oncomingPass", mesh: stream1, x: 1.5, zFar: -16, zNear: 16, speed: 7, t0: 0 });
     pushClip({ type: "oncomingPass", mesh: stream2, x: 1.5, zFar: -16, zNear: 16, speed: 6.2, t0: 1.4 });
-    state.animCars.push({ mesh: makeCar(0x4f7cac, -1.4, 12), speed: -4.8 });
   }
 
   function buildAccident() {
@@ -1908,8 +2116,8 @@
     addTrees();
     var a = makeCar(0x5b8def, -0.6, 2.2, { crumpled: true, yaw: 0.55 });
     var b = makeCar(0xd9843b, 0.8, 3.4, { crumpled: true, yaw: -0.9 });
-    makePerson(-1.8, 1.4, { shirtColor: 0x3d6bb3, label: "Bystander" });
-    makePerson(1.9, 1.0, { shirtColor: 0xc97b63, label: "Caller" });
+    makePerson(-1.8, 1.4, { shirtColor: 0x3d6bb3, label: "Bystander", static: true });
+    makePerson(1.9, 1.0, { shirtColor: 0xc97b63, label: "Caller", static: true });
     var bike = makeMotorcycle(-1.5, 4.2, { noHelmet: false, color: 0x222222, yaw: 1.1 });
     pushClip({ type: "rollForward", mesh: bike, speed: 0.35, zStart: 4.2, zMax: 5.5, zMin: 3.5, t0: 0 });
     var ego = makeCar(0x4f7cac, -1.3, 10);
@@ -2386,6 +2594,7 @@
     }
 
     state.animCars.forEach(function (c) {
+      if (!c.mesh || c.mesh.userData.frozen) return;
       if (!c.speed) return;
       c.mesh.position.z += c.speed * dt;
       if (c.stopZ !== undefined && c.speed < 0 && c.mesh.position.z <= c.stopZ) {
@@ -2399,6 +2608,7 @@
 
     processClips(dt);
     processFx(dt);
+    processCollisions();
 
     state.animActors.forEach(function (a) {
       if (a.type === "walk") {
