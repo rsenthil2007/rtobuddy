@@ -2,6 +2,7 @@ package com.rtobuddy.nativeapp.data
 
 import android.content.Context
 import com.rtobuddy.nativeapp.domain.model.EmergencyNumber
+import com.rtobuddy.nativeapp.domain.model.ExamQuestion
 import com.rtobuddy.nativeapp.domain.model.JurisdictionInfo
 import com.rtobuddy.nativeapp.domain.model.OfficialService
 import com.rtobuddy.nativeapp.domain.model.RoadMarking
